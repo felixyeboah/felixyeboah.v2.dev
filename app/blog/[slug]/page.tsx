@@ -1,32 +1,38 @@
-import { getFileBySlug } from '@/app/libs/mdx';
+import { getFileBySlug, getFiles } from '@/app/libs/mdx';
 import { getTweets } from '@/app/libs/tweets';
 import { Metadata } from 'next';
 
 import MDXContent from './components/MDXContent';
 
-interface PageProps {
-    params: {
-        slug: string;
-    };
-    searchParams?: { [key: string]: string | string[] | undefined };
+export async function generateStaticParams() {
+    const posts = await getFiles();
+
+    return posts.map((post) => ({
+        slug: post.replace(/\.mdx/, ''),
+    }));
 }
 
+// Generate metadata for each page
 export async function generateMetadata({
     params,
-}: PageProps): Promise<Metadata> {
-    const post = await getFileBySlug(params.slug);
+}: {
+    params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+    const slug = (await params).slug;
+
+    const post = await getFileBySlug(slug);
 
     return {
         title: post.frontMatter.title,
     };
 }
 
-const BlogPage = async ({ params }: PageProps) => {
+const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
     if (!params || typeof params !== 'object') {
         return null;
     }
 
-    const { slug } = params;
+    const slug = (await params).slug;
 
     if (!slug || typeof slug !== 'string') {
         return null;

@@ -4,14 +4,14 @@ import { getTweets } from '@/app/libs/tweets';
 import { CaseStudyBody } from '../components/case-study-body';
 import { CaseStudyHeader } from '../components/case-study-header';
 
-interface PageProps {
-    params: {
-        slug: string;
-    };
-}
+const CaseStudiesPage = async ({
+    params,
+}: {
+    params: Promise<{ slug: string }>;
+}) => {
+    const slug = (await params).slug;
 
-const CaseStudiesPage = async ({ params }: PageProps) => {
-    const post = await getFileBySlug(params!.slug as string, 'project');
+    const post = await getFileBySlug(slug, 'project');
     const tweets =
         post.tweetIDs.length > 0 ? await getTweets(post.tweetIDs) : {};
 
