@@ -12815,7 +12815,7 @@ const Signature = ({ title, url }: { title: string; url: string }) => {
                 <p>
                     Liked this article?
                     <a
-                        className="text-blue-600 hover:underline transition-all duration-300 ease-in hover:text-blue-700 cursor-pointer"
+                        className="text-primary hover:underline transition-all duration-300 ease-in hover:text-primary cursor-pointer"
                         href={`https://twitter.com/intent/tweet?text=${encodeURI(text)}`}
                         target="_blank"
                         rel="noopener noreferrer"

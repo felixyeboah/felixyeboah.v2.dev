@@ -340,8 +340,8 @@
 }
 
 .styled-section {
-    background: var(--color-gray-100);
-    color: var(--color-text-primary);
+    background: var(--color-secondary);
+    color: var(--color-white);
     padding-bottom: 48px;
     padding-top: 48px;
     width: 100%;

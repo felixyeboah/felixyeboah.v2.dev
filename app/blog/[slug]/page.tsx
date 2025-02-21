@@ -1,8 +1,11 @@
 import { getFileBySlug, getFiles } from '@/app/libs/mdx';
 import { getTweets } from '@/app/libs/tweets';
 import { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 
-import MDXContent from './components/MDXContent';
+const MDXContent = dynamic(() => import('./components/MDXContent'), {
+    ssr: false,
+});
 
 export async function generateStaticParams() {
     const posts = await getFiles();

@@ -9,6 +9,12 @@ const AboutPage = () => {
             <main className="container mx-auto lg:pt-44">
                 <PhotosSection />
                 <FunThings />
+                <section className="lg:py-48">
+                    <div className="grid grid-cols-12">
+                        <div className="col-span-7"></div>
+                        <div className="col-span-4 col-start-8"></div>
+                    </div>
+                </section>
             </main>
         </div>
     );
