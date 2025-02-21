@@ -1,11 +1,10 @@
-import React from "react"
-import { CSS } from "@/stitches.config"
+import React from 'react';
 
-export type CalloutVariant = "info" | "danger" | "warning";
+export type CalloutVariant = 'info' | 'danger' | 'warning';
 
 export interface CalloutProps {
-  children: React.ReactNode;
-  label?: React.ReactNode | string;
-  variant: CalloutVariant;
-  css?: CSS;
+    children: React.ReactNode;
+    label?: React.ReactNode | string;
+    variant: CalloutVariant;
+    css?: React.CSSProperties;
 }
