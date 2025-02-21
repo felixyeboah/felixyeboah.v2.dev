@@ -13,7 +13,7 @@ import { PlusIcon, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-import { Suspense, useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 const specialQueryRegex = /(!)?leader:(\w+)(\s|$)?/g;
 const PAGE_SIZE = 12;
@@ -93,156 +93,152 @@ export const BlogContent = ({ posts }: { posts: Post[] }) => {
     };
 
     return (
-        <Suspense fallback={<p>loading...</p>}>
-            <div className="space-y-12 pb-20">
-                <motion.div
-                    className="flex flex-wrap gap-3 overflow-visible"
-                    layout
-                    transition={{
-                        type: 'spring',
-                        stiffness: 500,
-                        damping: 30,
-                        mass: 0.5,
-                    }}
-                >
-                    {tags.map((tag) => {
-                        const selected = regularQuery.includes(tag);
-                        return (
-                            <Tag
-                                key={tag}
-                                tag={tag}
-                                selected={selected}
-                                onClick={() => toggleTag(tag)}
-                                disabled={
-                                    Boolean(!visibleTags.has(tag))
-                                        ? !selected
-                                        : false
-                                }
-                            />
-                        );
-                    })}
-                    {regularQuery.length > 0 && (
-                        <motion.button
-                            initial={{ scale: 0, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            exit={{ scale: 0, opacity: 0 }}
-                            onClick={clearTags}
-                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-base font-medium font-sans
+        <div className="space-y-12 pb-20">
+            <motion.div
+                className="flex flex-wrap gap-3 overflow-visible"
+                layout
+                transition={{
+                    type: 'spring',
+                    stiffness: 500,
+                    damping: 30,
+                    mass: 0.5,
+                }}
+            >
+                {tags.map((tag) => {
+                    const selected = regularQuery.includes(tag);
+                    return (
+                        <Tag
+                            key={tag}
+                            tag={tag}
+                            selected={selected}
+                            onClick={() => toggleTag(tag)}
+                            disabled={
+                                Boolean(!visibleTags.has(tag))
+                                    ? !selected
+                                    : false
+                            }
+                        />
+                    );
+                })}
+                {regularQuery.length > 0 && (
+                    <motion.button
+                        initial={{ scale: 0, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        exit={{ scale: 0, opacity: 0 }}
+                        onClick={clearTags}
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-base font-medium font-sans
                         text-primary hover:bg-primary/10 transition-colors"
-                        >
-                            Clear all
-                            <X className="w-4 h-4" />
-                        </motion.button>
-                    )}
-                </motion.div>
-                {!isSearching ? (
-                    <div className="px-4 lg:px-0 md:w-[1280px] mx-auto">
-                        <Link
-                            href={`/blog/${featuredPost.slug}`}
-                            key={featuredPost.slug}
-                            className="relative h-[500px] md:h-[650px] mb-10 flex flex-col hover:ring-2 hover:ring-offset-2 hover:ring-primary transition-all duration-300 ease-in-out overflow-hidden rounded-3xl"
-                        >
-                            <div className="bg-gradient-to-t from-black/50 to-transparent absolute inset-0 z-10" />
-                            <Image
-                                src={featuredPost.cover}
-                                alt={featuredPost.title}
-                                fill={true}
-                                loader={loader}
-                                style={{
-                                    objectFit: 'cover',
-                                }}
-                                className={cn(
-                                    'group-hover:opacity-75 object-cover duration-700 ease-in-out',
-                                    isLoading
-                                        ? 'blur-2xl scale-110'
-                                        : 'blur-0 scale-100',
-                                )}
-                                onLoad={() => setLoading(false)}
-                            />
-                            <div className="absolute left-6 top-6">
+                    >
+                        Clear all
+                        <X className="w-4 h-4" />
+                    </motion.button>
+                )}
+            </motion.div>
+            {!isSearching ? (
+                <div className="px-4 lg:px-0 md:w-[1280px] mx-auto">
+                    <Link
+                        href={`/blog/${featuredPost.slug}`}
+                        key={featuredPost.slug}
+                        className="relative h-[500px] md:h-[650px] mb-10 flex flex-col hover:ring-2 hover:ring-offset-2 hover:ring-primary transition-all duration-300 ease-in-out overflow-hidden rounded-3xl"
+                    >
+                        <div className="bg-gradient-to-t from-black/50 to-transparent absolute inset-0 z-10" />
+                        <Image
+                            src={featuredPost.cover}
+                            alt={featuredPost.title}
+                            fill={true}
+                            loader={loader}
+                            style={{
+                                objectFit: 'cover',
+                            }}
+                            className={cn(
+                                'group-hover:opacity-75 object-cover duration-700 ease-in-out',
+                                isLoading
+                                    ? 'blur-2xl scale-110'
+                                    : 'blur-0 scale-100',
+                            )}
+                            onLoad={() => setLoading(false)}
+                        />
+                        <div className="absolute left-6 top-6">
+                            <p>
+                                <span className="border-2 border-gray-100 rounded-full text-white font-semibold p-1 px-3 flex items-center justify-center">
+                                    Featured
+                                </span>
+                            </p>
+                        </div>
+                        <div className="absolute bottom-10 left-6 md:left-10 z-20 md:w-6/12 space-y-8">
+                            <h4>
+                                <span className="text-4xl leading-snug md:text-6xl font-semibold text-white">
+                                    {featuredPost.title}
+                                </span>
+                            </h4>
+                            <div className="flex flex-col gap-4">
                                 <p>
-                                    <span className="border-2 border-gray-100 rounded-full text-white font-semibold p-1 px-3 flex items-center justify-center">
-                                        Featured
+                                    <span className="text-lg text-gray-100">
+                                        {featuredPost.subtitle}
+                                    </span>
+                                </p>
+                                <p>
+                                    <span className="text-gray-200">
+                                        {format(
+                                            new Date(
+                                                Date.parse(featuredPost.date),
+                                            ),
+                                            'MMMM d, yyyy',
+                                        )}
+                                    </span>{' '}
+                                    /{' '}
+                                    <span className="text-gray-200">
+                                        {featuredPost.readTime?.text}
                                     </span>
                                 </p>
                             </div>
-                            <div className="absolute bottom-10 left-6 md:left-10 z-20 md:w-6/12 space-y-8">
-                                <h4>
-                                    <span className="text-4xl leading-snug md:text-6xl font-semibold text-white">
-                                        {featuredPost.title}
-                                    </span>
-                                </h4>
-                                <div className="flex flex-col gap-4">
-                                    <p>
-                                        <span className="text-lg text-gray-100">
-                                            {featuredPost.subtitle}
-                                        </span>
-                                    </p>
-                                    <p>
-                                        <span className="text-gray-200">
-                                            {format(
-                                                new Date(
-                                                    Date.parse(
-                                                        featuredPost.date,
-                                                    ),
-                                                ),
-                                                'MMMM d, yyyy',
-                                            )}
-                                        </span>{' '}
-                                        /{' '}
-                                        <span className="text-gray-200">
-                                            {featuredPost.readTime?.text}
-                                        </span>
-                                    </p>
-                                </div>
-                            </div>
-                        </Link>
-                    </div>
-                ) : null}
-                <div className="grid grid-cols-12 gap-1">
-                    {blogPostsFiltered.length === 0 ? (
-                        <div className="col-span-full flex flex-col items-center">
-                            <svg
-                                className="w-64 h-64 text-gray-400 dark:text-gray-600"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="1"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            >
-                                <circle cx="12" cy="12" r="10" />
-                                <path d="M8 15h8M9.5 9h.01M14.5 9h.01" />
-                            </svg>
-                            <h3 className="mt-8 text-xl font-medium text-gray-900 dark:text-gray-100">
-                                {`Couldn't find anything to match your criteria. Sorry.`}
-                            </h3>
                         </div>
-                    ) : (
-                        blogPostsFiltered.map((article) => (
-                            <div
-                                key={article.slug}
-                                className="col-span-full md:col-span-4 px-4 mb-10"
-                            >
-                                <ArticleCard article={article} />
-                            </div>
-                        ))
-                    )}
+                    </Link>
                 </div>
-
-                {hasMorePosts ? (
-                    <div className="w-[1280px] mx-auto flex items-center justify-center">
-                        <Button
-                            variant="secondary"
-                            size="lg"
-                            className="bg-primary hover:bg-primary/90 text-white rounded cursor-pointer"
-                            onClick={() => setIndexToShow((i) => i + PAGE_SIZE)}
+            ) : null}
+            <div className="grid grid-cols-12 gap-1">
+                {blogPostsFiltered.length === 0 ? (
+                    <div className="col-span-full flex flex-col items-center">
+                        <svg
+                            className="w-64 h-64 text-gray-400 dark:text-gray-600"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="1"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                         >
-                            <span>Load more articles</span> <PlusIcon />
-                        </Button>
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M8 15h8M9.5 9h.01M14.5 9h.01" />
+                        </svg>
+                        <h3 className="mt-8 text-xl font-medium text-gray-900 dark:text-gray-100">
+                            {`Couldn't find anything to match your criteria. Sorry.`}
+                        </h3>
                     </div>
-                ) : null}
+                ) : (
+                    blogPostsFiltered.map((article) => (
+                        <div
+                            key={article.slug}
+                            className="col-span-full md:col-span-4 px-4 mb-10"
+                        >
+                            <ArticleCard article={article} />
+                        </div>
+                    ))
+                )}
             </div>
-        </Suspense>
+
+            {hasMorePosts ? (
+                <div className="w-[1280px] mx-auto flex items-center justify-center">
+                    <Button
+                        variant="secondary"
+                        size="lg"
+                        className="bg-primary hover:bg-primary/90 text-white rounded cursor-pointer"
+                        onClick={() => setIndexToShow((i) => i + PAGE_SIZE)}
+                    >
+                        <span>Load more articles</span> <PlusIcon />
+                    </Button>
+                </div>
+            ) : null}
+        </div>
     );
 };
