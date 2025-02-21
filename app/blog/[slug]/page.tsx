@@ -1,4 +1,4 @@
-import { getFileBySlug, getFiles } from '@/app/libs/mdx';
+import { getFileBySlug } from '@/app/libs/mdx';
 import { getTweets } from '@/app/libs/tweets';
 import { Metadata } from 'next';
 
@@ -8,17 +8,9 @@ interface PageProps {
     params: {
         slug: string;
     };
+    searchParams?: { [key: string]: string | string[] | undefined };
 }
 
-export async function generateStaticParams() {
-    const posts = await getFiles();
-
-    return posts.map((post) => ({
-        slug: post.replace(/\.mdx/, ''),
-    }));
-}
-
-// Generate metadata for each page
 export async function generateMetadata({
     params,
 }: PageProps): Promise<Metadata> {

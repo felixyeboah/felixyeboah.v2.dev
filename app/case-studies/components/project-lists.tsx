@@ -21,9 +21,10 @@ export const ProjectList = ({ projects }: { projects: Post[] }) => {
                 {categories.map((category) => (
                     <Button
                         className={cn(
-                            'border-2 border-black h-10 px-8 hover:bg-black hover:text-white transition-all duration-300 ease-in',
+                            'border-2 border-secondary h-10 px-8 hover:bg-secondary hover:text-white transition-all duration-300 ease-in',
                             {
-                                'bg-black text-white': selected === category,
+                                'bg-secondary text-white':
+                                    selected === category,
                             },
                         )}
                         variant="outline"
