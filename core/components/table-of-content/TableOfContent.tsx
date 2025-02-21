@@ -122,7 +122,7 @@ const TableOfContent = ({ ids }: TableOfContentProps) => {
                                 <a
                                     href={`#${item.id}`}
                                     className={cn('', {
-                                        'text-[#FF7009]':
+                                        'text-primary':
                                             currentActiveIndex === index,
                                     })}
                                     onClick={(event) =>

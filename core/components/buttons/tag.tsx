@@ -16,8 +16,8 @@ export const Tag = ({
     return (
         <motion.button
             onClick={
-                disabled 
-                    ? undefined 
+                disabled
+                    ? undefined
                     : (onClick as unknown as React.MouseEventHandler<HTMLButtonElement>)
             }
             layout
@@ -32,20 +32,20 @@ export const Tag = ({
                 backgroundColor: disabled
                     ? undefined
                     : selected
-                        ? 'oklch(0.13 0.028 261.692)'
-                        : 'oklch(0.278 0.033 256.848)',
+                      ? 'oklch(0.13 0.028 261.692)'
+                      : 'oklch(0.278 0.033 256.848)',
             }}
             whileTap={{
                 backgroundColor: disabled
                     ? undefined
                     : selected
-                        ? 'oklch(0.13 0.028 261.692)'
-                        : 'oklch(0.278 0.033 256.848)',
+                      ? 'oklch(0.13 0.028 261.692)'
+                      : 'oklch(0.278 0.033 256.848)',
             }}
             className={`
                 inline-flex items-center px-4 py-2 rounded-full text-base font-medium font-sans
                 whitespace-nowrap overflow-hidden ring-1 ring-inset
-                ${selected ? 'text-[#FF7009] ring-gray-950' : 'text-zinc-300 ring-gray-950'}
+                ${selected ? 'text-primary ring-gray-950' : 'text-zinc-300 ring-gray-950'}
                 ${disabled ? 'cursor-not-allowed' : 'cursor-pointer'}
             `}
             transition={{
@@ -82,7 +82,7 @@ export const Tag = ({
                             }}
                             className="absolute right-0"
                         >
-                            <div className="w-4 h-4 rounded-full bg-[#FF7009] flex items-center justify-center">
+                            <div className="w-4 h-4 rounded-full bg-primary flex items-center justify-center">
                                 <Check
                                     className="w-3 h-3 text-zinc-300"
                                     strokeWidth={1.5}

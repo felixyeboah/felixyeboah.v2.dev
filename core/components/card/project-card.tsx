@@ -28,7 +28,7 @@ export const ProjectCard = ({
         <div className="col-span-full md:col-span-4 space-y-5">
             <motion.div
                 layoutId={`project-card-${index}`}
-                className="hover:ring-2 hover:ring-offset-2 hover:ring-[#FF7009] hover:scale-100 duration-200 ease-in-out transition-all relative overflow-hidden rounded-xl w-full h-96"
+                className="hover:ring-2 hover:ring-offset-2 hover:ring-primary hover:scale-100 duration-200 ease-in-out transition-all relative overflow-hidden rounded-xl w-full h-96"
                 onMouseEnter={() => {
                     setModal({ active: true, index });
                 }}

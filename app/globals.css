@@ -63,16 +63,16 @@
 
 :root {
     --base-hue: 266;
-    --background: hsl(0 0% 100%);
+    --background: #faf1e5;
     --foreground: hsl(0 0% 3.9%);
     --card: hsl(0 0% 100%);
     --card-foreground: hsl(0 0% 3.9%);
     --popover: hsl(0 0% 100%);
     --popover-foreground: hsl(0 0% 3.9%);
-    --primary: hsl(0 0% 9%);
-    --primary-foreground: hsl(0 0% 98%);
-    --secondary: hsl(0 0% 96.1%);
-    --secondary-foreground: hsl(0 0% 9%);
+    --primary: oklch(70.91% 0.196 46.35);
+    --primary-foreground: oklch(95.76% 0.0312 70.53);
+    --secondary: oklch(31.87% 0.0679 164.02);
+    --secondary-foreground: oklch(94.35% 0.0823 171.98);
     --muted: hsl(0 0% 96.1%);
     --muted-foreground: hsl(0 0% 45.1%);
     --accent: hsl(0 0% 96.1%);
@@ -639,4 +639,19 @@
 .text-container:hover .hide {
     opacity: 1;
     transform: translateY(0); /* Slide UP into view */
+}
+
+/* Add to your global CSS */
+.button-animation-wrapper {
+    perspective: 1000px;
+}
+
+.button-animation-wrapper * {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform, opacity;
+}
+
+.push-icon {
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }

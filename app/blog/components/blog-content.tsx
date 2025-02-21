@@ -127,7 +127,7 @@ export const BlogContent = ({ posts }: { posts: Post[] }) => {
                         exit={{ scale: 0, opacity: 0 }}
                         onClick={clearTags}
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-base font-medium font-sans
-                        text-[#FF7009] hover:bg-[#FF7009]/10 transition-colors"
+                        text-primary hover:bg-primary/10 transition-colors"
                     >
                         Clear all
                         <X className="w-4 h-4" />
@@ -139,7 +139,7 @@ export const BlogContent = ({ posts }: { posts: Post[] }) => {
                     <Link
                         href={`/blog/${featuredPost.slug}`}
                         key={featuredPost.slug}
-                        className="relative h-[500px] md:h-[650px] mb-10 flex flex-col hover:ring-2 hover:ring-offset-2 hover:ring-[#FF7009] transition-all duration-300 ease-in-out overflow-hidden rounded-3xl"
+                        className="relative h-[500px] md:h-[650px] mb-10 flex flex-col hover:ring-2 hover:ring-offset-2 hover:ring-primary transition-all duration-300 ease-in-out overflow-hidden rounded-3xl"
                     >
                         <div className="bg-gradient-to-t from-black/50 to-transparent absolute inset-0 z-10" />
                         <Image
@@ -232,7 +232,7 @@ export const BlogContent = ({ posts }: { posts: Post[] }) => {
                     <Button
                         variant="secondary"
                         size="lg"
-                        className="bg-[#FF7009] hover:bg-[#FF7009]/90 text-white rounded cursor-pointer"
+                        className="bg-primary hover:bg-primary/90 text-white rounded cursor-pointer"
                         onClick={() => setIndexToShow((i) => i + PAGE_SIZE)}
                     >
                         <span>Load more articles</span> <PlusIcon />

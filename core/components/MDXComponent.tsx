@@ -1,3 +1,6 @@
+import { Separator } from '@/components/ui/separator';
+
+import ArrowIcon from './ArrowIcon';
 import Blockquote from './blockquote';
 import Callout from './callout';
 import Card from './card';
@@ -6,6 +9,7 @@ import Image from './image';
 import InlineCode from './inline/inline';
 import Pill from './pill';
 import { Details, Info, Summary, Warn } from './plugins';
+import VideoPlayer from './video-player';
 
 const customComponents = {
     Card,
@@ -13,6 +17,7 @@ const customComponents = {
 };
 
 const MDXComponents = {
+    ArrowIcon,
     Image,
     Details,
     Info,
@@ -20,6 +25,7 @@ const MDXComponents = {
     Summary,
     Pill,
     Callout,
+    Separator,
     a: function A(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
         return (
             <a className="underline" {...props}>
@@ -45,7 +51,7 @@ const MDXComponents = {
         return <ol {...props} />;
     },
     p: function P(props: React.HTMLAttributes<HTMLParagraphElement>) {
-        return <p {...props}>{props.children}</p>;
+        return <span {...props}>{props.children}</span>;
     },
     pre: Code,
     strong: function StrongText(props: React.HTMLAttributes<HTMLElement>) {
@@ -58,7 +64,7 @@ const MDXComponents = {
     ul: function UL(props: React.HTMLAttributes<HTMLUListElement>) {
         return <ul {...props} />;
     },
-
+    VideoPlayer,
     ...customComponents,
 };
 

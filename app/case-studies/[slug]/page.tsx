@@ -1,12 +1,24 @@
-const CaseStudiesPage = async () => {
+import { getFileBySlug } from '@/app/libs/mdx';
+import { getTweets } from '@/app/libs/tweets';
+
+import { CaseStudyBody } from '../components/case-study-body';
+import { CaseStudyHeader } from '../components/case-study-header';
+
+interface PageProps {
+    params: {
+        slug: string;
+    };
+}
+
+const CaseStudiesPage = async ({ params }: PageProps) => {
+    const post = await getFileBySlug(params!.slug as string, 'project');
+    const tweets =
+        post.tweetIDs.length > 0 ? await getTweets(post.tweetIDs) : {};
+
     return (
-        <div className="flex flex-col gap-12">
-            <div className="flex flex-col gap-4">
-                <h1 className="text-4xl font-bold">Case Studies</h1>
-                <p className="text-lg">
-                    Here are some of the case studies we have done.
-                </p>
-            </div>
+        <div className="">
+            <CaseStudyHeader post={post} />
+            <CaseStudyBody post={post} tweets={tweets ?? {}} />
         </div>
     );
 };

@@ -100,7 +100,7 @@ export default function RootLayout({
             className={`${aperkuSans.variable} ${aperkuSansMono.variable} ${voyageBold.variable}`}
         >
             <body
-                className={`${aperkuSans.variable} ${aperkuSansMono.variable} ${voyageBold.variable} antialiased bg-[#FAF1E5]`}
+                className={`${aperkuSans.variable} ${aperkuSansMono.variable} ${voyageBold.variable} antialiased`}
             >
                 <ClientLayout>{children}</ClientLayout>
             </body>

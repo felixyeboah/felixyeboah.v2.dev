@@ -11,7 +11,7 @@ const MissingSomething = ({ aspectRatio }: { aspectRatio: string }) => {
             <div className="relative w-64 h-64 flex items-center justify-center">
                 <svg
                     viewBox="0 0 24 24"
-                    className="w-32 h-32 text-[#FF7009] animate-bounce"
+                    className="w-32 h-32 text-primary animate-bounce"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="1.5"

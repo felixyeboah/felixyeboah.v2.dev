@@ -32,7 +32,7 @@ function ArticleCard({
                 href={`/blog/${slug}`}
             >
                 {cover ? (
-                    <div className="w-full rounded-lg overflow-hidden hover:ring-2 hover:ring-offset-2 hover:ring-[#FF7009] transition-all duration-300 ease-in-out">
+                    <div className="w-full rounded-lg overflow-hidden hover:ring-2 hover:ring-offset-2 hover:ring-primary transition-all duration-300 ease-in-out">
                         <Image
                             src={cover}
                             alt={title}

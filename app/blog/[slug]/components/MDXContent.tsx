@@ -133,7 +133,7 @@ const MDXContent = ({ frontMatter, mdxSource, tweets }: MDXContentProps) => {
                     <Tooltip>
                         <TooltipTrigger className="fixed top-40 left-64 z-20">
                             <Link href="/blog">
-                                <div className="relative bg-[#FF7009] size-14 rounded-full flex items-center justify-center group">
+                                <div className="relative bg-primary size-14 rounded-full flex items-center justify-center group">
                                     <div
                                         ref={progressRef}
                                         className="absolute inset-[-1px] rounded-full"
@@ -145,7 +145,7 @@ const MDXContent = ({ frontMatter, mdxSource, tweets }: MDXContentProps) => {
                                                 'radial-gradient(circle at center, transparent 66%, black 68%)',
                                         }}
                                     />
-                                    <div className="absolute inset-0 bg-[#FF7009] rounded-full z-[1]" />
+                                    <div className="absolute inset-0 bg-primary rounded-full z-[1]" />
                                     <X className="relative z-10 text-white" />
                                 </div>
                             </Link>

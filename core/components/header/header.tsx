@@ -42,7 +42,7 @@ export const Header = () => {
         <header
             ref={header as React.RefObject<HTMLDivElement>}
             className={cn(
-                'fixed flex items-center justify-between z-50 font-mono top-0 h-20 px-10 w-full',
+                'fixed flex items-center justify-between z-50 font-mono top-0 h-20 px-10 w-full mix-blend-exclusion',
                 {
                     'bg-white/20 backdrop-blur-xl': reached,
                 },
@@ -55,7 +55,7 @@ export const Header = () => {
                 href="/"
                 passHref
             >
-                <h3 className="text-xl lowercase font-medium hover:text-[#FF7009] underlined">
+                <h3 className="text-xl lowercase font-medium hover:text-primary underlined text-white">
                     Felix
                 </h3>
             </Link>
@@ -65,9 +65,9 @@ export const Header = () => {
                     <li key={link.to}>
                         <Link
                             href={link.to}
-                            className="block w-full h-full hover:text-[#FF7009] underlined"
+                            className="block w-full h-full hover:text-primary underlined"
                         >
-                            <p className="block lowercase relative top-0 transition-all duration-300 h-full">
+                            <p className="block lowercase relative top-0 transition-all duration-300 h-full text-white">
                                 {link.name}
                             </p>
                         </Link>

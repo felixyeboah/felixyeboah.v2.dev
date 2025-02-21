@@ -7,7 +7,7 @@ const CaseStudiesPage = async () => {
 
     return (
         <div>
-            <header className="page-header flex flex-col items-center justify-center h-[50vh] bg-gray-300">
+            <header className="page-header flex flex-col items-center justify-center h-[50vh] bg-[#003D29] text-background">
                 <div className="w-3/5 space-y-0">
                     <h1 className="lg:text-[180px] text-center">
                         Case Studies

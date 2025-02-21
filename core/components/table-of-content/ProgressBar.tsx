@@ -7,7 +7,7 @@ export const ProgressBarWrapper: React.FC<
     React.ComponentProps<typeof motion.div>
 > = ({ ...props }) => (
     <motion.div
-        className="h-[calc(88vh-0px)] max-h-[425px] w-px bg-[#FF7009] hidden md:block"
+        className="h-[calc(88vh-0px)] max-h-[425px] w-px bg-primary hidden md:block"
         {...props}
     />
 );
