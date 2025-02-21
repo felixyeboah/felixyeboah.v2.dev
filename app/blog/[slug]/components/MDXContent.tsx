@@ -123,7 +123,6 @@ const MDXContent = ({ frontMatter, mdxSource, tweets }: MDXContentProps) => {
         };
     }, []);
 
-    // Remove the framer-motion useScroll hook and update the motion.div to a regular div
     return (
         <article className="pt-20 space-y-20">
             {ids ? <TableOfContent ids={ids} /> : null}
