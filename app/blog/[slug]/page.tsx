@@ -3,9 +3,7 @@ import { getTweets } from '@/app/libs/tweets';
 import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 
-const MDXContent = dynamic(() => import('./components/MDXContent'), {
-    ssr: false,
-});
+const MDXContent = dynamic(() => import('./components/MDXContent'));
 
 export async function generateStaticParams() {
     const posts = await getFiles();
