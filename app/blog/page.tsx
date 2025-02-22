@@ -1,7 +1,7 @@
 import { getAllFilesFrontMatter } from '@/app/libs/mdx';
 import React, { Suspense } from 'react';
 
-import { BlogContent } from './components/blog-content';
+import { BlogContent } from './blog-content';
 
 const BlogsPage = async () => {
     const posts = await getAllFilesFrontMatter();

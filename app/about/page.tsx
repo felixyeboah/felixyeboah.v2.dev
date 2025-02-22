@@ -1,6 +1,6 @@
-import { AboutHeader } from './components/about-header';
-import { FunThings } from './components/fun-things';
-import { PhotosSection } from './components/photos-section';
+import { AboutHeader } from './about-header';
+import { FunThings } from './fun-things';
+import { PhotosSection } from './photos-section';
 
 const AboutPage = () => {
     return (

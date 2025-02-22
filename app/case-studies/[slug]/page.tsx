@@ -1,8 +1,8 @@
 import { getFileBySlug } from '@/app/libs/mdx';
 import { getTweets } from '@/app/libs/tweets';
 
-import { CaseStudyBody } from '../components/case-study-body';
-import { CaseStudyHeader } from '../components/case-study-header';
+import { CaseStudyBody } from '../case-study-body';
+import { CaseStudyHeader } from '../case-study-header';
 
 const CaseStudiesPage = async ({
     params,

@@ -1,6 +1,6 @@
 // Import MDX
 import { getAllFilesFrontMatter } from '../libs/mdx';
-import { ProjectList } from './components/project-lists';
+import { ProjectList } from './project-lists';
 
 const CaseStudiesPage = async () => {
     const projects = await getAllFilesFrontMatter('project');
