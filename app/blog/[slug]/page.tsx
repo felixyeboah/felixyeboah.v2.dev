@@ -36,19 +36,17 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
             post.tweetIDs?.length > 0 ? await getTweets(post.tweetIDs) : {};
 
         return (
-            <div className="container">
-                <MDXContent frontMatter={post.frontMatter}>
-                    <MDXRemote
-                        source={post.mdxSource}
-                        components={{
-                            ...MDXComponents,
-                            StaticTweet: (props: { id: string }) => (
-                                <StaticTweet {...props} tweets={tweets ?? {}} />
-                            ),
-                        }}
-                    />
-                </MDXContent>
-            </div>
+            <MDXContent frontMatter={post.frontMatter}>
+                <MDXRemote
+                    source={post.mdxSource}
+                    components={{
+                        ...MDXComponents,
+                        StaticTweet: (props: { id: string }) => (
+                            <StaticTweet {...props} tweets={tweets ?? {}} />
+                        ),
+                    }}
+                />
+            </MDXContent>
         );
     } catch (error) {
         return (

@@ -90,7 +90,7 @@
     --radius: 0.6rem;
     --snippet-background: oklch(98.08% 0.008 var(--base-hue));
     --comment: oklch(50.13% 0.047 var(--base-hue));
-    --puntuation: oklch(55.52% 0.223 var(--base-hue));
+    --punctuation: oklch(55.52% 0.223 var(--base-hue));
     --symbol: oklch(64.6% 0.172 var(--base-hue));
     --selector: oklch(55.52% 0.223 var(--base-hue));
     --operator: oklch(31.24% 0.075 60);
@@ -130,7 +130,7 @@
     --chart-5: hsl(340 75% 55%);
     --snippet-background: oklch(17.8% 0.012 var(--base-hue));
     --comment: oklch(66.65% 0.04 var(--base-hue));
-    --puntuation: oklch(55.52% 0.223 var(--base-hue));
+    --punctuation: oklch(55.52% 0.223 var(--base-hue));
     --symbol: oklch(64.6% 0.172 var(--base-hue));
     --selector: oklch(55.52% 0.223 var(--base-hue));
     --operator: oklch(90.99% 0.066 60);
@@ -176,7 +176,7 @@
     --color-tertiary: var(--color-gray-500);
     --color-snippet-background: var(--snippet-background);
     --color-token-background: var(--comment);
-    --color-token-punctuation: var(--puntuation);
+    --color-token-punctuation: var(--punctuation);
     --color-token-symbol: var(--symbol);
     --color-token-selector: var(--selector);
     --color-token-operator: var(--operator);

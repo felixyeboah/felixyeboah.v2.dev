@@ -3,6 +3,7 @@ import { ClientLayout } from '@/core/components/client-layout';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 
+import './animated-button.css';
 import './globals.css';
 import './locomotive.css';
 

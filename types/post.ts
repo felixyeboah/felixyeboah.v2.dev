@@ -30,8 +30,8 @@ export type Post = {
         name: string;
         link: string;
     };
-    stack: string[];
-    timeline: string;
+    stack?: string[];
+    timeline?: string;
     video?: string;
 };
 

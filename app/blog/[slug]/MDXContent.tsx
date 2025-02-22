@@ -165,22 +165,26 @@ const MDXContent = ({ frontMatter, children }: MDXContentProps) => {
                         <p className="mt-4 text-xl text-gray-500">{subtitle}</p>
                     )}
                 </div>
-                <Image
-                    src={cover}
-                    alt={title}
-                    loader={loader}
-                    height={180}
-                    width={38}
-                    style={{
-                        objectFit: 'cover',
-                    }}
-                    className={cn(
-                        'w-full h-[700px] group-hover:opacity-75 object-cover duration-700 ease-in-out',
-                        isLoading ? 'blur-2xl scale-110' : 'blur-0 scale-100',
-                    )}
-                    onLoad={() => setLoading(false)}
-                    priority
-                />
+                <div className="relative h-[700px] min-w-full">
+                    <Image
+                        src={cover}
+                        alt={title}
+                        loader={loader}
+                        height={180}
+                        width={38}
+                        style={{
+                            objectFit: 'cover',
+                        }}
+                        className={cn(
+                            'w-full h-full group-hover:opacity-75 object-cover duration-700 ease-in-out',
+                            isLoading
+                                ? 'blur-2xl scale-110'
+                                : 'blur-0 scale-100',
+                        )}
+                        onLoad={() => setLoading(false)}
+                        priority
+                    />
+                </div>
                 <div className="max-w-3xl mx-auto mt-10 prose prose-pre:bg-transparent prose-a:cursor-pointer prose-p:text-gray-500 prose-p:leading-relaxed prose-p:tracking-wide prose-headings:leading-tight prose-li:leading-relaxed [&_span[data-testid='content-line']]:text-gray-500 [&_div[data-testid='number-line']]:text-gray-400">
                     {children}
                 </div>

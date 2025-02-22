@@ -40,10 +40,9 @@ export const PhotosSection = () => {
     const handleMouseMove = (e: React.MouseEvent) => {
         requestAnimationFrame(() => {
             const { clientX, clientY } = e;
-            const { scrollX, scrollY } = window;
             setMousePosition({
-                x: clientX + scrollX,
-                y: clientY + scrollY,
+                x: clientX,
+                y: clientY,
             });
         });
     };
@@ -78,7 +77,6 @@ export const PhotosSection = () => {
         });
     };
 
-    // Update the mouse position effect
     useEffect(() => {
         const cursor = followerRef.current;
         if (!cursor) return;
@@ -86,11 +84,8 @@ export const PhotosSection = () => {
         gsap.to(cursor, {
             x: mousePosition.x,
             y: mousePosition.y,
-            xPercent: -50,
-            yPercent: -50,
-            duration: 0.2,
-            ease: 'power2.out',
-            overwrite: true,
+            duration: 0.1,
+            ease: 'none',
         });
     }, [mousePosition]);
 
@@ -101,10 +96,12 @@ export const PhotosSection = () => {
         >
             <div
                 ref={followerRef}
-                className={`fixed top-0 left-0 pointer-events-none z-[9999] flex items-center justify-center px-4 h-10 rounded-md backdrop-blur-lg bg-black/20 transition-opacity duration-300 ${
+                className={`fixed top-0 left-0 pointer-events-none z-[999] flex items-center justify-center px-4 h-10 rounded-md bg-black/80 transition-opacity duration-300 ${
                     isHovering ? 'opacity-100' : 'opacity-0'
                 }`}
-                style={{ transform: 'translate(-50%, -50%)' }}
+                style={{
+                    transform: 'translate(-50%, -50%)',
+                }}
             >
                 <p className="text-sm text-center text-white font-medium whitespace-nowrap">
                     {activeTitle}

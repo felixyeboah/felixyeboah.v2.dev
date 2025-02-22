@@ -31,7 +31,7 @@ export const CaseStudyBody = ({
                     <h6 className="text-base">Technologies &amp; Tools</h6>
                 </div>
                 <ul className="flex items-center gap-4 w-full">
-                    {post.frontMatter.stack.map((item) => (
+                    {post.frontMatter.stack?.map((item) => (
                         <li
                             key={item}
                             className="flex items-center rounded h-9 px-4 border border-gray-800"

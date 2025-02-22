@@ -1,0 +1,489 @@
+svg {
+    max-width: none;
+    height: auto;
+    box-sizing: border-box;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/* ------------------------- Arrow -------------------------------------------------- */
+
+.arrow {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 3.75em;
+    height: 3.75em;
+    border-radius: 50%;
+    transform: rotate(0.001deg);
+}
+
+.arrow .arrow-fill {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--color-dark-medium);
+}
+
+.arrow .arrow-fill-hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--color-secondary);
+    transform: scale(0);
+    transition: transform var(--animation-primary);
+}
+
+.arrow .arrow-content {
+    width: 1.4em;
+    position: relative;
+    display: flex;
+    color: var(--color-light);
+    transform: rotate(0.001deg);
+    transition: transform var(--animation-primary);
+}
+
+.arrow .arrow-content svg :is(polyline, line, path) {
+    stroke: currentColor;
+    stroke-width: 0.075em;
+}
+
+/* Border */
+
+.arrow.border .arrow-fill {
+    background: transparent;
+    border: 1px solid var(--color-border);
+}
+
+.arrow.border .arrow-content {
+    color: var(--color-dark);
+}
+
+.theme-dark .arrow.border .arrow-fill {
+    border: 1px solid var(--color-border-light);
+}
+
+.theme-dark .arrow.border .arrow-content {
+    color: var(--color-light);
+}
+
+/* Secondary */
+
+.arrow.secondary .arrow-fill {
+    background: var(--color-secondary);
+}
+
+/* Small */
+
+.arrow.small {
+    width: 2em;
+    height: 2em;
+}
+
+.arrow.small .arrow-content {
+    width: 1em;
+}
+
+/* ------------------------- Buttons -------------------------------------------------- */
+
+.btn-row {
+    width: 100%;
+    position: relative;
+    display: flex;
+    gap: 1em;
+}
+
+.btn {
+    cursor: pointer;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-decoration: none;
+    outline: 0;
+    border-radius: 1000em;
+    white-space: nowrap;
+}
+
+.btn-content {
+    position: relative;
+    height: 3.75em;
+    transform: translateX(-3.75em) rotate(0.001deg);
+    transition: transform 0.5s cubic-bezier(0.3, 1, 0.3, 1);
+}
+
+.btn-fill {
+    background: var(--color-tertiary);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 2.125em;
+    top: 0;
+    left: 0;
+}
+
+.theme-dark .btn-fill {
+    background: var(--color-dark-medium);
+}
+
+.btn-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 2em;
+    font-weight: 400;
+    position: relative;
+    color: var(--color-white);
+    border-radius: 1000em;
+}
+
+.btn-text span {
+    transition: 0.5s cubic-bezier(0.3, 1, 0.3, 1);
+}
+
+.theme-dark .btn-text {
+    color: var(--color-light-medium);
+}
+
+.btn .arrow {
+    transition: transform 0.5s cubic-bezier(0.3, 1, 0.3, 1);
+}
+
+.btn .arrow.first {
+    transform: scale(0) rotate(0.001deg);
+    transform-origin: left;
+}
+
+.btn .arrow.second {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    transform: scale(1) rotate(0.001deg);
+    transform-origin: right;
+}
+
+.btn .arrow.first .arrow-fill {
+    background: var(--color-primary);
+    border: 0;
+}
+
+.btn .arrow.first .arrow-content {
+    color: var(--color-white);
+}
+
+.btn .arrow.second .arrow-fill {
+    background: var(--color-secondary);
+    border: 0;
+}
+
+.btn .arrow.second .arrow-content {
+    color: var(--color-white);
+}
+
+/* --- Hover--- */
+
+@media (hover: hover) {
+    .btn:hover .arrow .arrow-content {
+        transform: rotate(-45deg);
+    }
+
+    .btn:hover .arrow.first {
+        transform: scale(1) rotate(0.001deg);
+    }
+
+    .btn:hover .arrow.second {
+        transform: scale(0) rotate(0.001deg);
+    }
+
+    .btn:hover .btn-content {
+        transform: translateX(0em) rotate(0.001deg);
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .btn-content {
+        height: 3.25em;
+        transform: translateX(-3.25em) rotate(0.001deg);
+    }
+
+    .btn .arrow {
+        height: 3.25em;
+        width: 3.25em;
+    }
+
+    .btn-text {
+        padding: 0 1.5em;
+    }
+
+    .btn-text span {
+        font-size: 0.9em;
+    }
+}
+
+/* --- Small --- */
+
+.btn-small .btn-content {
+    height: 2em;
+    transform: translateX(-2em) rotate(0.001deg);
+}
+
+.btn-small .btn-text {
+    padding: 0 0.5em;
+}
+
+.btn-small .btn-fill {
+    background: transparent;
+}
+
+.btn-small .btn-text span {
+    font-size: 0.85em;
+}
+
+/* --- Hover--- */
+
+.btn-small .arrow .arrow-content {
+    transform: rotate(-45deg);
+}
+
+@media (hover: hover) {
+    .btn-small:hover .btn-content {
+        transform: translateX(0em) rotate(0.001deg);
+    }
+}
+
+/* --- Small Flipped --- */
+
+.btn-small.flipped .arrow .arrow-content {
+    transform: rotate(0deg);
+}
+
+.btn-small.flipped .arrow.first {
+    transform: scale(1) rotate(0.001deg);
+}
+
+.btn-small.flipped .arrow.second {
+    transform: scale(0) rotate(0.001deg);
+}
+
+@media (hover: hover) {
+    .btn-small.flipped:hover .arrow.first {
+        transform: scale(0) rotate(0.001deg);
+    }
+
+    .btn-small.flipped:hover .arrow.second {
+        transform: scale(1) rotate(0.001deg);
+    }
+}
+
+.btn-small.flipped .btn-content {
+    transform: translateX(0em) rotate(0.001deg);
+}
+
+@media (hover: hover) {
+    .btn-small.flipped:hover .btn-content {
+        transform: translateX(-2em) rotate(0.001deg);
+    }
+}
+
+.btn-small.flipped .arrow.first .arrow-fill {
+    border: 1px solid var(--color-border);
+    background: transparent;
+}
+
+.theme-dark .btn-small.flipped .arrow.first .arrow-fill {
+    border: 1px solid var(--color-border-light);
+}
+
+.btn-small.flipped.negative span,
+.btn-small.flipped.positive span {
+    padding-left: 0.5em;
+    font-size: 0.85em;
+    color: var(--color-light);
+    opacity: 1;
+    transition: 0.5s cubic-bezier(0.3, 1, 0.3, 1);
+}
+
+.btn-small.flipped .arrow.second {
+    right: unset;
+    left: 0;
+}
+
+.btn-small.flipped.negative .arrow.second .arrow-fill {
+    border: 0;
+    background: var(--color-secondary);
+}
+
+.btn-small.flipped.positive .arrow.second .arrow-fill {
+    border: 0;
+    background: var(--color-alert-success);
+}
+
+.btn-small.flipped .arrow.first .arrow-content {
+    color: var(--color-black);
+}
+
+.theme-dark .btn-small.flipped .arrow.first .arrow-content {
+    color: var(--color-white);
+}
+
+.btn-small.flipped .arrow.second .arrow-content {
+    color: var(--color-white);
+}
+
+/* --- Link --- */
+
+.btn-link .btn-content {
+    transform: translateX(0) rotate(0.001deg);
+}
+
+.btn-link .btn-content .btn-text {
+    padding: 0;
+}
+
+.btn-link .btn-content::after {
+    content: '';
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    height: 1px;
+    background: var(--color-primary);
+    position: absolute;
+    transform: rotate(0.001deg) scaleX(0);
+    transition: transform 0.5s cubic-bezier(0.3, 1, 0.3, 1);
+    transform-origin: right;
+}
+
+@media (hover: hover) {
+    .btn-link:hover .btn-content::after {
+        transform: rotate(0.001deg) scaleX(1);
+        transform-origin: left;
+    }
+
+    .btn-link:hover span {
+        opacity: 0.66;
+    }
+}
+
+/* --- Link Tiny --- */
+
+.btn-tiny .btn-content {
+    height: 1.5em;
+}
+
+.btn-tiny .btn-text span {
+    font-size: 0.75em;
+}
+
+/* Button Arrow */
+
+button.btn-arrow {
+    border: 0;
+    outline: 0;
+    padding: 0;
+    transform: rotate(0.001deg) scale(1);
+    transition: 0.5s cubic-bezier(0.3, 1, 0.3, 1);
+}
+
+button.btn-arrow[disabled] {
+    transform: rotate(0.001deg) scale(0);
+}
+
+button.btn-arrow.btn-prev .arrow .arrow-content {
+    transform: scaleX(-1) rotate(-45deg);
+}
+
+button.btn-arrow.btn-next .arrow .arrow-content {
+    transform: rotate(-45deg);
+}
+
+/* --- Icon --- */
+
+.btn-icon {
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25em;
+}
+
+.btn-icon .icon {
+    height: 1.5em;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-icon .icon svg {
+    width: 100%;
+}
+
+.btn-icon .icon svg path {
+    stroke: var(--color-secondary);
+    stroke-width: 1.25px;
+}
+
+.btn-icon span {
+    color: var(--color-text);
+    font-size: 0.85em;
+    transition: 0.5s cubic-bezier(0.3, 1, 0.3, 1);
+}
+
+@media (hover: hover) {
+    .btn-icon:hover span {
+        opacity: 0.6;
+    }
+}
+
+/* --- Scroll --- */
+
+.btn-scroll span {
+    padding-right: 0.5em;
+    font-size: 0.85em;
+    color: var(--color-light);
+    opacity: 1;
+    transition: 0.5s cubic-bezier(0.3, 1, 0.3, 1);
+}
+
+.btn-scroll .arrow-wrap {
+    position: relative;
+    transform: rotate(90deg);
+}
+
+.btn-scroll .arrow .arrow-content {
+    transform: rotate(-45deg);
+}
+
+.btn-scroll:hover .arrow .arrow-content {
+    transform: rotate(-45deg);
+}
+
+.btn-scroll .arrow.second .arrow-fill {
+    background: var(--color-primary);
+}
+
+.btn-scroll .arrow.second .arrow-content {
+    color: var(--color-dark-medium);
+}
+
+@media (hover: hover) {
+    .btn-scroll:hover span {
+        opacity: 0.6;
+    }
+}
