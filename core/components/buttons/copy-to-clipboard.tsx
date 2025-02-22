@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useMotionValue, useTransform } from 'framer-motion';
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Button } from '../ui/button';
 
@@ -32,7 +32,7 @@ const CopyToClipboardButton = (props: { text: string; title?: string }) => {
         unchecked: { pathLength: 0 },
     };
 
-    const [isChecked, setIsChecked] = React.useState(false);
+    const [isChecked, setIsChecked] = useState(false);
     const pathLength = useMotionValue(0);
     const opacity = useTransform(pathLength, [0.05, 0.15], [0, 1]);
 

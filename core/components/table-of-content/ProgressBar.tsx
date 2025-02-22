@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useReducedMotion } from 'framer-motion';
-import React from 'react';
+import React, { useState } from 'react';
 
 export const ProgressBarWrapper: React.FC<
     React.ComponentProps<typeof motion.div>
@@ -13,7 +13,7 @@ export const ProgressBarWrapper: React.FC<
 );
 
 const ProgressBar = ({ progress }: { progress: number }) => {
-    const [visibility, setVisibility] = React.useState(true);
+    const [visibility, setVisibility] = useState(true);
     const shouldReduceMotion = useReducedMotion();
 
     const progressBarWrapperVariants = {

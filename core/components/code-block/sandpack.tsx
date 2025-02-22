@@ -8,7 +8,7 @@ import {
     SandpackPreview,
     SandpackProvider,
 } from '@codesandbox/sandpack-react';
-import React from 'react';
+import React, { useState } from 'react';
 
 import PreviewTabs, { Tab } from './components/PreviewTabs';
 import setupFiles from './sandpack-setup-files';
@@ -110,8 +110,8 @@ const Sandpack = (props: SandpackProps) => {
         defaultTab = 'preview',
     } = props;
 
-    const [consoleKey, setConsoleKey] = React.useState(0);
-    const [selectedTab, setSelectedTab] = React.useState<Tab>(defaultTab);
+    const [consoleKey, setConsoleKey] = useState(0);
+    const [selectedTab, setSelectedTab] = useState<Tab>(defaultTab);
 
     return (
         <SandpackWrapper>

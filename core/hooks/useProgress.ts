@@ -1,8 +1,8 @@
 import { useScroll } from 'framer-motion';
-import React from 'react';
+import React, { useState } from 'react';
 
 const useProgress = () => {
-    const [readingProgress, setReadingProgress] = React.useState(0);
+    const [readingProgress, setReadingProgress] = useState(0);
     const { scrollYProgress } = useScroll();
 
     React.useEffect(

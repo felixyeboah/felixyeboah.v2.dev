@@ -2,10 +2,8 @@
 
 import { loader } from '@/app/libs/next-image-loader';
 import siteConfig from '@/config/site';
-import MDXComponents from '@/core/components/MDXComponent';
 import { Heading, Subheading } from '@/core/components/element';
 import Signature from '@/core/components/signtaure';
-import StaticTweet from '@/core/components/static-tweet/StaticTweet';
 import TableOfContent from '@/core/components/table-of-content';
 import {
     Tooltip,
@@ -19,14 +17,12 @@ import { format } from 'date-fns';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { X } from 'lucide-react';
-import { MDXRemote } from 'next-mdx-remote';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 
 interface MDXContentProps {
-    mdxSource: any;
-    tweets: Record<string, any>;
+    children: React.ReactNode;
     frontMatter: Post & { readingTime: ReadingTime };
 }
 
@@ -55,7 +51,7 @@ const WebmentionBlogData = (props: WebmentionBlogDataProps) => {
     );
 };
 
-const MDXContent = ({ frontMatter, mdxSource, tweets }: MDXContentProps) => {
+const MDXContent = ({ frontMatter, children }: MDXContentProps) => {
     const { date, slug, subtitle, title, readingTime, cover } = frontMatter;
     const [isLoading, setLoading] = useState(true);
     const progressRef = useRef<HTMLDivElement>(null);
@@ -179,22 +175,14 @@ const MDXContent = ({ frontMatter, mdxSource, tweets }: MDXContentProps) => {
                         objectFit: 'cover',
                     }}
                     className={cn(
-                        'w-full h-[660px] group-hover:opacity-75 object-cover duration-700 ease-in-out',
+                        'w-full h-[700px] group-hover:opacity-75 object-cover duration-700 ease-in-out',
                         isLoading ? 'blur-2xl scale-110' : 'blur-0 scale-100',
                     )}
                     onLoad={() => setLoading(false)}
                     priority
                 />
                 <div className="max-w-3xl mx-auto mt-10 prose prose-pre:bg-transparent prose-a:cursor-pointer prose-p:text-gray-500 prose-p:leading-relaxed prose-p:tracking-wide prose-headings:leading-tight prose-li:leading-relaxed [&_span[data-testid='content-line']]:text-gray-500 [&_div[data-testid='number-line']]:text-gray-400">
-                    <MDXRemote
-                        {...mdxSource}
-                        components={{
-                            ...MDXComponents,
-                            StaticTweet: (props: { id: string }) => (
-                                <StaticTweet {...props} tweets={tweets} />
-                            ),
-                        }}
-                    />
+                    {children}
                 </div>
             </div>
             <Signature title={title} url={postUrl} />

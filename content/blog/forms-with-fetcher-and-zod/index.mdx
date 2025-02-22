@@ -16,7 +16,11 @@ featured: false
 Forms are an essential part of many web applications, enabling users to interact with the application by submitting data. However, handling form submission and validation can be challenging. In this blog post, we will explore how to build forms using the useFetcher hook and Zod validation library in Remix, a versatile framework for building web applications. Combining these powerful tools allows for efficient form handling and validation, ensuring a smooth user experience. Let's dive in!
 
 <Info>
-Before getting started, make sure you have a basic understanding of Remix. If you are new to Remix, check out the [official documentation](https://docs.remix.run/) and [egghead course](https://egghead.io/playlists/getting-started-with-remix-2d2e) to get up to speed.
+    Before getting started, make sure you have a basic understanding of Remix.
+    If you are new to Remix, check out the [official
+    documentation](https://docs.remix.run/) and [egghead
+    course](https://egghead.io/playlists/getting-started-with-remix-2d2e) to get
+    up to speed.
 </Info>
 
 Working with Forms in Remix is a breeze. The framework provides a `Form` component that handles form submission and validation. However, the `Form` component is not the only way to handle forms in Remix. In this blog post, we will explore how to build forms using the `useFetcher` hook and Zod validation library.
@@ -26,117 +30,119 @@ One of the primary features of Remix is simplifying interactions with the server
 Let's start building a form to create a new blog post. We will use the `useFetcher` hook to call an action to create a new blog post.
 
 ```tsx {{ filename: "app/posts/create.tsx" }}
-import { useFetcher } from "remix";
+import { useFetcher } from 'remix';
 
-export default  function CreatePost() {
-  const fetcher = useFetcher();
+export default function CreatePost() {
+    const fetcher = useFetcher();
 
-  return (
-    <fetcher.Form
-        action="/posts" //can be ignored if the action is the same as the current URL
-        method="post"
-        className="space-y-4"
-        noValidate
-    >
-      <div>
-        <label htmlFor="title">Title</label>
-        <input id="title" name="title" type="text" />
-      </div>
-      <div>
-        <label htmlFor="body">Body</label>
-        <textarea id="body" name="body" />
-      </div>
-      <button type="submit">Create Post</button>
-    </fetcher.Form>
-  );
+    return (
+        <fetcher.Form
+            action="/posts" //can be ignored if the action is the same as the current URL
+            method="post"
+            className="space-y-4"
+            noValidate
+        >
+            <div>
+                <label htmlFor="title">Title</label>
+                <input id="title" name="title" type="text" />
+            </div>
+            <div>
+                <label htmlFor="body">Body</label>
+                <textarea id="body" name="body" />
+            </div>
+            <button type="submit">Create Post</button>
+        </fetcher.Form>
+    );
 }
 ```
 
 Now, we can get the data from the form submission in the action handler.
 
 ```tsx {{ filename: "app/posts/create.tsx" }}
-import { json, redirect } from "remix";
+import { json, redirect } from 'remix';
 
 export async function action({ request }) {
-  const formData = await request.formData();
-  const title = formData.get("title");
-  const body = formData.get("body");
+    const formData = await request.formData();
+    const title = formData.get('title');
+    const body = formData.get('body');
 
-  if (!title) {
-    return json({ error: "Title is required" }, { status: 400 });
-  }
-
-    if (!body) {
-        return json({ error: "Body is required" }, { status: 400 });
+    if (!title) {
+        return json({ error: 'Title is required' }, { status: 400 });
     }
 
-  // create a new post
+    if (!body) {
+        return json({ error: 'Body is required' }, { status: 400 });
+    }
+
+    // create a new post
     await db.posts.create({
-      data: {
-        title,
-        body,
-      },
+        data: {
+            title,
+            body,
+        },
     });
 
-  return redirect("/posts");
+    return redirect('/posts');
 }
 ```
+
 ## Pending UI
 
 This approach seems to work fine but for a better user experience, let's find a way to show the user that we are submitting the data to the server.
 
 ```tsx {{ filename: "app/posts/create.tsx" }}
-import { useFetcher } from "remix";
+import { useFetcher } from 'remix';
 
 export default function CreatePost() {
-  const fetcher = useFetcher();
+    const fetcher = useFetcher();
 
-  const isSubmitting = fetcher.state === "submitting" // this is true when the form is submitting
+    const isSubmitting = fetcher.state === 'submitting'; // this is true when the form is submitting
 
-  return (
-    <fetcher.Form
-        action="/posts" //can be ignored if the action is the same as the current URL
-        method="post"
-        className="space-y-4"
-        noValidate
-    >
-      <div>
-        <label htmlFor="title">Title</label>
-        <input id="title" name="title" type="text" />
-      </div>
-      <div>
-        <label htmlFor="body">Body</label>
-        <textarea id="body" name="body" />
-      </div>
-      <button type="submit">
-        {isSubmitting ? "Submitting" : "Create Post" } // show submitting when the form is submitting
-      </button>
-    </fetcher.Form>
-  );
+    return (
+        <fetcher.Form
+            action="/posts" //can be ignored if the action is the same as the current URL
+            method="post"
+            className="space-y-4"
+            noValidate
+        >
+            <div>
+                <label htmlFor="title">Title</label>
+                <input id="title" name="title" type="text" />
+            </div>
+            <div>
+                <label htmlFor="body">Body</label>
+                <textarea id="body" name="body" />
+            </div>
+            <button type="submit">
+                {isSubmitting ? 'Submitting' : 'Create Post'} // show submitting
+                when the form is submitting
+            </button>
+        </fetcher.Form>
+    );
 }
-
 ```
+
 ## Zod Validation
 
 Now, let's add some validation to the form. We will use the Zod validation library to validate the form data.
 
 ```tsx {{ filename: "app/posts/create.tsx" }}
-import { useFetcher } from "remix";
-import { z } from "zod";
-import {ActionFunctionArgs} from "@remix-run/router";
-import {json,redirect} from "@remix-run/node";
+import { json, redirect } from '@remix-run/node';
+import { ActionFunctionArgs } from '@remix-run/router';
+import { useFetcher } from 'remix';
+import { z } from 'zod';
 
 const schema = z.object({
-  title: z.string().min(3).max(50),
-  body: z.string().min(3).max(500),
+    title: z.string().min(3).max(50),
+    body: z.string().min(3).max(500),
 });
 
-async function action({request}: ActionFunctionArgs) {
+async function action({ request }: ActionFunctionArgs) {
     const formData = await request.formData();
     const data = await schema.parseAsync(Object.fromEntries(formData));
 
     if (!data.title) {
-        return json({ error: "Title is required" }, { status: 400 });
+        return json({ error: 'Title is required' }, { status: 400 });
     }
 
     // create a new post
@@ -144,32 +150,35 @@ async function action({request}: ActionFunctionArgs) {
         data,
     });
 
-    return redirect("/posts");
+    return redirect('/posts');
 }
 
 function CreatePost() {
-  const fetcher = useFetcher();
+    const fetcher = useFetcher();
 
-  const hasError = fetcher.data?.error // this is true when the form has an error
+    const hasError = fetcher.data?.error; // this is true when the form has an error
 
-  return (
-    <fetcher.Form
-      action="/posts" //can be ignored if the action is the same as the current URL
-      method="post"
-      className="space-y-4"
-    >
-      <div>
-        <label htmlFor="title">Title</label>
-        <input id="title" name="title" type="text" />
-        {hasError && <p className="text-red-500">{fetcher.data.error}</p>} // show the error message if the form has an error
-      </div>
-      <div>
-        <label htmlFor="body">Body</label>
-        <textarea id="body" name="body" />
-      </div>
-      <button type="submit">Create Post</button>
-    </fetcher.Form>
-  );
+    return (
+        <fetcher.Form
+            action="/posts" //can be ignored if the action is the same as the current URL
+            method="post"
+            className="space-y-4"
+        >
+            <div>
+                <label htmlFor="title">Title</label>
+                <input id="title" name="title" type="text" />
+                {hasError && (
+                    <p className="text-red-500">{fetcher.data.error}</p>
+                )}{' '}
+                // show the error message if the form has an error
+            </div>
+            <div>
+                <label htmlFor="body">Body</label>
+                <textarea id="body" name="body" />
+            </div>
+            <button type="submit">Create Post</button>
+        </fetcher.Form>
+    );
 }
 ```
 

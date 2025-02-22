@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 
 interface VideoPlayerProps {
     autoPlay?: boolean;
@@ -20,9 +20,9 @@ const getDisplayedPoster = (poster: string) => {
 const VideoPlayer = (props: VideoPlayerProps) => {
     const { autoPlay, controls, loop, muted, width, height, poster, src } =
         props;
-    const [currentPoster, setCurrentPoster] = React.useState<
-        string | undefined
-    >(undefined);
+    const [currentPoster, setCurrentPoster] = useState<string | undefined>(
+        undefined,
+    );
 
     React.useEffect(() => {
         if (poster) {
