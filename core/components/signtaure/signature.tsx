@@ -45,8 +45,11 @@ const SignatureSVG = () => {
                 initial="initial"
                 animate={isVisible ? 'revealed' : 'initial'}
                 variants={signatureSvgVariants}
-                className="h-20 w-72 stroke-2"
                 viewBox="0 0 4032 3024"
+                width="120"
+                height="115"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
             >
                 <motion.path
                     variants={signaturePathVariants}

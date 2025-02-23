@@ -21,18 +21,25 @@ export async function generateMetadata({
 }): Promise<Metadata> {
     const slug = (await params).slug;
     const post = await getFileBySlug(slug);
-    const { title, subtitle, date, readingTime } = post.frontMatter;
+    const { title, subtitle, date, readingTime, keywords, categories } =
+        post.frontMatter;
     const formattedDate = format(new Date(Date.parse(date)), 'MMMM d, yyyy');
     const url = `${siteConfig.url}/blog/${slug}`;
 
     return {
-        title,
+        title: `${title} | ${siteConfig.title}`,
         description: subtitle,
+        keywords: keywords?.join(', ') || '',
         openGraph: {
             title,
             description: subtitle,
             type: 'article',
             url,
+            siteName: siteConfig.title,
+            locale: 'en_US',
+            publishedTime: new Date(date).toISOString(),
+            modifiedTime: new Date(date).toISOString(),
+            authors: ['Felix Yeboah'],
             images: [
                 {
                     url: `${siteConfig.url}/api/og?title=${encodeURIComponent(title)}&date=${encodeURIComponent(formattedDate)}&readingTime=${encodeURIComponent(readingTime.text)}`,
@@ -44,21 +51,36 @@ export async function generateMetadata({
         },
         twitter: {
             card: 'summary_large_image',
-            title,
+            title: `${title} | ${siteConfig.title}`,
             description: subtitle,
+            site: '@felixyeboah_dev',
+            creator: '@felixyeboah_dev',
             images: [
                 `${siteConfig.url}/api/og?title=${encodeURIComponent(title)}&date=${encodeURIComponent(formattedDate)}&readingTime=${encodeURIComponent(readingTime.text)}`,
             ],
-            creator: '@felixyeboah_dev',
         },
-        authors: [{ name: 'Felix Yeboah' }],
-        publisher: 'Felix Yeboah',
+        authors: [
+            {
+                name: 'Felix Yeboah',
+                url: siteConfig.url,
+            },
+        ],
+        publisher: siteConfig.title,
         robots: {
             index: true,
             follow: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
         },
         alternates: {
             canonical: url,
+        },
+        category: categories?.join(', ') || '',
+        other: {
+            'article:published_time': new Date(date).toISOString(),
+            'article:author': siteConfig.url,
+            'og:site_name': siteConfig.title,
         },
     };
 }
