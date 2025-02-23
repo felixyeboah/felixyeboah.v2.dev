@@ -37,7 +37,7 @@ export async function generateMetadata({
     encode.append('readingTime', readingTime.text);
     encode.append('cover', coverUrl);
 
-    const ogImageUrl = `${siteConfig.url}/api/og?${params.toString()}`;
+    const ogImageUrl = `${siteConfig.url}/api/og?${encode.toString()}`;
 
     return {
         title: `${title} | ${siteConfig.title}`,
