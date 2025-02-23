@@ -30,12 +30,14 @@ export async function generateMetadata({
     // Transform cover image URL using the Cloudinary loader
     const coverUrl = cover ? loader({ src: cover, width: 1200 }) : '';
 
-    const ogImageUrl = `${siteConfig.url}/api/og?${new URLSearchParams({
-        title: encodeURIComponent(title),
-        date: encodeURIComponent(formattedDate),
-        readingTime: encodeURIComponent(readingTime.text),
-        cover: encodeURIComponent(coverUrl),
-    }).toString()}`;
+    // Create URL parameters without double encoding
+    const encode = new URLSearchParams();
+    encode.append('title', title);
+    encode.append('date', formattedDate);
+    encode.append('readingTime', readingTime.text);
+    encode.append('cover', coverUrl);
+
+    const ogImageUrl = `${siteConfig.url}/api/og?${params.toString()}`;
 
     return {
         title: `${title} | ${siteConfig.title}`,
