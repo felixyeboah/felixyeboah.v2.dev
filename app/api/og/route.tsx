@@ -10,6 +10,18 @@ export async function GET(req: NextRequest) {
     const date = searchParams.get('date');
     const readingTime = searchParams.get('readingTime');
 
+    // Fetch the image first to ensure it's available
+    let imageData: string | null = null;
+    if (cover) {
+        try {
+            const imageResponse = await fetch(cover);
+            const arrayBuffer = await imageResponse.arrayBuffer();
+            imageData = `data:image/png;base64,${Buffer.from(arrayBuffer).toString('base64')}`;
+        } catch (e) {
+            console.error('Error fetching cover image:', e);
+        }
+    }
+
     return new ImageResponse(
         (
             <div
@@ -19,7 +31,6 @@ export async function GET(req: NextRequest) {
                     width: '100%',
                     backgroundColor: '#fff',
                     borderRadius: '12px',
-                    fontFamily: 'var(--font-aperku-sans), sans-serif',
                     position: 'relative',
                     overflow: 'hidden',
                 }}
@@ -140,15 +151,30 @@ export async function GET(req: NextRequest) {
                             width: '35%',
                         }}
                     >
-                        <img
-                            style={{
-                                height: '100%',
-                                width: '100%',
-                                objectFit: 'cover',
-                            }}
-                            src={cover ?? ''}
-                            alt={title ?? ''}
-                        />
+                        {imageData ? (
+                            <img
+                                style={{
+                                    height: '100%',
+                                    width: '100%',
+                                    objectFit: 'cover',
+                                }}
+                                src={imageData}
+                                alt={title ?? ''}
+                            />
+                        ) : (
+                            <div
+                                style={{
+                                    height: '100%',
+                                    width: '100%',
+                                    backgroundColor: '#f3f4f6',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                }}
+                            >
+                                <span style={{ color: '#9ca3af' }}>No image</span>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>
@@ -156,6 +182,9 @@ export async function GET(req: NextRequest) {
         {
             width: 1200,
             height: 630,
+            headers: {
+                'cache-control': 'public, max-age=31536000, immutable',
+            },
         },
     );
 }

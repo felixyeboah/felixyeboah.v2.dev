@@ -1,6 +1,6 @@
 import { getFileBySlug, getFiles } from '@/app/libs/mdx';
 import { getTweets } from '@/app/libs/tweets';
-import siteConfig from '@/config/site';
+import { siteConfig } from '@/config/site';
 import { format } from 'date-fns';
 import { Metadata } from 'next';
 
@@ -21,10 +21,17 @@ export async function generateMetadata({
 }): Promise<Metadata> {
     const slug = (await params).slug;
     const post = await getFileBySlug(slug);
-    const { title, subtitle, date, readingTime, keywords, categories } =
+    const { title, subtitle, date, readingTime, keywords, categories, cover } =
         post.frontMatter;
     const formattedDate = format(new Date(Date.parse(date)), 'MMMM d, yyyy');
     const url = `${siteConfig.url}/blog/${slug}`;
+
+    const ogImageUrl = `${siteConfig.url}/api/og?${new URLSearchParams({
+        title: encodeURIComponent(title),
+        date: encodeURIComponent(formattedDate),
+        readingTime: encodeURIComponent(readingTime.text),
+        cover: encodeURIComponent(cover),
+    }).toString()}`;
 
     return {
         title: `${title} | ${siteConfig.title}`,
@@ -42,7 +49,7 @@ export async function generateMetadata({
             authors: ['Felix Yeboah'],
             images: [
                 {
-                    url: `${siteConfig.url}/api/og?title=${encodeURIComponent(title)}&date=${encodeURIComponent(formattedDate)}&readingTime=${encodeURIComponent(readingTime.text)}`,
+                    url: ogImageUrl,
                     width: 1200,
                     height: 630,
                     alt: title,
@@ -55,9 +62,7 @@ export async function generateMetadata({
             description: subtitle,
             site: '@felixyeboah_dev',
             creator: '@felixyeboah_dev',
-            images: [
-                `${siteConfig.url}/api/og?title=${encodeURIComponent(title)}&date=${encodeURIComponent(formattedDate)}&readingTime=${encodeURIComponent(readingTime.text)}`,
-            ],
+            images: [ogImageUrl],
         },
         authors: [
             {

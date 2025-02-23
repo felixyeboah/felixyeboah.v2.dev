@@ -1,7 +1,7 @@
 'use client';
 
 import { loader } from '@/app/libs/next-image-loader';
-import siteConfig from '@/config/site';
+import { siteConfig } from '@/config/site';
 import MDXComponents from '@/core/components/MDXComponent';
 import { Heading, Subheading } from '@/core/components/element';
 import Signature from '@/core/components/signtaure';
