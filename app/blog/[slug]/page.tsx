@@ -1,4 +1,5 @@
 import { getFileBySlug, getFiles } from '@/app/libs/mdx';
+import { loader } from '@/app/libs/next-image-loader';
 import { getTweets } from '@/app/libs/tweets';
 import { siteConfig } from '@/config/site';
 import { format } from 'date-fns';
@@ -26,11 +27,14 @@ export async function generateMetadata({
     const formattedDate = format(new Date(Date.parse(date)), 'MMMM d, yyyy');
     const url = `${siteConfig.url}/blog/${slug}`;
 
+    // Transform cover image URL using the Cloudinary loader
+    const coverUrl = cover ? loader({ src: cover, width: 1200 }) : '';
+
     const ogImageUrl = `${siteConfig.url}/api/og?${new URLSearchParams({
         title: encodeURIComponent(title),
         date: encodeURIComponent(formattedDate),
         readingTime: encodeURIComponent(readingTime.text),
-        cover: encodeURIComponent(cover),
+        cover: encodeURIComponent(coverUrl),
     }).toString()}`;
 
     return {
