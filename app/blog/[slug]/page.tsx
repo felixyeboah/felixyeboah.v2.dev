@@ -1,5 +1,7 @@
 import { getFileBySlug, getFiles } from '@/app/libs/mdx';
 import { getTweets } from '@/app/libs/tweets';
+import siteConfig from '@/config/site';
+import { format } from 'date-fns';
 import { Metadata } from 'next';
 
 import MDXContent from './MDXContent';
@@ -12,7 +14,6 @@ export async function generateStaticParams() {
     }));
 }
 
-// Generate metadata for each page
 export async function generateMetadata({
     params,
 }: {
@@ -20,8 +21,45 @@ export async function generateMetadata({
 }): Promise<Metadata> {
     const slug = (await params).slug;
     const post = await getFileBySlug(slug);
+    const { title, subtitle, date, readingTime } = post.frontMatter;
+    const formattedDate = format(new Date(Date.parse(date)), 'MMMM d, yyyy');
+    const url = `${siteConfig.url}/blog/${slug}`;
+
     return {
-        title: post.frontMatter.title,
+        title,
+        description: subtitle,
+        openGraph: {
+            title,
+            description: subtitle,
+            type: 'article',
+            url,
+            images: [
+                {
+                    url: `${siteConfig.url}/api/og?title=${encodeURIComponent(title)}&date=${encodeURIComponent(formattedDate)}&readingTime=${encodeURIComponent(readingTime.text)}`,
+                    width: 1200,
+                    height: 630,
+                    alt: title,
+                },
+            ],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title,
+            description: subtitle,
+            images: [
+                `${siteConfig.url}/api/og?title=${encodeURIComponent(title)}&date=${encodeURIComponent(formattedDate)}&readingTime=${encodeURIComponent(readingTime.text)}`,
+            ],
+            creator: '@felixyeboah_dev',
+        },
+        authors: [{ name: 'Felix Yeboah' }],
+        publisher: 'Felix Yeboah',
+        robots: {
+            index: true,
+            follow: true,
+        },
+        alternates: {
+            canonical: url,
+        },
     };
 }
 
