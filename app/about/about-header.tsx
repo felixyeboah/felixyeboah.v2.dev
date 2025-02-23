@@ -31,7 +31,7 @@ export const AboutHeader = () => {
             gsap.to(heroText.chars, {
                 y: 0,
                 duration: 1,
-                stagger: 0.075,
+                stagger: 0.055,
                 ease: 'power4.out',
                 delay: 1,
             });
@@ -44,7 +44,7 @@ export const AboutHeader = () => {
 
             gsap.set('.header-text p .line span', {
                 y: 400,
-                display: 'block',
+                display: 'inline-block',
             });
 
             gsap.to('.header-text p .line span', {
