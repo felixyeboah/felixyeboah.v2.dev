@@ -1,6 +1,6 @@
 import { ClientLayout } from '@/core/components/client-layout';
-// import { ThemeProvider } from '@/core/hooks/use-theme';
 import type { Metadata } from 'next';
+import { ViewTransitions } from 'next-view-transitions';
 import localFont from 'next/font/local';
 
 import './animated-button.css';
@@ -96,15 +96,17 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html
-            lang="en"
-            className={`${aperkuSans.variable} ${aperkuSansMono.variable} ${voyageBold.variable}`}
-        >
-            <body
-                className={`${aperkuSans.variable} ${aperkuSansMono.variable} ${voyageBold.variable} antialiased`}
+        <ViewTransitions>
+            <html
+                lang="en"
+                className={`${aperkuSans.variable} ${aperkuSansMono.variable} ${voyageBold.variable}`}
             >
-                <ClientLayout>{children}</ClientLayout>
-            </body>
-        </html>
+                <body
+                    className={`${aperkuSans.variable} ${aperkuSansMono.variable} ${voyageBold.variable} antialiased`}
+                >
+                    <ClientLayout>{children}</ClientLayout>
+                </body>
+            </html>
+        </ViewTransitions>
     );
 }

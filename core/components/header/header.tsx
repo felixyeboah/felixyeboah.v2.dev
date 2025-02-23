@@ -1,7 +1,9 @@
 'use client';
 
+import { slideOut } from '@/app/libs/misc';
 import useScrollCounter from '@/core/hooks/useScrollCounter';
 import { cn } from '@/lib/utils';
+import { useTransitionRouter } from 'next-view-transitions';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react';
@@ -40,17 +42,23 @@ export const Header = () => {
     const reached = useScrollCounter(offsetHeight / 2);
     const [isActive, setIsActive] = useState<boolean>(false);
 
+    const router = useTransitionRouter();
+
+    slideOut();
+
     useEffect(() => {
         if (isActive) setIsActive(false);
     }, [isActive, pathname]);
 
     return (
-        <header
+        <nav
             ref={header as React.RefObject<HTMLDivElement>}
             className={cn(
-                'fixed flex items-center justify-between z-50 font-mono top-0 h-20 px-10 w-full mix-blend-exclusion',
+                'fixed flex items-center justify-between z-50 font-mono top-0 h-20 px-10 w-full',
                 {
                     'bg-white/20 backdrop-blur-xl': reached,
+                    'text-white': pathname === '/',
+                    'mix-blend-exclusion': pathname !== '/',
                 },
             )}
         >
@@ -59,7 +67,12 @@ export const Header = () => {
                 aria-describedby="hometooltip"
                 data-testid="header-logo"
                 href="/"
-                passHref
+                onClick={(e) => {
+                    e.preventDefault();
+                    router.push('/', {
+                        onTransitionReady: slideOut,
+                    });
+                }}
             >
                 <h3 className="text-xl lowercase font-medium hover:text-primary underlined text-white">
                     Felix
@@ -72,6 +85,12 @@ export const Header = () => {
                         <Link
                             href={link.to}
                             className="block w-full h-full hover:text-primary underlined"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                router.push(link.to, {
+                                    onTransitionReady: slideOut,
+                                });
+                            }}
                         >
                             <p
                                 className={cn(
@@ -103,6 +122,6 @@ export const Header = () => {
                     </p>
                 ))}
             </Button> */}
-        </header>
+        </nav>
     );
 };

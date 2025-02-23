@@ -15,6 +15,7 @@ import {
 } from '@/core/components/ui/tooltip';
 import { cn } from '@/lib/utils';
 import { Post, ReadingTime } from '@/types/post';
+import { useGSAP } from '@gsap/react';
 import { format } from 'date-fns';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -23,6 +24,7 @@ import { MDXRemote } from 'next-mdx-remote';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
+import SplitType from 'split-type';
 
 interface MDXContentProps {
     mdxSource: any;
@@ -123,8 +125,32 @@ const MDXContent = ({ frontMatter, mdxSource, tweets }: MDXContentProps) => {
         };
     }, []);
 
+    const container = useRef<HTMLDivElement>(null);
+
+    useGSAP(
+        () => {
+            const heroText = new SplitType('.header-text h1', {
+                types: 'chars',
+            });
+            gsap.set(heroText.chars, {
+                y: 400,
+            });
+
+            gsap.to(heroText.chars, {
+                y: 0,
+                duration: 1,
+                stagger: 0.075,
+                ease: 'power4.out',
+                delay: 1,
+            });
+        },
+        {
+            scope: container,
+        },
+    );
+
     return (
-        <article className="pt-20 space-y-20">
+        <article className="pt-20 space-y-20 header-text" ref={container}>
             {ids ? <TableOfContent ids={ids} /> : null}
 
             <div className="space-y-16">

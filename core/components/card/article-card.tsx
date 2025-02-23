@@ -1,9 +1,11 @@
 'use client';
 
+import { slideOut } from '@/app/libs/misc';
 import { loader } from '@/app/libs/next-image-loader';
 import { cn } from '@/lib/utils';
 import { clsx } from 'clsx';
 import { format } from 'date-fns';
+import { useTransitionRouter } from 'next-view-transitions';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
@@ -24,12 +26,21 @@ function ArticleCard({
     };
 }) {
     const [isLoading, setLoading] = useState(true);
+    const router = useTransitionRouter();
+
+    slideOut();
 
     return (
         <div className={clsx('relative w-full')}>
             <Link
                 className="relative block w-full focus:outline-none"
                 href={`/blog/${slug}`}
+                onClick={(e) => {
+                    e.preventDefault();
+                    router.push(`/blog/${slug}`, {
+                        onTransitionReady: slideOut,
+                    });
+                }}
             >
                 {cover ? (
                     <div className="w-full rounded-lg overflow-hidden hover:ring-2 hover:ring-offset-2 hover:ring-primary transition-all duration-300 ease-in-out">

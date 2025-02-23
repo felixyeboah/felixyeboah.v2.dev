@@ -2,42 +2,75 @@
 
 import { loader } from '@/app/libs/next-image-loader';
 import { cn } from '@/lib/utils';
+import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import SplitType from 'split-type';
 
 export const AboutHeader = () => {
     const [isLoading, setLoading] = useState(true);
-    const headerRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        const text = new SplitType(headerRef.current!, {
-            types: ['words', 'lines'],
-            tagName: 'span',
-        });
+    const container = useRef<HTMLDivElement>(null);
 
-        gsap.from(text.words, {
-            y: 50,
-            opacity: 0,
-            stagger: {
-                amount: 0.4,
-                from: 'start',
-            },
-            duration: 0.4,
-            ease: 'power4.out',
-            delay: 0.3,
-        });
-    }, []);
+    useGSAP(
+        () => {
+            const heroText = new SplitType('.header-text h1', {
+                types: 'chars',
+            });
+            const text = new SplitType('.header-text p', {
+                types: 'lines',
+                tagName: 'div',
+                lineClass: 'line',
+            });
+            gsap.set(heroText.chars, {
+                y: 400,
+            });
+
+            gsap.to(heroText.chars, {
+                y: 0,
+                duration: 1,
+                stagger: 0.075,
+                ease: 'power4.out',
+                delay: 1,
+            });
+
+            // paragraph lines
+            text.lines?.forEach((line) => {
+                const content = line.innerHTML;
+                line.innerHTML = `<span>${content}</span>`;
+            });
+
+            gsap.set('.header-text p .line span', {
+                y: 400,
+                display: 'block',
+            });
+
+            gsap.to('.header-text p .line span', {
+                y: 0,
+                duration: 2,
+                stagger: 0.075,
+                ease: 'power4.out',
+                delay: 0.25,
+            });
+
+            return () => {
+                if (text) text.revert();
+            };
+        },
+        {
+            scope: container,
+        },
+    );
 
     return (
-        <header className="h-screen pt-28">
+        <header className="h-screen pt-28 header-text" ref={container}>
             <div className="container mx-auto grid grid-cols-12 gap-6">
                 <div className="col-span-full md:col-span-6 space-y-5">
                     <div className="w-[90%] flex flex-col h-full items-center justify-between">
                         <div>
-                            <div ref={headerRef} className="space-y-4">
+                            <div className="space-y-4">
                                 <h1 className="overflow-hidden">
                                     <span className="block text-5xl md:text-8xl font-bold">
                                         Hi
@@ -50,16 +83,13 @@ export const AboutHeader = () => {
                                 </h1>
                             </div>
 
-                            <p>
-                                <span className="text-xl md:text-2xl">
-                                    - A software developer. I build things for
-                                    the web and mobile. I consider myself a
-                                    learner, a life-long learner. And over the
-                                    years, I’ve been building functional,
-                                    beautiful interfaces and experiences that
-                                    leave a positive impact on people and
-                                    businesses.
-                                </span>
+                            <p className="text-xl md:text-2xl">
+                                - A software developer. I build things for the
+                                web and mobile. I consider myself a learner, a
+                                life-long learner. And over the years, I’ve been
+                                building functional, beautiful interfaces and
+                                experiences that leave a positive impact on
+                                people and businesses.
                             </p>
                         </div>
 

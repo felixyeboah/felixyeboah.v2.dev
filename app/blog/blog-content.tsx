@@ -1,6 +1,6 @@
 'use client';
 
-import { filterPosts } from '@/app/libs/misc';
+import { filterPosts, slideOut } from '@/app/libs/misc';
 import { loader } from '@/app/libs/next-image-loader';
 import { Tag } from '@/core/components/buttons/tag';
 import { ArticleCard } from '@/core/components/card/article-card';
@@ -10,6 +10,7 @@ import { Post } from '@/types/post';
 import { format } from 'date-fns';
 import { motion } from 'framer-motion';
 import { PlusIcon, X } from 'lucide-react';
+import { useTransitionRouter } from 'next-view-transitions';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
@@ -26,6 +27,7 @@ export const BlogContent = ({ posts }: { posts: Post[] }) => {
     const [queryValue, setQuery] = useState<string>(() => {
         return searchParams.get('q') ?? '';
     });
+    const router = useTransitionRouter();
 
     const query = queryValue.trim();
     const regularQuery = query.replace(specialQueryRegex, '').trim();
@@ -92,6 +94,8 @@ export const BlogContent = ({ posts }: { posts: Post[] }) => {
         setQuery('');
     };
 
+    slideOut();
+
     return (
         <div className="space-y-12 pb-20">
             <motion.div
@@ -140,6 +144,12 @@ export const BlogContent = ({ posts }: { posts: Post[] }) => {
                         href={`/blog/${featuredPost.slug}`}
                         key={featuredPost.slug}
                         className="relative h-[500px] md:h-[650px] mb-10 flex flex-col hover:ring-2 hover:ring-offset-2 hover:ring-primary transition-all duration-300 ease-in-out overflow-hidden rounded-3xl"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            router.push(`/blog/${featuredPost.slug}`, {
+                                onTransitionReady: slideOut,
+                            });
+                        }}
                     >
                         <div className="bg-gradient-to-t from-black/50 to-transparent absolute inset-0 z-10" />
                         <Image

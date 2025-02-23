@@ -652,3 +652,48 @@
 .push-icon {
     transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
+
+/* Page Heading clipPath */
+.header-text {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.header-text .char {
+    position: relative;
+    will-change: transform;
+}
+
+.header-text p .line {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.header-text p .line span {
+    position: relative;
+    will-change: transform;
+}
+
+/* View Transitions */
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation: none !important;
+}
+
+::view-transition-group(root) {
+    z-index: auto !important;
+}
+
+::view-transition-image-pair(root) {
+    isolation: isolate;
+    will-change: transform, opacity, clip-path;
+    z-index: 1;
+}
+
+::view-transition-new(root) {
+    z-index: 1000;
+    animation: none !important;
+}
+
+::view-transition-old(root) {
+    z-index: 1;
+    animation: none !important;
+}
