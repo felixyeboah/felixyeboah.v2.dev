@@ -2,29 +2,53 @@
 
 import { loader } from '@/app/libs/next-image-loader';
 import { cn } from '@/lib/utils';
+import gsap from 'gsap';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import SplitType from 'split-type';
 
 export const AboutHeader = () => {
     const [isLoading, setLoading] = useState(true);
+    const headerRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const text = new SplitType(headerRef.current!, {
+            types: ['words', 'lines'],
+            tagName: 'span',
+        });
+
+        gsap.from(text.words, {
+            y: 50,
+            opacity: 0,
+            stagger: {
+                amount: 0.4,
+                from: 'start',
+            },
+            duration: 0.4,
+            ease: 'power4.out',
+            delay: 0.3,
+        });
+    }, []);
 
     return (
         <header className="h-screen pt-28">
             <div className="container mx-auto grid grid-cols-12 gap-6">
                 <div className="col-span-full md:col-span-6 space-y-5">
-                    <div className="flex flex-col h-full items-center justify-between">
+                    <div className="w-[90%] flex flex-col h-full items-center justify-between">
                         <div>
-                            <h1>
-                                <span className="text-5xl md:text-8xl font-bold">
-                                    Hi
-                                </span>
-                            </h1>
-                            <h1>
-                                <span className="text-5xl md:text-8xl font-bold">
-                                    I&apos;m Felix.
-                                </span>
-                            </h1>
+                            <div ref={headerRef} className="space-y-4">
+                                <h1 className="overflow-hidden">
+                                    <span className="block text-5xl md:text-8xl font-bold">
+                                        Hi
+                                    </span>
+                                </h1>
+                                <h1 className="overflow-hidden">
+                                    <span className="block text-5xl md:text-8xl font-bold">
+                                        I&apos;m Felix.
+                                    </span>
+                                </h1>
+                            </div>
 
                             <p>
                                 <span className="text-xl md:text-2xl">
@@ -39,7 +63,7 @@ export const AboutHeader = () => {
                             </p>
                         </div>
 
-                        <div className="col-span-full mb-12 lg:col-span-4 lg:mb-0 space-y-8">
+                        <div className="col-span-full mb-12 lg:col-span-4 lg:mb-0 space-y-5">
                             <h3 className="dark:text-gray-100 dark:leading-snug text-2xl">
                                 After High School in 2011, I wanted to further
                                 my education to the university but the financial

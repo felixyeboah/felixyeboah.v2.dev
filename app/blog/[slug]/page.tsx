@@ -1,9 +1,6 @@
 import { getFileBySlug, getFiles } from '@/app/libs/mdx';
 import { getTweets } from '@/app/libs/tweets';
-import MDXComponents from '@/core/components/MDXComponent';
-import StaticTweet from '@/core/components/static-tweet/StaticTweet';
 import { Metadata } from 'next';
-import { MDXRemote } from 'next-mdx-remote/rsc';
 
 import MDXContent from './MDXContent';
 
@@ -36,17 +33,11 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
             post.tweetIDs?.length > 0 ? await getTweets(post.tweetIDs) : {};
 
         return (
-            <MDXContent frontMatter={post.frontMatter}>
-                <MDXRemote
-                    source={post.mdxSource}
-                    components={{
-                        ...MDXComponents,
-                        StaticTweet: (props: { id: string }) => (
-                            <StaticTweet {...props} tweets={tweets ?? {}} />
-                        ),
-                    }}
-                />
-            </MDXContent>
+            <MDXContent
+                frontMatter={post.frontMatter}
+                mdxSource={post.mdxSource}
+                tweets={tweets ?? {}}
+            />
         );
     } catch (error) {
         return (

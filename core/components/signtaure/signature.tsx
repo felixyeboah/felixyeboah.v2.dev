@@ -29,27 +29,6 @@ const signaturePathVariants = {
     },
 };
 
-// const draw = {
-//   initial: {
-//     opacity: 0,
-//     pathLength: 0,
-//   },
-//   revealed: {
-//     opacity: 1,
-//     pathLength: 1,
-//     transition: {
-//       pathLength: {
-//         delay: 0.2,
-//         type: 'spring',
-//         duration: 2.5,
-//         bounce: 0.2,
-//         ease: 'easeInOut',
-//       },
-//       opacity: { duration: 2 },
-//     },
-//   },
-// };
-
 const SignatureSVG = () => {
     const ref = useRef(null);
     const isVisible = useInView(ref);
@@ -58,7 +37,7 @@ const SignatureSVG = () => {
         <div
             style={{
                 opacity: 0.7,
-                color: 'var(--text-primary)',
+                color: 'black',
             }}
             ref={ref}
         >
@@ -66,12 +45,12 @@ const SignatureSVG = () => {
                 initial="initial"
                 animate={isVisible ? 'revealed' : 'initial'}
                 variants={signatureSvgVariants}
-                className="h-36 dark:stroke-white dark:opacity-100"
-                viewBox="0 0 1512 899"
+                className="h-20 w-72 stroke-2"
+                viewBox="0 0 4032 3024"
             >
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -209,7 +188,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -322,7 +301,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -472,7 +451,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -535,7 +514,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -623,7 +602,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -740,7 +719,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -841,7 +820,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -908,7 +887,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -960,7 +939,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -1006,7 +985,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -1044,7 +1023,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -1092,7 +1071,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -1142,7 +1121,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -1202,7 +1181,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -1266,7 +1245,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -1312,7 +1291,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -1366,7 +1345,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -1410,7 +1389,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -1443,7 +1422,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -1481,7 +1460,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -1524,7 +1503,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -1566,7 +1545,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -1611,7 +1590,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -1651,7 +1630,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -1674,7 +1653,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -1696,7 +1675,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -1725,7 +1704,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -1756,7 +1735,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -1799,7 +1778,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -1829,7 +1808,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -1858,7 +1837,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -1884,7 +1863,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -1915,7 +1894,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -1942,7 +1921,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -1974,7 +1953,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2007,7 +1986,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2030,7 +2009,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2061,7 +2040,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2091,7 +2070,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2112,7 +2091,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2139,7 +2118,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2165,7 +2144,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2186,7 +2165,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2209,7 +2188,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2232,7 +2211,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2257,7 +2236,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2279,7 +2258,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2302,7 +2281,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2325,7 +2304,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2349,7 +2328,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2371,7 +2350,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2390,7 +2369,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2414,7 +2393,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2432,7 +2411,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2459,7 +2438,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2477,7 +2456,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2496,7 +2475,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2516,7 +2495,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2538,7 +2517,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2556,7 +2535,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2575,7 +2554,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2593,7 +2572,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2613,7 +2592,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2629,7 +2608,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2646,7 +2625,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2663,7 +2642,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2679,7 +2658,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2697,7 +2676,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2715,7 +2694,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2732,7 +2711,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2748,7 +2727,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2764,7 +2743,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2780,7 +2759,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2796,7 +2775,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2812,7 +2791,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2827,7 +2806,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2842,7 +2821,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2860,7 +2839,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2876,7 +2855,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2889,7 +2868,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2903,7 +2882,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2917,7 +2896,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2932,7 +2911,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2947,7 +2926,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2965,7 +2944,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2981,7 +2960,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -2995,7 +2974,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3008,7 +2987,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3021,7 +3000,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3034,7 +3013,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3048,7 +3027,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3061,7 +3040,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3075,7 +3054,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3090,7 +3069,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3104,7 +3083,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3117,7 +3096,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3130,7 +3109,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3145,7 +3124,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3161,7 +3140,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3174,7 +3153,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3188,7 +3167,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3201,7 +3180,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3214,7 +3193,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3228,7 +3207,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3242,7 +3221,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3255,7 +3234,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3270,7 +3249,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3283,7 +3262,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3296,7 +3275,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3309,7 +3288,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3322,7 +3301,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3335,7 +3314,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3348,7 +3327,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3364,7 +3343,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3377,7 +3356,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3390,7 +3369,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3403,7 +3382,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3416,7 +3395,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3429,7 +3408,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3442,7 +3421,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3455,7 +3434,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3468,7 +3447,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3482,7 +3461,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3495,7 +3474,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3508,7 +3487,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3521,7 +3500,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3534,7 +3513,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3547,7 +3526,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3560,7 +3539,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3573,7 +3552,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3587,7 +3566,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3600,7 +3579,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3613,7 +3592,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3628,7 +3607,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3642,7 +3621,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3656,7 +3635,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3669,7 +3648,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3682,7 +3661,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3695,7 +3674,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3708,7 +3687,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3721,7 +3700,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3734,7 +3713,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3747,7 +3726,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3760,7 +3739,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3774,7 +3753,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3788,7 +3767,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3801,7 +3780,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3814,7 +3793,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3827,7 +3806,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3840,7 +3819,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3853,7 +3832,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3866,7 +3845,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3880,7 +3859,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3893,7 +3872,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3906,7 +3885,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3919,7 +3898,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3932,7 +3911,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3946,7 +3925,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3960,7 +3939,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -3983,7 +3962,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4013,7 +3992,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4033,7 +4012,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4057,7 +4036,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4091,7 +4070,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4113,7 +4092,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4157,7 +4136,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4176,7 +4155,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4194,7 +4173,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4209,7 +4188,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4227,7 +4206,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4243,7 +4222,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4258,7 +4237,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4273,7 +4252,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4289,7 +4268,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4302,7 +4281,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4315,7 +4294,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4328,7 +4307,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4341,7 +4320,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4354,7 +4333,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4366,7 +4345,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4379,7 +4358,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4449,7 +4428,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4488,7 +4467,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4520,7 +4499,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4549,7 +4528,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4566,7 +4545,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4584,7 +4563,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4603,7 +4582,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4619,7 +4598,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4636,7 +4615,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4650,7 +4629,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4665,7 +4644,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4678,7 +4657,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4691,7 +4670,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4704,7 +4683,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4717,7 +4696,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4730,7 +4709,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4743,7 +4722,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4828,7 +4807,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4907,7 +4886,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4955,7 +4934,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -4981,7 +4960,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5026,7 +5005,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5077,7 +5056,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5102,7 +5081,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5123,7 +5102,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5147,7 +5126,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5164,7 +5143,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5183,7 +5162,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5198,7 +5177,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5212,7 +5191,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5228,7 +5207,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5246,7 +5225,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5260,7 +5239,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5276,7 +5255,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5291,7 +5270,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5305,7 +5284,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5321,7 +5300,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5334,7 +5313,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5348,7 +5327,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5361,7 +5340,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5374,7 +5353,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5387,7 +5366,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5400,7 +5379,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5413,7 +5392,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5426,7 +5405,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5439,7 +5418,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5452,7 +5431,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5465,7 +5444,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5478,7 +5457,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5491,7 +5470,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5504,7 +5483,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5517,7 +5496,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5530,7 +5509,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5543,7 +5522,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5556,7 +5535,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5569,7 +5548,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5582,7 +5561,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5613,7 +5592,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5637,7 +5616,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5661,7 +5640,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5685,7 +5664,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5709,7 +5688,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5725,7 +5704,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5738,7 +5717,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5752,7 +5731,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5765,7 +5744,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5778,7 +5757,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -5978,7 +5957,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6005,7 +5984,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6026,7 +6005,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6048,7 +6027,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6064,7 +6043,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6080,7 +6059,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6095,7 +6074,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6108,7 +6087,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6121,7 +6100,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6134,7 +6113,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6147,7 +6126,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6160,7 +6139,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6173,7 +6152,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6186,7 +6165,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6199,7 +6178,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6212,7 +6191,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6252,7 +6231,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6279,7 +6258,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6339,7 +6318,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6374,7 +6353,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6419,7 +6398,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6452,7 +6431,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6477,7 +6456,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6495,7 +6474,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6518,7 +6497,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6538,7 +6517,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6554,7 +6533,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6568,7 +6547,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6581,7 +6560,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6594,7 +6573,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6607,7 +6586,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6620,7 +6599,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6633,7 +6612,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6646,7 +6625,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6659,7 +6638,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6685,7 +6664,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6702,7 +6681,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6717,7 +6696,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6730,7 +6709,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6743,7 +6722,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6756,7 +6735,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6769,7 +6748,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6800,7 +6779,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6814,7 +6793,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6827,7 +6806,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6843,7 +6822,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6857,7 +6836,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6870,7 +6849,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -6940,7 +6919,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7002,7 +6981,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7041,7 +7020,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7065,7 +7044,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7083,7 +7062,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7096,7 +7075,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7110,7 +7089,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7217,7 +7196,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7232,7 +7211,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7247,7 +7226,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7260,7 +7239,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7273,7 +7252,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7287,7 +7266,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7300,7 +7279,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7343,7 +7322,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7368,7 +7347,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7389,7 +7368,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7409,7 +7388,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7429,7 +7408,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7449,7 +7428,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7464,7 +7443,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7477,7 +7456,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7490,7 +7469,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7503,7 +7482,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7516,7 +7495,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7529,7 +7508,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7542,7 +7521,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7555,7 +7534,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7568,7 +7547,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7593,7 +7572,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7613,7 +7592,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7630,7 +7609,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7643,7 +7622,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7657,7 +7636,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7680,7 +7659,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7742,7 +7721,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7789,7 +7768,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7802,7 +7781,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7822,7 +7801,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7839,7 +7818,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7852,7 +7831,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7868,7 +7847,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7903,7 +7882,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7927,7 +7906,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7940,7 +7919,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7953,7 +7932,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7966,7 +7945,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7978,7 +7957,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -7999,7 +7978,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8015,7 +7994,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8041,7 +8020,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8066,7 +8045,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8092,7 +8071,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8109,7 +8088,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8122,7 +8101,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8135,7 +8114,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8153,7 +8132,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8166,7 +8145,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8179,7 +8158,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8192,7 +8171,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8205,7 +8184,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8218,7 +8197,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8231,7 +8210,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8268,7 +8247,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8290,7 +8269,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8303,7 +8282,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8317,7 +8296,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8331,7 +8310,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8364,7 +8343,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8377,7 +8356,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8391,7 +8370,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8404,7 +8383,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8420,7 +8399,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8434,7 +8413,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8451,7 +8430,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8465,7 +8444,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8477,7 +8456,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8494,7 +8473,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8512,7 +8491,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8525,7 +8504,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8538,7 +8517,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8555,7 +8534,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8572,7 +8551,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8597,7 +8576,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8617,7 +8596,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8638,7 +8617,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8661,7 +8640,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8676,7 +8655,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8691,7 +8670,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8704,7 +8683,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8717,7 +8696,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8730,7 +8709,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8744,7 +8723,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8767,7 +8746,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8782,7 +8761,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8798,7 +8777,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8811,7 +8790,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8824,7 +8803,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8837,7 +8816,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8850,7 +8829,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8863,7 +8842,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8876,7 +8855,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8889,7 +8868,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8902,7 +8881,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8940,7 +8919,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8967,7 +8946,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -8996,7 +8975,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9025,7 +9004,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9043,7 +9022,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9060,7 +9039,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9073,7 +9052,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9086,7 +9065,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9099,7 +9078,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9112,7 +9091,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9125,7 +9104,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9138,7 +9117,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9152,7 +9131,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9165,7 +9144,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9178,7 +9157,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9190,7 +9169,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9252,7 +9231,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9299,7 +9278,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9312,7 +9291,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9327,7 +9306,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9341,7 +9320,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9354,7 +9333,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9367,7 +9346,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9382,7 +9361,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9395,7 +9374,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9408,7 +9387,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9422,7 +9401,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9436,7 +9415,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9449,7 +9428,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9462,7 +9441,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9475,7 +9454,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9489,7 +9468,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9502,7 +9481,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9515,7 +9494,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9530,7 +9509,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9544,7 +9523,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9577,7 +9556,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9605,7 +9584,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9635,7 +9614,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9659,7 +9638,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9681,7 +9660,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9698,7 +9677,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9714,7 +9693,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9731,7 +9710,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9746,7 +9725,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9764,7 +9743,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9779,7 +9758,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9792,7 +9771,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9805,7 +9784,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9818,7 +9797,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9831,7 +9810,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9857,7 +9836,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9882,7 +9861,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9899,7 +9878,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9918,7 +9897,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9936,7 +9915,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9954,7 +9933,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9969,7 +9948,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9984,7 +9963,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -9998,7 +9977,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10012,7 +9991,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10031,7 +10010,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10048,7 +10027,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10062,7 +10041,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10075,7 +10054,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10088,7 +10067,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10102,7 +10081,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10117,7 +10096,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10140,7 +10119,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10170,7 +10149,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10187,7 +10166,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10202,7 +10181,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10218,7 +10197,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10231,7 +10210,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10244,7 +10223,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10258,7 +10237,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10271,7 +10250,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10284,7 +10263,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10297,7 +10276,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10310,7 +10289,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10323,7 +10302,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10336,7 +10315,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10349,7 +10328,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10362,7 +10341,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10375,7 +10354,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10402,7 +10381,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10429,7 +10408,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10452,7 +10431,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10469,7 +10448,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10487,7 +10466,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10506,7 +10485,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10521,7 +10500,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10535,7 +10514,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10548,7 +10527,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10561,7 +10540,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10574,7 +10553,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10587,7 +10566,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10610,7 +10589,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10625,7 +10604,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10638,7 +10617,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10671,7 +10650,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10691,7 +10670,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10715,7 +10694,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10732,7 +10711,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10746,7 +10725,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10761,7 +10740,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10777,7 +10756,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10792,7 +10771,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10807,7 +10786,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10821,7 +10800,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10836,7 +10815,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10851,7 +10830,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10866,7 +10845,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10881,7 +10860,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10894,7 +10873,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10907,7 +10886,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10922,7 +10901,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10937,7 +10916,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10950,7 +10929,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -10963,7 +10942,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11044,7 +11023,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11068,7 +11047,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11086,7 +11065,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11103,7 +11082,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11118,7 +11097,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11144,7 +11123,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11161,7 +11140,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11237,7 +11216,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11250,7 +11229,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11264,7 +11243,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11277,7 +11256,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11384,7 +11363,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11413,7 +11392,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11436,7 +11415,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11453,7 +11432,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11468,7 +11447,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11484,7 +11463,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11499,7 +11478,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11512,7 +11491,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11525,7 +11504,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11539,7 +11518,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11552,7 +11531,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11565,7 +11544,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11578,7 +11557,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11599,7 +11578,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11612,7 +11591,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11627,7 +11606,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11640,7 +11619,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11653,7 +11632,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11666,7 +11645,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11679,7 +11658,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11692,7 +11671,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11706,7 +11685,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11719,7 +11698,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11733,7 +11712,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11747,7 +11726,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11759,7 +11738,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11772,7 +11751,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11785,7 +11764,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11799,7 +11778,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11815,7 +11794,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11829,7 +11808,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11842,7 +11821,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11856,7 +11835,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11868,7 +11847,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11881,7 +11860,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11894,7 +11873,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11924,7 +11903,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11937,7 +11916,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -11988,7 +11967,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12017,7 +11996,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12039,7 +12018,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12060,7 +12039,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12079,7 +12058,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12098,7 +12077,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12116,7 +12095,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12132,7 +12111,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12145,7 +12124,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12159,7 +12138,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12174,7 +12153,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12187,7 +12166,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12200,7 +12179,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12213,7 +12192,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12226,7 +12205,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12239,7 +12218,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12252,7 +12231,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12265,7 +12244,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12285,7 +12264,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12318,7 +12297,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12337,7 +12316,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12351,7 +12330,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12364,7 +12343,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12400,7 +12379,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12413,7 +12392,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12426,7 +12405,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12439,7 +12418,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12461,7 +12440,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12492,7 +12471,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12510,7 +12489,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12526,7 +12505,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12540,7 +12519,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12554,7 +12533,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12567,7 +12546,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12580,7 +12559,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12593,7 +12572,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12606,7 +12585,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12619,7 +12598,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12632,7 +12611,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12644,7 +12623,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12657,7 +12636,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12683,7 +12662,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12711,7 +12690,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12725,7 +12704,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12738,7 +12717,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12752,7 +12731,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12765,7 +12744,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12784,7 +12763,7 @@ const SignatureSVG = () => {
                 />
                 <motion.path
                     variants={signaturePathVariants}
-                    fill="currentColor"
+                    fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
@@ -12804,7 +12783,10 @@ const Signature = ({ title, url }: { title: string; url: string }) => {
     const text = `${title} by @sudocode_ ${url}`;
 
     return (
-        <section className="styled-section" data-testid="signature">
+        <section
+            className="bg-neutral-200 max-w-3xl mx-auto py-10 rounded-lg"
+            data-testid="signature"
+        >
             <div
                 className="flex items-start flex-col gap-5"
                 style={{
@@ -12813,7 +12795,7 @@ const Signature = ({ title, url }: { title: string; url: string }) => {
                 }}
             >
                 <p>
-                    Liked this article?
+                    Liked this article?{' '}
                     <a
                         className="text-primary hover:underline transition-all duration-300 ease-in hover:text-primary cursor-pointer"
                         href={`https://twitter.com/intent/tweet?text=${encodeURI(text)}`}

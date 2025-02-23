@@ -145,7 +145,7 @@ export const PhotosSection = () => {
                     ))}
                 </div>
             </div>
-            <p className="text-xl">
+            <p className="text-xl w-full lg:w-2/5">
                 In my free time, I love exploring new places through travel,
                 capturing moments with my camera, and going on hikes. I also
                 enjoy fun activities and learning more about the world around

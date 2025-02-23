@@ -3,7 +3,8 @@
 import useScrollCounter from '@/core/hooks/useScrollCounter';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
-import React, { useRef } from 'react';
+import { usePathname } from 'next/navigation';
+import React, { useEffect, useRef, useState } from 'react';
 
 export const LINKS = [
     {
@@ -34,9 +35,14 @@ export const LINKS = [
 const offsetHeight = 120;
 
 export const Header = () => {
-    // Update ref type
+    const pathname = usePathname();
     const header = useRef<HTMLDivElement>(null);
     const reached = useScrollCounter(offsetHeight / 2);
+    const [isActive, setIsActive] = useState<boolean>(false);
+
+    useEffect(() => {
+        if (isActive) setIsActive(false);
+    }, [isActive, pathname]);
 
     return (
         <header
@@ -67,7 +73,15 @@ export const Header = () => {
                             href={link.to}
                             className="block w-full h-full hover:text-primary underlined"
                         >
-                            <p className="block lowercase relative top-0 transition-all duration-300 h-full text-white">
+                            <p
+                                className={cn(
+                                    'block lowercase relative top-0 transition-all duration-300 h-full text-white',
+                                    {
+                                        'text-primary underline underline-offset-8':
+                                            pathname === link.to,
+                                    },
+                                )}
+                            >
                                 {link.name}
                             </p>
                         </Link>

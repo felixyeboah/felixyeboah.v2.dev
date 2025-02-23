@@ -118,6 +118,8 @@ const CodeBlock = (props: CodeBlockProps) => {
                 display: 'grid',
                 background: 'unset',
                 width: '100%',
+                marginTop: '30px',
+                marginBottom: '30px',
 
                 // '@media(max-width: 750px)': {
                 //     width: '100vw',
@@ -133,7 +135,7 @@ const CodeBlock = (props: CodeBlockProps) => {
                 <Card.Header
                     style={{
                         padding: '0px 16px',
-                        backgroundColor: 'var(--color-snippet-background)',
+                        backgroundColor: 'transparent',
                     }}
                 >
                     <p

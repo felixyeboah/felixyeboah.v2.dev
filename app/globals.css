@@ -63,7 +63,7 @@
 
 :root {
     --base-hue: 266;
-    --background: #faf1e5;
+    --background: #f4f4f4;
     --foreground: hsl(0 0% 3.9%);
     --card: hsl(0 0% 100%);
     --card-foreground: hsl(0 0% 3.9%);
@@ -236,12 +236,12 @@
 }
 
 .line.highlight-line {
-    background: var(--color-background);
+    background: transparent;
     border-color: var(--color-border);
 }
 
 .line:hover {
-    background-color: var(--color-emphasis);
+    background-color: transparent;
 }
 
 .line-no {
@@ -273,7 +273,7 @@
     overflow: auto;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
-    background-color: var(--color-snippet-background);
+    background-color: transparent;
     font-family: monospace;
     font-size: 14px;
     line-height: 26px;
@@ -339,14 +339,6 @@
     color: var(--color-token-operator);
 }
 
-.styled-section {
-    background: var(--color-secondary);
-    color: var(--color-white);
-    padding-bottom: 48px;
-    padding-top: 48px;
-    width: 100%;
-}
-
 @media (max-width: 700px) {
     .styled-section {
         padding-left: 20px;
@@ -397,7 +389,7 @@
     padding: 6px;
     color: var(--color-background);
     border: 6px solid var(--color-background);
-    background: var(--color-background, var(--color-background));
+    background: var(--color-blue-700, var(--color-blue-700));
 }
 
 .callout-icon-wrapper[data-variant='info'] {
@@ -444,9 +436,14 @@
     position: relative;
     padding: 24px 24px;
     border-radius: 8px;
-    color: var(--color-primary);
+    color: var(--color-zinc-700);
     border: 1px solid var(--color-emphasis);
-    background: var(--callout-background, var(--color-emphasis));
+    background: var(--color-zinc-200, var(--color-zinc-200));
+    margin-bottom: 20px;
+}
+
+.callout a {
+    color: var(--color-primary);
 }
 
 .callout[data-variant='info'] {
