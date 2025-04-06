@@ -130,18 +130,24 @@ const MDXContent = ({ frontMatter, mdxSource, tweets }: MDXContentProps) => {
     useGSAP(
         () => {
             const heroText = new SplitType('.header-text h1', {
-                types: 'chars',
-            });
-            gsap.set(heroText.chars, {
-                y: 400,
+                types: 'lines',
+                lineClass: 'blog-line',
             });
 
-            gsap.to(heroText.chars, {
-                y: 0,
+           new SplitType('.header-text h1', {
+                lineClass: 'blog-line-parent',
+            });
+
+            gsap.set('.header-text h1', {
+                visibility: 'visible',
+                opacity: 1,
+            });
+
+            gsap.from(heroText.lines, {
                 duration: 1,
-                stagger: 0.075,
+                stagger: 0.1,
                 ease: 'power4.out',
-                delay: 1,
+                yPercent: 100,
             });
         },
         {

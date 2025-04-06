@@ -63,7 +63,7 @@
 
 :root {
     --base-hue: 266;
-    --background: #f4f4f4;
+    --background: #232323;
     --foreground: hsl(0 0% 3.9%);
     --card: hsl(0 0% 100%);
     --card-foreground: hsl(0 0% 3.9%);
@@ -71,7 +71,7 @@
     --popover-foreground: hsl(0 0% 3.9%);
     --primary: oklch(70.91% 0.196 46.35);
     --primary-foreground: oklch(95.76% 0.0312 70.53);
-    --secondary: oklch(31.87% 0.0679 164.02);
+    --secondary: #1b1b1b;
     --secondary-foreground: oklch(94.35% 0.0823 171.98);
     --muted: hsl(0 0% 96.1%);
     --muted-foreground: hsl(0 0% 45.1%);
@@ -193,8 +193,11 @@
     * {
         @apply border-border outline-ring/50;
     }
+    html,
     body {
         @apply bg-background text-foreground;
+        overflow: hidden;
+        height: 100%;
     }
 
     .sandpack-wrapper .sp-layout {
@@ -658,6 +661,11 @@
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
+.header-text h1 {
+    visibility: hidden;
+    opacity: 0;
+}
+
 .header-text .char {
     position: relative;
     will-change: transform;
@@ -670,6 +678,10 @@
 .header-text p .line span {
     position: relative;
     will-change: transform;
+}
+
+.blog-line-parent {
+    overflow: hidden;
 }
 
 /* View Transitions */
@@ -696,4 +708,65 @@
 ::view-transition-old(root) {
     z-index: 1;
     animation: none !important;
+}
+
+/***************************
+Stuff
+***************************/
+.botton-thing {
+  z-index: 4;
+  border-top: 1px solid #393939;
+  border-bottom: 1px solid #393939;
+  border-radius: 0;
+  justify-content: flex - start;
+  align-items: center;
+  width: 100 %;
+  height: 158px;
+  display: flex;
+  position: absolute;
+  inset: auto 0 % 0 %;
+  overflow: visible;
+}
+
+/* @media screen and(max-width: 991px) {
+    .div-block-20.is-right, .div-block-20.is-player, .div-block-21, .div-block-21.is-right, .div-block-21.is-player {
+    display: block;
+  }
+} */
+
+.div-block-20.is-right {
+  z-index: 6;
+  left: auto;
+  right: 124px;
+}
+/* @media screen and(max-width: 991px) {
+    .div-block-20 {
+    display: none;
+  }
+} */
+.div-block-20 {
+  z-index: 6;
+  width: 9px;
+  height: 4px;
+  position: absolute;
+  top: 0;
+  left: 124px;
+}
+
+.code-embed-2 {
+  width: 100 %;
+  height: 100 %;
+  position: relative;
+  top: 0;
+  left: auto;
+}
+
+.w-embed:before, .w-embed:after {
+  content: " ";
+  grid-area: 1 / 1 / 2 / 2;
+  display: table;
+}
+
+.w-embed:after {
+  clear: both;
 }

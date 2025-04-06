@@ -109,8 +109,6 @@ const CodeBlock = (props: CodeBlockProps) => {
     const highlightLineFn = calculateLinesToHighlight(metastring);
     const title = hasTitle(metastring);
 
-    console.log('title', title);
-
     return (
         <Card
             style={{

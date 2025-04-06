@@ -89,37 +89,61 @@ export const Header = () => {
         <nav
             ref={header as React.RefObject<HTMLDivElement>}
             className={cn(
-                'fixed flex items-center justify-between z-50 font-mono top-0 h-20 px-10 w-full',
-                {
-                    'bg-white/20 backdrop-blur-xl': reached,
-                    'text-white': pathname === '/',
-                    'mix-blend-exclusion': pathname !== '/',
-                },
+                'fixed flex z-50 font-mono top-0 h-20 w-full bg-[#232323] border-t border-b border-[#393939] relative',
             )}
         >
-            <Link
-                aria-label="Home"
-                aria-describedby="hometooltip"
-                data-testid="header-logo"
-                href="/"
-                onClick={(e) => {
-                    e.preventDefault();
-                    router.push('/', {
-                        onTransitionReady: slideOut,
-                    });
-                }}
-            >
-                <h3 className="text-xl lowercase font-medium hover:text-primary underlined text-white">
-                    Felix
-                </h3>
-            </Link>
+            {/* Corner + Icons for the entire Nav - Removed bg color */}
+            <div className="absolute top-0 left-0 transform -translate-x-1/2 -translate-y-1/2 px-1 z-10"><span className="text-[#6B6B6B] text-lg font-thin">+</span></div>
+            <div className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 px-1 z-10"><span className="text-[#6B6B6B] text-lg font-thin">+</span></div>
+            <div className="absolute bottom-0 left-0 transform -translate-x-1/2 translate-y-1/2 px-1 z-10"><span className="text-[#6B6B6B] text-lg font-thin">+</span></div>
+            <div className="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2 px-1 z-10"><span className="text-[#6B6B6B] text-lg font-thin">+</span></div>
 
-            <ul className="flex items-center gap-8">
-                {LINKS.map((link) => (
-                    <li key={link.to}>
+            {/* Logo Box */}
+            <div className={cn(
+                "flex-1 border-r border-[#393939] relative p-4 flex items-center justify-center transition-colors duration-200 hover:bg-[#303030]",
+                pathname === '/' && "bg-[#1b1b1b]"
+            )}>
+                {/* Intersection + Icons for Logo Box Right Border - Removed bg color */}
+                <div className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 px-1 z-10"><span className="text-[#6B6B6B] text-lg font-thin">+</span></div>
+                <div className="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2 px-1 z-10"><span className="text-[#6B6B6B] text-lg font-thin">+</span></div>
+
+                <Link
+                    aria-label="Home"
+                    aria-describedby="hometooltip"
+                    data-testid="header-logo"
+                    href="/"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        router.push('/', {
+                            onTransitionReady: slideOut,
+                        });
+                    }}
+                    className="flex items-center justify-center h-full w-full"
+                >
+                    <h3 className="text-xl lowercase font-medium text-white">
+                        Felix
+                    </h3>
+                </Link>
+            </div>
+
+            {/* Navigation Links Box Container */}
+            <ul className="flex flex-[3] h-full">
+                {LINKS.map((link, index) => (
+                    <li key={link.to} className={cn(
+                        "flex-1 border-r border-[#393939] relative p-4 flex items-center justify-center last:border-r-0 transition-colors duration-200 hover:bg-[#303030]",
+                        pathname === link.to && "bg-[#1b1b1b]"
+                    )}>
+                        {/* Intersection + Icons for Nav Link Right Border (don't add on the very last edge) - Removed bg color */}
+                        {index < LINKS.length - 1 && (
+                            <>
+                                <div className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 px-1 z-10"><span className="text-[#6B6B6B] text-lg font-thin">+</span></div>
+                                <div className="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2 px-1 z-10"><span className="text-[#6B6B6B] text-lg font-thin">+</span></div>
+                            </>
+                        )}
+
                         <Link
                             href={link.to}
-                            className="block w-full h-full hover:text-primary underlined"
+                            className="block w-full h-full flex items-center justify-center"
                             onClick={(e) => {
                                 e.preventDefault();
                                 router.push(link.to, {
@@ -129,11 +153,7 @@ export const Header = () => {
                         >
                             <p
                                 className={cn(
-                                    'block lowercase relative top-0 transition-all duration-300 h-full text-white',
-                                    {
-                                        'text-primary underline underline-offset-8':
-                                            pathname === link.to,
-                                    },
+                                    'block lowercase transition-all duration-300 text-white text-center'
                                 )}
                             >
                                 {link.name}

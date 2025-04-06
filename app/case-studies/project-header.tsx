@@ -62,12 +62,12 @@ export const ProjectHeader = () => {
 
     return (
         <header
-            className="page-header header-text flex flex-col items-center justify-center h-[50vh] bg-[#003D29] text-background"
+            className="page-header header-text flex flex-col items-center justify-center h-[50vh] text-white"
             ref={container}
         >
             <div className="w-3/5 space-y-0">
                 <h1 className="lg:text-[180px] text-center">Case Studies</h1>
-                <p className="text-xl font-medium">
+                <p className="text-xl font-medium text-gray-300">
                     Showcasing a diverse array of projects, each meticulously
                     designed to engage and delight users across various
                     platforms and devices. From sleek, minimalist interfaces to

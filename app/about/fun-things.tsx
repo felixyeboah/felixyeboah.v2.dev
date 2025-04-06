@@ -62,16 +62,16 @@ export const FunThings = () => {
             <div className="col-span-full lg:col-span-6">
                 <div className="w-[550px] ml-10">
                     <h2 style={{ fontWeight: 'bold' }}>
-                        <span className="mb-7 block text-4xl font-bold md:text-4xl">
+                        <span className="mb-7 block text-4xl font-bold md:text-4xl text-white">
                             Some fun things you should know about me
                         </span>
                     </h2>
 
                     <h3>
-                        <span className="mb-4 text-2xl block font-semibold">{`Eye for design`}</span>
+                        <span className="mb-4 text-2xl block font-semibold text-gray-100">{`Eye for design`}</span>
                     </h3>
                     <p>
-                        <span className="block text-xl mb-8">
+                        <span className="block text-xl mb-8 text-gray-300">
                             I have a keen eye for design and I love to create
                             beautiful and easy to use interfaces. I have a good
                             understanding of design principles and I am able to
@@ -81,19 +81,19 @@ export const FunThings = () => {
                     </p>
 
                     <h3>
-                        <span className="block mb-4 text-2xl font-semibold">
+                        <span className="block mb-4 text-2xl font-semibold text-gray-100">
                             {`My experience`}
                         </span>
                     </h3>
 
-                    <p>
+                    <p className='text-gray-300'>
                         <span className="block mb-4 text-xl">
                             Currently, I build solutions at{' '}
                             <a
                                 href="https://completefarmer.com"
                                 rel="noreferrer"
                                 target="_blank"
-                                className="text-red-600"
+                                className="text-[#2D68FF]"
                             >
                                 Complete Farmer
                             </a>{' '}
@@ -103,14 +103,14 @@ export const FunThings = () => {
                         </span>
                     </p>
                     <p>
-                        <span className="block mb-8 text-xl">
+                        <span className="block mb-8 text-xl text-gray-300">
                             I worked as a contractor for a few months at a UK
                             based startup called{' '}
                             <a
                                 href="https://primer.io"
                                 rel="noreferrer"
                                 target="_blank"
-                                className="text-red-600"
+                                className="text-[#2D68FF]"
                             >
                                 Primer API Limited
                             </a>{' '}
@@ -125,13 +125,13 @@ export const FunThings = () => {
                     </p>
 
                     <h3>
-                        <span className="block mb-4 text-2xl font-semibold">
+                        <span className="block mb-4 text-2xl font-semibold text-gray-100">
                             {`My hobbies`}
                         </span>
                     </h3>
 
                     <p>
-                        <span className="block text-xl">
+                        <span className="block text-xl text-gray-300">
                             In my spare time, you&lsquo;ll find me either
                             learning something new, playing COD or FC24. I like
                             listening to music, watching movies and traveling

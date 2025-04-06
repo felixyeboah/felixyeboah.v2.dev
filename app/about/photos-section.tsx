@@ -96,9 +96,8 @@ export const PhotosSection = () => {
         >
             <div
                 ref={followerRef}
-                className={`fixed top-0 left-0 pointer-events-none z-[999] flex items-center justify-center px-4 h-10 rounded-md bg-black/80 transition-opacity duration-300 ${
-                    isHovering ? 'opacity-100' : 'opacity-0'
-                }`}
+                className={`fixed top-0 left-0 pointer-events-none z-[999] flex items-center justify-center px-4 h-10 rounded-md bg-black/80 transition-opacity duration-300 ${isHovering ? 'opacity-100' : 'opacity-0'
+                    }`}
                 style={{
                     transform: 'translate(-50%, -50%)',
                 }}
@@ -108,10 +107,10 @@ export const PhotosSection = () => {
                 </p>
             </div>
             <div className="space-y-9">
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between text-white">
                     <h3 className="text-xl uppercase">Photos</h3>
                     <Button
-                        className="text-[17px] font-normal px-0 underlined hover:bg-transparent hover:text-primary cursor-pointer"
+                        className="text-[17px] font-normal px-0 underlined hover:bg-transparent hover:text-white/90 cursor-pointer"
                         variant="ghost"
                     >
                         View all photos
@@ -145,7 +144,7 @@ export const PhotosSection = () => {
                     ))}
                 </div>
             </div>
-            <p className="text-xl w-full lg:w-2/5">
+            <p className="text-xl w-full lg:w-2/5 text-gray-300">
                 In my free time, I love exploring new places through travel,
                 capturing moments with my camera, and going on hikes. I also
                 enjoy fun activities and learning more about the world around

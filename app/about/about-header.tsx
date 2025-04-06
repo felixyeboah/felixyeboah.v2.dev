@@ -16,18 +16,24 @@ export const AboutHeader = () => {
 
     useGSAP(
         () => {
+            // Split heading text into characters for animation
             const heroText = new SplitType('.header-text h1', {
                 types: 'chars',
             });
+
+            // Split paragraph text into lines for staggered animation
             const text = new SplitType('.header-text p', {
                 types: 'lines',
                 tagName: 'div',
                 lineClass: 'line',
             });
+
+            // Initial setup for heading characters
             gsap.set(heroText.chars, {
                 y: 400,
             });
 
+            // Animate heading characters
             gsap.to(heroText.chars, {
                 y: 0,
                 duration: 1,
@@ -36,17 +42,21 @@ export const AboutHeader = () => {
                 delay: 1,
             });
 
-            // paragraph lines
+            // Process paragraph lines to wrap content in spans for animation
             text.lines?.forEach((line) => {
                 const content = line.innerHTML;
                 line.innerHTML = `<span>${content}</span>`;
             });
 
+            // Style and position lines for animation
             gsap.set('.header-text p .line span', {
                 y: 400,
                 display: 'inline-block',
+                position: 'relative',
+                overflow: 'hidden',
             });
 
+            // Animate paragraph lines
             gsap.to('.header-text p .line span', {
                 y: 0,
                 duration: 2,
@@ -56,7 +66,9 @@ export const AboutHeader = () => {
             });
 
             return () => {
+                // Clean up split text instances
                 if (text) text.revert();
+                if (heroText) heroText.revert();
             };
         },
         {
@@ -65,10 +77,10 @@ export const AboutHeader = () => {
     );
 
     return (
-        <header className="h-screen pt-28 header-text" ref={container}>
+        <header className="h-screen pt-28 header-text text-white" ref={container}>
             <div className="container mx-auto grid grid-cols-12 gap-6">
                 <div className="col-span-full md:col-span-6 space-y-5">
-                    <div className="w-[90%] flex flex-col h-full items-center justify-between">
+                    <div className="w-full flex flex-col h-full items-center justify-between">
                         <div>
                             <div className="space-y-4">
                                 <h1 className="overflow-hidden">
@@ -83,14 +95,22 @@ export const AboutHeader = () => {
                                 </h1>
                             </div>
 
-                            <p className="text-xl md:text-2xl">
-                                - A software developer. I build things for the
-                                web and mobile. I consider myself a learner, a
-                                life-long learner. And over the years, I’ve been
-                                building functional, beautiful interfaces and
-                                experiences that leave a positive impact on
-                                people and businesses.
-                            </p>
+                            <div className="text-xl md:text-2xl space-y-0">
+                                <p>
+                                    - A software developer. I build things for
+                                    the web and mobile.
+                                </p>
+                                <p>
+                                    I consider myself a learner, a life-long
+                                    learner.
+                                </p>
+                                <p>
+                                    And over the years, I’ve been building
+                                    functional, beautiful interfaces and
+                                    experiences that leave a positive impact on
+                                    people and businesses.
+                                </p>
+                            </div>
                         </div>
 
                         <div className="col-span-full mb-12 lg:col-span-4 lg:mb-0 space-y-5">

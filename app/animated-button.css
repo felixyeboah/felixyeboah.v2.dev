@@ -188,7 +188,7 @@ video {
 }
 
 .btn .arrow.second .arrow-fill {
-    background: var(--color-secondary);
+    background: #2D68FF;
     border: 0;
 }
 
