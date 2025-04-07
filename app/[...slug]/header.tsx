@@ -66,18 +66,20 @@ export const Header = ({ page }: { page: FrontMatterPost }) => {
     );
 
     return (
-        <header className="header-text flex flex-col gap-8 items-center justify-center py-16 md:py-24" ref={container}>
-            <h1 className="block text-4xl md:text-6xl font-bold text-white text-center">
+        <header className="header-text flex flex-col gap-8 items-center justify-center py-16 md:py-40" ref={container}>
+            <h1 className="block text-4xl md:text-8xl font-bold text-white text-center">
                 {page?.frontMatter.title}
             </h1>
 
-            <div className="md:w-8/12 mx-auto">
-                {page?.frontMatter?.subtitle ? (
+
+            {page?.frontMatter?.subtitle ? (
+                <div className="md:w-8/12 mx-auto">
                     <p className="text-lg md:text-xl text-primary text-center">
                         {page?.frontMatter?.subtitle}
                     </p>
-                ) : null}
-            </div>
+                </div>
+            ) : null}
+
 
             {page?.frontMatter?.cover ? (
                 <div className="relative w-full rounded-xl overflow-hidden mt-8">
