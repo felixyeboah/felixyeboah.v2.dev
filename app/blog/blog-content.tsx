@@ -70,8 +70,8 @@ export const BlogContent = ({ posts }: { posts: Post[] }) => {
 
     const visibleTags = isSearching
         ? new Set(
-              matchingPosts.flatMap((post) => post.categories).filter(Boolean),
-          )
+            matchingPosts.flatMap((post) => post.categories).filter(Boolean),
+        )
         : new Set(tags);
 
     const blogPosts = isSearching
@@ -179,7 +179,7 @@ export const BlogContent = ({ posts }: { posts: Post[] }) => {
                     <Link
                         href={`/blog/${featuredPost.slug}`}
                         key={featuredPost.slug}
-                        className="relative h-[500px] md:h-[650px] mb-10 flex flex-col hover:ring-2 hover:ring-offset-2 hover:ring-primary transition-all duration-300 ease-in-out overflow-hidden rounded-3xl"
+                        className="relative h-[500px] md:h-[650px] mb-10 flex flex-col hover:ring-2 hover:ring-offset-2 hover:ring-primary transition-all duration-300 ease-in-out overflow-hidden rounded-3xl group"
                         onClick={(e) => {
                             e.preventDefault();
                             router.push(`/blog/${featuredPost.slug}`, {
@@ -187,7 +187,7 @@ export const BlogContent = ({ posts }: { posts: Post[] }) => {
                             });
                         }}
                     >
-                        <div className="bg-gradient-to-t from-black/50 to-transparent absolute inset-0 z-10" />
+                        <div className="bg-gradient-to-t from-background/80 via-background/50 to-transparent absolute inset-0 z-10" />
                         <Image
                             src={featuredPost.cover}
                             alt={featuredPost.title}
@@ -204,27 +204,27 @@ export const BlogContent = ({ posts }: { posts: Post[] }) => {
                             )}
                             onLoad={() => setLoading(false)}
                         />
-                        <div className="absolute left-6 top-6">
+                        <div className="absolute left-6 top-6 z-20">
                             <p>
-                                <span className="border-2 border-gray-100 rounded-full text-white font-semibold p-1 px-3 flex items-center justify-center">
+                                <span className="border border-border rounded-full text-foreground font-semibold p-1 px-3 flex items-center justify-center bg-background/50 backdrop-blur-sm">
                                     Featured
                                 </span>
                             </p>
                         </div>
                         <div className="absolute bottom-10 left-6 md:left-10 z-20 md:w-6/12 space-y-8">
                             <h4>
-                                <span className="text-4xl leading-snug md:text-6xl font-semibold text-white">
+                                <span className="text-4xl leading-snug md:text-6xl font-semibold text-foreground">
                                     {featuredPost.title}
                                 </span>
                             </h4>
                             <div className="flex flex-col gap-4">
                                 <p>
-                                    <span className="text-lg text-gray-100">
+                                    <span className="text-lg text-muted-foreground">
                                         {featuredPost.subtitle}
                                     </span>
                                 </p>
                                 <p>
-                                    <span className="text-gray-200">
+                                    <span className="text-muted-foreground">
                                         {format(
                                             new Date(
                                                 Date.parse(featuredPost.date),
@@ -233,7 +233,7 @@ export const BlogContent = ({ posts }: { posts: Post[] }) => {
                                         )}
                                     </span>{' '}
                                     /{' '}
-                                    <span className="text-gray-200">
+                                    <span className="text-muted-foreground">
                                         {featuredPost.readTime?.text}
                                     </span>
                                 </p>
@@ -242,11 +242,11 @@ export const BlogContent = ({ posts }: { posts: Post[] }) => {
                     </Link>
                 </div>
             ) : null}
-            <div className="grid grid-cols-12 gap-1">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                 {blogPostsFiltered.length === 0 ? (
-                    <div className="col-span-full flex flex-col items-center">
+                    <div className="col-span-full flex flex-col items-center py-20">
                         <svg
-                            className="w-64 h-64 text-gray-400 dark:text-gray-600"
+                            className="w-64 h-64 text-muted-foreground/50"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
@@ -254,37 +254,36 @@ export const BlogContent = ({ posts }: { posts: Post[] }) => {
                             strokeLinecap="round"
                             strokeLinejoin="round"
                         >
-                            <circle cx="12" cy="12" r="10" />
-                            <path d="M8 15h8M9.5 9h.01M14.5 9h.01" />
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            <line x1="11" y1="8" x2="11" y2="14"></line>
+                            <line x1="8" y1="11" x2="14" y2="11"></line>
                         </svg>
-                        <h3 className="mt-8 text-xl font-medium text-gray-900 dark:text-gray-100">
-                            {`Couldn't find anything to match your criteria. Sorry.`}
-                        </h3>
+                        <p className="mt-4 text-xl font-medium text-muted-foreground">
+                            No matching posts found.
+                        </p>
+                        <p className="text-muted-foreground">
+                            Try adjusting your search or removing tags.
+                        </p>
                     </div>
                 ) : (
-                    blogPostsFiltered.map((article) => (
-                        <div
-                            key={article.slug}
-                            className="col-span-full md:col-span-4 px-4 mb-10"
-                        >
-                            <ArticleCard article={article} />
-                        </div>
+                    blogPostsFiltered.map((post) => (
+                        <ArticleCard key={post.slug} article={post} />
                     ))
                 )}
             </div>
-
-            {hasMorePosts ? (
-                <div className="w-[1280px] mx-auto flex items-center justify-center">
+            {hasMorePosts && (
+                <div className="flex justify-center">
                     <Button
-                        variant="secondary"
-                        size="lg"
-                        className="bg-primary hover:bg-primary/90 text-white rounded cursor-pointer"
-                        onClick={() => setIndexToShow((i) => i + PAGE_SIZE)}
+                        variant="outline"
+                        onClick={() => setIndexToShow(indexToShow + PAGE_SIZE)}
+                        className="flex items-center gap-2 group"
                     >
-                        <span>Load more articles</span> <PlusIcon />
+                        Load More
+                        <PlusIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
                 </div>
-            ) : null}
+            )}
         </div>
     );
 };

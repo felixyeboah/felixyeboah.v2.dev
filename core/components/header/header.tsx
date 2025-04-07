@@ -89,7 +89,7 @@ export const Header = () => {
         <nav
             ref={header as React.RefObject<HTMLDivElement>}
             className={cn(
-                'fixed flex z-50 font-mono top-0 h-20 w-full bg-[#232323] border-t border-b border-[#393939] relative',
+                'fixed flex z-50 font-mono top-0 h-20 w-full bg-[#232323]/90 backdrop-blur-md border-t border-b border-[#393939]',
             )}
         >
             {/* Corner + Icons for the entire Nav - Removed bg color */}

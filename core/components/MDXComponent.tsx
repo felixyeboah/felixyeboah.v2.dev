@@ -45,7 +45,7 @@ const MDXComponents = {
     },
     code: InlineCode,
     li: function ListItem(props: React.HTMLAttributes<HTMLLIElement>) {
-        return <li {...props}>{props.children}</li>;
+        return <li className="text-muted-foreground" {...props}>{props.children}</li>;
     },
     ol: function OL(props: React.OlHTMLAttributes<HTMLOListElement>) {
         return <ol {...props} />;

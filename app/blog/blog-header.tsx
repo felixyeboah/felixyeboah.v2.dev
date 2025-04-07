@@ -20,10 +20,14 @@ export const BlogHeader = () => {
             });
             gsap.set(heroText.chars, {
                 y: 400,
+                opacity: 0,
+                visibility: 'hidden',
             });
 
             gsap.to(heroText.chars, {
                 y: 0,
+                opacity: 1,
+                visibility: 'visible',
                 duration: 1,
                 stagger: 0.075,
                 ease: 'power4.out',
@@ -39,10 +43,14 @@ export const BlogHeader = () => {
             gsap.set('.header-text p .line span', {
                 y: 400,
                 display: 'block',
+                opacity: 0,
+                visibility: 'hidden',
             });
 
             gsap.to('.header-text p .line span', {
                 y: 0,
+                opacity: 1,
+                visibility: 'visible',
                 duration: 2,
                 stagger: 0.075,
                 ease: 'power4.out',
@@ -51,6 +59,7 @@ export const BlogHeader = () => {
 
             return () => {
                 if (text) text.revert();
+                if (heroText) heroText.revert();
             };
         },
         {
@@ -59,9 +68,9 @@ export const BlogHeader = () => {
     );
 
     return (
-        <header className="h-[20vh] header-text" ref={container}>
-            <h1 className="lg:text-[100px]">Blog</h1>
-            <p className="text-2xl">Find the latest of my writing here.</p>
+        <header className="h-[20vh] header-text overflow-visible" ref={container}>
+            <h1 className="lg:text-[100px] text-white">Blog</h1>
+            <p className="text-2xl text-gray-300">Find the latest of my writing here.</p>
         </header>
     );
 };

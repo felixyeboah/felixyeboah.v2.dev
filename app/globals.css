@@ -624,8 +624,8 @@
 }
 
 .header-text h1 {
-    visibility: hidden;
-    opacity: 0;
+    /* Removed visibility: hidden; and opacity: 0; */
+    /* Rely on GSAP to handle initial state */
 }
 
 .header-text .char {

@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { Check } from 'lucide-react';
 import { ChangeEventHandler } from 'react';
+import { cn } from '@/lib/utils';
 
 export const Tag = ({
     tag,
@@ -23,37 +24,22 @@ export const Tag = ({
             layout
             initial={false}
             animate={{
-                backgroundColor: selected
-                    ? 'oklch(0.13 0.028 261.692)'
-                    : 'oklch(0.278 0.033 256.848)',
-                opacity: disabled ? 0.5 : 1,
+                opacity: disabled ? 0.75 : 1,
             }}
-            whileHover={{
-                backgroundColor: disabled
-                    ? undefined
-                    : selected
-                      ? 'oklch(0.13 0.028 261.692)'
-                      : 'oklch(0.278 0.033 256.848)',
-            }}
-            whileTap={{
-                backgroundColor: disabled
-                    ? undefined
-                    : selected
-                      ? 'oklch(0.13 0.028 261.692)'
-                      : 'oklch(0.278 0.033 256.848)',
-            }}
-            className={`
-                inline-flex items-center px-4 py-2 rounded-full text-base font-medium font-sans
-                whitespace-nowrap overflow-hidden ring-1 ring-inset
-                ${selected ? 'text-primary ring-gray-950' : 'text-zinc-300 ring-gray-950'}
-                ${disabled ? 'cursor-not-allowed' : 'cursor-pointer'}
-            `}
+            className={cn(
+                'inline-flex items-center px-4 py-2 rounded-full text-base font-medium font-sans',
+                'whitespace-nowrap overflow-hidden ring-1 ring-inset ring-border',
+                'transition-colors duration-100',
+                selected
+                    ? 'bg-card text-card-foreground hover:bg-muted'
+                    : 'bg-muted text-muted-foreground hover:bg-accent hover:text-accent-foreground',
+                disabled ? 'cursor-not-allowed text-muted-foreground/50' : 'cursor-pointer',
+            )}
             transition={{
                 type: 'spring',
                 stiffness: 500,
                 damping: 30,
                 mass: 0.5,
-                backgroundColor: { duration: 0.1 },
             }}
         >
             <motion.div
@@ -82,9 +68,9 @@ export const Tag = ({
                             }}
                             className="absolute right-0"
                         >
-                            <div className="w-4 h-4 rounded-full bg-primary flex items-center justify-center">
+                            <div className="w-4 h-4 rounded-full bg-card flex items-center justify-center ring-2 ring-background">
                                 <Check
-                                    className="w-3 h-3 text-zinc-300"
+                                    className="w-3 h-3 text-card-foreground"
                                     strokeWidth={1.5}
                                 />
                             </div>
