@@ -4,15 +4,35 @@ import { ProjectCard } from '@/core/components/card/project-card';
 import { Button } from '@/core/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Post } from '@/types/post';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 const categories = ['All', 'Dashboard', 'E-Commerce', 'Website'];
 
 export const ProjectList = ({ projects }: { projects: Post[] }) => {
     const [selected, setSelected] = useState('All');
+    const container = useRef<HTMLDivElement | null>(null);
 
     const filteredProjects = projects.filter((project) =>
         selected === 'All' ? true : project?.categories?.includes(selected),
+    );
+
+    useGSAP(
+        () => {
+            if (container.current && container.current.children.length > 0) {
+                gsap.set('.project-card-item', { opacity: 0, scale: 0.8 });
+
+                gsap.to('.project-card-item', {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.5,
+                    stagger: 0.1,
+                    ease: 'power3.out',
+                });
+            }
+        },
+        { scope: container, dependencies: [filteredProjects] },
     );
 
     return (
@@ -35,9 +55,15 @@ export const ProjectList = ({ projects }: { projects: Post[] }) => {
                     </Button>
                 ))}
             </div>
-            <div className="grid grid-cols-12 gap-x-4 gap-y-16">
+            <div ref={container} className="grid grid-cols-12 gap-x-4 gap-y-16">
                 {filteredProjects.map((project, index) => (
-                    <ProjectCard project={project} index={index} key={index} />
+                    <div
+                        key={project.slug || index}
+                        className="project-card-item col-span-12 md:col-span-6 lg:col-span-4"
+                        style={{ willChange: 'transform, opacity' }}
+                    >
+                        <ProjectCard project={project} index={index} />
+                    </div>
                 ))}
             </div>
         </div>
