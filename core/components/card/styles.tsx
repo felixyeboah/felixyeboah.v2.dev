@@ -30,7 +30,7 @@ export const CardHeader: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
     ...props
 }) => (
     <div
-        className="flex justify-between items-center rounded-t-lg min-h-8 px-6 text-text-tertiary font-medium text-sm border-b border-border-color"
+        className="flex justify-between items-center rounded-t-lg min-h-8 px-6 text-muted-foreground font-medium text-sm border-b border-border"
         {...props}
     >
         {children}
@@ -43,7 +43,7 @@ export const CardBody: React.FC<
     React.HTMLAttributes<HTMLDivElement> & { dotMatrix?: boolean }
 > = ({ children, dotMatrix, ...props }) => (
     <div
-        className={`overflow-hidden px-6 py-6 relative ${dotMatrix ? 'bg-[radial-gradient(var(--border-color)_1px,transparent_0)] bg-center bg-[length:20px_20px]' : ''}`}
+        className={`overflow-hidden px-6 py-6 relative ${dotMatrix ? 'bg-[radial-gradient(var(--color-border)_1px,transparent_0)] bg-center bg-[length:20px_20px]' : ''}`}
         {...props}
     >
         {children}

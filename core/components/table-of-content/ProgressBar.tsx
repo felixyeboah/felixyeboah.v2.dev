@@ -39,12 +39,10 @@ const ProgressBar = ({ progress }: { progress: number }) => {
             custom={visibility}
         >
             <motion.div
+                className="w-[2px] h-full bg-secondary"
                 style={{
                     transformOrigin: 'top',
                     scaleY: progress,
-                    width: '2px',
-                    backgroundColor: '#FF7009',
-                    height: '100%',
                 }}
                 data-testid="progress-bar"
                 data-testprogress={progress}

@@ -3,62 +3,58 @@ import Link from 'next/link';
 import { useRef } from 'react';
 
 const signatureSvgVariants = {
-    initial: {
-        opacity: 0,
-    },
-    revealed: {
-        opacity: 1,
-        transition: {
-            duration: 0.2,
-        },
-    },
+	initial: {
+		opacity: 0,
+	},
+	revealed: {
+		opacity: 1,
+		transition: {
+			duration: 0.2,
+		},
+	},
 };
 
 const signaturePathVariants = {
-    initial: {
-        pathLength: 0,
-    },
-    revealed: {
-        pathLength: 1,
-        delayChildren: 0.2,
-        transition: {
-            delay: 0.2,
-            duration: 2.5,
-            ease: 'easeInOut',
-        },
-    },
+	initial: {
+		pathLength: 0,
+	},
+	revealed: {
+		pathLength: 1,
+		delayChildren: 0.2,
+		transition: {
+			delay: 0.2,
+			duration: 2.5,
+			ease: 'easeInOut',
+		},
+	},
 };
 
 const SignatureSVG = () => {
-    const ref = useRef(null);
-    const isVisible = useInView(ref);
+	const ref = useRef(null);
+	const isVisible = useInView(ref);
 
-    return (
-        <div
-            style={{
-                opacity: 0.7,
-                color: 'black',
-            }}
-            ref={ref}
-        >
-            <motion.svg
-                initial="initial"
-                animate={isVisible ? 'revealed' : 'initial'}
-                variants={signatureSvgVariants}
-                viewBox="0 0 4032 3024"
-                width="120"
-                height="115"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+	return (
+		<div
+			ref={ref}
+		>
+			<motion.svg
+				initial="initial"
+				animate={isVisible ? 'revealed' : 'initial'}
+				variants={signatureSvgVariants}
+				viewBox="0 0 4032 3024"
+				width="240"
+				height="180"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1638.514893,1676.241699
 		C1641.994629,1673.898682 1645.474365,1671.555542 1650.188965,1668.673462
 		C1654.606812,1667.269897 1658.021240,1666.880737 1660.934326,1665.462158
@@ -188,15 +184,15 @@ const SignatureSVG = () => {
 		C1781.172485,2145.372314 1781.451294,2144.921631 1781.451294,2144.921631
 		C1781.451294,2144.921631 1780.928955,2144.969482 1781.172485,2145.372314
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1804.307861,1618.667236
 		C1804.273438,1612.910156 1804.239014,1607.152954 1804.816284,1600.676025
 		C1812.369019,1598.357788 1819.511108,1597.345093 1826.212158,1595.046753
@@ -301,15 +297,15 @@ const SignatureSVG = () => {
 		C1877.319214,1746.125488 1877.765869,1746.034058 1878.212524,1745.942627
 		C1877.767334,1745.842896 1877.322266,1745.743164 1876.872559,1746.216797
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M679.726562,1670.211914
 		C679.726562,1670.211914 679.247375,1669.833862 678.311096,1669.340820
 		C673.664001,1667.531372 669.779724,1666.565674 666.275330,1664.831909
@@ -451,15 +447,15 @@ const SignatureSVG = () => {
 		C733.733276,1668.544800 723.167969,1669.360718 712.608704,1669.812134
 		C701.662292,1670.279785 690.688416,1670.105347 679.726562,1670.211914
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M3055.686279,1362.189331
 		C3045.419922,1362.532715 3035.142578,1362.692017 3024.891357,1363.293457
 		C3019.337402,1363.619385 3019.357422,1363.959229 3013.766113,1368.918579
@@ -514,15 +510,15 @@ const SignatureSVG = () => {
 		C2845.485840,1409.912842 2858.706055,1409.242554 2871.915527,1408.416992
 		C2880.148438,1407.902466 2888.376709,1407.307251 2898.489746,1406.638428
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1749.964111,1537.925659
 		C1749.262695,1536.865723 1748.561279,1535.805908 1747.697266,1533.464355
 		C1750.393433,1522.117554 1753.252075,1512.052612 1756.050903,1501.992676
@@ -602,15 +598,15 @@ const SignatureSVG = () => {
 		C1764.460815,1512.110962 1761.583130,1517.584229 1761.485840,1524.695435
 		C1761.347778,1534.790527 1760.362427,1535.884033 1749.964111,1537.925659
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1229.951782,1059.263184
 		C1231.231934,1058.993896 1232.512207,1058.724487 1234.978027,1058.845703
 		C1241.390869,1061.766724 1246.643311,1066.417725 1251.839355,1066.355347
@@ -719,15 +715,15 @@ const SignatureSVG = () => {
 		C1221.889771,1078.807739 1224.751831,1077.802124 1229.134399,1076.262451
 		C1221.088013,1068.894409 1225.847046,1064.135132 1229.951782,1059.263184
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1623.112183,1434.503540
 		C1622.695923,1435.052124 1622.279541,1435.600586 1621.173584,1436.805908
 		C1614.305420,1441.241943 1614.192993,1448.200928 1611.826294,1453.978149
@@ -820,15 +816,15 @@ const SignatureSVG = () => {
 		C1630.030396,1416.789917 1629.779419,1418.156128 1628.888916,1419.669678
 		C1621.048218,1423.692383 1621.048218,1423.692383 1623.112183,1434.503540
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M755.875122,1504.159912
 		C759.923828,1483.712158 770.429871,1465.967651 779.202271,1447.439941
 		C787.236206,1430.471680 799.180481,1416.067505 808.561157,1400.163696
@@ -887,15 +883,15 @@ const SignatureSVG = () => {
 		C762.182129,1557.872070 761.495361,1562.711426 766.086243,1563.278320
 		C771.297913,1563.921875 771.825989,1559.077637 772.682861,1553.877930
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1589.785034,1696.200073
 		C1589.785034,1696.200073 1589.459106,1696.835449 1588.963135,1697.779785
 		C1585.210571,1704.856201 1582.241333,1711.018555 1586.425293,1717.941040
@@ -939,15 +935,15 @@ const SignatureSVG = () => {
 		C1523.711670,1973.924805 1523.944946,1973.760620 1524.178223,1973.596191
 		C1523.950562,1973.642822 1523.723022,1973.689575 1523.478394,1974.089111
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1948.124268,1312.019287
 		C1946.167847,1310.860596 1944.207397,1309.708618 1942.255615,1308.541748
 		C1935.746460,1304.650269 1933.275146,1305.924683 1931.858765,1313.578125
@@ -985,15 +981,15 @@ const SignatureSVG = () => {
 		C1939.319702,1295.628296 1939.653320,1294.501221 1939.987061,1293.374268
 		C1938.722900,1293.714233 1937.458862,1294.054199 1935.916748,1295.161255
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1712.011230,1700.647217
 		C1713.282349,1706.696289 1714.106445,1713.960693 1715.044922,1722.233521
 		C1718.832886,1720.842407 1722.383911,1719.538330 1726.591919,1718.791138
@@ -1023,15 +1019,15 @@ const SignatureSVG = () => {
 		C1707.695801,1714.364380 1708.021484,1713.060669 1708.347168,1711.756958
 		C1709.419434,1708.458740 1710.491821,1705.160645 1712.011230,1700.647217
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1933.742432,1439.581055
 		C1935.952637,1436.896729 1938.180542,1434.226807 1940.367676,1431.523804
 		C1942.384033,1429.031982 1941.197388,1427.459351 1938.543457,1425.608398
@@ -1071,15 +1067,15 @@ const SignatureSVG = () => {
 		C1942.873047,1441.264648 1942.196533,1441.413574 1941.506592,1441.206055
 		C1938.458496,1440.526123 1936.100464,1440.053589 1933.742432,1439.581055
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2490.104736,1047.508789
 		C2491.017578,1047.356201 2491.930420,1047.203613 2494.224121,1047.042480
 		C2497.006104,1047.035767 2498.407471,1047.037476 2500.709961,1047.171387
@@ -1121,15 +1117,15 @@ const SignatureSVG = () => {
 		C2459.166016,1052.079468 2472.635742,1050.136841 2486.777832,1048.133057
 		C2488.335205,1047.884033 2489.219971,1047.696411 2490.104736,1047.508789
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2802.922363,1355.938721
 		C2799.795410,1364.002197 2794.259033,1370.072021 2788.591309,1376.590210
 		C2780.919434,1385.412109 2775.495605,1396.451538 2770.375244,1407.146606
@@ -1181,15 +1177,15 @@ const SignatureSVG = () => {
 		C2812.551270,1324.022705 2808.488037,1335.134033 2804.609131,1346.303467
 		C2803.553223,1349.343872 2803.458252,1352.717896 2802.922363,1355.938721
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2798.000000,1165.995972
 		C2802.490234,1177.559082 2806.980469,1189.122070 2811.682617,1202.174561
 		C2813.891846,1209.771240 2815.889404,1215.878296 2817.886963,1221.985352
@@ -1245,15 +1241,15 @@ const SignatureSVG = () => {
 		C2771.057617,1139.029297 2773.035400,1140.354858 2774.511230,1142.112183
 		C2781.717773,1150.693481 2792.664062,1155.590332 2798.000000,1165.995972
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1294.104004,1070.223999
 		C1293.484131,1066.898804 1292.864258,1063.573730 1292.754395,1059.064209
 		C1305.106812,1054.864746 1316.890991,1051.584473 1328.820679,1048.966675
@@ -1291,15 +1287,15 @@ const SignatureSVG = () => {
 		C1301.141846,1067.436279 1298.387451,1069.201782 1295.441406,1069.986328
 		C1294.994141,1070.057007 1294.104004,1070.223999 1294.104004,1070.223999
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M807.941711,1801.719482
 		C821.232117,1796.502563 828.807617,1805.166138 836.760620,1814.083618
 		C833.495239,1813.101807 829.547241,1812.106445 826.578064,1809.832886
@@ -1345,15 +1341,15 @@ const SignatureSVG = () => {
 		C776.079895,1811.461060 778.129395,1810.905151 780.049561,1810.990601
 		C790.566223,1811.459229 799.463379,1807.266113 807.941711,1801.719482
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2741.210693,1458.801636
 		C2742.069824,1457.588257 2742.928955,1456.374878 2744.501465,1454.203979
 		C2746.246338,1450.862427 2747.277832,1448.478394 2748.309082,1446.094238
@@ -1389,15 +1385,15 @@ const SignatureSVG = () => {
 		C2705.813477,1513.854126 2720.956055,1490.004150 2736.977539,1465.984131
 		C2738.678711,1463.268799 2739.944824,1461.035278 2741.210693,1458.801636
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M607.957397,1857.987061
 		C609.782837,1856.373169 611.608337,1854.759277 613.791138,1852.648926
 		C614.148560,1852.152222 614.062683,1852.085938 614.652832,1852.324829
@@ -1422,15 +1418,15 @@ const SignatureSVG = () => {
 		C655.086304,1856.280151 641.810669,1860.303467 626.170532,1861.901245
 		C619.040710,1860.664917 613.499084,1859.325928 607.957397,1857.987061
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1662.480469,1130.082397
 		C1663.482422,1131.081909 1664.484375,1132.081299 1666.032959,1133.974731
 		C1667.016113,1135.409912 1667.452881,1135.951172 1667.889648,1136.492310
@@ -1460,15 +1456,15 @@ const SignatureSVG = () => {
 		C1658.028076,1127.046631 1657.946289,1127.391235 1658.447876,1127.975098
 		C1660.126465,1129.066650 1661.303467,1129.574585 1662.480469,1130.082397
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2803.514404,1356.510986
 		C2803.458252,1352.717896 2803.553223,1349.343872 2804.609131,1346.303467
 		C2808.488037,1335.134033 2812.551270,1324.022705 2816.848633,1313.007812
@@ -1503,15 +1499,15 @@ const SignatureSVG = () => {
 		C2850.799072,1356.801758 2837.584229,1358.383423 2824.338867,1359.511230
 		C2817.448730,1360.097900 2810.386230,1361.741211 2803.514404,1356.510986
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1637.728760,1676.299072
 		C1635.348022,1679.146240 1632.114624,1681.982422 1629.039185,1684.980713
 		C1627.170654,1686.802246 1625.118774,1688.645264 1623.916870,1690.889648
@@ -1545,15 +1541,15 @@ const SignatureSVG = () => {
 		C1644.133545,1777.966797 1641.778931,1781.482910 1644.953613,1786.365967
 		C1647.016602,1784.993774 1648.798584,1783.808472 1651.584106,1781.763794
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1573.830200,1691.954468
 		C1572.355103,1693.863892 1570.880005,1695.773315 1568.960205,1698.127686
 		C1568.515503,1694.082764 1568.515503,1689.593140 1568.515503,1683.863037
@@ -1590,15 +1586,15 @@ const SignatureSVG = () => {
 		M1493.051270,1760.953735
 		C1493.051270,1760.953735 1492.962280,1760.982544 1493.051270,1760.953735
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1917.583130,935.907227
 		C1910.278687,948.845276 1908.829102,963.623413 1904.642090,977.534363
 		C1902.171265,985.743286 1900.724487,994.263306 1898.881104,1002.657471
@@ -1630,15 +1626,15 @@ const SignatureSVG = () => {
 		C1920.855957,931.588257 1919.853271,930.269043 1917.583130,927.282349
 		C1917.583130,931.597168 1917.583130,933.752197 1917.583130,935.907227
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1133.753906,1097.604370
 		C1133.916138,1094.053345 1134.078369,1090.502441 1134.299194,1085.670288
 		C1129.975830,1085.670288 1126.518311,1085.670288 1122.717285,1085.715332
@@ -1653,15 +1649,15 @@ const SignatureSVG = () => {
 		C1179.071411,1079.294556 1167.911987,1080.439209 1159.032959,1087.318359
 		C1151.325928,1093.289429 1143.048218,1096.312500 1133.753906,1097.604370
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1697.937012,1623.278320
 		C1698.543091,1626.992188 1699.149170,1630.706055 1699.214111,1635.495361
 		C1689.608521,1639.777100 1680.569946,1643.059692 1671.473022,1646.171997
@@ -1675,15 +1671,15 @@ const SignatureSVG = () => {
 		C1653.915894,1638.101929 1665.122559,1634.404175 1676.207520,1629.837158
 		C1683.169678,1626.968750 1690.675171,1625.419434 1697.937012,1623.278320
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2216.037109,1525.705811
 		C2218.116943,1525.334717 2220.196533,1524.963501 2223.485352,1524.507568
 		C2227.732178,1523.766479 2230.770020,1523.109985 2233.981689,1522.798340
@@ -1704,15 +1700,15 @@ const SignatureSVG = () => {
 		C2209.360107,1534.769897 2206.918701,1533.103882 2206.284180,1529.197266
 		C2209.861328,1527.701172 2212.949219,1526.703491 2216.037109,1525.705811
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1572.523438,1073.566406
 		C1564.144653,1071.487427 1555.070557,1069.379395 1546.462036,1066.063232
 		C1540.088867,1063.608154 1534.024780,1061.188110 1527.202148,1063.257812
@@ -1735,15 +1731,15 @@ const SignatureSVG = () => {
 		C1531.591675,1055.631470 1547.984741,1062.229248 1564.512085,1068.296143
 		C1567.229126,1069.293579 1569.532959,1071.416382 1572.523438,1073.566406
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1961.263184,1608.968750
 		C1969.461182,1608.832764 1978.137573,1610.052002 1986.681030,1609.433228
 		C1992.038574,1609.044922 1997.611816,1606.597412 2002.336792,1603.803223
@@ -1778,15 +1774,15 @@ const SignatureSVG = () => {
 		C2003.722534,1606.670288 1990.282349,1616.609985 1972.903442,1614.891479
 		C1968.367798,1614.442993 1964.447021,1613.391113 1961.263184,1608.968750
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1948.182739,1312.760498
 		C1948.501343,1311.374146 1948.878296,1310.728882 1949.551025,1309.586182
 		C1949.846802,1309.088867 1949.766724,1308.846313 1949.766602,1308.846313
@@ -1808,15 +1804,15 @@ const SignatureSVG = () => {
 		C1948.989136,1318.082520 1948.636353,1318.021240 1948.283447,1317.959839
 		C1948.269287,1316.473755 1948.255127,1314.987549 1948.182739,1312.760498
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2229.945068,1393.943604
 		C2205.343018,1393.598022 2180.775391,1395.264404 2156.812012,1400.401367
 		C2144.186279,1403.108032 2131.922852,1402.107544 2118.798828,1402.336548
@@ -1837,15 +1833,15 @@ const SignatureSVG = () => {
 		C2261.382080,1388.452148 2260.094482,1391.053101 2251.761963,1392.142212
 		C2244.534668,1393.087036 2237.220703,1393.368774 2229.945068,1393.943604
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1990.788330,1028.038086
 		C1988.042236,1051.096436 1981.029419,1073.581299 1974.586792,1096.238281
 		C1970.969604,1108.959106 1968.870850,1122.105469 1965.857666,1135.006226
@@ -1863,15 +1859,15 @@ const SignatureSVG = () => {
 		C1979.685913,1066.926880 1981.928467,1051.602905 1985.789062,1036.833252
 		C1986.571899,1033.838501 1988.677002,1031.189453 1990.788330,1028.038086
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1416.305298,1700.583862
 		C1408.246704,1705.911011 1401.353882,1712.441895 1395.490234,1721.013428
 		C1395.138306,1721.627686 1394.765381,1721.859375 1393.914551,1722.204224
@@ -1894,15 +1890,15 @@ const SignatureSVG = () => {
 		C1399.362793,1704.611328 1401.305786,1703.248413 1403.202271,1701.914429
 		C1407.350098,1698.997681 1411.647827,1698.180054 1416.305298,1700.583862
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M680.238647,1670.707031
 		C690.688416,1670.105347 701.662292,1670.279785 712.608704,1669.812134
 		C723.167969,1669.360718 733.733276,1668.544800 744.231506,1667.331177
@@ -1921,15 +1917,15 @@ const SignatureSVG = () => {
 		C725.361755,1680.397461 714.516357,1679.793701 703.651062,1677.554565
 		C695.909973,1675.959351 688.376709,1673.355713 680.238647,1670.707031
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1825.098511,1422.221191
 		C1826.504761,1414.488892 1828.140747,1407.179688 1825.806396,1398.847290
 		C1824.226807,1393.208374 1824.952759,1385.618164 1831.126831,1379.653809
@@ -1953,15 +1949,15 @@ const SignatureSVG = () => {
 		C1832.612671,1409.477905 1832.596191,1409.743286 1832.579590,1410.008423
 		C1833.037720,1409.990479 1833.495972,1409.972534 1833.980103,1409.475464
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2045.509644,1577.176392
 		C2048.199219,1573.067017 2050.950439,1568.996338 2053.561279,1564.837646
 		C2056.375488,1560.355347 2059.546387,1556.006226 2061.668945,1551.204468
@@ -1986,15 +1982,15 @@ const SignatureSVG = () => {
 		C2057.035889,1569.477661 2054.045898,1573.362671 2047.847900,1576.176392
 		C2046.252930,1576.824219 2045.881348,1577.000244 2045.509644,1577.176392
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2336.166504,1679.831543
 		C2325.405273,1674.153442 2321.893555,1663.572388 2318.561768,1653.152100
 		C2313.599609,1637.633911 2309.946777,1621.778687 2308.977783,1605.429810
@@ -2009,15 +2005,15 @@ const SignatureSVG = () => {
 		C2312.375732,1611.027954 2317.343262,1646.593018 2337.042236,1678.978760
 		C2337.042236,1678.978760 2336.458496,1679.547363 2336.166504,1679.831543
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1770.927612,1952.719482
 		C1770.896606,1976.320679 1771.582886,2000.350708 1769.258057,2024.085938
 		C1767.764648,2039.332275 1767.239136,2054.518799 1766.530518,2069.750732
@@ -2040,15 +2036,15 @@ const SignatureSVG = () => {
 		C1766.701660,2012.515503 1767.116577,1994.135742 1766.600098,1975.613647
 		C1766.386719,1967.955200 1766.220825,1960.064575 1770.927612,1952.719482
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2215.297852,1525.440308
 		C2212.949219,1526.703491 2209.861328,1527.701172 2205.426758,1529.268311
 		C2198.865723,1530.525635 2193.277344,1530.258057 2188.522217,1532.119019
@@ -2070,15 +2066,15 @@ const SignatureSVG = () => {
 		C2172.247803,1539.411499 2172.940186,1534.154419 2181.652832,1530.869995
 		C2192.176025,1526.902832 2202.823730,1522.593506 2215.297852,1525.440308
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2282.272949,1525.471436
 		C2276.838623,1526.854492 2271.799072,1527.758179 2266.029297,1528.728516
 		C2262.835449,1524.636597 2264.380371,1520.618408 2266.552734,1515.576050
@@ -2091,15 +2087,15 @@ const SignatureSVG = () => {
 		C2301.451904,1520.801880 2299.647949,1521.815552 2297.843750,1522.829346
 		C2292.785156,1523.550293 2287.726562,1524.271240 2282.272949,1525.471436
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1633.657227,1105.146240
 		C1630.608276,1113.173706 1634.159424,1118.839478 1638.934082,1124.190552
 		C1641.073853,1126.588745 1643.190430,1129.007690 1645.269531,1132.422241
@@ -2118,15 +2114,15 @@ const SignatureSVG = () => {
 		C1598.237793,1084.200806 1614.716553,1093.361572 1631.222168,1102.468994
 		C1632.046021,1102.923462 1632.582764,1103.898071 1633.657227,1105.146240
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1567.201416,1703.892334
 		C1565.433228,1716.248779 1563.200806,1728.986694 1560.884033,1741.709106
 		C1558.049316,1757.275757 1555.328613,1772.866577 1552.213257,1788.377563
@@ -2144,15 +2140,15 @@ const SignatureSVG = () => {
 		C1536.625488,1852.229248 1536.125854,1852.021851 1536.136719,1851.989868
 		C1536.368530,1851.315552 1536.657837,1850.661255 1537.721680,1850.381714
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1851.529785,1174.315674
 		C1851.354980,1180.499634 1851.131836,1187.177368 1849.665771,1193.569946
 		C1844.270020,1217.096680 1839.576904,1240.765259 1832.183838,1263.857666
@@ -2165,15 +2161,15 @@ const SignatureSVG = () => {
 		C1836.595947,1227.831421 1841.322876,1206.530518 1846.518799,1185.346191
 		C1847.424561,1181.653320 1849.419312,1178.227661 1851.529785,1174.315674
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1686.646851,1966.338379
 		C1697.907349,1966.966797 1700.934204,1965.517944 1702.259766,1953.868286
 		C1704.770142,1931.806274 1706.131226,1909.613647 1707.967773,1887.475098
@@ -2188,15 +2184,15 @@ const SignatureSVG = () => {
 		C1708.821655,1951.021606 1706.998535,1955.873291 1705.365234,1960.541504
 		C1701.924072,1970.377808 1696.898315,1972.016479 1686.646851,1966.338379
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2014.341553,1008.438232
 		C2018.180420,987.988464 2022.691162,967.148193 2027.126709,946.291870
 		C2028.152710,941.467407 2028.921631,936.588257 2030.034912,930.208801
@@ -2211,15 +2207,15 @@ const SignatureSVG = () => {
 		C2022.814697,984.749268 2022.839844,989.114990 2022.241577,993.369995
 		C2021.446167,999.027710 2020.004517,1004.439087 2014.341553,1008.438232
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M662.498108,1646.834595
 		C655.485107,1655.399170 656.334045,1659.913452 666.275330,1664.831909
 		C669.779724,1666.565674 673.664001,1667.531372 678.034302,1669.212402
@@ -2236,15 +2232,15 @@ const SignatureSVG = () => {
 		M655.908325,1646.068848
 		C655.908325,1646.068848 655.919678,1645.955688 655.908325,1646.068848
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1630.737305,1660.211792
 		C1643.871582,1655.482910 1657.692627,1650.886719 1671.473022,1646.171997
 		C1680.569946,1643.059692 1689.608521,1639.777100 1699.336670,1636.288086
@@ -2258,15 +2254,15 @@ const SignatureSVG = () => {
 		C1658.523682,1654.248413 1651.354736,1656.738281 1644.023804,1658.598389
 		C1639.937744,1659.635010 1635.619995,1659.758911 1630.737305,1660.211792
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2432.066650,1058.284668
 		C2429.722656,1059.376587 2427.378418,1060.468384 2423.716797,1061.920654
 		C2411.659912,1064.581421 2401.997559,1069.421265 2392.213379,1074.266235
@@ -2281,15 +2277,15 @@ const SignatureSVG = () => {
 		C2388.810059,1069.553467 2407.701172,1059.079712 2430.578613,1056.555786
 		C2431.757080,1057.504028 2431.911865,1057.894409 2432.066650,1058.284668
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1703.998413,1436.002319
 		C1702.272583,1424.958618 1696.028931,1419.080933 1685.105713,1419.060547
 		C1682.156860,1419.055176 1679.014282,1420.535645 1676.303955,1421.978882
@@ -2304,15 +2300,15 @@ const SignatureSVG = () => {
 		C1719.053833,1460.230835 1718.183105,1459.774658 1715.501221,1452.753052
 		C1713.028809,1446.280273 1710.898804,1439.475586 1703.998413,1436.002319
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1750.013184,2187.500977
 		C1751.176147,2189.996094 1752.092407,2193.331299 1752.404419,2196.721924
 		C1752.825562,2201.298828 1752.313843,2205.997314 1753.070557,2210.497803
@@ -2328,15 +2324,15 @@ const SignatureSVG = () => {
 		C1748.834351,2220.830078 1746.305664,2218.608643 1746.492188,2210.945068
 		C1746.675903,2203.398682 1748.431519,2195.890625 1750.013184,2187.500977
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1665.554810,1428.463867
 		C1663.843384,1444.505127 1655.350342,1458.060059 1644.620605,1469.756714
 		C1640.412964,1474.343506 1632.401245,1475.843628 1625.830811,1477.740479
@@ -2350,15 +2346,15 @@ const SignatureSVG = () => {
 		C1645.925049,1457.454590 1649.626465,1449.926514 1654.204224,1442.998657
 		C1657.471191,1438.054443 1661.371948,1433.529175 1665.554810,1428.463867
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1844.327271,1305.583252
 		C1845.223511,1296.987549 1846.327271,1287.845337 1848.100586,1278.834961
 		C1850.130615,1268.520020 1852.769531,1258.325317 1855.118164,1248.072510
@@ -2369,15 +2365,15 @@ const SignatureSVG = () => {
 		C1854.435669,1277.113892 1852.631226,1284.935303 1850.553345,1292.589111
 		C1849.368408,1296.953857 1846.784546,1300.938965 1844.327271,1305.583252
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2017.510742,925.659180
 		C2016.066162,931.025757 2014.795898,936.448242 2013.098633,941.733643
 		C2012.332275,944.119934 2010.715820,946.233154 2008.768799,948.803772
@@ -2393,15 +2389,15 @@ const SignatureSVG = () => {
 		C2020.374023,890.831543 2020.121826,897.281799 2022.393677,904.615112
 		C2020.718628,912.184998 2019.114624,918.922119 2017.510742,925.659180
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1687.456055,1838.162598
 		C1692.705078,1843.891357 1691.197998,1851.655518 1690.839600,1858.887329
 		C1690.038330,1875.056274 1688.053955,1891.164307 1687.137695,1907.330444
@@ -2411,15 +2407,15 @@ const SignatureSVG = () => {
 		C1682.089478,1923.974487 1682.399658,1899.843384 1685.735596,1875.724121
 		C1687.404541,1863.658325 1686.795410,1851.277466 1687.456055,1838.162598
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2150.621094,1505.864990
 		C2149.960205,1505.926758 2149.953125,1505.029419 2150.470215,1504.174561
 		C2153.309326,1500.186768 2155.630859,1497.053955 2158.582031,1493.854126
@@ -2438,15 +2434,15 @@ const SignatureSVG = () => {
 		C2209.820557,1492.444824 2206.247070,1493.886719 2202.688232,1494.658325
 		C2185.552979,1498.373901 2168.417480,1502.088501 2150.621094,1505.864990
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1900.402100,1067.649536
 		C1902.257080,1058.156250 1904.705811,1048.277588 1907.116943,1038.389771
 		C1908.679321,1031.982544 1910.260498,1025.578491 1911.704468,1019.143921
@@ -2456,15 +2452,15 @@ const SignatureSVG = () => {
 		C1914.595703,1025.958496 1911.331909,1040.179443 1907.496826,1054.239746
 		C1906.244507,1058.830933 1903.202881,1062.933960 1900.402100,1067.649536
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1819.718262,1320.605957
 		C1820.046021,1319.967041 1821.028687,1319.979248 1821.519897,1319.992432
 		C1819.966797,1333.444336 1818.072754,1346.908203 1815.832886,1360.314209
@@ -2475,15 +2471,15 @@ const SignatureSVG = () => {
 		C1810.283447,1361.347046 1812.179199,1347.209595 1814.758545,1333.196289
 		C1815.518433,1329.068115 1817.804077,1325.220703 1819.718262,1320.605957
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1876.450195,1171.564209
 		C1875.891846,1170.168091 1875.485962,1168.194946 1875.873413,1166.392456
 		C1878.573608,1153.831177 1881.478027,1141.313965 1884.226318,1128.762817
@@ -2495,15 +2491,15 @@ const SignatureSVG = () => {
 		C1891.658081,1120.183838 1885.797241,1141.556885 1880.241211,1162.992310
 		C1879.518921,1165.779053 1878.078125,1168.379517 1876.450195,1171.564209
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1947.929688,1318.439697
 		C1948.636353,1318.021240 1948.989136,1318.082520 1949.869995,1318.259766
 		C1948.572144,1332.201172 1946.946899,1346.057007 1944.862915,1359.843750
@@ -2517,15 +2513,15 @@ const SignatureSVG = () => {
 		C1942.095581,1350.259521 1943.879639,1336.100586 1945.663574,1321.941406
 		C1946.301147,1320.934204 1946.938599,1319.927002 1947.929688,1318.439697
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1070.339966,1889.895752
 		C1073.270874,1888.493164 1076.903931,1886.202637 1080.599243,1886.097534
 		C1108.692871,1885.298828 1134.907837,1876.878052 1160.718628,1866.847656
@@ -2535,15 +2531,15 @@ const SignatureSVG = () => {
 		C1109.318726,1887.039917 1098.841797,1887.238037 1088.687744,1888.444214
 		C1082.835693,1889.139282 1076.944580,1889.505737 1070.339966,1889.895752
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1804.034424,1619.317627
 		C1810.537476,1616.710205 1816.731201,1614.628418 1823.004517,1612.822632
 		C1835.568970,1609.205811 1848.176880,1605.739868 1861.436646,1602.410400
@@ -2554,15 +2550,15 @@ const SignatureSVG = () => {
 		C1797.861084,1653.086792 1797.751099,1645.535767 1797.641113,1637.984741
 		C1799.681030,1631.979248 1801.721069,1625.973633 1804.034424,1619.317627
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1728.236694,1741.743164
 		C1727.360474,1739.057739 1726.361816,1735.449463 1726.275146,1731.819458
 		C1726.176147,1727.672485 1726.888916,1723.505981 1727.211914,1718.630981
@@ -2572,15 +2568,15 @@ const SignatureSVG = () => {
 		C1736.487427,1687.751587 1734.841675,1697.485840 1733.266602,1707.299683
 		C1731.479126,1718.437256 1730.083252,1729.637695 1728.236694,1741.743164
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1782.292969,2140.510254
 		C1781.998779,2129.375244 1782.577026,2118.183594 1782.985596,2106.985840
 		C1783.274536,2099.066406 1784.099365,2091.063965 1783.332642,2083.230713
@@ -2592,15 +2588,15 @@ const SignatureSVG = () => {
 		C1784.251221,2140.594971 1784.696045,2140.392090 1784.696045,2140.392090
 		C1784.161743,2140.411621 1783.627319,2140.431152 1782.292969,2140.510254
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M695.313843,1822.890259
 		C693.559509,1824.461304 691.219543,1826.451416 688.513733,1827.452759
 		C668.580322,1834.828857 648.601135,1842.084717 628.568665,1849.187500
@@ -2608,15 +2604,15 @@ const SignatureSVG = () => {
 		C614.814392,1851.607056 615.577576,1850.941040 616.451599,1850.489624
 		C641.219543,1837.697754 666.909058,1827.502075 695.313843,1822.890259
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2007.567139,949.456604
 		C2009.798096,958.038330 2006.995850,966.533447 2004.854492,975.164673
 		C2002.567383,984.382446 2000.780396,993.723145 1998.597290,1002.968201
@@ -2625,15 +2621,15 @@ const SignatureSVG = () => {
 		C1995.396729,995.029236 1999.190186,976.950806 2003.126465,958.907104
 		C2003.806152,955.791687 2005.677490,952.936340 2007.567139,949.456604
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2264.024902,1178.009644
 		C2273.517822,1155.513916 2290.125977,1138.619629 2307.885010,1122.704590
 		C2310.229492,1120.603394 2313.666016,1119.721191 2317.298096,1118.137939
@@ -2642,15 +2638,15 @@ const SignatureSVG = () => {
 		C2278.306641,1162.953613 2272.586670,1170.534424 2266.261475,1178.174316
 		C2265.018066,1178.093262 2264.521484,1178.051392 2264.024902,1178.009644
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2115.415527,1402.286621
 		C2112.968506,1403.325317 2109.549316,1405.206177 2106.150146,1405.170044
 		C2091.091797,1405.009644 2076.538086,1408.567139 2061.747559,1410.341553
@@ -2658,15 +2654,15 @@ const SignatureSVG = () => {
 		C2027.715088,1411.255005 2033.867188,1409.782227 2040.105469,1409.100952
 		C2064.847412,1406.399170 2089.298340,1400.462402 2115.415527,1402.286621
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1795.862915,1745.081909
 		C1793.679321,1734.166260 1791.283203,1723.458740 1793.541138,1712.008911
 		C1795.633057,1701.401489 1795.898315,1690.433594 1797.743896,1678.924805
@@ -2676,15 +2672,15 @@ const SignatureSVG = () => {
 		C1793.716064,1728.627075 1796.055786,1736.230835 1795.495972,1744.068359
 		C1795.593750,1744.836304 1795.862915,1745.081909 1795.862915,1745.081909
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2263.517090,1178.458862
 		C2264.521484,1178.051392 2265.018066,1178.093262 2266.068359,1178.909912
 		C2265.427246,1182.389648 2264.266602,1185.110596 2263.031982,1187.797607
@@ -2694,15 +2690,15 @@ const SignatureSVG = () => {
 		C2241.544189,1224.222900 2247.188232,1214.092163 2250.891846,1203.686279
 		C2253.955566,1195.079590 2258.898926,1187.142090 2263.517090,1178.458862
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M922.985107,1867.796875
 		C927.715332,1868.569092 932.805298,1870.032959 937.946289,1871.288086
 		C956.284546,1875.765381 973.974365,1882.708374 992.748718,1885.566772
@@ -2711,15 +2707,15 @@ const SignatureSVG = () => {
 		C945.057373,1876.605469 938.725403,1875.428711 932.889771,1873.185913
 		C929.589417,1871.917480 926.533997,1870.011597 922.985107,1867.796875
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1867.815796,1110.293579
 		C1868.688110,1112.179443 1870.018188,1114.909302 1869.466309,1117.182129
 		C1866.267700,1130.354736 1862.768799,1143.460327 1859.067627,1156.502319
@@ -2727,15 +2723,15 @@ const SignatureSVG = () => {
 		C1851.581909,1165.072876 1853.704468,1156.550415 1856.582153,1147.969849
 		C1860.669434,1135.782959 1863.841431,1123.289185 1867.815796,1110.293579
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M780.106934,1792.976807
 		C774.664673,1795.825684 768.613220,1799.173584 762.194153,1801.513306
 		C746.959229,1807.066406 731.583313,1812.242065 716.188660,1817.341797
@@ -2743,15 +2739,15 @@ const SignatureSVG = () => {
 		C716.042053,1814.448730 729.910217,1808.314453 744.158875,1803.250610
 		C755.644348,1799.168701 767.589417,1796.380005 780.106934,1792.976807
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1277.004150,1057.577148
 		C1277.947388,1058.032471 1278.012817,1058.513184 1278.148438,1059.718506
 		C1270.168701,1065.633179 1260.725952,1066.248901 1251.839355,1066.355347
@@ -2759,15 +2755,15 @@ const SignatureSVG = () => {
 		C1238.006958,1058.083618 1240.924194,1057.806885 1243.843872,1057.778931
 		C1254.604248,1057.675659 1265.365479,1057.654663 1277.004150,1057.577148
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1198.637207,1851.799316
 		C1199.106812,1850.777222 1200.200073,1849.394165 1201.627930,1848.683472
 		C1221.499878,1838.792480 1241.417847,1828.993652 1261.963867,1819.022949
@@ -2775,15 +2771,15 @@ const SignatureSVG = () => {
 		C1239.652832,1834.185425 1221.964722,1842.509766 1204.287476,1850.850708
 		C1202.843506,1851.531982 1201.048340,1851.468384 1198.637207,1851.799316
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1794.735962,1838.892700
 		C1794.046509,1833.507202 1793.594971,1827.257080 1793.327759,1820.999146
 		C1792.845337,1809.709961 1792.403809,1798.418091 1792.114868,1787.122803
@@ -2791,45 +2787,45 @@ const SignatureSVG = () => {
 		C1794.659180,1786.372437 1796.442261,1792.867432 1796.464844,1799.368652
 		C1796.509644,1812.252197 1795.582520,1825.139038 1794.735962,1838.892700
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1534.359863,1873.682739
 		C1534.586548,1878.304443 1534.292480,1883.128662 1533.261841,1887.790039
 		C1531.665283,1895.011353 1529.566284,1902.121582 1527.412476,1909.699463
 		C1520.826416,1901.342285 1522.832520,1881.790161 1530.807251,1874.996338
 		C1531.523926,1874.385864 1532.599731,1874.196899 1534.359863,1873.682739
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2017.763428,1412.281494
 		C2016.644165,1413.261719 2014.635620,1414.780518 2012.461548,1415.074341
 		C1994.829224,1417.456665 1977.165771,1419.609375 1958.590942,1421.729492
 		C1959.728394,1420.623657 1961.705444,1418.996338 1963.857910,1418.715942
 		C1981.486084,1416.419434 1999.146729,1414.374023 2017.763428,1412.281494
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1834.324707,1378.497314
 		C1833.449219,1379.068970 1832.944824,1379.119263 1831.680542,1379.218506
 		C1831.016724,1377.427856 1831.112793,1375.588257 1831.500610,1372.329834
@@ -2839,15 +2835,15 @@ const SignatureSVG = () => {
 		C1839.996704,1346.959106 1838.503174,1359.731201 1836.819824,1372.478149
 		C1836.569946,1374.371216 1835.426147,1376.146362 1834.324707,1378.497314
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1920.406494,1371.319336
 		C1919.159424,1371.519409 1918.173096,1371.015381 1916.694580,1370.266235
 		C1919.024780,1365.291260 1919.051392,1360.157104 1919.553467,1354.783569
@@ -2855,86 +2851,86 @@ const SignatureSVG = () => {
 		C1926.382568,1327.680542 1926.715088,1327.751587 1927.550537,1327.907227
 		C1925.591553,1342.199707 1923.129517,1356.407471 1920.406494,1371.319336
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1526.379883,1916.485840
 		C1530.039429,1928.465088 1528.619507,1940.795532 1524.204346,1953.530518
 		C1522.022949,1941.667236 1520.329224,1929.225952 1526.379883,1916.485840
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1716.438232,1808.568848
 		C1717.394531,1795.549194 1718.998901,1782.182617 1721.019043,1768.441406
 		C1724.884766,1779.266235 1722.898560,1790.479736 1721.187622,1801.613037
 		C1720.825439,1803.970459 1718.504639,1806.026855 1716.438232,1808.568848
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1263.995361,1818.491699
 		C1274.177368,1810.737671 1285.052734,1802.947876 1296.059814,1795.348755
 		C1299.249756,1793.146606 1302.817505,1791.491577 1306.919434,1789.468994
 		C1299.181274,1800.130859 1276.103271,1815.830811 1263.995361,1818.491699
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2486.105225,1048.194336
 		C2472.635742,1050.136841 2459.166016,1052.079468 2444.783691,1054.009277
 		C2445.555908,1052.990845 2447.139404,1051.378540 2448.941895,1051.077881
 		C2460.986084,1049.068604 2473.076660,1047.338989 2485.755859,1046.254639
 		C2486.274414,1047.391724 2486.189941,1047.792969 2486.105225,1048.194336
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1797.049805,1638.311279
 		C1797.751099,1645.535767 1797.861084,1653.086792 1798.219727,1661.591797
 		C1798.354004,1663.211060 1798.239746,1663.876343 1797.619385,1665.187012
 		C1797.113281,1665.832397 1796.202637,1666.062866 1796.202637,1666.062866
 		C1788.996094,1655.116821 1789.067993,1647.401001 1797.049805,1638.311279
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1603.988892,1665.880981
 		C1605.547241,1665.759644 1607.105713,1665.638306 1609.456055,1665.475586
 		C1608.763916,1666.758911 1607.455322,1668.393311 1605.764282,1669.353638
@@ -2944,15 +2940,15 @@ const SignatureSVG = () => {
 		C1591.456055,1676.091553 1594.279297,1672.982544 1597.172485,1668.965210
 		C1600.120483,1667.458862 1602.054688,1666.669922 1603.988892,1665.880981
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1771.145752,1895.887939
 		C1771.720825,1901.978760 1771.528809,1907.910400 1771.454712,1913.843506
 		C1771.338623,1923.132812 1771.302124,1932.423096 1771.202881,1941.957520
@@ -2960,179 +2956,179 @@ const SignatureSVG = () => {
 		C1766.164551,1925.882690 1766.172974,1912.404907 1766.474731,1898.936279
 		C1766.499268,1897.838379 1769.052979,1896.797119 1771.145752,1895.887939
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1792.065186,1905.219238
 		C1790.788452,1892.020386 1790.598511,1878.100586 1793.825439,1864.175415
 		C1797.317627,1870.511963 1797.262329,1877.108643 1795.571777,1884.116455
 		C1793.965332,1890.775269 1793.336060,1897.669922 1792.065186,1905.219238
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1366.264648,1747.247437
 		C1374.739624,1739.101318 1383.901733,1730.825195 1393.743774,1722.342041
 		C1387.755249,1733.199219 1378.604858,1741.534424 1366.264648,1747.247437
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1308.198486,1789.379272
 		C1315.986694,1782.375732 1323.674927,1774.171265 1334.798462,1769.535889
 		C1329.426880,1779.751099 1320.129028,1785.791626 1308.198486,1789.379272
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M869.139771,1839.648438
 		C879.938110,1841.472168 888.663208,1848.248535 897.853271,1855.294678
 		C887.002991,1853.556885 877.501160,1848.222168 869.139771,1839.648438
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1795.505493,1745.880005
 		C1795.862915,1745.081909 1795.593750,1744.836304 1795.626221,1744.769531
 		C1799.387085,1753.828613 1796.414673,1762.753906 1794.467773,1772.518555
 		C1794.439331,1764.436523 1794.793701,1755.557373 1795.505493,1745.880005
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M898.368164,1856.447510
 		C905.873047,1859.211548 913.704468,1862.570801 921.936829,1866.447021
 		C912.672302,1867.909424 905.274170,1863.451416 898.368164,1856.447510
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1841.909424,1333.430176
 		C1840.939453,1333.645508 1840.327148,1333.095703 1839.290771,1332.090820
 		C1840.129028,1323.241943 1841.391479,1314.848389 1843.148438,1306.065674
 		C1843.184326,1314.672729 1842.725830,1323.668823 1841.909424,1333.430176
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1793.794434,1420.450073
 		C1793.598755,1422.287476 1792.744629,1424.341064 1791.205078,1427.419922
 		C1788.275146,1431.311890 1786.030396,1434.178833 1783.785645,1437.045654
 		C1783.145386,1437.438110 1782.505127,1437.830566 1781.323242,1438.372803
 		C1780.802734,1429.735962 1786.514771,1424.886597 1793.794434,1420.450073
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1623.635010,1434.007324
 		C1621.048218,1423.692383 1621.048218,1423.692383 1628.963867,1420.467041
 		C1629.771240,1422.182373 1629.864014,1423.247803 1629.956909,1424.313110
 		C1628.023804,1427.379150 1626.090820,1430.445068 1623.635010,1434.007324
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1723.603027,1763.395874
 		C1720.430176,1757.947021 1721.742432,1752.179932 1725.028809,1746.210205
 		C1728.383423,1751.743530 1727.266235,1757.310425 1723.603027,1763.395874
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M852.419128,1828.351318
 		C857.496704,1831.018066 862.836182,1834.313354 868.460876,1838.169434
 		C861.325195,1838.884033 856.392700,1834.937622 852.419128,1828.351318
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1586.714355,1717.541016
 		C1582.241333,1711.018555 1585.210571,1704.856201 1588.871216,1698.125000
 		C1591.407959,1701.617310 1590.646973,1705.467773 1587.847046,1710.178223
 		C1587.485229,1712.543213 1587.579590,1713.916016 1587.673950,1715.288940
 		C1587.547607,1715.941406 1587.324219,1716.558838 1586.714355,1717.541016
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2028.569336,1591.792358
 		C2033.048096,1587.271973 2038.197388,1582.570190 2043.820435,1578.322388
 		C2044.180664,1579.190796 2044.067017,1579.605103 2043.953247,1580.019531
@@ -3140,202 +3136,202 @@ const SignatureSVG = () => {
 		C2042.776978,1580.964844 2042.354492,1581.441772 2041.989990,1581.970215
 		C2037.739990,1585.183838 2033.489868,1588.397339 2028.569336,1591.792358
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1864.231934,1844.135498
 		C1866.066040,1849.748779 1865.686279,1855.679565 1860.904663,1861.152100
 		C1858.133667,1855.253784 1860.184692,1849.877930 1864.231934,1844.135498
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1359.971436,1749.114014
 		C1361.604248,1748.271973 1362.846191,1747.915161 1364.727295,1747.460449
 		C1363.062622,1753.236694 1358.823853,1756.929688 1352.062988,1758.559448
 		C1354.111450,1755.577637 1356.845947,1752.588623 1359.971436,1749.114014
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1612.393066,1453.600342
 		C1614.192993,1448.200928 1614.305420,1441.241943 1621.161377,1437.162720
 		C1620.697388,1443.302734 1618.162476,1448.986694 1612.393066,1453.600342
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1336.318604,1769.361816
 		C1340.144287,1766.115967 1344.706299,1762.791626 1349.858154,1759.251465
 		C1349.102539,1766.527710 1343.047241,1767.864502 1336.318604,1769.361816
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M755.449341,1503.950195
 		C754.514954,1507.230103 753.154785,1510.300293 751.327515,1513.472046
 		C748.691162,1510.104248 748.525757,1506.626099 751.442200,1502.428711
 		C753.053833,1502.393555 754.038696,1503.067017 755.449341,1503.950195
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M748.028870,1609.249756
 		C749.312500,1609.024048 750.346924,1609.670044 751.726685,1610.678955
 		C752.397522,1614.639282 752.722839,1618.236694 752.673584,1622.307373
 		C748.831604,1619.260864 747.302429,1615.049438 748.028870,1609.249756
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1794.326904,1859.770996
 		C1793.988525,1856.747559 1794.005371,1852.844604 1794.256226,1848.507080
 		C1794.554199,1851.678833 1794.618286,1855.285156 1794.326904,1859.770996
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1796.309814,1666.812744
 		C1796.202637,1666.062866 1797.113281,1665.832397 1797.564941,1665.694580
 		C1801.291748,1668.900757 1801.824097,1672.745728 1799.872314,1677.681396
 		C1799.265137,1678.315918 1798.892334,1678.270508 1797.959229,1678.159424
 		C1797.071533,1674.583374 1796.744385,1671.072998 1796.309814,1666.812744
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2780.763672,1435.698486
 		C2784.895508,1430.671997 2791.035645,1431.477905 2797.709717,1432.290527
 		C2792.714111,1433.543335 2787.155762,1434.648560 2780.763672,1435.698486
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1714.367676,1667.873779
 		C1715.638672,1671.055054 1717.288452,1674.933838 1712.792603,1678.314453
 		C1712.998413,1675.160767 1713.624146,1671.837036 1714.367676,1667.873779
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M975.899536,1199.476807
 		C973.937622,1202.865845 971.348145,1206.347778 968.255981,1210.056641
 		C967.310425,1204.642700 970.870789,1201.811157 975.899536,1199.476807
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1907.003174,1654.668213
 		C1906.566772,1650.410645 1906.852905,1645.983643 1907.451660,1640.944214
 		C1912.535400,1647.981812 1912.532959,1648.893188 1907.003174,1654.668213
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1708.226074,1711.641602
 		C1708.021484,1713.060669 1707.695801,1714.364380 1707.411377,1715.697266
 		C1707.670044,1714.326294 1707.887451,1712.926270 1708.226074,1711.641602
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1955.526978,1421.738159
 		C1952.510986,1422.257080 1948.821777,1422.591797 1944.511719,1422.584229
 		C1947.545044,1422.012695 1951.199463,1421.783325 1955.526978,1421.738159
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1630.365479,1423.753174
 		C1629.864014,1423.247803 1629.771240,1422.182373 1629.603516,1420.319702
 		C1629.779419,1418.156128 1630.030396,1416.789917 1630.910767,1414.510986
@@ -3343,611 +3339,611 @@ const SignatureSVG = () => {
 		C1635.540527,1411.558472 1635.809570,1411.822266 1635.944336,1411.954956
 		C1634.310669,1415.789551 1632.542358,1419.491455 1630.365479,1423.753174
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M842.180664,1820.604858
 		C845.215454,1822.169678 848.426025,1824.391113 851.913147,1827.219971
 		C848.078430,1826.886963 844.200012,1825.597900 842.180664,1820.604858
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2018.915649,1599.807373
 		C2021.125000,1597.481445 2023.980835,1594.992188 2027.409912,1592.205811
 		C2026.634155,1596.074341 2023.733643,1598.550903 2018.915649,1599.807373
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1709.337646,1660.589478
 		C1710.957520,1659.624390 1713.656982,1656.722534 1715.623779,1661.364502
 		C1713.780884,1661.381226 1711.999756,1661.088135 1709.337646,1660.589478
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1770.751709,1830.529053
 		C1774.074707,1834.494263 1774.288818,1839.342896 1771.964355,1845.156738
 		C1767.623657,1841.318359 1767.654663,1836.363281 1770.751709,1830.529053
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1799.511230,1721.718506
 		C1798.662231,1718.364014 1798.203125,1714.324951 1798.050171,1709.518555
 		C1802.438599,1712.396729 1801.861938,1716.628174 1799.511230,1721.718506
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2058.346191,1564.688110
 		C2061.786377,1563.451172 2062.022705,1563.930298 2060.391602,1569.742920
 		C2059.632568,1568.597290 2059.113525,1566.939941 2058.346191,1564.688110
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1887.517822,1614.908691
 		C1888.218384,1617.550903 1888.439453,1620.879761 1888.335815,1624.705322
 		C1887.686890,1621.999756 1887.362549,1618.797485 1887.517822,1614.908691
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1770.975708,1812.516235
 		C1773.953857,1815.287109 1773.881714,1818.826416 1771.822510,1823.270386
 		C1768.431641,1820.621582 1767.959473,1816.980469 1770.975708,1812.516235
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2499.672363,1044.098633
 		C2500.146729,1044.700439 2500.044922,1045.368164 2499.875977,1046.537598
 		C2498.407471,1047.037476 2497.006104,1047.035767 2494.906738,1046.917969
 		C2495.838135,1045.922607 2497.467041,1045.043579 2499.672363,1044.098633
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M837.242798,1815.708862
 		C838.587158,1816.363037 840.118958,1817.602905 841.846558,1819.421875
 		C840.505005,1818.765625 838.967529,1817.530029 837.242798,1815.708862
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2440.186035,1055.401611
 		C2438.918701,1055.971802 2437.288574,1056.203735 2434.854492,1056.290283
 		C2435.974854,1055.784302 2437.899170,1055.423950 2440.186035,1055.401611
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1897.767334,1743.952759
 		C1897.731079,1743.161499 1898.197632,1741.449341 1899.127686,1739.384155
 		C1899.150879,1740.364746 1898.710571,1741.698242 1897.767334,1743.952759
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1684.171631,1960.233643
 		C1684.893677,1961.279663 1685.604248,1962.823242 1686.362183,1965.022217
 		C1685.659668,1964.028809 1684.909790,1962.379883 1684.171631,1960.233643
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1755.621826,2125.737549
 		C1755.853271,2126.433594 1756.270264,2126.710693 1756.760986,2126.792969
 		C1756.492065,2126.171875 1756.149658,2125.745361 1755.621826,2125.737549
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1657.571777,1126.535645
 		C1656.128418,1125.830078 1654.228882,1124.613525 1651.908447,1122.871582
 		C1653.363770,1123.572266 1655.239624,1124.798462 1657.571777,1126.535645
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M701.491028,1820.213379
 		C700.630798,1820.832031 699.175964,1821.601318 697.085632,1822.366699
 		C697.932190,1821.696533 699.414307,1821.030273 701.491028,1820.213379
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2822.874512,1300.107300
 		C2823.365479,1299.244751 2823.848389,1298.838013 2825.093506,1297.859619
 		C2825.280029,1298.966187 2824.704346,1300.644165 2823.722168,1302.841431
 		C2823.166260,1302.428101 2823.016602,1301.495605 2822.874512,1300.107300
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2298.531006,1522.508667
 		C2299.647949,1521.815552 2301.451904,1520.801880 2304.078125,1519.763550
 		C2303.006104,1520.555420 2301.112305,1521.371704 2298.531006,1522.508667
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2305.519287,1519.657104
 		C2306.283936,1519.166260 2307.530273,1518.686646 2309.412109,1518.036499
 		C2308.698975,1518.466797 2307.349854,1519.067505 2305.519287,1519.657104
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1756.098633,2117.961426
 		C1755.853760,2118.088623 1755.575562,2118.413086 1755.575562,2118.413086
 		C1755.575562,2118.413086 1755.845337,2118.836426 1755.985229,2118.824219
 		C1756.375610,2118.594727 1756.626099,2118.377441 1756.876587,2118.160400
 		C1756.698853,2118.051758 1756.521118,2117.943115 1756.098633,2117.961426
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1760.412354,2066.256348
 		C1759.757690,2066.793213 1759.540894,2067.170166 1759.502319,2067.564209
 		C1759.484863,2067.743652 1759.819946,2067.957764 1760.165039,2068.058105
 		C1760.531128,2067.341064 1760.727173,2066.722412 1760.412354,2066.256348
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1762.396240,2030.337769
 		C1761.712280,2030.910889 1761.523193,2031.273682 1761.496094,2031.648071
 		C1761.482788,2031.831909 1761.769897,2032.037476 1762.083618,2032.139648
 		C1762.483521,2031.408203 1762.720703,2030.770264 1762.396240,2030.337769
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1587.634766,1714.673462
 		C1587.579590,1713.916016 1587.485229,1712.543213 1587.462646,1710.754517
 		C1587.554565,1711.578491 1587.574951,1712.818237 1587.634766,1714.673462
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M827.991455,1362.381714
 		C827.837769,1362.976074 827.354370,1364.072021 826.475830,1365.623047
 		C826.607666,1365.013062 827.134705,1363.948242 827.991455,1362.381714
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M980.596191,1192.663330
 		C980.492493,1193.323120 979.935730,1194.346436 978.864441,1195.656006
 		C978.947632,1194.970459 979.545410,1193.998779 980.596191,1192.663330
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1553.921753,1880.304565
 		C1553.973267,1879.804932 1554.421631,1879.134521 1555.157349,1878.160034
 		C1555.069458,1878.615112 1554.694092,1879.374512 1553.921753,1880.304565
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1661.927002,1129.760986
 		C1661.303467,1129.574585 1660.126465,1129.066650 1658.446167,1128.152100
 		C1659.086426,1128.310181 1660.230103,1128.874878 1661.927002,1129.760986
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1903.187988,1715.863037
 		C1902.910767,1715.277466 1902.653076,1713.789551 1902.769775,1711.827637
 		C1903.165283,1712.556030 1903.186401,1713.758545 1903.187988,1715.863037
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1899.584473,1736.251953
 		C1899.267700,1735.648560 1898.906372,1734.392334 1898.596924,1732.479248
 		C1898.945923,1733.081299 1899.243042,1734.340332 1899.584473,1736.251953
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2369.400146,1080.146240
 		C2368.970215,1080.462402 2368.066162,1081.009033 2366.667480,1081.743164
 		C2367.090332,1081.412598 2368.008301,1080.894653 2369.400146,1080.146240
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2486.777832,1048.133057
 		C2486.189941,1047.792969 2486.274414,1047.391724 2486.478516,1046.385864
 		C2487.479736,1046.188965 2488.361572,1046.596924 2489.673828,1047.256836
 		C2489.219971,1047.696411 2488.335205,1047.884033 2486.777832,1048.133057
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1784.969849,2140.569824
 		C1784.696045,2140.392090 1784.251221,2140.594971 1784.296387,2140.717773
 		C1784.341675,2140.840332 1784.840454,2141.265137 1784.840454,2141.265137
 		C1784.840454,2141.265137 1785.243652,2140.747314 1784.969849,2140.569824
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M977.726318,1196.472046
 		C977.962036,1196.799927 977.689880,1197.299194 976.803345,1197.855835
 		C976.721252,1197.585571 977.064453,1197.162354 977.726318,1196.472046
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2365.556641,1082.405029
 		C2365.510498,1082.557617 2365.115479,1082.946045 2364.360840,1083.553467
 		C2364.424072,1083.415527 2364.826416,1083.038208 2365.556641,1082.405029
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1555.939453,1874.879028
 		C1555.733398,1874.944702 1556.016602,1874.271729 1556.125977,1874.145996
 		C1556.235229,1874.020264 1556.145630,1874.813354 1555.939453,1874.879028
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1881.522949,1890.551270
 		C1881.393921,1890.521362 1881.450439,1890.297119 1881.471191,1890.258789
 		C1881.492065,1890.220581 1881.651978,1890.581299 1881.522949,1890.551270
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1898.480957,1069.464355
 		C1898.232056,1069.096191 1898.561890,1068.564941 1899.626343,1068.042236
 		C1899.619995,1068.263916 1899.186279,1068.680908 1898.480957,1069.464355
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1789.844238,2034.136719
 		C1789.674683,2034.060303 1789.912109,2033.676270 1789.997681,2033.636963
 		C1790.083252,2033.597534 1790.013916,2034.213257 1789.844238,2034.136719
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2044.328613,1579.703613
 		C2044.067017,1579.605103 2044.180664,1579.190796 2044.553955,1578.178711
 		C2044.813721,1577.580933 2045.384033,1577.706055 2045.663818,1577.787109
 		C2045.596558,1578.428467 2045.183350,1578.935059 2044.328613,1579.703613
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2042.359375,1581.667236
 		C2042.354492,1581.441772 2042.776978,1580.964844 2043.638428,1580.248535
 		C2043.634277,1580.467896 2043.203979,1580.936768 2042.359375,1581.667236
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1958.325806,1608.713623
 		C1958.265991,1608.604736 1958.764160,1608.712402 1958.815918,1608.833252
 		C1958.867798,1608.953979 1958.385620,1608.822510 1958.325806,1608.713623
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M825.683167,1366.364258
 		C825.638855,1366.567383 825.197266,1367.099609 824.317383,1367.922119
 		C824.348022,1367.705933 824.816956,1367.199585 825.683167,1366.364258
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1667.609985,1136.054077
 		C1667.452881,1135.951172 1667.016113,1135.409912 1666.350952,1134.400024
 		C1666.525146,1134.492798 1666.927734,1135.054321 1667.609985,1136.054077
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2432.522217,1058.041260
 		C2431.911865,1057.894409 2431.757080,1057.504028 2431.363281,1056.530029
 		C2431.620361,1055.956787 2432.116455,1055.967163 2433.353027,1056.054932
 		C2433.721436,1056.687500 2433.349609,1057.242676 2432.522217,1058.041260
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2045.590576,1577.374512
 		C2045.881348,1577.000244 2046.252930,1576.824219 2047.210327,1576.456543
 		C2047.434814,1576.710205 2047.027466,1577.108276 2046.221069,1577.705933
 		C2045.868286,1577.952759 2045.671509,1577.572632 2045.590576,1577.374512
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1698.208252,1623.370850
 		C1690.675171,1625.419434 1683.169678,1626.968750 1676.207520,1629.837158
 		C1665.122559,1634.404175 1653.915894,1638.101929 1640.673340,1638.917725
@@ -3962,15 +3958,15 @@ const SignatureSVG = () => {
 		C1701.434326,1621.932495 1700.136475,1622.921387 1698.838623,1623.910400
 		C1698.838501,1623.910278 1698.479370,1623.463501 1698.208252,1623.370850
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1731.971802,1583.726074
 		C1724.246216,1578.514160 1716.483398,1582.096069 1708.792236,1583.524536
 		C1703.306885,1584.543335 1697.826660,1585.612427 1692.311279,1586.439697
@@ -3992,15 +3988,15 @@ const SignatureSVG = () => {
 		C1694.994141,1571.803711 1713.824829,1568.444824 1732.254395,1562.564941
 		C1735.213623,1569.382690 1735.273804,1576.206421 1731.971802,1583.726074
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1895.952026,1548.080933
 		C1899.914307,1555.747681 1898.257812,1563.752197 1894.029053,1569.879761
 		C1891.045410,1574.202881 1884.646729,1577.585205 1879.256592,1578.573853
@@ -4012,15 +4008,15 @@ const SignatureSVG = () => {
 		C1834.946289,1571.191772 1838.575928,1566.708252 1843.087769,1563.418579
 		C1858.804199,1551.959595 1877.573608,1550.607178 1895.952026,1548.080933
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1896.021118,1547.245728
 		C1877.573608,1550.607178 1858.804199,1551.959595 1843.087769,1563.418579
 		C1838.575928,1566.708252 1834.946289,1571.191772 1830.511475,1574.607788
@@ -4036,15 +4032,15 @@ const SignatureSVG = () => {
 		C1881.455322,1537.236938 1889.501465,1535.072144 1897.562134,1533.130127
 		C1897.071411,1537.556885 1896.580811,1541.983765 1896.021118,1547.245728
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1732.977661,1562.437012
 		C1713.824829,1568.444824 1694.994141,1571.803711 1674.865356,1571.004883
 		C1675.906982,1567.530396 1677.677002,1564.634155 1679.954102,1561.619141
@@ -4070,15 +4066,15 @@ const SignatureSVG = () => {
 		C1744.737305,1540.580322 1742.394409,1547.457275 1739.967285,1554.304443
 		C1738.782349,1557.647461 1738.399048,1561.687622 1732.977661,1562.437012
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1771.943848,1508.009766
 		C1772.405762,1507.538086 1773.116577,1507.144287 1773.292603,1506.583008
 		C1776.401611,1496.667603 1779.445557,1486.731934 1783.053223,1475.703003
@@ -4092,15 +4088,15 @@ const SignatureSVG = () => {
 		C1761.896240,1544.967651 1764.470947,1535.328003 1768.332031,1526.234497
 		C1770.879028,1520.235596 1772.306030,1514.399292 1771.943848,1508.009766
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1863.798584,1527.351562
 		C1862.208374,1529.012695 1859.975220,1530.402466 1859.139648,1532.382324
 		C1855.490845,1541.026611 1848.289795,1542.895508 1839.975342,1543.921875
@@ -4136,15 +4132,15 @@ const SignatureSVG = () => {
 		C1887.531616,1453.737915 1883.815796,1453.792725 1880.193726,1454.123413
 		C1868.970337,1455.148682 1857.768188,1456.405884 1845.039429,1457.885376
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1750.186523,1581.994141
 		C1750.877075,1580.134521 1751.567627,1578.275024 1752.892578,1575.443604
 		C1754.478394,1573.030151 1755.429565,1571.588379 1756.380859,1570.146729
@@ -4155,15 +4151,15 @@ const SignatureSVG = () => {
 		C1760.975220,1597.464478 1758.005981,1598.397095 1753.979126,1599.450439
 		C1746.228516,1594.611816 1750.336670,1587.971680 1750.186523,1581.994141
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1771.320312,1508.266357
 		C1772.306030,1514.399292 1770.879028,1520.235596 1768.332031,1526.234497
 		C1764.470947,1535.328003 1761.896240,1544.967651 1758.631348,1555.085449
@@ -4173,30 +4169,30 @@ const SignatureSVG = () => {
 		C1760.362427,1535.884033 1761.347778,1534.790527 1761.485840,1524.695435
 		C1761.583130,1517.584229 1764.460815,1512.110962 1771.320312,1508.266357
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1783.902588,1567.377686
 		C1776.295898,1569.068481 1768.733398,1569.796387 1760.531006,1570.184570
 		C1759.949707,1566.379517 1760.008423,1562.913940 1760.096191,1558.577148
 		C1767.329102,1556.183838 1774.533325,1554.661987 1782.533325,1552.967285
 		C1783.535034,1557.334351 1783.740967,1561.874634 1783.902588,1567.377686
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1778.078247,1603.575073
 		C1781.401978,1609.142334 1781.653809,1612.594238 1777.380859,1614.181152
 		C1769.135498,1617.243408 1760.409546,1619.016724 1751.858154,1621.229126
@@ -4206,15 +4202,15 @@ const SignatureSVG = () => {
 		C1762.274292,1607.856689 1762.594604,1607.734009 1763.960938,1607.723877
 		C1770.534790,1610.006714 1773.831665,1605.334351 1778.078247,1603.575073
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1807.024170,1538.259033
 		C1807.849731,1541.237427 1808.038696,1544.495972 1808.311646,1548.553345
 		C1807.733398,1553.152344 1807.071289,1556.952637 1806.076782,1562.025635
@@ -4222,45 +4218,45 @@ const SignatureSVG = () => {
 		C1803.186279,1565.244629 1801.644775,1564.740356 1801.112793,1563.713013
 		C1797.515137,1556.768555 1800.267700,1544.087891 1807.024170,1538.259033
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1749.479248,1582.156982
 		C1750.336670,1587.971680 1746.228516,1594.611816 1753.510742,1599.948364
 		C1748.239502,1602.295410 1742.087524,1600.490234 1739.908569,1596.161011
 		C1738.017212,1592.402954 1739.634277,1587.686646 1744.261230,1584.242188
 		C1745.535522,1583.293579 1747.255981,1582.944092 1749.479248,1582.156982
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1777.906006,1602.866089
 		C1773.831665,1605.334351 1770.534790,1610.006714 1764.438721,1607.532837
 		C1763.961304,1604.063477 1764.052246,1600.897827 1764.043945,1597.132080
 		C1767.458496,1595.009766 1770.972290,1593.487671 1775.224487,1591.927124
 		C1776.552979,1595.311523 1777.143311,1598.734253 1777.906006,1602.866089
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1804.375488,1566.462280
 		C1804.755249,1565.093384 1805.249756,1564.195923 1805.943115,1562.825684
 		C1809.676147,1563.228760 1812.947021,1564.429321 1813.900146,1569.242432
@@ -4268,105 +4264,105 @@ const SignatureSVG = () => {
 		C1807.141113,1569.913330 1805.713257,1569.380371 1804.285522,1568.847534
 		C1804.516602,1568.227051 1804.584839,1567.589111 1804.375488,1566.462280
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1804.400635,1569.412354
 		C1805.713257,1569.380371 1807.141113,1569.913330 1809.309570,1570.623291
 		C1807.510620,1575.198486 1805.819702,1573.888306 1804.400635,1569.412354
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1761.354980,1608.157593
 		C1759.693970,1609.663208 1757.433838,1611.347168 1754.516846,1613.030762
 		C1756.158447,1611.465454 1758.457153,1609.900757 1761.354980,1608.157593
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1751.827148,1550.523438
 		C1752.514771,1551.620239 1753.113525,1553.193115 1753.858643,1555.382568
 		C1753.249268,1554.332642 1752.493652,1552.666138 1751.827148,1550.523438
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1699.398438,1623.660767
 		C1700.136475,1622.921387 1701.434326,1621.932495 1703.338989,1620.829590
 		C1702.616577,1621.614014 1701.287476,1622.512573 1699.398438,1623.660767
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1755.845215,1570.519775
 		C1755.429565,1571.588379 1754.478394,1573.030151 1752.982422,1574.853271
 		C1753.395142,1573.787476 1754.352417,1572.340088 1755.845215,1570.519775
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1712.894287,1687.887207
 		C1712.985229,1687.854126 1712.803345,1687.920166 1712.894287,1687.887207
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1781.050781,2145.170898
 		C1780.928955,2144.969482 1781.451294,2144.921631 1781.451294,2144.921631
 		C1781.451294,2144.921631 1781.172485,2145.372314 1781.050781,2145.170898
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2132.338379,1504.529297
 		C2118.988770,1507.538330 2112.008301,1517.294556 2106.322998,1528.661133
 		C2103.971680,1533.362183 2100.684814,1537.586182 2098.041992,1542.153687
@@ -4428,15 +4424,15 @@ const SignatureSVG = () => {
 		C2096.855957,1519.202026 2097.904541,1516.437988 2096.966309,1514.842529
 		C2095.028076,1511.547119 2093.485596,1513.431885 2092.624268,1517.213623
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2010.450684,1532.221924
 		C2023.288574,1522.548706 2039.072388,1523.224487 2055.050781,1520.076904
 		C2060.528564,1522.162720 2059.743408,1524.832397 2057.913086,1528.089844
@@ -4467,15 +4463,15 @@ const SignatureSVG = () => {
 		C1994.567139,1564.473511 1992.569214,1557.997559 1995.578613,1555.407593
 		C2002.888062,1549.117310 2006.048096,1540.298950 2010.450684,1532.221924
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1879.723877,1444.182983
 		C1879.164795,1446.187256 1878.067383,1449.067383 1876.921143,1449.087036
 		C1869.840332,1449.207764 1863.142090,1455.016357 1855.678589,1450.436646
@@ -4499,15 +4495,15 @@ const SignatureSVG = () => {
 		C1869.457764,1434.286621 1869.157959,1437.775391 1874.165527,1440.712402
 		C1875.844971,1441.697266 1877.497925,1442.727173 1879.723877,1444.182983
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1981.890137,1455.658691
 		C1979.387817,1458.565430 1977.407104,1462.342773 1974.284302,1464.213867
 		C1965.322388,1469.584106 1960.124146,1477.992554 1955.570679,1486.655029
@@ -4528,15 +4524,15 @@ const SignatureSVG = () => {
 		C1940.586060,1507.749390 1943.856445,1499.416016 1947.535034,1491.266113
 		C1954.726074,1475.334351 1965.434937,1462.699219 1981.890137,1455.658691
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1955.618408,1536.767334
 		C1963.844116,1535.005981 1971.659546,1533.764648 1979.511108,1532.824707
 		C1985.111572,1532.154419 1990.760376,1531.889160 1997.043823,1532.152100
@@ -4545,15 +4541,15 @@ const SignatureSVG = () => {
 		C1973.107666,1555.028809 1964.440308,1558.119507 1955.724609,1561.227417
 		C1950.187134,1552.350098 1951.470215,1544.888672 1955.618408,1536.767334
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1897.853638,1532.534424
 		C1889.501465,1535.072144 1881.455322,1537.236938 1871.677368,1534.662964
 		C1873.230347,1532.404053 1874.350952,1530.773804 1876.461182,1528.376465
@@ -4563,15 +4559,15 @@ const SignatureSVG = () => {
 		C1901.149536,1522.060425 1900.898438,1523.184204 1900.647461,1524.307983
 		C1899.813354,1526.851562 1898.979248,1529.395142 1897.853638,1532.534424
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1902.475342,1504.467529
 		C1898.894531,1507.743530 1894.950928,1509.967651 1891.709473,1512.953857
 		C1886.704346,1517.565186 1882.179321,1522.697632 1876.877930,1527.944946
@@ -4582,15 +4578,15 @@ const SignatureSVG = () => {
 		C1904.046753,1480.486694 1903.399658,1483.737549 1903.171631,1487.017334
 		C1902.784424,1492.587524 1902.661133,1498.176147 1902.475342,1504.467529
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1936.073120,1541.877075
 		C1935.986206,1546.797607 1935.765503,1551.720581 1935.852905,1556.637939
 		C1935.928955,1560.907349 1934.341797,1563.181396 1929.894287,1564.070801
@@ -4598,15 +4594,15 @@ const SignatureSVG = () => {
 		C1916.176025,1550.267700 1917.029297,1548.076172 1918.742920,1545.157471
 		C1925.325684,1543.589233 1930.699463,1542.733154 1936.073120,1541.877075
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1982.426758,1552.173584
 		C1985.066895,1548.051636 1988.374878,1544.178345 1991.644653,1540.273193
 		C1993.692627,1537.827271 1995.683350,1535.333374 1997.963989,1532.194336
@@ -4615,122 +4611,122 @@ const SignatureSVG = () => {
 		C1992.569214,1557.997559 1994.567139,1564.473511 1987.929199,1565.181152
 		C1989.654663,1556.422974 1989.654663,1556.422974 1982.426758,1552.173584
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1945.012451,1322.160522
 		C1943.879639,1336.100586 1942.095581,1350.259521 1940.085205,1365.217529
 		C1931.522583,1356.572998 1931.193604,1334.449951 1939.403564,1325.557861
 		C1940.692017,1324.162354 1942.690918,1323.422607 1945.012451,1322.160522
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1936.008545,1541.083374
 		C1930.699463,1542.733154 1925.325684,1543.589233 1919.152466,1544.489258
 		C1918.875366,1539.522095 1919.397827,1534.511230 1920.009766,1528.677734
 		C1924.228516,1527.295288 1928.357544,1526.735107 1933.263794,1526.126709
 		C1934.675293,1530.815552 1935.309692,1535.552612 1936.008545,1541.083374
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1985.712402,1566.315674
 		C1981.530640,1572.563477 1974.803467,1575.748779 1966.347168,1577.227783
 		C1972.057007,1573.637085 1978.517944,1570.035522 1985.712402,1566.315674
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1938.344238,1372.612793
 		C1938.139893,1375.839600 1937.296509,1379.313354 1935.973633,1383.392456
 		C1931.958618,1377.453735 1931.958618,1377.453735 1938.344238,1372.612793
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1970.312500,1594.473389
 		C1975.534546,1594.100708 1981.417236,1594.247681 1988.096069,1594.635864
 		C1982.934814,1597.326294 1976.961548,1597.311768 1970.312500,1594.473389
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1876.874756,1745.930176
 		C1877.322266,1745.743164 1877.767334,1745.842896 1878.212524,1745.942627
 		C1877.765869,1746.034058 1877.319214,1746.125488 1876.874756,1745.930176
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1900.968262,1524.045898
 		C1900.898438,1523.184204 1901.149536,1522.060425 1901.766602,1520.477539
 		C1901.851318,1521.273560 1901.570068,1522.528687 1900.968262,1524.045898
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1990.404297,1594.679565
 		C1991.566895,1593.995361 1993.534668,1593.317749 1996.283691,1592.531006
 		C1995.113159,1593.176758 1993.161255,1593.931519 1990.404297,1594.679565
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1025.592529,1868.178345
 		C1024.879883,1868.189819 1024.167236,1868.201294 1022.170349,1867.867188
 		C1006.402832,1864.188721 991.950439,1860.709961 977.411743,1857.640137
@@ -4807,15 +4803,15 @@ const SignatureSVG = () => {
 		C1076.273926,1866.962036 1073.984863,1866.673462 1071.705811,1866.738281
 		C1056.333496,1867.176392 1040.963379,1867.689453 1025.592529,1868.178345
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M781.661743,1702.529663
 		C781.366211,1701.501343 781.070679,1700.473022 780.775208,1698.281494
 		C781.624634,1691.719971 780.198486,1685.079590 788.170532,1683.568481
@@ -4886,15 +4882,15 @@ const SignatureSVG = () => {
 		C784.344421,1711.843384 784.161804,1710.580566 784.053284,1708.265381
 		C783.305542,1705.651978 782.483643,1704.090820 781.661743,1702.529663
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M828.089111,1777.075684
 		C838.878418,1778.200806 848.286743,1772.041016 858.412109,1769.323242
 		C885.008057,1762.184326 911.386475,1754.233765 937.841431,1746.571411
@@ -4934,15 +4930,15 @@ const SignatureSVG = () => {
 		C847.130554,1777.029297 843.742310,1778.454346 840.313599,1779.683228
 		C835.952393,1781.246094 831.867188,1781.410400 828.089111,1777.075684
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1298.264160,1766.347046
 		C1296.159790,1768.431519 1293.495361,1770.187500 1292.047852,1772.656982
 		C1285.683350,1783.515503 1275.335083,1789.239990 1264.737793,1794.776367
@@ -4960,15 +4956,15 @@ const SignatureSVG = () => {
 		C1314.884155,1726.042480 1314.276978,1728.603394 1313.273682,1730.998535
 		C1308.328125,1742.805420 1303.277588,1754.568481 1298.264160,1766.347046
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M776.330566,1624.635742
 		C778.037720,1610.533569 778.651428,1596.981567 782.954895,1583.782593
 		C785.565247,1575.776733 784.883728,1566.710083 785.799438,1558.132690
@@ -5005,15 +5001,15 @@ const SignatureSVG = () => {
 		M997.026062,1223.040039
 		C997.026062,1223.040039 996.999084,1222.952393 997.026062,1223.040039
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M801.610840,1643.756958
 		C801.844849,1643.064331 802.074280,1642.475464 802.720215,1642.125732
 		C804.091858,1641.655273 804.817505,1641.534302 806.399292,1641.456055
@@ -5056,15 +5052,15 @@ const SignatureSVG = () => {
 		C791.894714,1656.196533 793.063538,1654.085083 794.550598,1652.228638
 		C796.705383,1649.538940 799.090210,1647.033569 801.610840,1643.756958
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1191.687866,1763.836304
 		C1191.458008,1764.793579 1191.476562,1765.918945 1190.960205,1766.682373
 		C1185.796509,1774.316284 1185.464966,1778.010864 1191.226196,1784.749023
@@ -5081,15 +5077,15 @@ const SignatureSVG = () => {
 		C1155.292236,1753.199463 1159.359253,1755.989746 1163.753296,1758.098877
 		C1172.542236,1762.317749 1181.308350,1767.159668 1191.687866,1763.836304
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M861.658447,1782.756592
 		C872.484863,1785.132202 882.545044,1781.964966 891.211548,1778.255981
 		C913.668579,1768.645142 937.539978,1764.320679 960.577698,1757.026978
@@ -5102,15 +5098,15 @@ const SignatureSVG = () => {
 		C853.410889,1790.016113 856.749756,1787.114746 858.724365,1782.682617
 		C859.506165,1782.713013 860.288025,1782.743408 861.658447,1782.756592
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1347.911133,1711.725708
 		C1356.713501,1710.523682 1365.515747,1709.321777 1375.098999,1708.817383
 		C1375.443115,1711.871948 1375.006348,1714.229126 1374.569458,1716.586304
@@ -5126,15 +5122,15 @@ const SignatureSVG = () => {
 		C1361.273926,1714.121704 1355.811401,1714.876587 1350.396118,1715.885620
 		C1344.366089,1717.009277 1338.884277,1719.148560 1335.297119,1726.507080
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1333.875610,1717.926514
 		C1328.827393,1728.641846 1323.553345,1739.259766 1318.860840,1750.128784
 		C1317.341064,1753.648682 1317.345825,1757.826904 1316.713867,1762.419678
@@ -5143,15 +5139,15 @@ const SignatureSVG = () => {
 		C1314.276978,1728.603394 1314.884155,1726.042480 1316.525391,1722.715698
 		C1322.876221,1720.557617 1328.375977,1719.242065 1333.875610,1717.926514
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1084.442505,1867.274536
 		C1090.550903,1865.094116 1097.435059,1862.644043 1104.523926,1861.195557
 		C1126.490356,1856.706787 1147.466553,1849.373413 1167.954834,1840.402100
@@ -5162,44 +5158,44 @@ const SignatureSVG = () => {
 		C1125.113037,1860.331299 1113.140015,1863.160156 1101.096313,1865.634399
 		C1095.927734,1866.696167 1090.578735,1866.880249 1084.442505,1867.274536
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M909.761963,1837.287720
 		C927.443787,1843.319946 945.477661,1849.939697 964.004395,1857.060059
 		C959.724976,1856.401367 954.840515,1855.576050 950.202881,1854.016724
 		C938.954102,1850.234375 927.784058,1846.206909 916.668701,1842.047363
 		C914.295715,1841.159302 912.289368,1839.291382 909.761963,1837.287720
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M968.414551,1858.313110
 		C970.954834,1857.840210 974.341309,1856.991943 977.411743,1857.640137
 		C991.950439,1860.709961 1006.402832,1864.188721 1021.637573,1867.822266
 		C1003.757629,1869.858032 986.601746,1863.315063 968.414551,1858.313110
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M790.184082,1658.714600
 		C793.976074,1658.642334 797.368469,1659.090698 800.959351,1660.334473
 		C795.745483,1666.425171 799.706421,1671.116333 801.862061,1676.103516
@@ -5207,15 +5203,15 @@ const SignatureSVG = () => {
 		C798.212585,1675.075073 795.142212,1673.692749 792.437256,1671.790649
 		C787.064453,1668.012329 786.895142,1666.678223 790.184082,1658.714600
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M821.791626,1710.814575
 		C819.005066,1709.692017 816.218384,1708.569580 812.553467,1706.523682
 		C810.371094,1702.588257 809.066895,1699.576294 807.762695,1696.564453
@@ -5225,29 +5221,29 @@ const SignatureSVG = () => {
 		C820.648743,1696.931396 818.869995,1699.676758 820.122314,1704.328003
 		C820.702637,1706.483887 821.236633,1708.651978 821.791626,1710.814575
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1026.270508,1868.640015
 		C1040.963379,1867.689453 1056.333496,1867.176392 1071.705811,1866.738281
 		C1073.984863,1866.673462 1076.273926,1866.962036 1079.290039,1867.263428
 		C1062.483765,1872.878906 1044.768066,1872.647583 1026.270508,1868.640015
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M787.927429,1682.968994
 		C780.198486,1685.079590 781.624634,1691.719971 780.514648,1697.522339
 		C778.911560,1692.935059 777.112122,1688.003174 776.452698,1682.923340
@@ -5255,44 +5251,44 @@ const SignatureSVG = () => {
 		C780.586731,1675.991577 783.676086,1677.955811 785.479065,1679.138672
 		C786.486938,1679.799805 786.966675,1681.266113 787.927429,1682.968994
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M820.673462,1691.589111
 		C818.279541,1691.177490 815.885681,1690.765991 812.793335,1690.153076
 		C807.521057,1686.897949 803.090881,1683.717651 801.340576,1677.337891
 		C801.117798,1676.692383 801.613647,1676.299438 802.461731,1676.418213
 		C809.097717,1681.554321 814.885620,1686.571777 820.673462,1691.589111
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M857.945557,1782.690674
 		C856.749756,1787.114746 853.410889,1790.016113 848.134583,1791.732422
 		C844.807434,1789.009277 845.623230,1786.447632 848.833252,1784.967407
 		C851.411560,1783.778564 854.374451,1783.423828 857.945557,1782.690674
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1374.876953,1716.621704
 		C1375.006348,1714.229126 1375.443115,1711.871948 1375.924561,1708.801025
 		C1377.907471,1707.675659 1379.845825,1707.264160 1381.784180,1706.852661
@@ -5300,276 +5296,276 @@ const SignatureSVG = () => {
 		C1380.180664,1713.571533 1378.330200,1714.587769 1376.351807,1716.274536
 		C1375.801636,1716.707153 1375.184570,1716.657104 1374.876953,1716.621704
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M784.533447,1713.924561
 		C787.444458,1719.026978 790.361816,1724.947754 793.440613,1731.574585
 		C786.687805,1728.446655 785.245728,1721.785034 784.533447,1713.924561
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M807.028564,1696.442749
 		C809.066895,1699.576294 810.371094,1702.588257 811.898865,1706.152588
 		C808.315979,1703.387939 804.509521,1700.070679 800.531372,1696.259155
 		C802.337891,1695.950317 804.316162,1696.135620 807.028564,1696.442749
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M873.757141,1815.134766
 		C878.683167,1817.432861 883.862427,1820.366089 889.398071,1823.891602
 		C883.463135,1823.464233 877.698181,1821.493652 873.757141,1815.134766
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M797.869263,1741.210693
 		C800.327271,1743.319336 802.927551,1746.069824 805.692993,1749.454102
 		C803.242554,1747.342651 800.627014,1744.597534 797.869263,1741.210693
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M776.501953,1630.073486
 		C777.339722,1633.129272 777.849670,1636.845337 778.390137,1641.383301
 		C774.995300,1638.905640 774.000671,1635.129883 776.501953,1630.073486
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M812.636841,1759.696777
 		C814.988831,1761.681763 817.421387,1764.380249 819.829773,1767.577759
 		C816.071228,1766.789429 813.506653,1764.420532 812.636841,1759.696777
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M889.799194,1825.107422
 		C892.113525,1826.007202 894.680237,1827.530151 897.600586,1829.617920
 		C895.320068,1828.698730 892.685852,1827.214600 889.799194,1825.107422
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M677.632385,1643.603516
 		C680.315247,1643.991089 683.538696,1644.832520 687.241516,1646.232666
 		C684.538208,1645.880005 681.355591,1644.968628 677.632385,1643.603516
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M663.103760,1646.718140
 		C664.059631,1645.931030 665.621094,1645.027344 667.657837,1644.305664
 		C666.658508,1645.192383 665.183960,1645.896973 663.103760,1646.718140
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M781.739380,1703.119385
 		C782.483643,1704.090820 783.305542,1705.651978 783.923950,1707.640015
 		C783.085999,1706.614380 782.451477,1705.161743 781.739380,1703.119385
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M865.799133,1809.130981
 		C867.283142,1809.569336 869.056641,1810.573608 871.119507,1812.143555
 		C869.635437,1811.704956 867.862061,1810.700806 865.799133,1809.130981
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M794.556274,1735.688110
 		C795.305786,1736.398804 796.186707,1737.707764 797.220947,1739.582886
 		C796.478760,1738.861450 795.583252,1737.573975 794.556274,1735.688110
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M861.664368,1805.083740
 		C862.650146,1805.500000 863.833313,1806.487549 865.293579,1807.997803
 		C864.334412,1807.565430 863.098083,1806.610229 861.664368,1805.083740
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M903.231567,1832.863037
 		C904.796570,1833.384155 906.809326,1834.451416 909.312378,1836.002441
 		C907.761475,1835.460449 905.720337,1834.434692 903.231567,1832.863037
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M898.335327,1830.554199
 		C899.068909,1830.598877 900.249390,1831.132324 901.985474,1832.035156
 		C901.288086,1831.950684 900.035217,1831.496826 898.335327,1830.554199
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M760.854553,1703.145996
 		C760.638977,1702.772339 760.452759,1701.769653 760.410156,1700.394531
 		C760.663818,1700.853638 760.773865,1701.685303 760.854553,1703.145996
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M797.070312,1695.497681
 		C797.080688,1695.430908 797.041748,1695.745728 797.045654,1695.589111
 		C797.049622,1695.432495 797.059998,1695.564453 797.070312,1695.497681
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M796.493896,1694.895752
 		C796.560059,1694.898193 796.251160,1694.886475 796.406311,1694.880371
 		C796.561462,1694.874146 796.427673,1694.893311 796.493896,1694.895752
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M872.000244,1812.631348
 		C872.353760,1812.548096 872.807434,1812.990845 873.583984,1813.782837
 		C873.310181,1813.801392 872.708069,1813.476440 872.000244,1812.631348
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1186.611084,1833.910522
 		C1186.683228,1833.641113 1187.338135,1833.158813 1188.536377,1832.389282
 		C1188.451050,1832.634033 1187.822388,1833.165771 1186.611084,1833.910522
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2897.548340,1406.693359
 		C2888.376709,1407.307251 2880.148438,1407.902466 2871.915527,1408.416992
 		C2858.706055,1409.242554 2845.485840,1409.912842 2832.285400,1410.861572
@@ -5592,15 +5588,15 @@ const SignatureSVG = () => {
 		C2959.841064,1402.306396 2945.862793,1402.181152 2931.943359,1403.047119
 		C2920.760986,1403.742920 2909.638672,1405.405151 2897.548340,1406.693359
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1756.050903,1501.992676
 		C1748.951660,1508.267456 1748.040405,1517.678345 1744.604126,1525.740356
 		C1741.368164,1533.332886 1739.831299,1541.636597 1737.276367,1549.540039
@@ -5616,15 +5612,15 @@ const SignatureSVG = () => {
 		C1757.983521,1495.784424 1757.009277,1498.946899 1756.035034,1502.109497
 		C1756.035034,1502.109497 1755.991089,1501.997925 1756.050903,1501.992676
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1764.003662,1464.460205
 		C1755.171021,1467.221802 1746.283813,1469.806274 1737.212402,1471.109009
 		C1729.138550,1472.268311 1722.138794,1475.423706 1714.196777,1479.652100
@@ -5640,15 +5636,15 @@ const SignatureSVG = () => {
 		C1737.563843,1456.902832 1748.730591,1455.168091 1760.707275,1453.197754
 		C1762.314697,1456.624878 1763.091797,1460.175171 1764.003662,1464.460205
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1922.214600,934.449768
 		C1933.340088,931.497925 1938.500488,922.171021 1933.729004,911.822021
 		C1931.419189,912.462158 1929.023804,913.126099 1926.437378,913.843018
@@ -5664,15 +5660,15 @@ const SignatureSVG = () => {
 		C1920.956299,953.170044 1920.158203,948.916565 1921.802368,943.419128
 		C1922.594482,940.770508 1922.243042,937.779968 1922.214600,934.449768
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1836.938843,1423.979614
 		C1836.938843,1423.979614 1837.525269,1424.378906 1838.143188,1424.953369
 		C1839.834351,1426.360962 1840.907593,1427.194214 1841.980835,1428.027588
@@ -5688,15 +5684,15 @@ const SignatureSVG = () => {
 		C1834.336426,1421.871948 1834.284180,1422.027344 1834.656982,1422.357544
 		C1835.666138,1423.118408 1836.302490,1423.548950 1836.938843,1423.979614
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1784.050659,1437.761719
 		C1786.030396,1434.178833 1788.275146,1431.311890 1791.008545,1428.060547
 		C1801.241821,1430.326416 1803.509521,1432.873657 1800.941406,1439.742920
@@ -5704,68 +5700,68 @@ const SignatureSVG = () => {
 		C1792.416870,1446.893677 1789.153687,1444.405762 1786.629028,1442.724976
 		C1785.441650,1441.934448 1785.061646,1439.931274 1784.050659,1437.761719
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1833.004150,1361.890625
 		C1833.018311,1364.791626 1832.405273,1367.851318 1831.482666,1371.637695
 		C1825.660522,1366.517334 1825.760132,1365.663940 1833.004150,1361.890625
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1918.167114,935.732056
 		C1917.583130,933.752197 1917.583130,931.597168 1917.583130,927.282349
 		C1919.853271,930.269043 1920.855957,931.588257 1921.944214,933.433838
 		C1920.936890,934.492432 1919.843994,935.024719 1918.167114,935.732056
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1756.536133,1501.607422
 		C1757.009277,1498.946899 1757.983521,1495.784424 1759.449951,1492.083008
 		C1758.973999,1494.731323 1758.005737,1497.918335 1756.536133,1501.607422
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1786.537720,1470.589478
 		C1785.956665,1471.666016 1784.779907,1473.135620 1782.984253,1474.964111
 		C1783.557617,1473.876099 1784.749756,1472.429321 1786.537720,1470.589478
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M851.239868,1633.396729
 		C849.980652,1633.676147 848.721497,1633.955566 846.341187,1634.148682
 		C843.540833,1634.081177 841.861572,1634.099976 839.319458,1634.166260
@@ -5957,15 +5953,15 @@ const SignatureSVG = () => {
 		C859.939392,1631.723511 858.691223,1631.982544 856.383911,1632.194336
 		C853.963135,1632.563721 852.601501,1632.980225 851.239868,1633.396729
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1133.230957,1098.039551
 		C1143.048218,1096.312500 1151.325928,1093.289429 1159.032959,1087.318359
 		C1167.911987,1080.439209 1179.071411,1079.294556 1191.087158,1080.179077
@@ -5984,15 +5980,15 @@ const SignatureSVG = () => {
 		C1102.553223,1114.999146 1109.251465,1111.983887 1115.580322,1108.405762
 		C1121.324829,1105.157837 1127.001343,1101.789795 1133.230957,1098.039551
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1264.645264,1093.321899
 		C1250.873413,1090.660889 1237.241577,1093.374634 1223.960693,1098.055298
 		C1211.463013,1102.460327 1199.221313,1107.587280 1186.812012,1112.250610
@@ -6005,15 +6001,15 @@ const SignatureSVG = () => {
 		C1256.026733,1081.993896 1256.640503,1082.059937 1262.499634,1090.282349
 		C1263.079346,1091.096069 1263.676514,1091.897339 1264.645264,1093.321899
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1293.091064,1071.882202
 		C1292.352295,1073.063599 1290.892822,1074.427490 1289.251221,1075.516602
 		C1285.183594,1078.215088 1286.078613,1080.745850 1290.232178,1083.971680
@@ -6027,15 +6023,15 @@ const SignatureSVG = () => {
 		C1266.083862,1082.866211 1266.802612,1079.663330 1270.582520,1078.311768
 		C1277.670654,1075.777344 1285.036865,1074.020020 1293.091064,1071.882202
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1089.152100,1165.543213
 		C1088.530884,1167.293213 1087.501343,1169.738770 1085.664673,1170.846924
 		C1075.003418,1177.279785 1064.152344,1183.397949 1052.635742,1189.734863
@@ -6043,15 +6039,15 @@ const SignatureSVG = () => {
 		C1057.658813,1180.227661 1059.097778,1177.991211 1061.010742,1177.129028
 		C1070.027954,1173.064941 1079.232788,1169.417236 1089.152100,1165.543213
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1194.356689,1085.596680
 		C1193.061035,1084.202026 1192.537842,1082.586914 1191.747803,1080.380615
 		C1196.785522,1078.410889 1202.073975,1076.965820 1207.400146,1075.676147
@@ -6059,147 +6055,147 @@ const SignatureSVG = () => {
 		C1214.726685,1084.233154 1210.888306,1085.587524 1205.712158,1084.844360
 		C1202.280762,1084.351440 1198.663452,1085.153809 1194.356689,1085.596680
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1048.963501,1191.647217
 		C1047.907471,1193.555786 1046.412354,1195.951050 1044.267700,1197.352051
 		C1035.972900,1202.770264 1027.471069,1207.871460 1018.384033,1213.305176
 		C1018.022156,1212.580200 1018.024963,1211.255737 1018.667725,1210.759033
 		C1027.976196,1203.564697 1036.940552,1195.812256 1048.963501,1191.647217
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1165.275513,1120.036865
 		C1159.834351,1128.375122 1151.006104,1132.677002 1140.572266,1135.738647
 		C1146.542358,1128.244873 1154.531006,1122.630127 1165.275513,1120.036865
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1107.304321,1154.104492
 		C1102.800659,1157.886230 1097.532593,1161.668701 1091.553467,1165.675293
 		C1093.682617,1158.783813 1098.726562,1154.601562 1107.304321,1154.104492
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1139.237427,1135.858398
 		C1135.726562,1138.394043 1131.444580,1140.913818 1126.522217,1143.656616
 		C1127.730103,1137.526245 1133.107544,1136.699219 1139.237427,1135.858398
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1125.275879,1143.789673
 		C1123.914307,1145.223511 1121.885376,1146.594604 1119.294312,1148.174316
 		C1120.690918,1146.830933 1122.649780,1145.278931 1125.275879,1143.789673
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1173.300537,1115.947021
 		C1171.715088,1117.172119 1169.467041,1118.463989 1166.562500,1119.869629
 		C1168.149780,1118.659912 1170.393799,1117.336792 1173.300537,1115.947021
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1117.552246,1148.797852
 		C1116.459839,1149.736328 1114.751953,1150.696289 1112.457764,1151.802856
 		C1113.559692,1150.906006 1115.248169,1149.862671 1117.552246,1148.797852
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1017.209106,1214.017334
 		C1017.087402,1214.341431 1016.554749,1214.805298 1015.716797,1215.241577
 		C1015.807434,1214.774536 1016.269653,1214.422363 1017.209106,1214.017334
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1111.480347,1152.069702
 		C1111.056519,1152.491089 1110.076172,1153.069214 1108.568726,1153.866577
 		C1109.002319,1153.465942 1109.963013,1152.846069 1111.480347,1152.069702
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1051.488281,1190.137939
 		C1051.513550,1190.395630 1051.078979,1190.833496 1050.273193,1191.553833
 		C1050.119629,1191.219360 1050.494995,1190.713379 1051.488281,1190.137939
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1377.711426,1541.360107
 		C1386.796021,1539.499756 1395.894165,1537.702637 1404.959961,1535.754639
 		C1410.124634,1534.644653 1415.191528,1533.045776 1420.379883,1532.085449
@@ -6231,15 +6227,15 @@ const SignatureSVG = () => {
 		C1371.625244,1549.248901 1373.164673,1545.816040 1375.219727,1542.255005
 		C1376.394043,1541.871338 1377.052734,1541.615723 1377.711426,1541.360107
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1532.626221,1603.387329
 		C1531.993042,1595.428833 1530.908081,1587.469849 1530.914185,1579.511841
 		C1530.917358,1575.439087 1531.831787,1570.621826 1534.123169,1567.422119
@@ -6258,15 +6254,15 @@ const SignatureSVG = () => {
 		C1571.331421,1595.646729 1552.604370,1597.076294 1534.961426,1604.507568
 		C1533.869507,1603.987915 1533.247925,1603.687622 1532.626221,1603.387329
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1377.909058,1540.741821
 		C1377.052734,1541.615723 1376.394043,1541.871338 1374.473145,1542.281006
 		C1370.870850,1543.073975 1368.530640,1543.712646 1365.730469,1544.780273
@@ -6318,15 +6314,15 @@ const SignatureSVG = () => {
 		C1373.486938,1515.773560 1374.056519,1522.157349 1378.557983,1527.874634
 		C1381.808594,1532.003418 1379.720215,1536.091064 1377.909058,1540.741821
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1679.447021,1561.737915
 		C1677.677002,1564.634155 1675.906982,1567.530396 1673.950684,1571.036255
 		C1673.764404,1571.645752 1673.815918,1571.732178 1673.038940,1571.903809
@@ -6353,15 +6349,15 @@ const SignatureSVG = () => {
 		C1680.328857,1547.629761 1680.590332,1553.310669 1679.999512,1559.261597
 		C1679.766113,1560.416992 1679.606567,1561.077393 1679.447021,1561.737915
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1532.000244,1603.610107
 		C1533.247925,1603.687622 1533.869507,1603.987915 1534.975342,1605.196289
 		C1534.206055,1610.434326 1532.952637,1614.764404 1531.133789,1619.500732
@@ -6398,15 +6394,15 @@ const SignatureSVG = () => {
 		C1470.892212,1642.415894 1468.762817,1646.516724 1467.923706,1651.730469
 		C1476.535645,1651.080811 1489.693970,1642.853882 1500.417725,1631.756226
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1622.304077,1572.618286
 		C1622.048462,1575.974731 1621.792969,1579.331055 1621.632690,1583.531616
 		C1621.736084,1586.824341 1621.744263,1589.272949 1621.441284,1593.122559
@@ -6431,15 +6427,15 @@ const SignatureSVG = () => {
 		C1628.290405,1557.786621 1626.818726,1562.012695 1624.734131,1567.374023
 		C1623.515381,1569.878784 1622.909668,1571.248535 1622.304077,1572.618286
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1635.797363,1410.887939
 		C1634.207153,1412.238403 1632.873657,1412.918335 1631.022461,1413.824707
 		C1627.542969,1411.611694 1624.581055,1409.172119 1621.105713,1405.799316
@@ -6456,15 +6452,15 @@ const SignatureSVG = () => {
 		C1667.242798,1334.671143 1660.359375,1352.897461 1653.040649,1370.946899
 		C1647.682861,1384.160522 1641.737671,1397.135864 1635.797363,1410.887939
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1697.336670,1439.805176
 		C1698.863281,1444.862427 1699.921753,1449.604004 1700.656982,1454.395386
 		C1701.760376,1461.585327 1701.663940,1461.600098 1692.849243,1464.064819
@@ -6474,15 +6470,15 @@ const SignatureSVG = () => {
 		C1674.466064,1452.300659 1679.973999,1443.955444 1683.617676,1433.256470
 		C1688.638794,1435.652954 1692.681396,1437.582397 1697.336670,1439.805176
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1667.925415,1289.901367
 		C1663.308716,1307.469727 1658.835693,1325.029175 1650.015015,1341.204590
 		C1646.734253,1347.220947 1645.857910,1354.511963 1642.860474,1360.727539
@@ -6497,15 +6493,15 @@ const SignatureSVG = () => {
 		C1666.643799,1281.790771 1667.620728,1281.753662 1667.702148,1282.570679
 		C1667.830933,1285.558960 1667.878174,1287.730103 1667.925415,1289.901367
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1680.073486,1558.766724
 		C1680.590332,1553.310669 1680.328857,1547.629761 1681.823242,1542.456055
 		C1683.640015,1536.166870 1686.586670,1530.120117 1689.668823,1524.298828
@@ -6517,15 +6513,15 @@ const SignatureSVG = () => {
 		C1700.206299,1498.496216 1697.503906,1511.399414 1694.438965,1524.766846
 		C1689.408813,1536.409546 1684.741211,1547.588135 1680.073486,1558.766724
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1510.160034,1598.102051
 		C1511.184692,1596.977173 1512.209473,1595.852417 1513.585938,1594.276611
 		C1517.481812,1594.801270 1519.691895,1596.992798 1520.365845,1601.427124
@@ -6533,120 +6529,120 @@ const SignatureSVG = () => {
 		C1507.772949,1610.486328 1504.701660,1609.793823 1504.392822,1604.349365
 		C1506.645630,1601.610840 1508.402832,1599.856445 1510.160034,1598.102051
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1549.189087,1491.464600
 		C1557.835815,1487.610840 1568.166870,1485.377686 1575.595459,1476.448364
 		C1576.582031,1483.165894 1572.146118,1486.975342 1566.241089,1488.763672
 		C1561.028442,1490.342407 1555.419678,1490.613159 1549.189087,1491.464600
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1488.229248,1500.292480
 		C1497.222290,1498.724609 1507.025879,1497.277222 1517.470093,1495.928711
 		C1509.069214,1501.791016 1499.087158,1501.318115 1488.229248,1500.292480
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1576.750244,1476.065918
 		C1580.401611,1469.703979 1584.753540,1463.295776 1589.616089,1456.449219
 		C1587.678467,1463.806274 1585.169312,1471.562988 1576.750244,1476.065918
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1598.851807,1444.107666
 		C1598.524048,1438.161987 1600.281494,1432.810791 1605.565186,1428.402588
 		C1605.718384,1434.094849 1605.548218,1440.273071 1598.851807,1444.107666
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1592.706787,1453.970703
 		C1593.694580,1451.037842 1595.363403,1447.918579 1597.585693,1444.435303
 		C1598.470093,1448.245605 1597.388916,1451.729126 1592.706787,1453.970703
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1532.451416,1494.078003
 		C1535.526611,1493.162598 1539.212769,1492.414062 1543.521851,1491.745117
 		C1540.450562,1492.631470 1536.756470,1493.438110 1532.451416,1494.078003
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1518.707520,1496.068726
 		C1521.126709,1495.448364 1524.340576,1494.821533 1528.187012,1494.326050
 		C1525.713745,1494.992432 1522.608154,1495.527344 1518.707520,1496.068726
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1590.374268,1455.750488
 		C1590.468750,1455.610229 1590.937256,1455.138550 1591.740234,1454.297241
 		C1591.642944,1454.435059 1591.200684,1454.932251 1590.374268,1455.750488
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M766.175781,1525.996094
 		C767.517700,1519.300903 768.859558,1512.605835 770.941772,1504.797607
 		C775.935059,1499.836182 777.127991,1494.936768 776.575806,1489.437988
@@ -6664,15 +6660,15 @@ const SignatureSVG = () => {
 		C763.549622,1544.729980 763.613708,1541.278809 764.404907,1536.591797
 		C765.479980,1532.235962 765.827881,1529.116089 766.175781,1525.996094
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M831.211975,1407.821045
 		C830.592834,1399.320801 830.592834,1399.320801 822.931458,1400.168701
 		C826.688782,1394.115723 830.963928,1387.852905 835.411072,1381.714844
@@ -6681,82 +6677,82 @@ const SignatureSVG = () => {
 		C847.035950,1379.115112 846.780762,1380.950684 846.020264,1382.317627
 		C841.343445,1390.724365 836.481384,1399.028076 831.211975,1407.821045
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M763.189575,1548.860962
 		C766.176086,1550.077637 768.866638,1551.974243 771.992554,1554.499268
 		C771.825989,1559.077637 771.297913,1563.921875 766.086243,1563.278320
 		C761.495361,1562.711426 762.182129,1557.872070 762.041077,1554.362305
 		C761.977051,1552.769165 762.588562,1551.148926 763.189575,1548.860962
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M776.160645,1489.916626
 		C777.127991,1494.936768 775.935059,1499.836182 771.137451,1504.069824
 		C772.310303,1499.768677 774.027893,1495.081909 776.160645,1489.916626
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M797.129272,1441.882568
 		C795.836304,1446.044800 794.005005,1450.626099 791.767395,1455.653564
 		C791.045715,1450.720093 792.637512,1446.063232 797.129272,1441.882568
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M765.844421,1526.662109
 		C765.827881,1529.116089 765.479980,1532.235962 764.671509,1535.763184
 		C764.645020,1533.223145 765.079041,1530.275635 765.844421,1526.662109
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M818.780396,1409.887695
 		C818.474487,1410.820679 817.718262,1412.093994 816.514038,1413.713867
 		C816.820679,1412.782959 817.575378,1411.505615 818.780396,1409.887695
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1591.663940,1625.812744
 		C1592.629150,1627.859375 1594.184204,1629.831177 1594.455322,1631.965942
 		C1595.538696,1640.493774 1601.715088,1644.741455 1607.104614,1649.429443
@@ -6779,42 +6775,42 @@ const SignatureSVG = () => {
 		C1587.715576,1633.093750 1588.719971,1629.543213 1590.210693,1625.962158
 		C1590.696899,1625.931519 1591.663940,1625.812744 1591.663940,1625.812744
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1548.654541,1899.540771
 		C1551.718384,1898.512085 1552.781372,1899.825439 1552.077637,1902.241699
 		C1551.849609,1903.024536 1550.151001,1903.379028 1549.125000,1903.929443
 		C1548.852905,1902.570312 1548.580811,1901.211060 1548.654541,1899.540771
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1523.486938,1973.912598
 		C1523.723022,1973.689575 1523.950562,1973.642822 1524.178223,1973.596191
 		C1523.944946,1973.760620 1523.711670,1973.924805 1523.486938,1973.912598
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2018.188477,925.926758
 		C2019.114624,918.922119 2020.718628,912.184998 2023.016846,904.415527
 		C2027.355469,901.799866 2030.999878,900.216614 2034.644287,898.633362
@@ -6822,42 +6818,42 @@ const SignatureSVG = () => {
 		C2034.328735,915.518982 2033.006836,922.134155 2029.965088,929.394775
 		C2026.068115,928.802185 2022.467163,927.498230 2018.188477,925.926758
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1936.055664,1294.777710
 		C1937.458862,1294.054199 1938.722900,1293.714233 1939.987061,1293.374268
 		C1939.653320,1294.501221 1939.319702,1295.628296 1938.986084,1296.755371
 		C1937.962891,1296.223999 1936.939819,1295.692627 1936.055664,1294.777710
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1949.710205,1308.893188
 		C1949.766724,1308.846313 1949.846802,1309.088867 1949.788086,1309.077393
 		C1949.729492,1309.065796 1949.653809,1308.940063 1949.710205,1308.893188
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1982.313477,1455.605347
 		C1965.434937,1462.699219 1954.726074,1475.334351 1947.535034,1491.266113
 		C1943.856445,1499.416016 1940.586060,1507.749390 1937.008301,1515.946167
@@ -6919,15 +6915,15 @@ const SignatureSVG = () => {
 		C1992.934082,1448.640991 1987.110107,1448.570923 1983.574585,1455.390015
 		C1983.574585,1455.390015 1982.736816,1455.552124 1982.313477,1455.605347
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2245.905762,1236.717773
 		C2248.548340,1218.813843 2255.889648,1203.342041 2263.031982,1187.797607
 		C2264.266602,1185.110596 2265.427246,1182.389648 2266.814941,1178.948853
@@ -6981,15 +6977,15 @@ const SignatureSVG = () => {
 		C2242.083496,1290.588623 2239.821289,1272.300049 2244.125000,1254.218262
 		C2245.413818,1248.803345 2245.334473,1243.062988 2245.905762,1236.717773
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2211.645020,1458.405151
 		C2211.654053,1456.751465 2211.662842,1455.097778 2211.760986,1451.994629
 		C2211.873535,1449.707642 2211.896973,1448.869873 2211.920410,1448.032227
@@ -7020,15 +7016,15 @@ const SignatureSVG = () => {
 		C2210.281250,1471.116699 2215.051025,1467.969849 2211.984863,1460.115479
 		C2211.734619,1459.104614 2211.645020,1458.405151 2211.645020,1458.405151
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2158.954102,1416.776123
 		C2156.083252,1417.916748 2152.402344,1419.537842 2148.591797,1419.943848
 		C2115.910156,1423.426880 2083.204102,1426.681763 2050.508301,1430.036011
@@ -7044,15 +7040,15 @@ const SignatureSVG = () => {
 		C2106.071777,1423.268188 2126.928711,1417.341553 2148.128662,1416.963501
 		C2151.447510,1416.904297 2154.765381,1416.784790 2158.954102,1416.776123
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2255.641846,1408.205566
 		C2257.310547,1408.239624 2258.566895,1409.159546 2259.793457,1409.121948
 		C2269.135498,1408.835571 2273.430664,1414.447510 2275.929199,1423.197266
@@ -7062,42 +7058,42 @@ const SignatureSVG = () => {
 		C2252.053955,1414.080200 2251.715820,1413.729858 2251.544678,1413.552734
 		C2252.654297,1411.799561 2253.935059,1410.223633 2255.641846,1408.205566
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1949.698975,1439.616211
 		C1948.344116,1440.299683 1946.617310,1440.703979 1944.226562,1441.154053
 		C1944.862915,1438.656494 1946.660645,1437.653320 1949.698975,1439.616211
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1959.630859,1438.528076
 		C1960.121460,1438.349365 1960.096436,1439.130981 1960.081055,1439.520752
 		C1959.609741,1439.888916 1959.153564,1439.867065 1958.008667,1439.799805
 		C1957.926880,1439.405396 1958.533569,1439.056152 1959.630859,1438.528076
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2313.554443,1385.376099
 		C2309.612549,1383.786377 2305.670654,1382.196777 2300.130371,1380.355713
 		C2294.217773,1380.075317 2289.885254,1380.290771 2285.593018,1379.967041
@@ -7196,98 +7192,98 @@ const SignatureSVG = () => {
 		C2358.198730,1379.973145 2354.213623,1380.022583 2349.307617,1380.039429
 		C2336.281494,1378.588379 2325.080811,1383.038574 2313.554443,1385.376099
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2748.005859,1119.497314
 		C2739.661621,1115.769287 2731.313477,1111.324829 2722.454102,1105.965210
 		C2721.942871,1105.050049 2721.978027,1104.057373 2721.978027,1104.057373
 		C2730.356445,1108.182739 2738.735107,1112.308105 2747.551758,1116.890625
 		C2747.994141,1117.825317 2747.998047,1118.303101 2748.005859,1119.497314
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2663.713623,1079.344482
 		C2653.178955,1076.985352 2642.259033,1074.017334 2630.692871,1070.750977
 		C2632.440430,1069.905273 2635.100586,1068.401245 2637.180908,1068.980347
 		C2645.266602,1071.231812 2653.178955,1074.112183 2661.121582,1076.857910
 		C2661.971924,1077.151978 2662.597900,1078.094238 2663.713623,1079.344482
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2697.707520,1091.460938
 		C2689.233887,1089.638184 2679.883545,1088.409302 2672.240723,1081.369385
 		C2680.730957,1083.176270 2689.878662,1084.840210 2697.707520,1091.460938
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2717.906982,1103.367432
 		C2711.720215,1100.296265 2705.301514,1096.580688 2698.402832,1092.385742
 		C2706.337402,1092.168945 2712.715576,1096.150635 2717.906982,1103.367432
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2721.304199,1103.992920
 		C2721.978027,1104.057373 2721.942871,1105.050049 2721.913574,1105.546143
 		C2720.888916,1105.518677 2719.893555,1104.995361 2718.409668,1104.187012
 		C2718.824219,1103.910767 2719.727295,1103.919556 2721.304199,1103.992920
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2667.462891,1080.227295
 		C2667.022461,1080.319824 2665.884766,1080.288452 2664.347412,1080.100830
 		C2664.886963,1079.997681 2665.826172,1080.050537 2667.462891,1080.227295
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2769.192383,1222.494019
 		C2769.202637,1223.188599 2769.213135,1223.883301 2768.793457,1225.556396
 		C2764.949707,1229.957275 2764.364990,1233.910889 2765.812256,1238.447144
@@ -7322,15 +7318,15 @@ const SignatureSVG = () => {
 		C2742.966309,1177.719727 2748.339844,1186.400757 2753.536133,1195.183594
 		C2758.878662,1204.213867 2763.983398,1213.384644 2769.192383,1222.494019
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2715.466797,1375.200684
 		C2720.731445,1375.518921 2725.994873,1376.084473 2731.260742,1376.107300
 		C2745.183838,1376.167603 2759.108398,1375.993042 2774.051270,1375.973633
@@ -7347,15 +7343,15 @@ const SignatureSVG = () => {
 		C2697.246582,1387.689087 2699.254883,1385.422852 2701.509766,1382.769409
 		C2706.602295,1380.103760 2711.034424,1377.652222 2715.466797,1375.200684
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2676.693359,1415.642822
 		C2682.582275,1421.709595 2689.820557,1420.145874 2697.109863,1419.680176
 		C2705.561768,1419.140625 2714.071289,1419.500122 2723.320312,1419.796875
@@ -7368,15 +7364,15 @@ const SignatureSVG = () => {
 		C2653.991699,1435.940430 2653.819824,1435.064941 2654.192383,1434.557617
 		C2661.941162,1427.914429 2669.317139,1421.778564 2676.693359,1415.642822
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2798.600586,1165.881836
 		C2792.664062,1155.590332 2781.717773,1150.693481 2774.511230,1142.112183
 		C2773.035400,1140.354858 2771.057617,1139.029297 2769.439209,1137.379150
@@ -7388,15 +7384,15 @@ const SignatureSVG = () => {
 		C2810.262695,1172.154907 2808.636719,1170.098022 2806.542236,1168.792236
 		C2804.327637,1167.411377 2801.666992,1166.745728 2798.600586,1165.881836
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2707.980957,1437.797852
 		C2716.849121,1433.423218 2726.252930,1433.557251 2736.621582,1434.664551
 		C2737.543213,1435.510864 2737.595459,1436.191895 2737.276367,1437.808594
@@ -7408,15 +7404,15 @@ const SignatureSVG = () => {
 		C2729.862061,1439.237915 2727.946533,1437.194336 2721.798584,1437.262329
 		C2717.191406,1437.313232 2712.586670,1437.610352 2707.980957,1437.797852
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2777.788086,1363.759766
 		C2772.820068,1360.723022 2767.583008,1359.650757 2761.753662,1360.025391
 		C2752.927002,1360.592529 2744.056641,1360.709106 2735.210938,1360.582275
@@ -7428,134 +7424,134 @@ const SignatureSVG = () => {
 		C2779.718018,1360.160278 2778.733154,1362.033569 2777.748535,1363.906860
 		C2777.748535,1363.906860 2777.829102,1363.808472 2777.788086,1363.759766
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2726.635498,1460.964722
 		C2727.516602,1458.986572 2728.397949,1457.008423 2729.680176,1454.514160
 		C2733.306885,1455.385010 2736.532715,1456.772095 2740.484619,1458.480469
 		C2739.944824,1461.035278 2738.678711,1463.268799 2736.301270,1465.559448
 		C2732.338379,1464.065796 2729.486816,1462.515259 2726.635498,1460.964722
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2819.788086,1247.195068
 		C2819.052490,1241.101196 2818.646484,1234.286133 2818.372559,1226.554077
 		C2822.895020,1232.284424 2821.964111,1239.343750 2819.788086,1247.195068
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2818.117432,1221.340820
 		C2815.889404,1215.878296 2813.891846,1209.771240 2811.889160,1202.890137
 		C2817.556885,1207.085693 2819.598145,1213.318359 2818.117432,1221.340820
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2753.605469,1415.265625
 		C2755.766357,1411.324707 2758.598633,1407.157959 2761.956787,1402.551270
 		C2763.382568,1408.728027 2759.630371,1412.391968 2753.605469,1415.265625
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2747.800781,1446.375977
 		C2747.277832,1448.478394 2746.246338,1450.862427 2744.724121,1453.690186
 		C2743.303955,1450.844238 2744.382812,1448.376465 2747.800781,1446.375977
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2734.456543,1443.773926
 		C2734.957764,1442.247192 2735.931396,1440.495728 2737.343750,1438.316895
 		C2736.831055,1439.776001 2735.880127,1441.662476 2734.456543,1443.773926
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2814.529053,1180.360962
 		C2815.949463,1181.622803 2817.497559,1183.497192 2819.133545,1186.009888
 		C2817.699951,1184.756470 2816.178467,1182.864990 2814.529053,1180.360962
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2770.817383,1386.032349
 		C2771.310791,1384.451538 2772.288330,1382.645142 2773.694336,1380.388794
 		C2773.182617,1381.894897 2772.242188,1383.850952 2770.817383,1386.032349
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2778.241211,1363.495117
 		C2778.733154,1362.033569 2779.718018,1360.160278 2781.216797,1357.893799
 		C2780.731934,1359.361450 2779.732666,1361.222412 2778.241211,1363.495117
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1383.841309,1057.472168
 		C1376.546265,1060.544800 1368.615601,1062.966553 1360.883179,1065.909790
 		C1355.567749,1067.933105 1350.573486,1067.373169 1345.277710,1066.053711
@@ -7572,15 +7568,15 @@ const SignatureSVG = () => {
 		C1323.032349,1072.176514 1322.822998,1072.019287 1322.613770,1071.862183
 		C1322.741211,1072.040649 1322.868652,1072.219116 1323.241577,1072.333618
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1595.833496,1102.934326
 		C1583.972534,1098.528564 1572.027466,1093.481079 1560.295044,1087.979858
 		C1551.416748,1083.816895 1542.238525,1081.470337 1532.478271,1080.626953
@@ -7592,15 +7588,15 @@ const SignatureSVG = () => {
 		C1575.814453,1090.204346 1585.192139,1094.358887 1595.251709,1098.461182
 		C1595.826660,1099.850708 1595.833618,1100.973999 1595.833496,1102.934326
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1495.756348,1065.325928
 		C1483.292480,1064.828003 1470.329834,1064.551514 1457.700928,1062.356323
 		C1441.890747,1059.608276 1426.151855,1059.664307 1410.289185,1060.310059
@@ -7609,42 +7605,42 @@ const SignatureSVG = () => {
 		C1445.352417,1056.715820 1463.817749,1058.768799 1482.257935,1060.915039
 		C1486.726685,1061.435059 1491.027710,1063.396973 1495.756348,1065.325928
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1395.923828,1058.686768
 		C1393.798706,1058.909912 1391.215332,1058.723389 1388.129883,1058.244629
 		C1390.336548,1055.744141 1392.936157,1056.161499 1395.923828,1058.686768
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1507.277588,1067.781128
 		C1507.936401,1068.519775 1507.912964,1068.891113 1507.841553,1069.821533
 		C1504.189819,1069.216187 1500.586060,1068.051880 1496.472168,1066.394287
 		C1499.506348,1066.405273 1503.050781,1066.909546 1507.277588,1067.781128
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M607.219849,1858.152832
 		C613.499084,1859.325928 619.040710,1860.664917 625.402588,1862.088501
 		C623.467896,1864.464478 621.064636,1867.796753 617.897217,1868.866333
@@ -7659,15 +7655,15 @@ const SignatureSVG = () => {
 		C548.715393,1874.821655 550.268799,1874.194336 551.867981,1873.741821
 		C570.070679,1868.593384 588.276978,1863.457642 607.219849,1858.152832
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2322.136475,1514.323486
 		C2321.454102,1508.906372 2320.704590,1504.357422 2320.525391,1498.635498
 		C2326.902832,1491.181885 2330.660156,1484.415771 2326.500000,1475.073608
@@ -7721,15 +7717,15 @@ const SignatureSVG = () => {
 		C2320.744629,1566.978271 2319.697510,1562.487061 2315.819580,1557.955444
 		C2317.902832,1543.700928 2319.986328,1529.446289 2322.136475,1514.323486
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2424.524658,1711.233398
 		C2421.883545,1706.124023 2420.080811,1701.107910 2418.844727,1695.230469
 		C2422.026611,1694.002686 2424.641113,1693.636353 2428.069092,1693.367432
@@ -7768,28 +7764,28 @@ const SignatureSVG = () => {
 		C2496.289307,1696.493408 2479.260254,1702.240967 2461.851074,1706.384155
 		C2449.969238,1709.211792 2437.544922,1709.759644 2424.524658,1711.233398
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2410.361572,1712.728027
 		C2411.608398,1712.205811 2413.333496,1711.987793 2415.559570,1711.962769
 		C2414.320312,1712.447998 2412.580078,1712.740112 2410.361572,1712.728027
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1683.215332,1269.475586
 		C1680.858032,1269.708862 1678.957397,1269.453369 1676.198242,1268.330811
 		C1675.545898,1265.811890 1675.621094,1264.131226 1675.978760,1262.512817
@@ -7801,15 +7797,15 @@ const SignatureSVG = () => {
 		C1690.056152,1206.080444 1690.387817,1222.203491 1689.846924,1238.281860
 		C1689.495605,1248.724243 1689.115479,1259.441650 1683.215332,1269.475586
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1678.344727,1177.245605
 		C1677.461304,1178.536865 1676.195312,1179.221558 1673.983643,1179.611328
 		C1664.315186,1163.923584 1656.229614,1148.113770 1644.081299,1134.975830
@@ -7818,28 +7814,28 @@ const SignatureSVG = () => {
 		C1657.357300,1137.809570 1664.218384,1146.527344 1667.978027,1158.662842
 		C1669.963257,1165.070801 1674.549927,1170.672852 1678.344727,1177.245605
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1683.395508,1281.585205
 		C1680.335693,1279.882202 1679.243530,1277.553955 1682.670410,1274.347412
 		C1683.305908,1276.386230 1683.477661,1278.783203 1683.395508,1281.585205
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1651.082275,1782.193481
 		C1648.798584,1783.808472 1647.016602,1784.993774 1644.953613,1786.365967
 		C1641.778931,1781.482910 1644.133545,1777.966797 1646.138672,1774.733398
@@ -7847,15 +7843,15 @@ const SignatureSVG = () => {
 		C1652.053589,1772.555786 1653.625000,1774.917847 1653.734985,1776.503540
 		C1653.852539,1778.199097 1652.368896,1780.005737 1651.082275,1782.193481
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1441.098999,1655.415649
 		C1444.897461,1659.382935 1444.994629,1663.932739 1443.480957,1668.903198
 		C1442.264038,1672.898926 1441.403320,1677.002930 1439.904297,1682.109863
@@ -7882,15 +7878,15 @@ const SignatureSVG = () => {
 		C1416.807251,1673.436401 1420.254395,1673.955322 1427.144775,1667.926392
 		C1431.845825,1663.812866 1436.450928,1659.589600 1441.098999,1655.415649
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1440.686279,1705.686768
 		C1439.282593,1701.928467 1439.059570,1698.330078 1437.930908,1695.042603
 		C1436.744873,1691.588501 1434.574585,1688.443359 1437.655518,1685.004028
@@ -7906,66 +7902,66 @@ const SignatureSVG = () => {
 		C1467.879883,1711.631226 1466.241699,1709.856689 1457.117310,1708.498535
 		C1451.892090,1707.720581 1446.684326,1706.825806 1440.686279,1705.686768
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1570.626221,1677.067871
 		C1576.155884,1675.644287 1576.790527,1676.365234 1575.472290,1683.593872
 		C1573.907715,1681.850464 1572.593262,1679.676636 1570.626221,1677.067871
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1423.907227,1700.838623
 		C1426.564941,1701.304199 1429.770386,1702.236084 1433.482666,1703.660767
 		C1430.811279,1703.203979 1427.633179,1702.254395 1423.907227,1700.838623
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1564.062744,1679.569580
 		C1564.227295,1679.153809 1564.835815,1678.499878 1565.715698,1677.910034
 		C1565.493530,1678.426514 1565.000122,1678.879028 1564.062744,1679.569580
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1493.006836,1760.968140
 		C1492.962280,1760.982544 1493.051270,1760.953735 1493.006836,1760.968140
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1612.384155,1637.393066
 		C1612.230835,1638.063232 1611.827881,1638.575195 1611.713257,1638.879639
 		C1607.378540,1640.070801 1605.314331,1638.857056 1605.783569,1634.065674
@@ -7978,15 +7974,15 @@ const SignatureSVG = () => {
 		C1629.719116,1621.943604 1629.143311,1624.477051 1627.982910,1627.222900
 		C1621.295288,1628.327881 1615.746704,1630.487793 1612.384155,1637.393066
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2326.246094,1475.714478
 		C2330.660156,1484.415771 2326.902832,1491.181885 2320.636963,1498.001953
 		C2301.719727,1501.048706 2284.630371,1508.069336 2266.776367,1514.885376
@@ -7994,15 +7990,15 @@ const SignatureSVG = () => {
 		C2251.719727,1503.507080 2247.733643,1496.444580 2244.407715,1488.446777
 		C2271.944580,1481.746826 2298.832031,1476.909668 2326.246094,1475.714478
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2263.858887,1540.500732
 		C2267.488037,1547.238647 2265.209961,1553.184814 2259.929932,1558.137207
 		C2255.570557,1562.226074 2251.217529,1566.540161 2246.172607,1569.629517
@@ -8020,15 +8016,15 @@ const SignatureSVG = () => {
 		C2236.218994,1561.207031 2243.745850,1559.611206 2252.674316,1549.767090
 		C2256.230469,1546.813599 2259.786865,1543.860229 2263.858887,1540.500732
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2326.500000,1475.073608
 		C2298.832031,1476.909668 2271.944580,1481.746826 2244.422119,1487.695801
 		C2242.488281,1483.081543 2241.313477,1478.212891 2240.071289,1472.558594
@@ -8045,15 +8041,15 @@ const SignatureSVG = () => {
 		M2321.039795,1472.962891
 		C2321.039795,1472.962891 2320.982422,1472.960938 2321.039795,1472.962891
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2205.185059,1474.804932
 		C2217.226318,1473.895142 2218.180176,1472.350952 2216.621582,1461.296631
 		C2214.741699,1447.964844 2215.227051,1434.804443 2223.943848,1422.197754
@@ -8071,15 +8067,15 @@ const SignatureSVG = () => {
 		C2189.570557,1479.502441 2190.576660,1479.280884 2191.582520,1479.059326
 		C2195.921387,1477.779541 2200.260254,1476.499756 2205.185059,1474.804932
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2252.623535,1548.938965
 		C2243.745850,1559.611206 2236.218994,1561.207031 2224.911621,1555.649048
 		C2221.946045,1554.191406 2218.773438,1553.035156 2216.070557,1551.191162
@@ -8088,41 +8084,41 @@ const SignatureSVG = () => {
 		C2233.384277,1539.117798 2237.642334,1537.454590 2242.488037,1535.519775
 		C2252.330811,1536.299072 2252.330811,1536.299072 2252.623535,1548.938965
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2233.981689,1522.798340
 		C2234.697998,1522.297974 2235.588623,1522.142456 2237.149414,1521.887451
 		C2237.086182,1523.557617 2236.667969,1526.181030 2233.981689,1522.798340
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2022.632080,1573.753174
 		C2030.247681,1564.763062 2038.551392,1555.631104 2047.480713,1546.240234
 		C2042.354370,1557.442993 2035.358887,1567.789307 2022.632080,1573.753174
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2052.703613,1539.850586
 		C2054.018555,1536.071777 2055.741455,1531.954834 2057.913086,1528.089844
 		C2059.743408,1524.832397 2060.528564,1522.162720 2055.819092,1520.014893
@@ -8132,93 +8128,93 @@ const SignatureSVG = () => {
 		C2063.343750,1527.102417 2062.742920,1527.925781 2062.074707,1529.398438
 		C2058.989258,1533.211548 2056.147705,1536.416504 2052.703613,1539.850586
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2016.476562,1579.729492
 		C2017.008179,1578.879883 2018.056519,1577.752808 2019.578369,1576.287964
 		C2019.032349,1577.117432 2018.012817,1578.284790 2016.476562,1579.729492
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2048.393066,1545.672363
 		C2048.460449,1545.056763 2048.936035,1544.022217 2049.744385,1542.524658
 		C2049.651855,1543.125610 2049.226807,1544.189453 2048.393066,1545.672363
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2012.551636,1581.886719
 		C2012.996460,1581.507202 2013.985596,1580.954468 2015.499268,1580.186035
 		C2015.047974,1580.551514 2014.071899,1581.132446 2012.551636,1581.886719
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2008.401367,1585.849121
 		C2008.861816,1585.452393 2009.886108,1584.860718 2011.450439,1584.025635
 		C2010.982056,1584.406128 2009.973511,1585.030151 2008.401367,1585.849121
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2020.331421,1575.747070
 		C2020.372314,1575.561157 2020.812622,1575.091431 2021.620239,1574.305542
 		C2021.607300,1574.511841 2021.188477,1575.003174 2020.331421,1575.747070
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2050.555176,1541.898193
 		C2050.444336,1541.545532 2050.862305,1541.074951 2051.704102,1540.356934
 		C2051.725098,1540.617920 2051.377197,1541.174805 2050.555176,1541.898193
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1334.385010,1717.522827
 		C1328.375977,1719.242065 1322.876221,1720.557617 1316.588867,1721.973145
 		C1313.187866,1721.947266 1310.303955,1721.037964 1308.007446,1721.830566
@@ -8247,15 +8243,15 @@ const SignatureSVG = () => {
 		C1344.793091,1711.229858 1344.407349,1711.925171 1344.021484,1712.620483
 		C1340.979126,1714.119995 1337.936768,1715.619507 1334.385010,1717.522827
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1346.453613,1697.133057
 		C1346.105713,1697.227051 1345.678833,1697.094849 1345.233398,1696.312988
 		C1344.394165,1690.952271 1344.000366,1686.373535 1343.885254,1681.088013
@@ -8269,56 +8265,56 @@ const SignatureSVG = () => {
 		C1349.787231,1696.687500 1348.654053,1696.888550 1347.520874,1697.089722
 		C1347.520874,1697.089722 1346.801636,1697.038940 1346.453613,1697.133057
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1347.918457,1697.254272
 		C1348.654053,1696.888550 1349.787231,1696.687500 1351.491943,1696.475098
 		C1350.814331,1696.782227 1349.565186,1697.100464 1347.918457,1697.254272
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1344.428833,1712.696289
 		C1344.407349,1711.925171 1344.793091,1711.229858 1345.503662,1710.029785
 		C1346.295166,1710.014526 1346.761841,1710.503784 1347.569824,1711.359375
 		C1346.886108,1712.074585 1345.861084,1712.423340 1344.428833,1712.696289
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1833.967041,1409.715088
 		C1833.495972,1409.972534 1833.037720,1409.990479 1832.579590,1410.008545
 		C1832.596191,1409.743286 1832.612671,1409.477905 1832.629272,1409.212646
 		C1833.079590,1409.300293 1833.529785,1409.387817 1833.967041,1409.715088
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2170.563965,1429.973755
 		C2173.226562,1431.022705 2176.459961,1431.445923 2178.436035,1433.247681
 		C2182.884521,1437.303711 2182.629883,1442.483398 2177.191162,1444.426636
@@ -8343,55 +8339,55 @@ const SignatureSVG = () => {
 		C2150.086426,1442.025269 2149.987793,1441.981079 2150.707520,1441.911377
 		C2157.805908,1437.885742 2164.185059,1433.929688 2170.563965,1429.973755
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2315.527832,1558.676270
 		C2319.697510,1562.487061 2320.744629,1566.978271 2315.110352,1571.744507
 		C2314.807129,1567.870728 2315.021484,1563.634033 2315.527832,1558.676270
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1642.001953,1136.003906
 		C1633.585449,1135.088867 1629.333374,1128.226562 1623.360352,1122.641846
 		C1631.375244,1122.435791 1635.786499,1129.392212 1642.213379,1134.441406
 		C1642.554565,1135.274414 1642.001953,1136.003906 1642.001953,1136.003906
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1620.101562,1119.631958
 		C1616.036133,1117.172974 1612.083374,1114.161011 1607.611084,1110.655273
 		C1613.548218,1110.069702 1619.172119,1111.203003 1620.101562,1119.631958
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1642.000977,1136.001953
 		C1642.001953,1136.003906 1642.554565,1135.274414 1642.799805,1134.889893
 		C1643.045166,1134.505249 1643.616455,1134.664185 1643.901489,1134.755859
@@ -8399,29 +8395,29 @@ const SignatureSVG = () => {
 		C1642.659058,1135.638062 1642.327759,1135.818237 1641.996460,1135.998535
 		C1641.996460,1135.998535 1642.000000,1136.000000 1642.000977,1136.001953
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1537.328857,1850.192383
 		C1536.657837,1850.661255 1536.368530,1851.315552 1536.136719,1851.989868
 		C1536.125854,1852.021851 1536.625488,1852.229248 1536.887329,1852.354980
 		C1537.165527,1851.697266 1537.443604,1851.039551 1537.328857,1850.192383
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2035.262085,898.345215
 		C2030.999878,900.216614 2027.355469,901.799866 2023.087891,903.582764
 		C2020.121826,897.281799 2020.374023,890.831543 2022.333618,884.237366
@@ -8430,41 +8426,41 @@ const SignatureSVG = () => {
 		C2045.405396,886.827515 2046.184692,888.486938 2046.964111,890.146362
 		C2043.269287,892.783264 2039.574585,895.420166 2035.262085,898.345215
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2047.499878,889.985291
 		C2046.184692,888.486938 2045.405396,886.827515 2044.438721,884.498047
 		C2046.393799,884.502563 2048.536133,885.177185 2051.353516,885.918335
 		C2050.697754,887.264648 2049.366699,888.544434 2047.499878,889.985291
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M655.914001,1646.012207
 		C655.919678,1645.955688 655.908325,1646.068848 655.914001,1646.012207
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2179.490479,1480.781494
 		C2179.037842,1487.058594 2183.214844,1486.470947 2186.837891,1486.453247
 		C2192.986572,1486.423096 2199.337402,1484.753906 2205.504150,1489.290649
@@ -8473,15 +8469,15 @@ const SignatureSVG = () => {
 		C2162.071533,1489.741455 2162.286865,1487.554810 2162.502441,1485.368042
 		C2167.916992,1483.478516 2172.470947,1478.714355 2179.490479,1480.781494
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2161.480957,1485.451416
 		C2162.286865,1487.554810 2162.071533,1489.741455 2161.788574,1492.729980
 		C2160.884521,1493.616943 2160.048096,1493.702148 2158.582031,1493.854126
@@ -8491,41 +8487,41 @@ const SignatureSVG = () => {
 		C2149.425781,1488.008667 2150.520020,1487.934570 2151.944824,1487.786011
 		C2155.003174,1486.985962 2157.731445,1486.260498 2161.480957,1485.451416
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1643.437256,1579.627563
 		C1652.521118,1576.994019 1662.391602,1574.534790 1673.032715,1571.953613
 		C1664.859863,1577.888306 1654.926025,1580.270874 1643.437256,1579.627563
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1638.707275,1581.020386
 		C1638.782227,1580.847412 1639.286133,1580.585449 1640.214844,1580.197998
 		C1640.153809,1580.382324 1639.652710,1580.668579 1638.707275,1581.020386
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1694.801514,1524.302734
 		C1697.503906,1511.399414 1700.206299,1498.496216 1703.443115,1484.411499
 		C1704.648682,1482.172607 1705.319946,1481.115112 1705.991211,1480.057617
@@ -8534,15 +8530,15 @@ const SignatureSVG = () => {
 		C1706.934082,1516.942871 1703.772217,1519.009888 1700.332764,1521.969482
 		C1697.605347,1523.121338 1696.203369,1523.712036 1694.801514,1524.302734
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1694.438965,1524.766846
 		C1696.203369,1523.712036 1697.605347,1523.121338 1699.718262,1522.264648
 		C1699.145630,1529.521973 1696.874512,1536.485107 1691.390625,1542.269775
@@ -8551,15 +8547,15 @@ const SignatureSVG = () => {
 		C1679.606567,1561.077393 1679.766113,1560.416992 1679.999634,1559.261597
 		C1684.741211,1547.588135 1689.408813,1536.409546 1694.438965,1524.766846
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1845.798584,1457.729248
 		C1857.768188,1456.405884 1868.970337,1455.148682 1880.193726,1454.123413
 		C1883.815796,1453.792725 1887.531616,1453.737915 1891.137573,1454.146606
@@ -8576,15 +8572,15 @@ const SignatureSVG = () => {
 		C1823.323364,1461.451660 1826.246338,1459.246704 1836.134766,1458.768188
 		C1839.110229,1458.624268 1842.071655,1458.187866 1845.798584,1457.729248
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1974.963867,1518.730103
 		C1971.739014,1519.214966 1969.163086,1519.657471 1966.571777,1519.974365
 		C1961.563721,1520.586426 1958.128052,1518.375732 1959.001709,1513.541016
@@ -8596,15 +8592,15 @@ const SignatureSVG = () => {
 		C2014.007446,1509.667358 2012.917725,1510.468750 1998.749023,1513.088257
 		C1990.959351,1514.528198 1983.315430,1516.757568 1974.963867,1518.730103
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1984.404053,1455.384399
 		C1987.110107,1448.570923 1992.934082,1448.640991 1999.018311,1450.657227
 		C2004.685303,1452.535034 2010.271851,1454.746094 2015.701904,1457.229980
@@ -8617,15 +8613,15 @@ const SignatureSVG = () => {
 		C2021.160156,1467.936157 2017.653564,1462.641968 2009.846924,1459.432251
 		C2001.796143,1456.122070 1994.167114,1452.424561 1984.404053,1455.384399
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2058.435059,1502.225098
 		C2064.822510,1499.676758 2068.099121,1494.986328 2066.318359,1487.028320
 		C2065.685791,1484.201660 2065.914795,1481.065308 2066.313965,1478.147461
@@ -8640,98 +8636,98 @@ const SignatureSVG = () => {
 		C2072.539307,1499.067749 2071.681641,1500.369385 2064.235596,1501.741211
 		C2062.621094,1502.038696 2060.954346,1502.055542 2058.435059,1502.225098
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2129.493164,1470.370117
 		C2129.662354,1471.688721 2129.242188,1473.321289 2128.662109,1475.566650
 		C2124.193359,1481.585815 2119.884521,1486.992188 2115.765869,1492.159912
 		C2111.985596,1492.159912 2108.733643,1492.159912 2104.733887,1492.139160
 		C2113.951904,1486.903442 2121.118896,1478.434814 2129.493164,1470.370117
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2092.674561,1516.679443
 		C2093.485596,1513.431885 2095.028076,1511.547119 2096.966309,1514.842529
 		C2097.904541,1516.437988 2096.855957,1519.202026 2096.707275,1521.436890
 		C2096.014893,1521.517456 2095.322754,1521.598022 2094.630371,1521.678467
 		C2093.961670,1520.190186 2093.292969,1518.701904 2092.674561,1516.679443
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2052.653809,1503.394531
 		C2053.241211,1503.046997 2054.483887,1502.707275 2056.370117,1502.240479
 		C2055.778809,1502.543091 2054.543701,1502.972656 2052.653809,1503.394531
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1841.687012,1427.595215
 		C1840.907593,1427.194214 1839.834351,1426.360962 1838.428223,1425.164307
 		C1839.194702,1425.588379 1840.293823,1426.375610 1841.687012,1427.595215
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1836.584961,1423.497437
 		C1836.302490,1423.548950 1835.666138,1423.118408 1834.579224,1422.331543
 		C1834.829468,1422.322021 1835.530396,1422.668579 1836.584961,1423.497437
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1843.663330,1428.121582
 		C1844.222046,1428.163330 1843.376221,1428.203979 1843.376221,1428.203979
 		C1843.376221,1428.203979 1842.532959,1428.128174 1842.259277,1428.073242
 		C1842.358521,1428.038940 1842.731567,1428.059448 1843.663330,1428.121582
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1350.454956,1662.866943
 		C1348.357788,1668.705078 1346.260864,1674.543213 1343.244141,1680.976562
 		C1338.962769,1679.712891 1335.600952,1677.853882 1332.239258,1675.994751
@@ -8746,30 +8742,30 @@ const SignatureSVG = () => {
 		C1356.292725,1646.547607 1354.937744,1649.150513 1353.943970,1651.884399
 		C1352.632690,1655.491333 1351.604736,1659.201294 1350.454956,1662.866943
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1331.866699,1676.370605
 		C1335.600952,1677.853882 1338.962769,1679.712891 1342.965576,1681.683350
 		C1344.000366,1686.373535 1344.394165,1690.952271 1345.011475,1696.337524
 		C1339.478394,1696.878296 1333.721924,1696.612793 1327.165283,1696.255249
 		C1328.074585,1689.690918 1329.784424,1683.218628 1331.866699,1676.370605
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1165.939941,1739.242065
 		C1162.838379,1739.136597 1158.994019,1739.184204 1155.499390,1738.102051
 		C1150.987793,1736.704956 1147.292969,1736.477051 1144.281616,1741.616333
@@ -8777,119 +8773,119 @@ const SignatureSVG = () => {
 		C1145.342041,1731.466919 1149.305664,1730.607910 1153.263184,1732.421631
 		C1157.410522,1734.322266 1161.332275,1736.715210 1165.939941,1739.242065
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M998.177124,1749.815918
 		C1004.361023,1747.592407 1011.209473,1745.602661 1018.867554,1743.614990
 		C1013.730957,1748.997314 1007.063416,1752.040527 998.177124,1749.815918
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1030.612183,1740.043945
 		C1036.536377,1734.075806 1044.995483,1735.391479 1053.674316,1734.089478
 		C1047.695801,1739.546387 1039.174561,1738.614136 1030.612183,1740.043945
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1144.753906,1744.322876
 		C1145.778076,1745.112061 1146.884766,1746.467163 1148.171143,1748.310303
 		C1147.179443,1747.495117 1146.008057,1746.192017 1144.753906,1744.322876
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1325.749512,1696.872437
 		C1325.288574,1697.608521 1324.423340,1698.646606 1323.106934,1699.923828
 		C1323.552246,1699.166870 1324.448730,1698.170532 1325.749512,1696.872437
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1024.695923,1742.003906
 		C1025.628540,1741.441406 1027.195190,1740.789795 1029.398193,1740.049561
 		C1028.466309,1740.612305 1026.898193,1741.263550 1024.695923,1742.003906
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1020.526062,1743.576660
 		C1020.979309,1743.245117 1021.944885,1742.730957 1023.466980,1742.158203
 		C1023.028442,1742.531006 1022.033447,1742.962524 1020.526062,1743.576660
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1155.991333,1761.980713
 		C1155.978271,1761.967529 1155.998291,1762.134155 1156.013916,1762.077393
 		C1156.029663,1762.020630 1156.004395,1761.994019 1155.991333,1761.980713
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1174.084106,1739.614014
 		C1173.923706,1739.775513 1173.372437,1739.761597 1171.992188,1739.675293
 		C1172.006592,1739.548096 1172.849976,1739.493408 1174.084106,1739.614014
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1353.880127,1546.074585
 		C1352.899536,1552.939209 1351.884155,1559.799072 1350.948853,1566.669922
 		C1350.144043,1572.581543 1349.430420,1578.505615 1348.469238,1586.081299
@@ -8919,15 +8915,15 @@ const SignatureSVG = () => {
 		C1333.108765,1548.830933 1338.602905,1547.666138 1344.711182,1546.342285
 		C1348.176880,1546.147095 1351.028442,1546.110840 1353.880127,1546.074585
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1066.155518,1685.549927
 		C1042.727661,1693.686035 1019.305725,1701.839233 995.868958,1709.949585
 		C987.428162,1712.870483 979.099976,1716.284424 970.461609,1718.432251
@@ -8946,15 +8942,15 @@ const SignatureSVG = () => {
 		C1070.936401,1683.242676 1070.159790,1683.482788 1068.416748,1684.090332
 		C1066.966064,1684.759277 1066.534424,1685.123291 1066.155518,1685.549927
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1072.430908,1682.983398
 		C1073.369873,1679.925781 1075.026733,1676.848999 1077.937744,1671.443237
 		C1067.497803,1673.241211 1059.553589,1674.609375 1051.358765,1675.593994
@@ -8975,15 +8971,15 @@ const SignatureSVG = () => {
 		C1104.293945,1668.747192 1094.168823,1673.572876 1083.989746,1678.281982
 		C1080.418457,1679.934082 1076.764893,1681.408569 1072.430908,1682.983398
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M881.745422,1714.274048
 		C884.000183,1718.877319 888.234009,1718.676514 892.519409,1719.313721
 		C897.543152,1720.060791 902.492493,1721.762329 907.254639,1723.614258
@@ -9004,15 +9000,15 @@ const SignatureSVG = () => {
 		C837.348206,1707.190918 845.267822,1707.205566 853.775146,1707.688599
 		C863.602478,1709.915649 872.673950,1712.094849 881.745422,1714.274048
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1343.934570,1613.007690
 		C1345.399780,1604.249878 1346.830933,1595.994141 1348.500000,1586.923340
 		C1350.936035,1587.755249 1353.134399,1589.402222 1355.707275,1592.342896
@@ -9022,15 +9018,15 @@ const SignatureSVG = () => {
 		C1343.728394,1617.525513 1343.636353,1616.515503 1343.544312,1615.505371
 		C1343.663208,1614.840088 1343.781982,1614.174927 1343.934570,1613.007690
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1342.920410,1615.872192
 		C1343.636353,1616.515503 1343.728394,1617.525513 1343.613770,1619.998047
 		C1342.858154,1624.914673 1342.309204,1628.368896 1341.760498,1631.823242
@@ -9039,145 +9035,145 @@ const SignatureSVG = () => {
 		C1334.103271,1639.425293 1336.256348,1630.598755 1338.752441,1621.870239
 		C1339.338013,1619.822754 1341.084106,1618.107178 1342.920410,1615.872192
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1154.766113,1641.920654
 		C1156.529907,1634.696411 1162.075562,1634.139282 1169.192139,1635.661621
 		C1165.093140,1637.803711 1160.296631,1639.807861 1154.766113,1641.920654
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M874.597107,1728.326172
 		C877.546143,1728.105957 880.966736,1728.352295 885.073364,1728.828369
 		C882.135742,1731.389282 878.539246,1732.631104 874.597107,1728.326172
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1141.194702,1651.986572
 		C1140.367188,1646.542114 1145.083496,1647.144409 1149.097168,1645.963257
 		C1147.089111,1647.845215 1144.428589,1649.797729 1141.194702,1651.986572
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M825.315430,1712.695312
 		C826.285156,1712.778564 827.651306,1713.279419 829.463745,1714.068359
 		C828.510681,1713.941895 827.111206,1713.527466 825.315430,1712.695312
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1150.498047,1645.487793
 		C1151.048340,1644.730103 1152.074097,1643.685425 1153.558838,1642.331299
 		C1153.002930,1643.081543 1151.988159,1644.141235 1150.498047,1645.487793
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1066.518311,1685.333008
 		C1066.534424,1685.123291 1066.966064,1684.759277 1067.828125,1684.249268
 		C1067.802490,1684.446411 1067.360840,1684.804932 1066.518311,1685.333008
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M870.467651,1727.936035
 		C870.309937,1727.762329 871.106873,1727.748535 871.501587,1727.806641
 		C871.896362,1727.864868 871.301819,1728.210205 871.301819,1728.210205
 		C871.301819,1728.210205 870.625305,1728.109619 870.467651,1727.936035
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M865.151245,1727.579712
 		C865.188660,1727.447998 865.166138,1727.575684 865.172791,1727.512451
 		C865.179443,1727.449341 865.113831,1727.711426 865.151245,1727.579712
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1209.406494,1758.985840
 		C1210.146240,1758.512573 1211.231445,1758.296265 1213.142334,1758.022705
 		C1212.562622,1758.391113 1211.157227,1758.816895 1209.406494,1758.985840
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M997.012573,1222.996216
 		C996.999084,1222.952393 997.026062,1223.040039 997.012573,1222.996216
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M882.565063,1714.233643
 		C872.673950,1712.094849 863.602478,1709.915649 853.227722,1707.216064
 		C845.245239,1703.873413 838.566040,1701.051147 831.886780,1698.229004
@@ -9231,15 +9227,15 @@ const SignatureSVG = () => {
 		C933.455688,1711.692139 922.704285,1714.424805 911.150940,1713.268311
 		C902.017944,1712.354126 892.648926,1713.796997 882.565063,1714.233643
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1235.676270,1571.117676
 		C1234.917603,1571.628662 1234.194946,1571.607788 1232.366211,1571.170166
 		C1220.099976,1567.459473 1210.459839,1571.243286 1201.284546,1577.191650
@@ -9278,260 +9274,260 @@ const SignatureSVG = () => {
 		C1251.463379,1561.322754 1244.156372,1564.382812 1236.982056,1568.008789
 		C1236.299072,1568.354126 1236.123291,1569.702759 1235.676270,1571.117676
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M862.251648,1646.697266
 		C852.044373,1649.747681 841.806030,1656.665649 828.799927,1654.341797
 		C838.461487,1648.509399 849.535339,1646.012329 862.251648,1646.697266
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M806.399292,1641.456055
 		C809.720093,1639.764771 813.769836,1637.471802 818.103394,1636.616699
 		C824.785706,1635.298340 831.662415,1634.964966 839.255859,1634.602661
 		C840.055115,1634.991577 839.917969,1635.863037 839.917969,1635.863037
 		C829.030457,1637.741577 818.143005,1639.620239 806.399292,1641.456055
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M862.047363,1631.541748
 		C866.878784,1628.855591 872.602173,1626.394165 879.248657,1627.869629
 		C878.281128,1628.723022 877.180298,1629.249268 876.079468,1629.775391
 		C871.688599,1630.390015 867.297852,1631.004639 862.047363,1631.541748
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M881.283386,1641.518066
 		C877.658691,1643.024170 873.421448,1644.425781 868.530518,1645.808105
 		C871.272339,1641.788696 875.833069,1641.196167 881.283386,1641.518066
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M816.819824,1655.802246
 		C813.551208,1657.225464 809.527832,1658.656738 804.704590,1660.067017
 		C807.958130,1658.634155 812.011536,1657.222168 816.819824,1655.802246
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M902.621460,1623.492065
 		C906.363342,1622.433838 910.628113,1621.456909 915.507568,1620.719482
 		C916.122253,1620.958984 915.988586,1621.066650 915.382446,1621.142090
 		C913.201965,1622.058960 911.627625,1622.900635 910.053345,1623.742188
 		C907.750366,1623.685791 905.447449,1623.629517 902.621460,1623.492065
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M910.508545,1623.861450
 		C911.627625,1622.900635 913.201965,1622.058960 915.298706,1621.123169
 		C914.201965,1622.012817 912.582825,1622.996826 910.508545,1623.861450
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M920.299377,1619.803467
 		C921.423157,1619.289307 923.192261,1618.760742 925.429199,1618.375000
 		C924.246277,1618.941528 922.595520,1619.365356 920.299377,1619.803467
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M876.548706,1629.859131
 		C877.180298,1629.249268 878.281128,1628.723022 879.937744,1627.932129
 		C880.493591,1627.667480 881.255188,1627.615356 881.634155,1627.669189
 		C880.348083,1628.463013 878.683044,1629.202881 876.548706,1629.859131
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M840.563843,1635.844482
 		C839.917969,1635.863037 840.055115,1634.991577 840.118652,1634.555176
 		C841.861572,1634.099976 843.540833,1634.081177 845.708008,1634.271240
 		C844.533813,1634.928833 842.871826,1635.377441 840.563843,1635.844482
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M887.559448,1626.702148
 		C888.723267,1626.282959 890.422729,1625.855347 892.628296,1625.529297
 		C891.454651,1625.985107 889.774841,1626.339355 887.559448,1626.702148
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M851.877197,1633.407715
 		C852.601501,1632.980225 853.963135,1632.563721 855.756531,1632.307617
 		C854.963745,1632.784912 853.739136,1633.101807 851.877197,1633.407715
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M895.756592,1624.629150
 		C896.306335,1624.305664 897.216370,1623.973389 898.480225,1623.741211
 		C897.928345,1624.101196 897.022583,1624.360962 895.756592,1624.629150
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M890.923950,1641.377930
 		C890.936157,1641.326172 890.876709,1641.829102 890.876709,1641.829102
 		C890.876709,1641.829102 890.936279,1641.669067 890.914856,1641.497192
 		C890.893433,1641.325317 890.911804,1641.429565 890.923950,1641.377930
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M821.170776,1655.592651
 		C821.315308,1655.615601 820.784546,1655.879639 820.760498,1655.745605
 		C820.736450,1655.611572 821.026184,1655.569702 821.170776,1655.592651
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M826.846375,1655.564575
 		C826.824768,1655.516602 826.845520,1655.736084 826.870911,1655.623779
 		C826.896301,1655.511353 826.867981,1655.612549 826.846375,1655.564575
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1335.619019,1725.833008
 		C1338.884277,1719.148560 1344.366089,1717.009277 1350.396118,1715.885620
 		C1355.811401,1714.876587 1361.273926,1714.121704 1367.217407,1713.174805
 		C1364.656250,1722.894409 1344.566772,1738.893066 1333.638550,1740.621094
 		C1331.379883,1735.602051 1334.593262,1731.161255 1335.619019,1725.833008
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1705.375732,1479.998047
 		C1705.319946,1481.115112 1704.648682,1482.172607 1703.685181,1483.583496
 		C1703.146729,1483.023926 1702.900635,1482.111084 1702.472534,1480.512207
 		C1703.113770,1479.863403 1703.937012,1479.900757 1705.375732,1479.998047
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1229.045532,1439.487915
 		C1224.239136,1442.130371 1218.711914,1444.763306 1211.781738,1447.896484
 		C1203.546509,1449.368774 1196.655762,1450.049194 1189.902100,1451.410400
@@ -9556,15 +9552,15 @@ const SignatureSVG = () => {
 		C1182.941772,1450.099121 1193.247559,1447.045288 1204.503052,1446.269531
 		C1212.561523,1445.713989 1220.392456,1441.860474 1229.045532,1439.487915
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1322.043457,1112.329956
 		C1330.336670,1124.764160 1338.578857,1137.232910 1346.946777,1149.616577
 		C1350.639771,1155.081787 1351.764282,1161.074829 1352.084717,1167.556274
@@ -9584,15 +9580,15 @@ const SignatureSVG = () => {
 		C1339.709717,1153.458008 1340.088867,1153.898071 1340.468140,1154.338257
 		C1340.886597,1153.684448 1341.305176,1153.030640 1341.321533,1151.847534
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1326.810303,1550.022461
 		C1327.225342,1547.359863 1328.444702,1544.670654 1329.901367,1541.458252
 		C1323.197632,1537.371338 1316.260498,1537.936157 1309.633911,1539.219360
@@ -9614,15 +9610,15 @@ const SignatureSVG = () => {
 		C1346.157471,1539.329590 1344.562622,1542.479980 1344.097168,1546.501343
 		C1338.602905,1547.666138 1333.108765,1548.830933 1326.810303,1550.022461
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1642.165283,1136.680420
 		C1642.327759,1135.818237 1642.659058,1135.638062 1643.508789,1135.228271
 		C1656.229614,1148.113770 1664.315186,1163.923584 1673.351807,1179.949463
@@ -9638,15 +9634,15 @@ const SignatureSVG = () => {
 		C1671.004028,1192.377075 1670.035767,1186.919067 1667.664795,1182.443481
 		C1659.598022,1167.216797 1650.832886,1152.360107 1642.165283,1136.680420
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1275.025391,1099.956177
 		C1276.241699,1091.517700 1278.529419,1090.140991 1285.691284,1093.317627
 		C1289.415894,1094.969604 1292.939941,1097.073853 1296.639771,1099.018677
@@ -9660,15 +9656,15 @@ const SignatureSVG = () => {
 		M1303.998535,1101.059448
 		C1303.998535,1101.059448 1303.969727,1100.959839 1303.998535,1101.059448
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1339.498413,1409.735229
 		C1330.051636,1412.653076 1319.891357,1415.589966 1309.718628,1418.482788
 		C1290.622803,1423.913330 1271.537476,1429.382568 1252.406128,1434.685181
@@ -9677,15 +9673,15 @@ const SignatureSVG = () => {
 		C1272.092896,1426.963867 1282.893066,1420.765259 1294.869873,1418.285156
 		C1309.470459,1415.261475 1324.139771,1412.569580 1339.498413,1409.735229
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1292.860596,1438.544189
 		C1299.561035,1435.951050 1307.114380,1433.527588 1314.579956,1430.857910
 		C1321.435425,1428.406494 1328.007812,1424.764160 1335.047852,1423.331055
@@ -9693,15 +9689,15 @@ const SignatureSVG = () => {
 		C1342.425171,1426.738281 1322.969604,1432.037964 1303.472412,1437.178833
 		C1300.301514,1438.014771 1296.945557,1438.148438 1292.860596,1438.544189
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1207.958740,1461.906494
 		C1221.030518,1458.438110 1234.081665,1454.888916 1247.186890,1451.551758
 		C1251.004639,1450.579590 1254.976440,1450.212158 1259.610596,1449.543701
@@ -9710,30 +9706,30 @@ const SignatureSVG = () => {
 		C1196.009888,1471.251099 1194.972046,1469.767944 1194.493164,1467.864380
 		C1199.354370,1465.598145 1203.656494,1463.752319 1207.958740,1461.906494
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1387.423340,1396.675537
 		C1386.780640,1400.525879 1383.762573,1402.781372 1379.631836,1403.781982
 		C1370.678467,1405.950562 1361.756958,1408.264160 1352.758179,1410.222534
 		C1350.281738,1410.761475 1347.577759,1410.255737 1344.288818,1409.986084
 		C1357.971680,1405.494385 1372.343994,1401.246216 1387.423340,1396.675537
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1193.934204,1468.284668
 		C1194.972046,1469.767944 1196.009888,1471.251099 1197.376587,1473.146240
 		C1198.740356,1474.431641 1199.775391,1475.305054 1201.246826,1476.694702
@@ -9743,82 +9739,82 @@ const SignatureSVG = () => {
 		C1173.965820,1469.991333 1180.112305,1472.794067 1185.952393,1470.118164
 		C1189.524414,1469.213745 1191.729248,1468.749268 1193.934204,1468.284668
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1306.685059,1118.238037
 		C1306.899414,1110.371826 1313.307129,1109.533691 1319.231445,1107.182861
 		C1320.381104,1108.285889 1320.944702,1109.628296 1321.775757,1111.650269
 		C1320.398560,1116.109009 1318.753784,1119.888184 1316.526978,1125.004395
 		C1313.283203,1122.750000 1310.259521,1120.648560 1306.685059,1118.238037
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1262.875122,1447.852539
 		C1271.289307,1445.140503 1280.388428,1442.348145 1290.248779,1439.538574
 		C1281.859985,1442.271606 1272.710083,1445.021973 1262.875122,1447.852539
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1228.177734,1553.354980
 		C1224.113892,1554.334106 1219.573730,1555.077759 1214.220215,1555.788818
 		C1218.171753,1554.877197 1222.936646,1553.998413 1228.177734,1553.354980
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1293.643311,1085.677246
 		C1293.089966,1085.558105 1292.110840,1085.096924 1290.688477,1084.327759
 		C1291.235840,1084.458252 1292.226685,1084.896606 1293.643311,1085.677246
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1233.216064,1437.981689
 		C1233.280396,1438.040527 1233.082764,1438.179199 1233.022217,1438.167725
 		C1232.961548,1438.156372 1233.151733,1437.922974 1233.216064,1437.981689
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1410.262573,1646.541504
 		C1410.224731,1645.224854 1410.237427,1643.904419 1410.140503,1642.592163
 		C1409.364990,1632.082275 1407.790771,1630.707275 1397.405762,1631.454224
@@ -9836,15 +9832,15 @@ const SignatureSVG = () => {
 		C1447.324829,1642.524780 1443.420654,1641.110840 1439.749756,1641.568115
 		C1429.867432,1642.799072 1420.084839,1644.828857 1410.262573,1646.541504
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1420.476196,1592.673828
 		C1419.023682,1587.816772 1417.207031,1583.281006 1410.625000,1582.180908
 		C1411.328003,1579.851807 1412.321289,1577.147949 1414.237549,1575.553589
@@ -9861,15 +9857,15 @@ const SignatureSVG = () => {
 		C1437.990845,1586.681641 1435.467285,1585.411011 1433.502930,1584.421753
 		C1428.737793,1587.440430 1424.607056,1590.057129 1420.476196,1592.673828
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1351.182617,1662.631470
 		C1351.604736,1659.201294 1352.632690,1655.491333 1353.943970,1651.884399
 		C1354.937744,1649.150513 1356.292725,1646.547607 1357.611694,1643.218262
@@ -9878,15 +9874,15 @@ const SignatureSVG = () => {
 		C1382.464844,1654.346802 1373.324585,1656.006958 1364.281006,1658.441772
 		C1360.105103,1659.565918 1356.030640,1661.066162 1351.182617,1662.631470
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1485.575317,1566.495483
 		C1486.841797,1559.010620 1491.976318,1556.152344 1499.683105,1555.228760
 		C1502.502563,1556.019775 1504.500000,1556.969604 1507.570068,1558.515991
@@ -9897,15 +9893,15 @@ const SignatureSVG = () => {
 		C1504.428833,1576.161743 1502.113037,1573.213501 1498.202271,1571.574585
 		C1494.018555,1569.821289 1489.786377,1568.183716 1485.575317,1566.495483
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1342.411011,1632.081055
 		C1342.309204,1628.368896 1342.858154,1624.914673 1343.657715,1620.754639
 		C1349.406860,1619.255371 1352.529907,1615.437134 1356.103027,1610.158813
@@ -9915,15 +9911,15 @@ const SignatureSVG = () => {
 		C1359.384155,1622.374146 1357.756958,1631.279785 1356.151123,1641.060303
 		C1351.778442,1638.732300 1347.420044,1635.535522 1342.411011,1632.081055
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1362.200073,1603.091797
 		C1361.872559,1603.894653 1361.529053,1603.898315 1360.159424,1603.655273
 		C1358.126343,1602.888184 1357.119507,1602.367920 1356.112549,1601.847656
@@ -9933,73 +9929,73 @@ const SignatureSVG = () => {
 		C1366.052612,1576.067261 1365.028687,1584.420288 1363.891602,1592.757812
 		C1363.455688,1595.954346 1362.760864,1599.115356 1362.200073,1603.091797
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1518.267578,1568.122559
 		C1514.805786,1565.473633 1511.724243,1562.293091 1508.250244,1558.582764
 		C1509.577637,1558.174927 1511.405640,1557.969360 1512.993774,1558.491943
 		C1515.669678,1559.372559 1518.193481,1560.715332 1521.429199,1562.072754
 		C1520.933960,1564.051636 1519.790894,1565.821289 1518.267578,1568.122559
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1364.020630,1560.014893
 		C1364.164185,1555.056641 1361.142090,1549.831177 1365.743896,1545.447266
 		C1367.326172,1548.453857 1368.434937,1551.222290 1369.543945,1553.990845
 		C1369.122559,1555.602051 1368.701172,1557.213379 1367.354126,1559.373413
 		C1365.625854,1559.953125 1364.823242,1559.984009 1364.020630,1560.014893
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1369.814819,1553.336304
 		C1368.434937,1551.222290 1367.326172,1548.453857 1366.203857,1545.018311
 		C1368.530640,1543.712646 1370.870850,1543.073975 1373.957520,1542.409180
 		C1373.164673,1545.816040 1371.625244,1549.248901 1369.814819,1553.336304
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1364.216797,1560.472412
 		C1364.823242,1559.984009 1365.625854,1559.953125 1367.028687,1559.911133
 		C1367.437500,1560.864380 1367.246216,1561.828857 1366.809082,1563.489990
 		C1365.846680,1563.101074 1365.129761,1562.015503 1364.216797,1560.472412
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1591.767456,1625.005615
 		C1591.663940,1625.812744 1590.696899,1625.931519 1590.057983,1625.330078
 		C1588.440674,1620.026001 1589.309326,1613.865723 1582.652832,1612.920044
@@ -10010,15 +10006,15 @@ const SignatureSVG = () => {
 		C1590.938110,1594.465942 1590.121338,1597.971191 1591.068359,1600.907593
 		C1593.579102,1608.693237 1593.283447,1616.380249 1591.767456,1625.005615
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1194.493164,1467.864258
 		C1191.729248,1468.749268 1189.524414,1469.213745 1186.665894,1469.855713
 		C1182.165527,1468.091797 1179.448486,1465.364868 1180.610229,1460.676636
@@ -10027,84 +10023,84 @@ const SignatureSVG = () => {
 		C1210.837646,1452.285522 1209.677979,1456.440918 1208.238525,1461.251465
 		C1203.656494,1463.752319 1199.354370,1465.598145 1194.493164,1467.864258
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1344.711182,1546.342285
 		C1344.562622,1542.479980 1346.157471,1539.329590 1351.109131,1538.080200
 		C1352.513916,1540.280640 1353.261353,1542.662109 1353.944458,1545.559082
 		C1351.028442,1546.110840 1348.176880,1546.147095 1344.711182,1546.342285
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1631.754883,1549.461670
 		C1631.776733,1548.689453 1632.131470,1547.433716 1632.787109,1545.903442
 		C1632.754639,1546.745361 1632.421143,1547.861694 1631.754883,1549.461670
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1622.745850,1572.235474
 		C1622.909668,1571.248535 1623.515381,1569.878784 1624.493042,1568.092651
 		C1624.305786,1569.068359 1623.746582,1570.460571 1622.745850,1572.235474
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1631.989258,1554.033813
 		C1631.989258,1554.033813 1632.273071,1554.445312 1632.273071,1554.445312
 		C1632.273071,1554.445312 1632.132324,1554.174683 1632.071289,1554.087158
 		C1632.010132,1553.999512 1631.989258,1554.033813 1631.989258,1554.033813
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1630.331787,1553.665771
 		C1629.856445,1553.193604 1630.003174,1552.848999 1630.371582,1552.306885
 		C1630.781494,1552.412476 1631.021606,1552.737671 1631.625488,1553.548340
 		C1631.989258,1554.033813 1632.010132,1553.999512 1632.026489,1553.985107
 		C1631.662354,1553.904175 1631.281982,1553.837524 1630.331787,1553.665771
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1531.133789,1619.500732
 		C1543.622192,1616.430298 1556.106079,1617.693481 1567.885498,1613.267822
 		C1572.260132,1611.624268 1577.801270,1612.230591 1582.652832,1612.920044
@@ -10119,15 +10115,15 @@ const SignatureSVG = () => {
 		C1466.550903,1671.013916 1492.490601,1658.733398 1512.496948,1636.898315
 		C1518.067261,1630.818970 1524.520386,1625.548584 1531.133789,1619.500732
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1484.874756,1566.262207
 		C1489.786377,1568.183716 1494.018555,1569.821289 1498.202271,1571.574585
 		C1502.113037,1573.213501 1504.428833,1576.161743 1505.047852,1581.178711
@@ -10149,15 +10145,15 @@ const SignatureSVG = () => {
 		C1468.855957,1565.980469 1471.649536,1564.837402 1473.578003,1564.964233
 		C1477.118164,1565.197021 1480.643066,1565.661255 1484.874756,1566.262207
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1409.939819,1647.198242
 		C1420.084839,1644.828857 1429.867432,1642.799072 1439.749756,1641.568115
 		C1443.420654,1641.110840 1447.324829,1642.524780 1451.627075,1643.576782
@@ -10166,30 +10162,30 @@ const SignatureSVG = () => {
 		C1420.254395,1673.955322 1416.807251,1673.436401 1412.426147,1665.553589
 		C1409.364868,1660.045532 1406.183472,1654.444092 1409.939819,1647.198242
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1499.444458,1632.393799
 		C1489.693970,1642.853882 1476.535645,1651.080811 1467.923706,1651.730469
 		C1468.762817,1646.516724 1470.892212,1642.415894 1474.974365,1639.196411
 		C1479.123901,1635.923462 1483.115356,1632.450073 1488.235718,1628.461670
 		C1493.859253,1626.727783 1496.857300,1629.100952 1499.444458,1632.393799
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1499.931152,1632.074951
 		C1496.857300,1629.100952 1493.859253,1626.727783 1488.657837,1627.945312
 		C1490.646484,1625.205322 1493.015381,1622.052734 1496.008789,1619.691772
@@ -10197,172 +10193,172 @@ const SignatureSVG = () => {
 		C1503.563599,1620.164185 1504.629761,1623.204712 1504.314453,1625.344238
 		C1503.978638,1627.623413 1501.794678,1629.630371 1499.931152,1632.074951
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1509.539185,1598.149536
 		C1508.402832,1599.856445 1506.645630,1601.610840 1504.316162,1603.626709
 		C1503.047363,1599.789673 1505.614136,1598.658081 1509.539185,1598.149536
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1498.852539,1590.006104
 		C1499.216675,1589.040405 1500.052734,1587.702393 1501.340332,1585.965576
 		C1500.969360,1586.922607 1500.146973,1588.278198 1498.852539,1590.006104
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1667.702148,1282.570679
 		C1667.620728,1281.753662 1668.442383,1281.553711 1668.852539,1281.466553
 		C1669.059937,1283.952515 1668.857300,1286.525391 1668.290039,1289.499878
 		C1667.878174,1287.730103 1667.830933,1285.558960 1667.702148,1282.570679
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1585.230347,1641.915771
 		C1585.176392,1641.279785 1585.404785,1640.129028 1585.944092,1638.471680
 		C1586.007446,1639.110352 1585.760132,1640.255737 1585.230347,1641.915771
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2169.759277,1430.040527
 		C2164.185059,1433.929688 2157.805908,1437.885742 2150.720459,1441.963867
 		C2154.306396,1434.897217 2160.683594,1431.005005 2169.759277,1430.040527
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2149.467773,1442.282471
 		C2147.197021,1445.938965 2144.307617,1449.852661 2140.765869,1453.927002
 		C2143.025635,1450.238525 2145.937256,1446.389160 2149.467773,1442.282471
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2139.641113,1454.478027
 		C2139.172119,1455.921997 2138.251221,1457.773438 2136.718262,1459.836914
 		C2137.134033,1458.327759 2138.161865,1456.606567 2139.641113,1454.478027
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2191.261719,1478.837158
 		C2190.576660,1479.280884 2189.570557,1479.502441 2188.040527,1479.768311
 		C2188.658203,1479.413574 2189.799561,1479.014404 2191.261719,1478.837158
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2133.443848,1465.952393
 		C2132.971924,1466.865479 2132.031494,1468.159302 2130.568848,1469.748901
 		C2131.022949,1468.807495 2131.999268,1467.570312 2133.443848,1465.952393
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2135.722168,1460.636963
 		C2135.654297,1461.333496 2135.264160,1462.602295 2134.452148,1464.408203
 		C2134.486572,1463.699951 2134.943359,1462.454590 2135.722168,1460.636963
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2211.823242,1448.403809
 		C2211.896973,1448.869873 2211.873535,1449.707642 2211.797852,1451.168457
 		C2211.739502,1450.786255 2211.732910,1449.780884 2211.823242,1448.403809
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2211.647705,1458.579590
 		C2211.645020,1458.405151 2211.734619,1459.104614 2211.771973,1459.452271
 		C2211.723633,1459.456177 2211.670654,1459.107544 2211.647705,1458.579590
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2319.878906,1459.977783
 		C2317.770752,1460.072754 2315.662842,1460.167847 2312.309082,1459.936035
 		C2309.835938,1458.126221 2308.409668,1456.765015 2307.413818,1455.139893
@@ -10381,15 +10377,15 @@ const SignatureSVG = () => {
 		C2330.966553,1459.366699 2330.268555,1459.419922 2328.658203,1459.284302
 		C2325.123779,1459.389526 2322.501465,1459.683716 2319.878906,1459.977783
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2355.681641,1406.061768
 		C2354.324219,1400.845825 2351.076416,1397.933960 2345.005127,1398.262939
 		C2342.029785,1398.424072 2339.031738,1398.226318 2336.046631,1398.115112
@@ -10408,15 +10404,15 @@ const SignatureSVG = () => {
 		C2366.006104,1379.755981 2366.867188,1379.736084 2367.728516,1379.716309
 		C2359.215088,1386.202759 2357.800049,1395.901611 2355.681641,1406.061768
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2293.713867,1171.955444
 		C2292.020508,1175.906738 2290.462646,1179.922852 2288.608643,1183.797241
 		C2282.879883,1195.767212 2275.908203,1207.290039 2271.577393,1219.737183
@@ -10431,15 +10427,15 @@ const SignatureSVG = () => {
 		C2288.369385,1174.381836 2289.458008,1173.494751 2291.420654,1172.150391
 		C2292.918701,1171.860107 2293.316162,1171.907715 2293.713867,1171.955444
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2289.290527,1426.331055
 		C2295.642578,1435.710449 2301.478516,1445.455566 2307.413818,1455.139893
 		C2308.409668,1456.765015 2309.835938,1458.126221 2311.519043,1459.980347
@@ -10448,15 +10444,15 @@ const SignatureSVG = () => {
 		C2292.480469,1446.898926 2287.454834,1438.359863 2282.429199,1429.820801
 		C2284.555420,1428.772583 2286.681641,1427.724365 2289.290527,1426.331055
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2294.238770,1171.519287
 		C2293.316162,1171.907715 2292.918701,1171.860107 2291.927246,1171.720581
 		C2297.431152,1160.723022 2303.421143,1150.090088 2314.051514,1142.292603
@@ -10466,15 +10462,15 @@ const SignatureSVG = () => {
 		C2335.136719,1129.829346 2323.437744,1139.464233 2312.588135,1149.979736
 		C2306.009033,1156.356323 2300.663574,1164.005615 2294.238770,1171.519287
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2259.913330,1320.389160
 		C2261.358398,1322.077271 2263.117432,1324.584717 2263.848877,1327.362793
 		C2266.204102,1336.308716 2268.289062,1345.330811 2270.255127,1354.372192
@@ -10485,96 +10481,96 @@ const SignatureSVG = () => {
 		C2275.189209,1382.606079 2272.205322,1379.791748 2271.595215,1377.755981
 		C2266.064697,1359.296875 2259.590332,1340.995117 2259.913330,1320.389160
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2282.065430,1429.314941
 		C2287.454834,1438.359863 2292.480469,1446.898926 2297.247559,1455.646240
 		C2285.051758,1448.517212 2279.950684,1436.645142 2275.906006,1424.072388
 		C2275.906006,1424.072388 2276.061523,1423.946289 2276.139404,1423.883301
 		C2278.045410,1425.483154 2279.873779,1427.146118 2282.065430,1429.314941
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2395.198242,1087.723389
 		C2387.736084,1092.407227 2379.498535,1096.975708 2370.553467,1101.694336
 		C2370.409668,1100.708374 2370.678223,1098.982300 2371.583740,1098.529541
 		C2379.130371,1094.756104 2386.794189,1091.217407 2395.198242,1087.723389
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2419.384277,1075.975342
 		C2418.256104,1076.719116 2416.546387,1077.536743 2414.280273,1078.458374
 		C2415.416748,1077.724731 2417.109619,1076.886963 2419.384277,1075.975342
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2362.159424,1105.804199
 		C2360.974365,1106.990845 2359.029053,1108.221558 2356.459961,1109.708740
 		C2357.690674,1108.592773 2359.544922,1107.220459 2362.159424,1105.804199
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2369.193848,1101.766602
 		C2368.005371,1103.074829 2366.090332,1104.315063 2363.506348,1105.768311
 		C2364.713867,1104.553833 2366.590576,1103.126221 2369.193848,1101.766602
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2398.399414,1086.031128
 		C2398.348633,1086.353638 2397.646484,1086.806763 2396.420410,1087.602051
 		C2396.513428,1087.350220 2397.130859,1086.755981 2398.399414,1086.031128
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2275.325439,1423.742676
 		C2279.950684,1436.645142 2285.051758,1448.517212 2297.616943,1456.263062
 		C2297.475586,1463.602173 2291.208008,1462.042358 2286.469238,1464.110107
@@ -10589,43 +10585,43 @@ const SignatureSVG = () => {
 		C2259.963379,1411.298828 2266.573242,1412.468384 2271.254395,1420.128418
 		C2272.057861,1421.443237 2273.563721,1422.328857 2275.325439,1423.742676
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2231.010010,1420.770264
 		C2229.101562,1421.403687 2227.162598,1421.478760 2224.253418,1421.560547
 		C2224.712891,1418.909912 2226.142822,1416.252686 2227.572510,1413.595459
 		C2228.257080,1413.758301 2228.941650,1413.921021 2229.626221,1414.083862
 		C2230.077393,1416.126465 2230.528564,1418.169067 2231.010010,1420.770264
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2231.243652,1459.124146
 		C2230.809814,1458.558716 2230.449219,1457.116699 2230.262695,1455.257812
 		C2230.729980,1455.976685 2231.023438,1457.112061 2231.243652,1459.124146
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2769.228516,1221.636963
 		C2763.983398,1213.384644 2758.878662,1204.213867 2753.536133,1195.183594
 		C2748.339844,1186.400757 2742.966309,1177.719727 2737.491699,1169.107666
@@ -10650,15 +10646,15 @@ const SignatureSVG = () => {
 		C2758.584961,1186.384521 2761.057373,1194.292725 2764.381592,1201.824951
 		C2767.086182,1207.952393 2770.112793,1213.813721 2769.228516,1221.636963
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2407.989746,1302.000366
 		C2409.011475,1291.183594 2415.833984,1283.149658 2421.493164,1274.683716
 		C2430.721680,1260.879150 2439.944824,1247.014893 2450.129395,1233.921875
@@ -10670,15 +10666,15 @@ const SignatureSVG = () => {
 		C2416.313721,1290.217651 2412.460205,1296.358398 2408.456543,1302.376709
 		C2408.301025,1302.250977 2407.989746,1302.000366 2407.989746,1302.000366
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2575.839355,1115.868042
 		C2579.608643,1112.756958 2582.911133,1108.485718 2587.232666,1106.747559
 		C2601.374023,1101.060059 2615.558594,1094.827881 2630.334717,1091.528809
@@ -10694,15 +10690,15 @@ const SignatureSVG = () => {
 		C2582.074951,1113.927856 2579.309814,1115.318481 2576.368652,1116.498535
 		C2576.192871,1116.287842 2575.839355,1115.868042 2575.839355,1115.868042
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2756.496826,1305.057373
 		C2759.053467,1293.812134 2762.166992,1282.291260 2765.386963,1270.800171
 		C2768.402344,1260.038574 2769.261475,1249.257935 2765.812256,1238.447144
@@ -10711,44 +10707,44 @@ const SignatureSVG = () => {
 		C2770.700928,1269.121582 2766.691650,1281.726318 2763.898926,1294.535889
 		C2762.925049,1299.003906 2761.235352,1302.608643 2756.496826,1305.057373
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2734.400391,1347.140137
 		C2733.834961,1347.044067 2733.807617,1346.685181 2733.932617,1346.390991
 		C2739.737305,1332.722778 2745.301514,1318.929077 2754.810791,1306.557617
 		C2752.499268,1321.738037 2747.082275,1335.980469 2734.400391,1347.140137
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2507.943115,1173.951782
 		C2514.455811,1163.780396 2522.252441,1154.846313 2533.488770,1148.388794
 		C2534.380859,1148.410889 2534.947266,1149.054321 2534.539062,1149.566406
 		C2525.681396,1158.310791 2517.231934,1166.542969 2508.572754,1174.569214
 		C2508.363037,1174.363281 2507.943115,1173.951782 2507.943115,1173.951782
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2549.994873,1134.002319
 		C2556.820801,1126.231201 2565.217529,1120.625366 2575.166016,1116.048828
 		C2575.839355,1115.868042 2576.192871,1116.287842 2575.993652,1117.049927
@@ -10756,201 +10752,201 @@ const SignatureSVG = () => {
 		C2560.650146,1130.480103 2555.776611,1132.614258 2550.870117,1134.839600
 		C2550.578369,1134.560303 2549.994873,1134.002319 2549.994873,1134.002319
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2482.252197,1198.181152
 		C2490.117676,1189.990601 2498.388428,1182.204712 2507.301270,1174.185303
 		C2507.943115,1173.951782 2508.363037,1174.363281 2508.202148,1175.124756
 		C2499.851074,1183.721924 2491.660645,1191.557739 2483.470459,1199.393555
 		C2483.199463,1199.124390 2482.928467,1198.855103 2482.252197,1198.181152
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2755.548340,1178.058350
 		C2753.826904,1177.225464 2750.946045,1176.212891 2750.162354,1174.328003
 		C2747.063477,1166.876343 2744.621826,1159.151367 2741.929443,1150.759521
 		C2747.307129,1154.992554 2750.611816,1161.143188 2752.340332,1168.263794
 		C2753.100342,1171.394409 2754.334229,1174.409912 2755.548340,1178.058350
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2368.068848,1379.111938
 		C2366.867188,1379.736084 2366.006104,1379.755981 2364.497559,1379.786743
 		C2367.606934,1372.150757 2371.363525,1364.503784 2375.665283,1356.458252
 		C2377.106934,1364.757568 2371.775391,1371.291016 2368.068848,1379.111938
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2381.414551,1349.626465
 		C2380.034424,1351.617676 2378.654785,1353.608887 2376.726074,1355.872803
 		C2376.123047,1345.991577 2381.006348,1338.495605 2389.517090,1332.344482
 		C2390.178467,1332.092407 2390.334229,1332.239136 2390.223145,1332.944702
 		C2387.212891,1338.975708 2384.313721,1344.301147 2381.414551,1349.626465
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2393.728516,1323.815918
 		C2395.273926,1315.014282 2400.433594,1308.454834 2407.417480,1302.336182
 		C2407.989746,1302.000366 2408.301025,1302.250977 2408.199707,1303.022705
 		C2403.811279,1310.854370 2399.524170,1317.914307 2394.860352,1324.684326
 		C2394.483398,1324.394531 2393.728516,1323.815918 2393.728516,1323.815918
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2534.098145,1148.088867
 		C2538.820068,1143.386108 2543.824707,1139.005493 2549.412109,1134.313599
 		C2549.994873,1134.002319 2550.578369,1134.560303 2550.537598,1135.421631
 		C2546.673584,1142.196045 2541.713135,1146.724243 2534.947266,1149.054321
 		C2534.947266,1149.054321 2534.380859,1148.410889 2534.098145,1148.088867
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2716.191895,1121.400146
 		C2715.504395,1122.061035 2714.466797,1122.121460 2712.230469,1121.696289
 		C2707.550049,1117.985352 2704.068604,1114.759888 2700.586914,1111.534424
 		C2700.888672,1111.210693 2701.190674,1110.886963 2701.947510,1110.074951
 		C2706.882080,1113.324463 2711.362061,1117.062012 2716.191895,1121.400146
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2730.417969,1133.575439
 		C2726.313965,1133.440063 2721.558838,1132.985596 2721.806152,1125.944458
 		C2724.617188,1127.914185 2727.264404,1130.495850 2730.417969,1133.575439
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2741.881348,1149.368286
 		C2739.461182,1146.461182 2736.952881,1142.847046 2734.186768,1138.605225
 		C2738.814453,1139.871948 2740.371826,1144.216675 2741.881348,1149.368286
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2350.043213,1382.014648
 		C2350.043213,1382.014648 2350.169434,1381.046021 2350.198975,1380.559082
 		C2354.213623,1380.022583 2358.198730,1379.973145 2363.041992,1379.910400
 		C2359.796387,1380.599731 2355.692871,1381.302368 2350.799316,1381.989014
 		C2350.009277,1381.972900 2350.043213,1382.014648 2350.043213,1382.014648
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2390.102051,1332.017822
 		C2390.976074,1329.560425 2391.926758,1327.177734 2393.302979,1324.305420
 		C2393.728516,1323.815918 2394.483398,1324.394531 2394.595703,1325.257324
 		C2393.250000,1328.159790 2391.791992,1330.199463 2390.334229,1332.239136
 		C2390.334229,1332.239136 2390.178467,1332.092407 2390.102051,1332.017822
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2732.136230,1351.479004
 		C2732.240967,1350.956177 2732.611816,1349.993652 2733.306641,1348.637451
 		C2733.221191,1349.175659 2732.811768,1350.107422 2732.136230,1351.479004
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2733.790039,1137.468262
 		C2733.204102,1137.084473 2732.384277,1136.097412 2731.302734,1134.508423
 		C2731.879395,1134.892578 2732.717773,1135.878662 2733.790039,1137.468262
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2689.774658,1121.991821
 		C2698.824951,1131.598389 2708.094727,1141.011353 2716.820801,1150.904175
 		C2720.458740,1155.028687 2723.004395,1160.134033 2725.920898,1164.870850
@@ -11023,15 +11019,15 @@ const SignatureSVG = () => {
 		C2667.670654,1114.272827 2677.949463,1118.112549 2688.615234,1121.951660
 		C2689.001953,1121.950928 2689.774658,1121.991821 2689.774658,1121.991821
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2697.950684,1363.966797
 		C2698.403076,1363.661865 2698.855225,1363.356934 2700.371582,1362.460205
 		C2702.289062,1361.230713 2703.142090,1360.592896 2703.995117,1359.955078
@@ -11047,15 +11043,15 @@ const SignatureSVG = () => {
 		C2681.691406,1370.149902 2685.564453,1366.905518 2691.593750,1365.992188
 		C2693.765137,1365.663208 2695.834473,1364.661499 2697.950684,1363.966797
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2737.492676,1309.094971
 		C2736.029541,1302.631470 2738.374268,1296.542236 2740.622070,1290.235962
 		C2745.268311,1277.201294 2749.594971,1264.028320 2753.339844,1250.711548
@@ -11065,15 +11061,15 @@ const SignatureSVG = () => {
 		C2756.875488,1253.446167 2755.697510,1264.689575 2752.615479,1275.021851
 		C2749.137451,1286.681519 2742.943359,1297.530884 2737.492676,1309.094971
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2714.219238,1351.124023
 		C2712.817139,1351.977539 2711.745605,1352.255615 2710.141602,1352.681763
 		C2709.806396,1351.205322 2709.481689,1349.242676 2710.281494,1348.008667
@@ -11082,30 +11078,30 @@ const SignatureSVG = () => {
 		C2734.654053,1315.585571 2733.689697,1320.576660 2731.268555,1324.715820
 		C2726.095459,1333.560669 2720.168213,1341.964233 2714.219238,1351.124023
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2750.316650,1216.500977
 		C2748.280273,1214.728882 2745.599609,1212.511108 2744.226807,1209.663086
 		C2740.515869,1201.962769 2737.187012,1194.061890 2734.095459,1186.089844
 		C2733.207275,1183.799683 2733.641113,1180.996704 2733.743652,1177.810303
 		C2740.547119,1189.582031 2747.844727,1201.648438 2750.316650,1216.500977
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2677.028320,1415.145752
 		C2669.317139,1421.778564 2661.941162,1427.914429 2653.527344,1434.743408
 		C2649.580078,1436.601807 2646.670898,1437.766846 2643.055908,1439.014893
@@ -11123,15 +11119,15 @@ const SignatureSVG = () => {
 		C2673.353760,1408.211182 2675.997314,1410.415161 2678.640869,1412.619019
 		C2678.215088,1413.295532 2677.789307,1413.972046 2677.028320,1415.145752
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2679.205566,1412.273193
 		C2675.997314,1410.415161 2673.353760,1408.211182 2670.364258,1405.139160
 		C2673.822998,1399.214722 2677.634277,1394.163208 2681.429688,1389.100220
@@ -11140,15 +11136,15 @@ const SignatureSVG = () => {
 		C2699.254883,1385.422852 2697.246582,1387.689087 2696.141113,1390.332886
 		C2692.526367,1398.978516 2686.871094,1405.976440 2679.205566,1412.273193
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2638.092285,1439.312744
 		C2639.511475,1439.241089 2640.930664,1439.169434 2643.823486,1439.081787
 		C2648.252197,1438.315918 2651.207520,1437.566040 2654.162598,1436.816162
@@ -11216,55 +11212,55 @@ const SignatureSVG = () => {
 		C2626.369141,1444.323486 2628.213135,1443.283325 2630.719727,1442.319702
 		C2633.600586,1441.084473 2635.846436,1440.198486 2638.092285,1439.312744
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2684.510254,1435.866211
 		C2680.314209,1436.299316 2675.339111,1436.698242 2669.619629,1437.052734
 		C2673.827148,1436.616211 2678.779297,1436.224121 2684.510254,1435.866211
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2654.077148,1436.378296
 		C2651.207520,1437.566040 2648.252197,1438.315918 2644.529541,1438.998779
 		C2646.670898,1437.766846 2649.580078,1436.601807 2653.154541,1435.250732
 		C2653.819824,1435.064941 2653.991699,1435.940430 2654.077148,1436.378296
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1323.118774,1072.365601
 		C1322.868652,1072.219116 1322.741211,1072.040649 1322.613770,1071.862183
 		C1322.822998,1072.019287 1323.032349,1072.176514 1323.118774,1072.365601
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2377.897705,1536.251465
 		C2376.846924,1536.378784 2375.795898,1536.505981 2373.736328,1536.463379
 		C2372.116211,1536.026489 2371.481445,1535.841064 2370.822998,1535.737305
@@ -11363,15 +11359,15 @@ const SignatureSVG = () => {
 		M2362.041260,1519.873657
 		C2362.041260,1519.873657 2362.115967,1519.966919 2362.041260,1519.873657
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2347.656738,1495.574219
 		C2351.270264,1495.459839 2354.008545,1496.788452 2355.048584,1501.871582
 		C2355.204834,1504.223755 2355.224609,1505.147217 2355.244385,1506.070801
@@ -11392,15 +11388,15 @@ const SignatureSVG = () => {
 		C2336.779297,1533.547241 2338.702148,1519.773071 2340.544434,1505.988892
 		C2342.831055,1502.735474 2345.117432,1499.481934 2347.656738,1495.574219
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2383.069336,1398.042114
 		C2388.642334,1400.005493 2389.523193,1403.818726 2386.598633,1408.780884
 		C2381.658447,1417.163574 2379.519775,1427.019165 2371.831543,1434.058716
@@ -11415,15 +11411,15 @@ const SignatureSVG = () => {
 		C2379.207520,1405.607666 2380.447998,1402.677368 2381.993896,1399.998657
 		C2382.428711,1399.564575 2382.750977,1399.058716 2383.069336,1398.042114
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2339.982422,1506.399658
 		C2338.702148,1519.773071 2336.779297,1533.547241 2335.061279,1547.346802
 		C2334.449219,1552.264160 2334.334961,1557.243408 2333.344238,1563.141968
@@ -11432,30 +11428,30 @@ const SignatureSVG = () => {
 		C2322.917480,1537.246338 2323.066162,1525.812866 2332.408203,1516.429321
 		C2335.174805,1513.650513 2337.106201,1510.039795 2339.982422,1506.399658
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2328.931885,1565.201660
 		C2330.121338,1564.331787 2331.408447,1564.210693 2333.352051,1564.045410
 		C2333.694336,1577.460571 2333.380127,1590.919800 2332.880371,1605.317261
 		C2326.900879,1600.700073 2327.623047,1593.845947 2328.339111,1586.720215
 		C2329.030029,1579.843262 2328.835205,1572.877319 2328.931885,1565.201660
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2364.047363,1676.689331
 		C2372.252686,1679.883545 2380.596680,1683.910156 2389.134033,1687.473145
 		C2394.286133,1689.623535 2399.738770,1691.053345 2405.593750,1693.251709
@@ -11463,109 +11459,109 @@ const SignatureSVG = () => {
 		C2386.912109,1690.535156 2383.435791,1689.338501 2379.959717,1688.141846
 		C2374.729004,1684.536621 2369.498047,1680.931519 2364.047363,1676.689331
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2381.235596,1400.105835
 		C2380.447998,1402.677368 2379.207520,1405.607666 2377.267822,1407.962158
 		C2375.435303,1410.186890 2372.868164,1411.806274 2370.136230,1414.043457
 		C2364.635742,1407.820557 2365.120117,1405.086182 2372.088135,1402.377930
 		C2374.761230,1401.338989 2377.673828,1400.916504 2381.235596,1400.105835
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2380.292969,1688.764404
 		C2383.435791,1689.338501 2386.912109,1690.535156 2390.895020,1692.198242
 		C2387.257080,1693.389648 2383.276611,1693.574341 2380.292969,1688.764404
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2364.131836,1426.409180
 		C2364.357178,1428.459473 2363.998779,1430.689331 2363.293945,1433.506592
 		C2359.303467,1431.284424 2358.867432,1428.731812 2364.131836,1426.409180
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2410.804199,1693.673096
 		C2415.322998,1693.343628 2420.616699,1693.193604 2426.583008,1693.156738
 		C2424.641113,1693.636353 2422.026611,1694.002686 2418.640625,1694.595215
 		C2415.772461,1694.498535 2413.675781,1694.175415 2410.804199,1693.673096
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2346.594727,1660.122192
 		C2348.238525,1661.283325 2349.964111,1663.085327 2351.672363,1665.549561
 		C2349.995605,1664.395630 2348.336182,1662.579346 2346.594727,1660.122192
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2406.128662,1694.996826
 		C2406.829102,1694.658325 2407.783691,1694.569336 2409.452148,1694.577881
 		C2408.905029,1694.865723 2407.643799,1695.056030 2406.128662,1694.996826
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2360.913574,1438.687744
 		C2361.013428,1439.383911 2360.756104,1440.183960 2360.139648,1441.506714
 		C2360.039062,1440.950073 2360.297607,1439.870850 2360.913574,1438.687744
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2554.832520,1646.218872
 		C2558.800537,1642.566528 2563.520508,1638.960938 2568.268555,1635.392456
 		C2572.747803,1632.025879 2577.482178,1628.958862 2581.705078,1625.299316
@@ -11578,215 +11574,215 @@ const SignatureSVG = () => {
 		C2616.616699,1602.279785 2596.526367,1617.175659 2578.337402,1634.197021
 		C2571.832031,1640.284546 2563.861084,1643.541260 2554.832520,1646.218872
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2686.703857,1513.955566
 		C2691.760498,1499.354858 2700.241455,1486.335327 2711.585938,1474.408325
 		C2706.973633,1489.213745 2698.954834,1502.612305 2686.703857,1513.955566
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2496.735352,1678.013428
 		C2511.519775,1670.085938 2527.097412,1662.193970 2543.395020,1654.181152
 		C2541.618652,1656.110718 2539.374512,1658.631836 2536.581055,1660.128784
 		C2525.604248,1666.010620 2514.489746,1671.642090 2503.329834,1677.171143
 		C2501.660645,1677.998169 2499.475098,1677.782471 2496.735352,1678.013428
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2458.315186,1688.186401
 		C2469.331543,1683.324219 2481.314209,1678.751465 2495.193359,1677.992676
 		C2484.028076,1682.322632 2472.209961,1687.379639 2458.315186,1688.186401
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2434.601807,1693.507812
 		C2440.125488,1691.757080 2446.459229,1690.041748 2453.636719,1688.248535
 		C2448.124268,1689.961548 2441.768066,1691.752441 2434.601807,1693.507812
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2544.741211,1654.100098
 		C2546.968018,1651.600098 2549.912354,1649.067383 2553.504883,1646.324219
 		C2553.715332,1651.454468 2549.584473,1652.757935 2544.741211,1654.100098
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2712.791504,1474.125732
 		C2714.400146,1471.019775 2716.723633,1467.893799 2719.589355,1464.391113
 		C2720.051270,1468.775269 2718.224365,1472.389526 2712.791504,1474.125732
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2720.503418,1463.939209
 		C2720.410889,1463.586548 2720.862793,1463.102783 2721.731934,1462.333496
 		C2721.744385,1462.599243 2721.377197,1463.186035 2720.503418,1463.939209
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1394.121338,1688.112305
 		C1395.756104,1685.438721 1397.628174,1683.240967 1399.817261,1680.494385
 		C1403.377686,1683.332520 1402.048462,1686.707642 1399.717163,1689.692383
 		C1397.583374,1692.423950 1395.759033,1690.882690 1394.121338,1688.112305
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2320.743164,1460.016235
 		C2322.501465,1459.683716 2325.123779,1459.389526 2328.144531,1459.396240
 		C2326.230713,1459.816406 2323.919189,1459.935425 2320.743164,1460.016235
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2262.845947,1465.805908
 		C2264.640869,1465.224976 2267.145996,1464.678467 2270.214600,1464.358154
 		C2270.778320,1464.584229 2270.691895,1465.221313 2270.691895,1465.221313
 		C2268.313232,1465.427734 2265.934570,1465.634033 2262.845947,1465.805908
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2271.381836,1465.202637
 		C2270.691895,1465.221313 2270.778320,1464.584229 2270.864746,1464.274780
 		C2272.344971,1463.878052 2273.738525,1463.790771 2275.585938,1463.983643
 		C2274.717285,1464.570435 2273.394287,1464.877197 2271.381836,1465.202637
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2321.011230,1472.961914
 		C2320.982422,1472.960938 2321.039795,1472.962891 2321.011230,1472.961914
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2147.989746,1488.058105
 		C2147.876221,1488.090942 2147.420654,1488.099243 2146.279541,1488.098389
 		C2146.278564,1488.070801 2146.963379,1488.052124 2147.989746,1488.058105
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M832.205322,1698.834595
 		C838.566040,1701.051147 845.245239,1703.873413 852.471863,1707.168213
 		C845.267822,1707.205566 837.348206,1707.190918 832.205322,1698.834595
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1356.090088,1602.666260
 		C1357.119507,1602.367920 1358.126343,1602.888184 1359.643921,1603.662231
 		C1359.082642,1605.673950 1358.010742,1607.431885 1356.475586,1609.601807
 		C1356.030884,1607.837524 1356.049316,1605.661255 1356.090088,1602.666260
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1077.873291,1603.228760
 		C1080.048096,1601.449829 1082.896484,1598.808228 1086.171509,1598.076294
 		C1098.971069,1595.214966 1111.913208,1592.995605 1124.787476,1590.462524
@@ -11794,94 +11790,94 @@ const SignatureSVG = () => {
 		C1145.725708,1587.955566 1139.236206,1591.666626 1132.268555,1593.189087
 		C1114.540649,1597.062378 1096.598877,1599.957031 1077.873291,1603.228760
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1158.535767,1584.771729
 		C1170.340332,1580.685913 1182.858276,1576.694214 1197.185059,1578.153564
 		C1188.735229,1580.397461 1179.415527,1582.642456 1170.013794,1584.464355
 		C1166.529907,1585.139526 1162.853394,1584.821533 1158.535767,1584.771729
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1202.130859,1577.193848
 		C1210.459839,1571.243286 1220.099976,1567.459473 1231.825928,1571.127930
 		C1222.586792,1573.400391 1212.781860,1575.298340 1202.130859,1577.193848
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1341.522583,1152.112183
 		C1341.305176,1153.030640 1340.886597,1153.684448 1340.468140,1154.338257
 		C1340.088867,1153.898071 1339.709717,1153.458008 1339.330444,1153.017822
 		C1339.994141,1152.627686 1340.657837,1152.237671 1341.522583,1152.112183
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1303.984131,1101.009644
 		C1303.969727,1100.959839 1303.998535,1101.059448 1303.984131,1101.009644
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M1418.004639,1598.618408
 		C1417.921509,1601.165771 1420.142212,1605.251953 1414.864014,1606.710938
 		C1415.424438,1604.231567 1416.429565,1601.635498 1418.004639,1598.618408
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2349.990234,1381.954712
 		C2349.971191,1381.936523 2349.999512,1382.120850 2350.021484,1382.067749
 		C2350.043213,1382.014648 2350.009277,1381.972900 2349.990234,1381.954712
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2592.515381,1124.647705
 		C2590.605957,1120.735107 2588.696533,1116.822510 2586.363770,1112.335205
 		C2588.906494,1109.979736 2591.872803,1108.199097 2595.944580,1106.793945
@@ -11903,28 +11899,28 @@ const SignatureSVG = () => {
 		C2613.683350,1121.027588 2607.701416,1123.870972 2600.304199,1123.560181
 		C2597.727783,1123.452026 2595.112793,1124.258911 2592.515381,1124.647705
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2611.013428,1102.845459
 		C2608.806396,1112.127686 2606.693115,1112.762817 2596.604004,1106.706543
 		C2600.878174,1105.137939 2605.598145,1104.032227 2611.013428,1102.845459
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2586.985352,1392.134644
 		C2582.399902,1393.318237 2577.814453,1394.501831 2572.208740,1395.285889
 		C2570.140137,1391.915039 2569.092041,1388.943848 2567.361328,1384.037476
@@ -11967,15 +11963,15 @@ const SignatureSVG = () => {
 		C2543.464111,1395.023193 2543.516113,1391.149170 2540.844971,1386.178711
 		C2539.177002,1387.514526 2538.023193,1388.438843 2536.322266,1390.493164
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2433.174561,1397.285034
 		C2436.153320,1393.857056 2440.427734,1391.191528 2440.042725,1385.276611
 		C2433.832031,1380.857788 2426.763184,1378.524902 2417.816406,1377.674316
@@ -11996,15 +11992,15 @@ const SignatureSVG = () => {
 		C2452.659912,1414.068115 2448.692627,1408.490356 2441.608398,1405.202515
 		C2438.287354,1403.661255 2435.955078,1399.990601 2433.174561,1397.285034
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2505.817383,1386.411499
 		C2506.554199,1381.987061 2507.291260,1377.562622 2508.171875,1372.449951
 		C2509.743164,1370.376587 2511.170898,1368.991577 2513.690430,1366.822876
@@ -12018,15 +12014,15 @@ const SignatureSVG = () => {
 		C2537.994873,1381.472046 2528.872803,1389.555542 2515.941406,1387.943604
 		C2511.623291,1387.181396 2508.720459,1386.796509 2505.817383,1386.411499
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2424.437012,1315.645996
 		C2423.870850,1315.296631 2423.666748,1314.485718 2423.975342,1314.001343
 		C2430.686523,1303.464600 2434.414551,1291.365479 2442.626221,1281.481689
@@ -12039,15 +12035,15 @@ const SignatureSVG = () => {
 		C2445.061035,1287.562134 2441.640869,1294.055054 2437.445557,1300.008057
 		C2433.666992,1305.369629 2429.200684,1310.246094 2424.437012,1315.645996
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2524.442139,1185.636719
 		C2525.422852,1183.158203 2526.599609,1180.034790 2528.649414,1177.667358
 		C2535.308838,1169.976318 2542.287598,1162.561890 2550.257324,1154.473877
@@ -12058,15 +12054,15 @@ const SignatureSVG = () => {
 		C2580.560303,1136.226196 2575.060547,1140.440796 2569.895264,1145.031860
 		C2554.871094,1158.386353 2539.980713,1171.891724 2524.442139,1185.636719
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2592.043945,1125.073486
 		C2595.112793,1124.258911 2597.727783,1123.452026 2600.304199,1123.560181
 		C2607.701416,1123.870972 2613.683350,1121.027588 2619.033203,1116.223511
@@ -12077,15 +12073,15 @@ const SignatureSVG = () => {
 		C2615.031250,1124.850708 2601.881836,1129.774780 2586.625244,1131.692139
 		C2587.746338,1129.717651 2589.659180,1127.608521 2592.043945,1125.073486
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2410.641602,1374.257202
 		C2413.096191,1375.145630 2414.860352,1376.213623 2417.212402,1377.463623
 		C2416.361084,1377.753540 2414.922119,1377.861572 2412.010742,1377.968018
@@ -12095,15 +12091,15 @@ const SignatureSVG = () => {
 		C2399.704346,1360.798950 2399.702148,1361.879761 2399.235840,1362.694946
 		C2393.673828,1372.419067 2399.220703,1378.080444 2410.641602,1374.257202
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2522.027344,1347.925903
 		C2524.205566,1357.928833 2523.258545,1360.296753 2514.207031,1366.282593
 		C2513.134033,1359.136353 2516.949463,1353.609619 2521.876953,1348.096680
@@ -12111,148 +12107,148 @@ const SignatureSVG = () => {
 		C2522.130371,1348.218628 2521.649170,1348.174805 2521.649170,1348.174805
 		C2521.649170,1348.174805 2522.027344,1347.925903 2522.027344,1347.925903
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2410.422607,1337.623047
 		C2411.659180,1329.310303 2416.787109,1322.610962 2423.278809,1316.106201
 		C2422.345459,1324.656128 2417.601562,1331.526489 2410.422607,1337.623047
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2656.674805,1110.188477
 		C2664.814697,1109.621826 2673.647705,1109.615112 2681.330322,1114.970337
 		C2683.651123,1116.588013 2685.589844,1118.753906 2687.966064,1121.310425
 		C2677.949463,1118.112549 2667.670654,1114.272827 2656.674805,1110.188477
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2400.307861,1359.587891
 		C2399.579834,1359.650757 2399.457764,1359.325562 2399.693359,1357.955688
 		C2400.505615,1355.196777 2400.960205,1353.482666 2401.415039,1351.768555
 		C2402.600342,1349.427124 2403.786133,1347.085571 2405.463623,1344.310303
 		C2406.261230,1349.637817 2406.349365,1355.327637 2400.307861,1359.587891
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2514.495117,1195.715576
 		C2514.615723,1190.762207 2518.474121,1188.290405 2523.223877,1185.924316
 		C2522.874268,1190.782104 2519.538574,1193.621704 2514.495117,1195.715576
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2528.024902,1339.292358
 		C2527.601562,1340.988770 2526.676025,1342.906128 2525.509277,1345.123657
 		C2524.221436,1342.767578 2524.792236,1340.728149 2528.024902,1339.292358
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2406.338867,1343.827637
 		C2406.783447,1342.094238 2407.712158,1340.195679 2409.265869,1338.079712
 		C2408.868164,1339.795776 2407.845703,1341.729126 2406.338867,1343.827637
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2708.157227,1353.837158
 		C2707.668945,1355.049072 2706.662598,1356.434204 2705.192383,1358.071777
 		C2705.698486,1356.886353 2706.668701,1355.448486 2708.157227,1353.837158
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2703.598389,1360.045898
 		C2703.142090,1360.592896 2702.289062,1361.230713 2701.053467,1362.007935
 		C2701.514648,1361.477051 2702.358154,1360.806763 2703.598389,1360.045898
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2510.358887,1199.629395
 		C2510.826904,1198.683350 2511.791016,1197.425537 2513.359619,1196.018188
 		C2512.927734,1197.018311 2511.891357,1198.167969 2510.358887,1199.629395
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2539.621338,1337.220947
 		C2539.480469,1337.268921 2539.446045,1337.188232 2539.434082,1337.144287
 		C2539.421875,1337.100464 2539.762207,1337.172974 2539.621338,1337.220947
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2587.196045,1392.867432
 		C2587.591064,1383.748535 2593.598877,1380.786499 2600.516602,1380.051147
 		C2610.715332,1378.967285 2621.013428,1378.663574 2631.279053,1378.398438
@@ -12264,15 +12260,15 @@ const SignatureSVG = () => {
 		C2612.344727,1426.624634 2598.812500,1420.047974 2589.953369,1400.040161
 		C2589.019531,1397.931274 2588.251465,1395.748779 2587.196045,1392.867432
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2544.000000,1446.000977
 		C2557.093750,1444.746338 2570.176270,1443.347046 2583.286865,1442.303345
 		C2589.096191,1441.840820 2594.962402,1442.097656 2601.496338,1441.762207
@@ -12297,15 +12293,15 @@ const SignatureSVG = () => {
 		C2510.613525,1497.411743 2520.734863,1489.679932 2523.324463,1478.198486
 		C2526.435303,1464.405518 2531.719971,1453.298828 2544.000000,1446.000977
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2586.841309,1428.319336
 		C2577.697998,1429.251221 2568.430664,1430.194214 2559.235596,1429.722412
 		C2548.820557,1429.187866 2546.921875,1426.551025 2549.394531,1416.335571
@@ -12316,42 +12312,42 @@ const SignatureSVG = () => {
 		C2577.463623,1408.960205 2578.627930,1410.669434 2579.792236,1412.378784
 		C2582.111084,1417.487793 2584.429932,1422.596802 2586.841309,1428.319336
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2630.719727,1442.319580
 		C2630.015625,1442.307983 2629.946289,1441.947144 2629.785889,1441.043457
 		C2632.090820,1439.991821 2634.486572,1439.482910 2637.487305,1439.143311
 		C2635.846436,1440.198486 2633.600586,1441.084473 2630.719727,1442.319580
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2579.636475,1411.757324
 		C2578.627930,1410.669434 2577.463623,1408.960205 2576.113525,1406.655273
 		C2577.112061,1407.751831 2578.296387,1409.443970 2579.636475,1411.757324
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2507.593262,1452.327393
 		C2504.827393,1452.091919 2502.061279,1451.856323 2498.736816,1451.763428
 		C2490.941162,1452.992065 2483.693115,1454.011963 2476.468994,1455.179321
@@ -12379,54 +12375,54 @@ const SignatureSVG = () => {
 		C2484.504883,1437.652710 2489.430420,1437.429321 2494.621582,1437.723145
 		C2498.482666,1443.513184 2506.517334,1444.781860 2507.593262,1452.327393
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2360.426758,1526.465088
 		C2361.876465,1527.609497 2363.660156,1529.173584 2365.686035,1531.162964
 		C2364.205811,1530.020630 2362.483154,1528.452759 2360.426758,1526.465088
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2370.890869,1535.946533
 		C2371.481445,1535.841064 2372.116211,1536.026489 2372.943848,1536.399902
 		C2372.426270,1536.389282 2371.692383,1536.272461 2370.890869,1535.946533
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2367.747559,1534.191895
 		C2367.688721,1534.194702 2367.902100,1534.271240 2367.897705,1534.330322
 		C2367.893311,1534.389404 2367.806152,1534.189209 2367.747559,1534.191895
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2401.276855,1462.015381
 		C2413.373047,1460.871948 2424.891113,1460.084961 2436.415527,1459.397949
 		C2440.538574,1459.152222 2446.166748,1456.764526 2447.963135,1461.657349
@@ -12440,15 +12436,15 @@ const SignatureSVG = () => {
 		C2370.159180,1505.302490 2370.406250,1504.653320 2370.389893,1504.010742
 		C2369.844727,1482.377563 2383.094238,1470.809204 2401.276855,1462.015381
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2456.085693,1421.169434
 		C2456.333984,1423.609253 2456.387939,1425.562500 2456.243652,1427.500977
 		C2455.346436,1439.569580 2454.055420,1440.814819 2441.287109,1441.610352
@@ -12471,15 +12467,15 @@ const SignatureSVG = () => {
 		C2435.955078,1399.990601 2438.287354,1403.661255 2441.608398,1405.202515
 		C2448.692627,1408.490356 2452.659912,1414.068115 2456.085693,1421.169434
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2379.996582,1451.950806
 		C2381.875732,1454.624756 2383.754883,1457.298706 2385.081787,1459.186890
 		C2378.921875,1468.278076 2373.344727,1476.799316 2367.383545,1485.042725
@@ -12489,15 +12485,15 @@ const SignatureSVG = () => {
 		C2360.792236,1463.421753 2364.944824,1456.903076 2374.246094,1452.147461
 		C2377.031494,1451.869751 2378.513916,1451.910278 2379.996582,1451.950806
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2380.547119,1451.517212
 		C2378.513916,1451.910278 2377.031494,1451.869751 2374.811523,1451.754517
 		C2373.910156,1447.298950 2375.630615,1444.255859 2379.715820,1442.183350
@@ -12505,146 +12501,146 @@ const SignatureSVG = () => {
 		C2392.099365,1436.620239 2393.230469,1437.315430 2394.361816,1438.010620
 		C2394.297607,1446.789307 2387.136230,1448.366943 2380.547119,1451.517212
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2429.969238,1396.786621
 		C2425.543213,1399.403320 2420.400635,1402.067993 2414.984131,1403.940186
 		C2413.315430,1404.517090 2410.899170,1402.932129 2408.364990,1401.883301
 		C2413.382080,1392.845093 2421.298584,1394.834717 2429.969238,1396.786621
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2394.687988,1437.645020
 		C2393.230469,1437.315430 2392.099365,1436.620239 2390.390869,1435.589355
 		C2391.494873,1434.293457 2393.175781,1433.333252 2394.856934,1432.373047
 		C2394.909180,1434.008545 2394.961670,1435.643921 2394.687988,1437.645020
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2559.376953,1146.143921
 		C2557.173340,1148.675171 2554.272461,1151.291016 2550.698486,1153.978760
 		C2551.376709,1149.746704 2554.091797,1146.951782 2559.376953,1146.143921
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2567.573730,1138.102783
 		C2566.489990,1140.021606 2564.896729,1141.856934 2562.726807,1143.942627
 		C2562.540039,1141.141724 2563.007812,1138.152588 2567.573730,1138.102783
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2369.640137,1506.326538
 		C2369.971680,1508.121948 2369.908691,1510.295166 2369.726074,1513.276123
 		C2367.251465,1511.733398 2366.755859,1509.291992 2369.640137,1506.326538
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2408.743896,1438.013794
 		C2408.878662,1439.436890 2408.581299,1441.069702 2408.210938,1443.321045
 		C2405.442139,1441.950562 2405.345459,1440.040405 2408.743896,1438.013794
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2400.987793,1351.948975
 		C2400.960205,1353.482666 2400.505615,1355.196777 2399.632568,1357.438354
 		C2397.696533,1355.566772 2397.770996,1353.534912 2400.987793,1351.948975
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2406.256836,1378.540649
 		C2407.479004,1378.113281 2409.008545,1378.039795 2411.297607,1378.084106
 		C2410.226074,1378.432739 2408.395264,1378.663574 2406.256836,1378.540649
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2362.078613,1519.920288
 		C2362.115967,1519.966919 2362.041260,1519.873657 2362.078613,1519.920288
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2355.440430,1505.812500
 		C2355.224609,1505.147217 2355.204834,1504.223755 2355.321777,1502.618896
 		C2355.517578,1503.143188 2355.576904,1504.348755 2355.440430,1505.812500
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2475.539307,1437.824951
 		C2470.695068,1436.103149 2468.070312,1432.912964 2468.707031,1426.829102
 		C2471.851074,1419.555664 2468.074707,1415.019409 2464.213379,1410.431030
@@ -12662,15 +12658,15 @@ const SignatureSVG = () => {
 		C2489.430420,1437.429321 2484.504883,1437.652710 2478.480957,1437.837524
 		C2476.765625,1437.654541 2476.151123,1437.663208 2475.539307,1437.824951
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2494.621582,1437.723145
 		C2494.677490,1437.126953 2495.020508,1436.930664 2495.316650,1436.986206
 		C2508.239990,1439.408569 2514.092529,1432.340942 2517.086914,1420.398804
@@ -12690,69 +12686,69 @@ const SignatureSVG = () => {
 		C2507.541016,1452.245850 2507.656494,1452.204712 2507.625000,1452.266113
 		C2506.517334,1444.781860 2498.482666,1443.513184 2494.621582,1437.723145
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2536.595703,1389.928223
 		C2538.023193,1388.438843 2539.177002,1387.514526 2540.844971,1386.178711
 		C2543.516113,1391.149170 2543.464111,1395.023193 2540.197266,1399.157349
 		C2535.482422,1397.401733 2535.299072,1394.216309 2536.595703,1389.928223
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2499.202637,1385.700806
 		C2497.692139,1385.938232 2495.648438,1386.005737 2492.836670,1386.041504
 		C2494.268799,1385.850220 2496.468994,1385.690552 2499.202637,1385.700806
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2522.025391,1347.941162
 		C2522.027344,1347.925903 2521.649170,1348.174805 2521.649170,1348.174805
 		C2521.649170,1348.174805 2522.130371,1348.218628 2522.107178,1348.080078
 		C2522.083984,1347.941528 2522.023438,1347.956421 2522.025391,1347.941162
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2507.406250,1452.892334
 		C2513.374756,1455.846680 2513.380371,1456.634644 2507.025635,1459.992188
 		C2506.727539,1457.933105 2506.999512,1455.735962 2507.406250,1452.892334
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2415.255859,1443.226074
 		C2414.181641,1435.572998 2418.699707,1431.591919 2424.729736,1428.689331
 		C2427.247559,1427.477173 2429.778076,1426.291016 2432.750000,1424.880737
@@ -12763,79 +12759,79 @@ const SignatureSVG = () => {
 		C2450.138428,1438.548462 2445.104736,1439.271118 2440.459961,1441.625366
 		C2431.987305,1444.444946 2424.023926,1444.938232 2415.255859,1443.226074
 		z"
-                />
-                <motion.path
-                    variants={signaturePathVariants}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="
+				/>
+				<motion.path
+					variants={signaturePathVariants}
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="
 		M2476.142578,1437.878296
 		C2476.151123,1437.663208 2476.765625,1437.654541 2477.668701,1437.900635
 		C2477.551758,1437.978882 2477.148926,1437.955200 2476.142578,1437.878296
 		z"
-                />
-            </motion.svg>
-        </div>
-    );
+				/>
+			</motion.svg>
+		</div>
+	);
 };
 
 const Signature = ({ title, url }: { title: string; url: string }) => {
-    const text = `${title} by @sudocode_ ${url}`;
+	const text = `${title} by @sudocode_ ${url}`;
 
-    return (
-        <section
-            className="bg-neutral-200 max-w-3xl mx-auto py-10 rounded-lg"
-            data-testid="signature"
-        >
-            <div
-                className="flex items-start flex-col gap-5"
-                style={{
-                    maxWidth: 700,
-                    margin: '0 auto',
-                }}
-            >
-                <p>
-                    Liked this article?{' '}
-                    <a
-                        className="text-primary hover:underline transition-all duration-300 ease-in hover:text-primary cursor-pointer"
-                        href={`https://twitter.com/intent/tweet?text=${encodeURI(text)}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Share it with a friend on Twitter
-                    </a>{' '}
-                    or <Link href="/contact">contact me</Link> let&apos;s start
-                    a new project. Have a question, feedback or simply wish to
-                    contact me privately?{' '}
-                    <a
-                        href="http://twitter.com/sudocode_"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Shoot me a DM
-                    </a>{' '}
-                    and I&apos;ll always be available to respond to your
-                    messages.
-                </p>
+	return (
+		<section
+			className="bg-card max-w-3xl mx-auto py-10 rounded-lg"
+			data-testid="signature"
+		>
+			<div
+				className="flex items-start flex-col gap-5"
+				style={{
+					maxWidth: 700,
+					margin: '0 auto',
+				}}
+			>
+				<p>
+					Liked this article?{' '}
+					<a
+						className="text-primary hover:underline transition-all duration-300 ease-in hover:text-primary cursor-pointer"
+						href={`https://twitter.com/intent/tweet?text=${encodeURI(text)}`}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Share it with a friend on Twitter
+					</a>{' '}
+					or <Link href="/contact">contact me</Link> let&apos;s start
+					a new project. Have a question, feedback or simply wish to
+					contact me privately?{' '}
+					<a
+						href="http://twitter.com/sudocode_"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Shoot me a DM
+					</a>{' '}
+					and I&apos;ll always be available to respond to your
+					messages.
+				</p>
 
-                <div
-                    style={{
-                        color: 'var(--62)',
-                    }}
-                >
-                    <p>Have a wonderful day.</p>
-                    <div className="flex items-start">
-                        <p>– Felix</p>
-                    </div>
-                </div>
-                <SignatureSVG />
-            </div>
-            {/* <NewsletterForm /> */}
-        </section>
-    );
+				<div
+					style={{
+						color: 'var(--62)',
+					}}
+				>
+					<p>Have a wonderful day.</p>
+					<div className="flex items-start">
+						<p>– Felix</p>
+					</div>
+				</div>
+				<SignatureSVG />
+			</div>
+			{/* <NewsletterForm /> */}
+		</section>
+	);
 };
 
 export { Signature };

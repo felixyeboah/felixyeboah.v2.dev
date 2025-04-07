@@ -23,20 +23,20 @@ const theme = {
         error: 'var(--danger)',
         surface3: 'var(--emphasis)',
         surface2: 'var(--border-color)',
-        surface1: 'var(--card-background)',
+        surface1: 'var(--secondary)',
     },
     syntax: {
-        plain: 'var(--token-comment)',
+        plain: 'var(--comment)',
         comment: {
-            color: 'var(--token-comment)',
+            color: 'var(--comment)',
         },
-        keyword: 'var(--token-keyword)',
-        tag: 'var(--token-symbol)',
-        punctuation: 'var(--token-punctuation)',
-        definition: 'var(--token-function)',
-        property: 'var(--token-function)',
-        static: 'var(--token-comment)',
-        string: 'var(--token-selector)',
+        keyword: 'var(--keyword)',
+        tag: 'var(--symbol)',
+        punctuation: 'var(--punctuation)',
+        definition: 'var(--function)',
+        property: 'var(--function)',
+        static: 'var(--comment)',
+        string: 'var(--selector)',
     },
     font: {
         body: 'var(--font-display)',
@@ -166,7 +166,7 @@ const Sandpack = (props: SandpackProps) => {
                         {...defaultEditorOptions}
                         showRunButton={false}
                         style={{
-                            borderLeft: '1px solid var(--border-color)',
+                            borderLeft: '1px solid var(--border)',
                             height: defaultEditorOptions.editorHeight,
                         }}
                     />

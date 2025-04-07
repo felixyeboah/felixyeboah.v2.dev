@@ -65,8 +65,18 @@ const MDXContent = ({ frontMatter, mdxSource, tweets }: MDXContentProps) => {
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
+        // Initial state reference for the gradient
+        const initialGradient = 'conic-gradient(var(--warning) 0deg, var(--border) 0deg)';
+        // Target state for the gradient
+        const targetGradient = 'conic-gradient(var(--warning) 360deg, var(--border) 360deg)';
+
+        // Ensure the element starts with the initial gradient if needed
+        if (progressRef.current) {
+            progressRef.current.style.backgroundImage = initialGradient;
+        }
+
         const progress = gsap.to(progressRef.current, {
-            backgroundImage: `conic-gradient(#FF7009 360deg, rgba(255, 112, 9, 0.1) 0deg)`,
+            backgroundImage: targetGradient, // Animate to the target gradient
             ease: 'none',
             scrollTrigger: {
                 trigger: 'article',
@@ -101,9 +111,9 @@ const MDXContent = ({ frontMatter, mdxSource, tweets }: MDXContentProps) => {
                     id: title.id,
                     title: title.innerText,
                 })) as Array<{
-                id: string;
-                title: string;
-            }>;
+                    id: string;
+                    title: string;
+                }>;
             setIds(idArrays);
         }, 500);
     }, [slug]);
@@ -134,7 +144,7 @@ const MDXContent = ({ frontMatter, mdxSource, tweets }: MDXContentProps) => {
                 lineClass: 'blog-line',
             });
 
-           new SplitType('.header-text h1', {
+            new SplitType('.header-text h1', {
                 lineClass: 'blog-line-parent',
             });
 
@@ -169,21 +179,22 @@ const MDXContent = ({ frontMatter, mdxSource, tweets }: MDXContentProps) => {
                                         ref={progressRef}
                                         className="absolute inset-[-1px] rounded-full"
                                         style={{
+                                            // Use --border for the track color in the initial state
                                             backgroundImage:
-                                                'conic-gradient(#FF7009 0deg, rgba(255, 112, 9, 0.1) 0deg)',
+                                                'conic-gradient(var(--warning) 0deg, var(--border) 0deg)',
                                             transform: 'scale(1.15)',
                                             WebkitMask:
                                                 'radial-gradient(circle at center, transparent 66%, black 68%)',
                                         }}
                                     />
-                                    <div className="absolute inset-0 bg-primary rounded-full z-[1]" />
-                                    <X className="relative z-10 text-white" />
+                                    <div className="absolute inset-0 bg-background rounded-full z-[1]" />
+                                    <X className="relative z-10 text-foreground" />
                                 </div>
                             </Link>
                         </TooltipTrigger>
                         <TooltipContent
                             hasArrow={false}
-                            className="text-black bg-transparent font-sans text-base"
+                            className="text-foreground bg-transparent font-sans text-base"
                         >
                             <p>Back to blog</p>
                         </TooltipContent>
@@ -221,7 +232,7 @@ const MDXContent = ({ frontMatter, mdxSource, tweets }: MDXContentProps) => {
                         priority
                     />
                 </div>
-                <div className="max-w-3xl mx-auto mt-10 prose prose-pre:bg-transparent prose-a:cursor-pointer prose-p:text-gray-500 prose-p:leading-relaxed prose-p:tracking-wide prose-headings:leading-tight prose-li:leading-relaxed [&_span[data-testid='content-line']]:text-gray-500 [&_div[data-testid='number-line']]:text-gray-400 prose-strong:p-1 prose-strong:text-white prose-strong:font-medium prose-strong:text-sm prose-strong:rounded-sm">
+                <div className="max-w-3xl mx-auto mt-10 prose prose-headings:text-foreground prose-pre:bg-transparent prose-a:cursor-pointer prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:tracking-wide prose-headings:leading-tight prose-li:leading-relaxed [&_span[data-testid='content-line']]:text-muted-foreground [&_div[data-testid='number-line']]:text-muted-foreground prose-strong:p-1 prose-strong:text-foreground prose-strong:font-medium prose-strong:text-sm prose-strong:rounded-sm">
                     <MDXRemote
                         {...mdxSource}
                         components={{

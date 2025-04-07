@@ -51,12 +51,12 @@ const MDXComponents = {
         return <ol {...props} />;
     },
     p: function P(props: React.HTMLAttributes<HTMLParagraphElement>) {
-        return <span {...props}>{props.children}</span>;
+        return <p {...props}>{props.children}</p>;
     },
     pre: Code,
     strong: function StrongText(props: React.HTMLAttributes<HTMLElement>) {
         return (
-            <strong {...props} className="bg-blue-600">
+            <strong {...props}>
                 {props.children}
             </strong>
         );
