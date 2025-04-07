@@ -1,5 +1,4 @@
 import { getFileBySlug, getFiles } from '@/app/libs/mdx';
-import { loader } from '@/app/libs/next-image-loader';
 import { getTweets } from '@/app/libs/tweets';
 import { siteConfig } from '@/config/site';
 import { format } from 'date-fns';
@@ -18,42 +17,39 @@ export async function generateStaticParams() {
 export async function generateMetadata({
     params,
 }: {
-    params: Promise<{ slug: string }>;
+    params: { slug: string };
 }): Promise<Metadata> {
-    const slug = (await params).slug;
+    const slug = params.slug;
     const post = await getFileBySlug(slug);
-    const { title, subtitle, date, readingTime, keywords, categories, cover } =
-        post.frontMatter;
-    const formattedDate = format(new Date(Date.parse(date)), 'MMMM d, yyyy');
+    const { title, subtitle, date, keywords, categories, cover, updated } = post.frontMatter;
     const url = `${siteConfig.url}/blog/${slug}`;
 
-    // Transform cover image URL using the Cloudinary loader
-    const coverUrl = cover ? loader({ src: cover, width: 1200 }) : '';
-
-    // Create URL parameters without double encoding
-    const encode = new URLSearchParams();
-    encode.append('title', title);
-    encode.append('date', formattedDate);
-    encode.append('readingTime', readingTime.text);
-    encode.append('cover', coverUrl);
-    encode.append('subtitle', subtitle);
-
-    const ogImageUrl = `${siteConfig.url}/api/og?${encode.toString()}`;
+    const ogImageUrl = `${siteConfig.url}/api/og?title=${encodeURIComponent(title)}&subtitle=${encodeURIComponent(subtitle || '')}`;
+    const publishedTime = new Date(date).toISOString();
+    const modifiedTime = updated ? new Date(updated).toISOString() : publishedTime;
 
     return {
-        title: `${title} | ${siteConfig.title}`,
+        title: title,
         description: subtitle,
-        keywords: keywords?.join(', ') || '',
+        keywords: keywords || [],
+        authors: [
+            {
+                name: siteConfig.author,
+                url: siteConfig.url,
+            },
+        ],
+        creator: siteConfig.author,
+        publisher: siteConfig.name,
         openGraph: {
-            title,
+            title: title,
             description: subtitle,
             type: 'article',
-            url,
-            siteName: siteConfig.title,
-            locale: 'en_US',
-            publishedTime: new Date(date).toISOString(),
-            modifiedTime: new Date(date).toISOString(),
-            authors: ['Felix Yeboah'],
+            url: url,
+            locale: siteConfig.siteLanguage,
+            publishedTime: publishedTime,
+            modifiedTime: modifiedTime,
+            authors: [siteConfig.url],
+            siteName: siteConfig.name,
             images: [
                 {
                     url: ogImageUrl,
@@ -61,45 +57,39 @@ export async function generateMetadata({
                     height: 630,
                     alt: title,
                 },
+                {
+                    url: siteConfig.ogImage,
+                    width: 1200,
+                    height: 630,
+                    alt: siteConfig.name,
+                }
             ],
         },
         twitter: {
-            card: 'summary_large_image',
-            title: `${title} | ${siteConfig.title}`,
+            card: siteConfig.twitterCardType,
+            title: title,
             description: subtitle,
-            site: '@felixyeboah_dev',
-            creator: '@felixyeboah_dev',
+            site: siteConfig.twitter,
+            creator: siteConfig.twitter,
             images: [ogImageUrl],
-        },
-        authors: [
-            {
-                name: 'Felix Yeboah',
-                url: siteConfig.url,
-            },
-        ],
-        publisher: siteConfig.title,
-        robots: {
-            index: true,
-            follow: true,
-            'max-video-preview': -1,
-            'max-image-preview': 'large',
-            'max-snippet': -1,
         },
         alternates: {
             canonical: url,
         },
-        category: categories?.join(', ') || '',
+        category: categories?.join(', ') || undefined,
         other: {
-            'article:published_time': new Date(date).toISOString(),
+            'article:published_time': publishedTime,
+            'article:modified_time': modifiedTime,
             'article:author': siteConfig.url,
-            'og:site_name': siteConfig.title,
+            'og:image:width': '1200',
+            'og:image:height': '630',
         },
     };
 }
 
-const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
+const BlogPage = async ({ params }: { params: { slug: string } }) => {
     try {
-        const slug = (await params).slug;
+        const slug = params.slug;
         const post = await getFileBySlug(slug);
         const tweets =
             post.tweetIDs?.length > 0 ? await getTweets(post.tweetIDs) : {};
