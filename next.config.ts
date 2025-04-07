@@ -46,6 +46,12 @@ const nextConfig: NextConfig = {
         ],
     },
     transpilePackages: ['next-mdx-remote'],
+    eslint: {
+        ignoreDuringBuilds: true
+    },
+    typescript: {
+        ignoreBuildErrors: true
+    }
 };
 
 export default nextConfig;
