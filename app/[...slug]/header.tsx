@@ -66,13 +66,21 @@ export const Header = ({ page }: { page: FrontMatterPost }) => {
     );
 
     return (
-        <header className="header-text flex flex-col gap-10 items-center justify-center lg:pt-40" ref={container}>
-            <h1 className="block text-5xl md:text-8xl font-medium text-white">
+        <header className="header-text flex flex-col gap-8 items-center justify-center py-16 md:py-24" ref={container}>
+            <h1 className="block text-4xl md:text-6xl font-bold text-white text-center">
                 {page?.frontMatter.title}
             </h1>
 
+            <div className="md:w-8/12 mx-auto">
+                {page?.frontMatter?.subtitle ? (
+                    <p className="text-lg md:text-xl text-primary text-center">
+                        {page?.frontMatter?.subtitle}
+                    </p>
+                ) : null}
+            </div>
+
             {page?.frontMatter?.cover ? (
-                <div className="relative w-full rounded-lg transition overflow-hidden">
+                <div className="relative w-full rounded-xl overflow-hidden mt-8">
                     <Image
                         src={page?.frontMatter?.cover}
                         alt={page?.frontMatter?.title}
@@ -80,7 +88,7 @@ export const Header = ({ page }: { page: FrontMatterPost }) => {
                         height={1200}
                         loader={loader}
                         className={cn(
-                            'w-full lg:h-[650px] md:aspect-1 rounded-xl group-hover:opacity-75 duration-700 ease-in-out',
+                            'w-full h-auto md:h-[500px] rounded-xl group-hover:opacity-75 duration-700 ease-in-out',
                             isLoading
                                 ? 'blur-2xl scale-110'
                                 : 'blur-0 scale-100',

@@ -1,7 +1,6 @@
 import { getFileBySlug, getFiles } from '@/app/libs/mdx';
 import { getTweets } from '@/app/libs/tweets';
 import { siteConfig } from '@/config/site';
-import { format } from 'date-fns';
 import { Metadata } from 'next';
 
 import MDXContent from './MDXContent';

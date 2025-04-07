@@ -3,6 +3,8 @@ import { Header } from './header';
 import { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
 import { FrontMatterPost } from '@/types/post';
+import { getTweets } from '../libs/tweets';
+import { MainBody } from './main';
 
 export async function generateMetadata({
     params,
@@ -90,15 +92,18 @@ const MdxScreen = async ({ params }: { params: Promise<{ slug: string[] }> }) =>
         return <div>Page not found.</div>; // Simple fallback
     }
 
+    const tweets =
+        page.tweetIDs?.length > 0 ? await getTweets(page.tweetIDs) : {};
+
     const isDraft = Boolean(page?.frontMatter.draft);
     const isArchived = Boolean(page?.frontMatter.archived);
 
-    console.log('page: ', page);
-
     return (
         <div className="min-h-screen">
-            <div className="container mx-auto">
+            <div className="container mx-auto max-w-5xl px-4">
                 <Header page={page} />
+
+                <MainBody mdxSource={page.mdxSource} tweets={tweets ?? {}} />
             </div>
         </div>
     );
