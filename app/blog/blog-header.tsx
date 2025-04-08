@@ -11,27 +11,33 @@ export const BlogHeader = () => {
     useGSAP(
         () => {
             const heroText = new SplitType('.header-text h1', {
-                types: 'chars',
+                types: 'lines',
+                tagName: 'div',
+                lineClass: 'line',
             });
             const text = new SplitType('.header-text p', {
                 types: 'lines',
                 tagName: 'div',
                 lineClass: 'line',
             });
-            gsap.set(heroText.chars, {
-                y: 400,
-                opacity: 0,
-                visibility: 'hidden',
+
+            // Animate h1 lines
+            heroText.lines?.forEach((line) => {
+                const content = line.innerHTML;
+                line.innerHTML = `<span>${content}</span>`;
             });
 
-            gsap.to(heroText.chars, {
+            gsap.set('.header-text h1 .line span', {
+                y: 400,
+                display: 'block',
+            });
+
+            gsap.to('.header-text h1 .line span', {
                 y: 0,
-                opacity: 1,
-                visibility: 'visible',
-                duration: 1,
-                stagger: 0.075,
+                duration: 1.5,
+                stagger: 0.1,
                 ease: 'power4.out',
-                delay: 1,
+                delay: 0.5,
             });
 
             // paragraph lines
@@ -43,14 +49,10 @@ export const BlogHeader = () => {
             gsap.set('.header-text p .line span', {
                 y: 400,
                 display: 'block',
-                opacity: 0,
-                visibility: 'hidden',
             });
 
             gsap.to('.header-text p .line span', {
                 y: 0,
-                opacity: 1,
-                visibility: 'visible',
                 duration: 2,
                 stagger: 0.075,
                 ease: 'power4.out',
@@ -58,8 +60,8 @@ export const BlogHeader = () => {
             });
 
             return () => {
-                if (text) text.revert();
                 if (heroText) heroText.revert();
+                if (text) text.revert();
             };
         },
         {
