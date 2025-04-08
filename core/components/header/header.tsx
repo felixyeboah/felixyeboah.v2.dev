@@ -6,6 +6,7 @@ import { useTransitionRouter } from 'next-view-transitions';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export const LINKS = [
     {
@@ -187,51 +188,126 @@ export const Header = () => {
             </button>
 
             {/* Mobile Menu Overlay */}
-            {isActive && (
-                <div className="fixed inset-0 top-20 h-[calc(100vh-5rem)] bg-[#232323] border-t border-[#393939] md:hidden">
-                    <div className="m-4 border border-[#393939] relative">
-                        {/* Corner + Icons for Mobile Menu Box */}
-                        <div className="absolute top-0 left-0 transform -translate-x-1/2 -translate-y-1/2 px-1 z-10"><span className="text-[#6B6B6B] text-lg font-thin">+</span></div>
-                        <div className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 px-1 z-10"><span className="text-[#6B6B6B] text-lg font-thin">+</span></div>
-                        <div className="absolute bottom-0 left-0 transform -translate-x-1/2 translate-y-1/2 px-1 z-10"><span className="text-[#6B6B6B] text-lg font-thin">+</span></div>
-                        <div className="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2 px-1 z-10"><span className="text-[#6B6B6B] text-lg font-thin">+</span></div>
+            <AnimatePresence>
+                {isActive && (
+                    <motion.div
+                        initial={{ height: 0 }}
+                        animate={{
+                            height: "calc(100vh - 5rem)",
+                            transition: {
+                                duration: 0.3,
+                                ease: [0.4, 0, 0.2, 1]
+                            }
+                        }}
+                        exit={{
+                            height: 0,
+                            transition: {
+                                delay: 0.5,
+                                duration: 0.3,
+                                ease: [0.4, 0, 0.2, 1]
+                            }
+                        }}
+                        className="fixed inset-0 top-20 bg-[#232323] border-t border-[#393939] md:hidden overflow-hidden"
+                    >
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{
+                                opacity: 1,
+                                transition: { duration: 0.2 }
+                            }}
+                            exit={{
+                                opacity: 0,
+                                transition: {
+                                    duration: 0.2,
+                                    delay: 0.3
+                                }
+                            }}
+                            className="m-4 border border-[#393939] relative h-[calc(100%-2rem)]"
+                        >
+                            {/* Corner + Icons for Mobile Menu Box */}
+                            <div className="absolute top-0 left-0 transform -translate-x-1/2 -translate-y-1/2 px-1 z-10"><span className="text-[#6B6B6B] text-lg font-thin">+</span></div>
+                            <div className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 px-1 z-10"><span className="text-[#6B6B6B] text-lg font-thin">+</span></div>
+                            <div className="absolute bottom-0 left-0 transform -translate-x-1/2 translate-y-1/2 px-1 z-10"><span className="text-[#6B6B6B] text-lg font-thin">+</span></div>
+                            <div className="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2 px-1 z-10"><span className="text-[#6B6B6B] text-lg font-thin">+</span></div>
 
-                        <ul className="flex flex-col divide-y divide-[#393939]">
-                            {LINKS.map((link, index) => (
-                                <li key={link.to} className="relative">
-                                    {/* Intersection + Icons for each nav item */}
-                                    {index > 0 && (
-                                        <>
-                                            <div className="absolute top-0 left-0 transform -translate-x-1/2 -translate-y-1/2 px-1 z-10">
-                                                <span className="text-[#6B6B6B] text-lg font-thin">+</span>
-                                            </div>
-                                            <div className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 px-1 z-10">
-                                                <span className="text-[#6B6B6B] text-lg font-thin">+</span>
-                                            </div>
-                                        </>
-                                    )}
-                                    <Link
-                                        href={link.to}
-                                        className={cn(
-                                            "block text-lg text-white hover:bg-[#303030] transition-colors duration-200 p-6",
-                                            pathname === link.to && "bg-[#1b1b1b]"
-                                        )}
-                                        onClick={(e) => {
-                                            e.preventDefault();
-                                            setIsActive(false);
-                                            router.push(link.to, {
-                                                onTransitionReady: slideOut,
-                                            });
+                            <motion.ul
+                                className="flex flex-col divide-y divide-[#393939]"
+                                initial="closed"
+                                animate="open"
+                                exit="closed"
+                                variants={{
+                                    open: {
+                                        transition: {
+                                            staggerChildren: 0.05,
+                                            delayChildren: 0.1
+                                        }
+                                    },
+                                    closed: {
+                                        transition: {
+                                            staggerChildren: 0.05,
+                                            staggerDirection: -1,
+                                            delayChildren: 0.1
+                                        }
+                                    }
+                                }}
+                            >
+                                {LINKS.map((link, index) => (
+                                    <motion.li
+                                        key={link.to}
+                                        className="relative"
+                                        variants={{
+                                            open: {
+                                                y: 0,
+                                                opacity: 1,
+                                                transition: {
+                                                    y: { type: "spring", stiffness: 300, damping: 30 },
+                                                    opacity: { duration: 0.2 }
+                                                }
+                                            },
+                                            closed: {
+                                                y: 50,
+                                                opacity: 0,
+                                                transition: {
+                                                    y: { type: "spring", stiffness: 200, damping: 30 },
+                                                    opacity: { duration: 0.2 }
+                                                }
+                                            }
                                         }}
                                     >
-                                        {link.name}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-            )}
+                                        {/* Intersection + Icons for each nav item */}
+                                        {index > 0 && (
+                                            <>
+                                                <div className="absolute top-0 left-0 transform -translate-x-1/2 -translate-y-1/2 px-1 z-10">
+                                                    <span className="text-[#6B6B6B] text-lg font-thin">+</span>
+                                                </div>
+                                                <div className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 px-1 z-10">
+                                                    <span className="text-[#6B6B6B] text-lg font-thin">+</span>
+                                                </div>
+                                            </>
+                                        )}
+                                        <Link
+                                            href={link.to}
+                                            className={cn(
+                                                "block text-lg text-white hover:bg-[#303030] transition-colors duration-200 p-6",
+                                                pathname === link.to && "bg-[#1b1b1b]"
+                                            )}
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                setIsActive(false);
+                                                router.push(link.to, {
+                                                    onTransitionReady: slideOut,
+                                                });
+                                            }}
+                                        >
+                                            {link.name}
+                                        </Link>
+                                    </motion.li>
+                                ))}
+                            </motion.ul>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </nav>
     );
 };
