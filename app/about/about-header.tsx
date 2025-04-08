@@ -11,29 +11,22 @@ import SplitType from 'split-type';
 
 export const AboutHeader = () => {
     const [isLoading, setLoading] = useState(true);
-
     const container = useRef<HTMLDivElement>(null);
 
     useGSAP(
         () => {
-            // Split heading text into characters for animation
             const heroText = new SplitType('.header-text h1', {
                 types: 'chars',
             });
-
-            // Split paragraph text into lines for staggered animation
             const text = new SplitType('.header-text p', {
                 types: 'lines',
                 tagName: 'div',
                 lineClass: 'line',
             });
-
-            // Initial setup for heading characters
             gsap.set(heroText.chars, {
                 y: 400,
             });
 
-            // Animate heading characters
             gsap.to(heroText.chars, {
                 y: 0,
                 duration: 1,
@@ -42,13 +35,11 @@ export const AboutHeader = () => {
                 delay: 1,
             });
 
-            // Process paragraph lines to wrap content in spans for animation
             text.lines?.forEach((line) => {
                 const content = line.innerHTML;
                 line.innerHTML = `<span>${content}</span>`;
             });
 
-            // Style and position lines for animation
             gsap.set('.header-text p .line span', {
                 y: 400,
                 display: 'inline-block',
@@ -56,7 +47,6 @@ export const AboutHeader = () => {
                 overflow: 'hidden',
             });
 
-            // Animate paragraph lines
             gsap.to('.header-text p .line span', {
                 y: 0,
                 duration: 2,
@@ -66,7 +56,6 @@ export const AboutHeader = () => {
             });
 
             return () => {
-                // Clean up split text instances
                 if (text) text.revert();
                 if (heroText) heroText.revert();
             };
@@ -77,25 +66,25 @@ export const AboutHeader = () => {
     );
 
     return (
-        <header className="h-screen pt-28 header-text text-white" ref={container}>
-            <div className="container mx-auto grid grid-cols-12 gap-6">
-                <div className="col-span-full md:col-span-6 space-y-5">
-                    <div className="w-full flex flex-col h-full items-center justify-between">
-                        <div>
+        <header className="min-h-screen header-text text-white" ref={container}>
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 py-24 md:pt-28">
+                    <div className="md:col-span-6 space-y-8">
+                        <div className="space-y-6">
                             <div className="space-y-4">
                                 <h1 className="overflow-hidden">
-                                    <span className="block text-5xl md:text-8xl font-bold">
+                                    <span className="block text-6xl sm:text-7xl lg:text-8xl font-bold">
                                         Hi
                                     </span>
                                 </h1>
                                 <h1 className="overflow-hidden">
-                                    <span className="block text-5xl md:text-8xl font-bold">
+                                    <span className="block text-6xl sm:text-7xl lg:text-8xl font-bold">
                                         I&apos;m Felix.
                                     </span>
                                 </h1>
                             </div>
 
-                            <div className="text-xl md:text-2xl space-y-0">
+                            <div className="text-xl md:text-2xl space-y-4">
                                 <p>
                                     - A software developer. I build things for
                                     the web and mobile.
@@ -105,7 +94,7 @@ export const AboutHeader = () => {
                                     learner.
                                 </p>
                                 <p>
-                                    And over the years, I’ve been building
+                                    And over the years, I've been building
                                     functional, beautiful interfaces and
                                     experiences that leave a positive impact on
                                     people and businesses.
@@ -113,8 +102,8 @@ export const AboutHeader = () => {
                             </div>
                         </div>
 
-                        <div className="col-span-full mb-12 lg:col-span-4 lg:mb-0 space-y-5">
-                            <h3 className="dark:text-gray-100 dark:leading-snug text-2xl">
+                        <div className="space-y-6">
+                            <h3 className="text-lg md:text-xl text-gray-100 leading-relaxed">
                                 After High School in 2011, I wanted to further
                                 my education to the university but the financial
                                 burden was too much for my parents to bear. I
@@ -153,7 +142,7 @@ export const AboutHeader = () => {
                                                     stroke="#000"
                                                     strokeMiterlimit="10"
                                                 ></line>
-                                            </svg>{' '}
+                                            </svg>
                                         </div>
                                     </div>
                                     <div className="btn-content">
@@ -184,34 +173,34 @@ export const AboutHeader = () => {
                                                     stroke="#000"
                                                     strokeMiterlimit="10"
                                                 ></line>
-                                            </svg>{' '}
+                                            </svg>
                                         </div>
                                     </div>
                                 </Link>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div className="col-span-full md:col-span-6">
-                    <div className="h-[600px] lg:h-[85vh] overflow-hidden rounded-lg relative">
-                        <Image
-                            src="felixyeboah.dev/IMG_7337_tmsrzq"
-                            alt=""
-                            fill={true}
-                            className={cn(
-                                'group-hover:opacity-75 duration-700 ease-in-out',
-                                isLoading
-                                    ? 'grayscale blur-2xl scale-110'
-                                    : 'grayscale-0 blur-0 scale-100',
-                            )}
-                            style={{
-                                objectFit: 'cover',
-                            }}
-                            loader={loader}
-                            onLoad={() => setLoading(false)}
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        />
+                    <div className="md:col-span-6">
+                        <div className="h-[500px] md:h-[600px] lg:h-[700px] overflow-hidden rounded-lg relative">
+                            <Image
+                                src="felixyeboah.dev/IMG_7337_tmsrzq"
+                                alt="Felix Yeboah"
+                                fill={true}
+                                className={cn(
+                                    'group-hover:opacity-75 duration-700 ease-in-out',
+                                    isLoading
+                                        ? 'grayscale blur-2xl scale-110'
+                                        : 'grayscale-0 blur-0 scale-100'
+                                )}
+                                style={{
+                                    objectFit: 'cover',
+                                }}
+                                loader={loader}
+                                onLoad={() => setLoading(false)}
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            />
+                        </div>
                     </div>
                 </div>
             </div>

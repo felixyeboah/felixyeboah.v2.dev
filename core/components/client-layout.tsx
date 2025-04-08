@@ -9,7 +9,7 @@ const Wrapper = ({
     ...props
 }: React.ComponentPropsWithRef<'main'>) => (
     <main
-        className="transition-[0.5s] overflow-x-hidden bg-background"
+        className="transition-[0.5s] bg-background"
         {...props}
     >
         {children}

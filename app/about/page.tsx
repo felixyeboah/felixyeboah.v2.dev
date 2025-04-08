@@ -33,9 +33,9 @@ const AboutPage = () => {
     }, { scope: mainRef });
 
     return (
-        <div className="relative">
+        <div className="relative min-h-screen">
             <AboutHeader />
-            <main ref={mainRef} className="container mx-auto lg:pt-44">
+            <main ref={mainRef} className="container mx-auto px-4 sm:px-6 lg:px-8 pt-8">
                 <div className="animate-section">
                     <PhotosSection />
                 </div>

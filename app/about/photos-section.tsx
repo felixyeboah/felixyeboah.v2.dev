@@ -36,7 +36,6 @@ export const PhotosSection = () => {
     const [activeTitle, setActiveTitle] = useState('');
     const followerRef = useRef<HTMLDivElement>(null);
 
-    // Update the mouse move handler
     const handleMouseMove = (e: React.MouseEvent) => {
         requestAnimationFrame(() => {
             const { clientX, clientY } = e;
@@ -90,43 +89,30 @@ export const PhotosSection = () => {
     }, [mousePosition]);
 
     return (
-        <div
-            className="relative h-screen space-y-9"
-            onMouseMove={handleMouseMove}
-        >
-            <div
-                ref={followerRef}
-                className={`fixed top-0 left-0 pointer-events-none z-[999] flex items-center justify-center px-4 h-10 rounded-md bg-black/80 transition-opacity duration-300 ${isHovering ? 'opacity-100' : 'opacity-0'
-                    }`}
-                style={{
-                    transform: 'translate(-50%, -50%)',
-                }}
-            >
+        <div className="min-h-screen space-y-6 sm:space-y-8 lg:space-y-12 py-8 sm:py-12 lg:py-16" onMouseMove={handleMouseMove}>
+            <div ref={followerRef} className={`fixed top-0 left-0 pointer-events-none z-[999] flex items-center justify-center px-4 h-10 rounded-md bg-black/80 transition-opacity duration-300 ${isHovering ? 'opacity-100' : 'opacity-0'}`} style={{ transform: 'translate(-50%, -50%)' }}>
                 <p className="text-sm text-center text-white font-medium whitespace-nowrap">
                     {activeTitle}
                 </p>
             </div>
-            <div className="space-y-9">
-                <div className="flex items-center justify-between text-white">
-                    <h3 className="text-xl uppercase">Photos</h3>
+            <div className="space-y-6 sm:space-y-8">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between text-white gap-4 sm:gap-0">
+                    <h3 className="text-lg sm:text-xl uppercase">Photos</h3>
                     <Button
-                        className="text-[17px] font-normal px-0 underlined hover:bg-transparent hover:text-white/90 cursor-pointer"
+                        className="text-base sm:text-lg font-normal px-0 underlined hover:bg-transparent hover:text-white/90 cursor-pointer"
                         variant="ghost"
                     >
                         View all photos
                     </Button>
                 </div>
-                <div
-                    className="flex items-center gap-2"
-                    onMouseMove={handleMouseMove}
-                >
+                <div className="hidden sm:flex items-center gap-2" onMouseMove={handleMouseMove}>
                     {images.map((image, index) => (
                         <div
                             key={index}
                             ref={(el) => {
                                 imageRefs.current[index] = el;
                             }}
-                            className="relative h-[75vh] transition-none cursor-none overflow-hidden"
+                            className="relative h-[50vh] sm:h-[60vh] lg:h-[75vh] transition-none cursor-none overflow-hidden"
                             style={{
                                 width: index === 2 ? '70%' : '15%',
                             }}
@@ -143,8 +129,27 @@ export const PhotosSection = () => {
                         </div>
                     ))}
                 </div>
+                <div className="flex sm:hidden flex-col gap-4">
+                    {images.map((image, index) => (
+                        <div
+                            key={index}
+                            className="relative h-[300px] w-full overflow-hidden rounded-lg"
+                        >
+                            <Image
+                                src={image.img}
+                                alt={image.title}
+                                loader={loader}
+                                fill
+                                className="w-full h-full object-cover"
+                            />
+                            <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                                <p className="text-sm text-white">{image.title}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
-            <p className="text-xl w-full lg:w-2/5 text-gray-300">
+            <p className="text-base sm:text-lg lg:text-xl w-full lg:w-2/5 text-gray-300">
                 In my free time, I love exploring new places through travel,
                 capturing moments with my camera, and going on hikes. I also
                 enjoy fun activities and learning more about the world around
