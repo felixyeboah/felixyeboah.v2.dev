@@ -4,6 +4,14 @@ import { siteConfig } from '@/config/site';
 import { getAllFilesFrontMatter } from '../libs/mdx';
 import { ProjectHeader } from './project-header';
 import { ProjectList } from './project-lists';
+// Import Accordion components
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+} from '@/components/ui/accordion';
+import { Post } from '@/types/post';
 
 export async function generateMetadata(): Promise<Metadata> {
     const title = 'Case Studies | ' + siteConfig.title;
@@ -45,12 +53,32 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const CaseStudiesPage = async () => {
-    const projects = await getAllFilesFrontMatter('project');
+    // Fetch all projects
+    const allProjects = await getAllFilesFrontMatter('project');
+
+    // Separate active and archived projects
+    const activeProjects = allProjects.filter((project: Post) => !project.archive);
+    const archivedProjects = allProjects.filter((project: Post) => project.archive);
 
     return (
         <div>
             <ProjectHeader />
-            <ProjectList projects={projects} />
+            {/* Display active projects */}
+            <ProjectList projects={activeProjects} />
+
+            {/* Display archived projects in an accordion if there are any */}
+            {archivedProjects.length > 0 && (
+                <div className="mt-12 container mx-auto pb-20">
+                    <Accordion type="single" collapsible className="w-full">
+                        <AccordionItem value="archived-projects" className=''>
+                            <AccordionTrigger className='text-2xl border p-4 rounded-lg bg-secondary border-secondary'>Archived Projects</AccordionTrigger>
+                            <AccordionContent>
+                                <ProjectList projects={archivedProjects} />
+                            </AccordionContent>
+                        </AccordionItem>
+                    </Accordion>
+                </div>
+            )}
         </div>
     );
 };

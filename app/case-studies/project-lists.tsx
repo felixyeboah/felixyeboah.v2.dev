@@ -55,15 +55,9 @@ export const ProjectList = ({ projects }: { projects: Post[] }) => {
                     </Button>
                 ))}
             </div>
-            <div ref={container} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-x-4 lg:gap-y-16">
+            <div ref={container} className="flex flex-wrap gap-4">
                 {filteredProjects.map((project, index) => (
-                    <div
-                        key={project.slug || index}
-                        className="project-card-item"
-                        style={{ willChange: 'transform, opacity' }}
-                    >
-                        <ProjectCard project={project} index={index} />
-                    </div>
+                    <ProjectCard key={project.slug || index} project={project} />
                 ))}
             </div>
         </div>

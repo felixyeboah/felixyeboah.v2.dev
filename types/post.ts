@@ -33,6 +33,7 @@ export type Post = {
     stack?: string[];
     timeline?: string;
     video?: string;
+    archive?: boolean;
 };
 
 export type FrontMatterPost = {

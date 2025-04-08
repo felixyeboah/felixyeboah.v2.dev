@@ -129,7 +129,7 @@ export const Header = () => {
 
             {/* Desktop Navigation */}
             <ul className="hidden md:flex flex-[3] h-full">
-                {LINKS.map((link, index) => (
+                {LINKS.filter(link => link.name !== 'Bookmarks').map((link, index) => (
                     <li key={link.to} className={cn(
                         "flex-1 border-r border-[#393939] relative p-4 flex items-center justify-center last:border-r-0 transition-colors duration-200 hover:bg-[#303030]",
                         pathname === link.to && "bg-[#1b1b1b]"
