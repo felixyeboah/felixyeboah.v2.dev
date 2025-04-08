@@ -82,9 +82,9 @@ export const ProjectCard = ({
                 </MotionLink>
             </motion.div>
             <div className="flex items-center gap-2 flex-wrap">
-                <h3 className="font-bold text-2xl"> {project.title}</h3>
+                <h3 className="font-bold text-xl md:text-2xl"> {project.title}</h3>
                 <span>for</span>
-                <h3 className="font-bold text-2xl"> {project.client?.name}</h3>
+                <h3 className="font-bold text-xl md:text-2xl"> {project.client?.name}</h3>
             </div>
         </div>
     );

@@ -36,12 +36,12 @@ export const ProjectList = ({ projects }: { projects: Post[] }) => {
     );
 
     return (
-        <div className="container mx-auto py-14 space-y-12">
-            <div className="flex items-center gap-4">
+        <div className="container mx-auto py-8 sm:py-10 lg:py-14 px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10 lg:space-y-12">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-4">
                 {categories.map((category) => (
                     <Button
                         className={cn(
-                            'border-2 border-secondary h-10 px-8 hover:bg-secondary hover:text-white transition-all duration-300 ease-in',
+                            'border-2 border-secondary h-8 sm:h-10 px-4 sm:px-8 hover:bg-secondary hover:text-white transition-all duration-300 ease-in text-sm sm:text-base',
                             {
                                 'bg-secondary text-white':
                                     selected === category,
@@ -55,11 +55,11 @@ export const ProjectList = ({ projects }: { projects: Post[] }) => {
                     </Button>
                 ))}
             </div>
-            <div ref={container} className="grid grid-cols-12 gap-x-4 gap-y-16">
+            <div ref={container} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-x-4 lg:gap-y-16">
                 {filteredProjects.map((project, index) => (
                     <div
                         key={project.slug || index}
-                        className="project-card-item col-span-12 md:col-span-6 lg:col-span-4"
+                        className="project-card-item"
                         style={{ willChange: 'transform, opacity' }}
                     >
                         <ProjectCard project={project} index={index} />
