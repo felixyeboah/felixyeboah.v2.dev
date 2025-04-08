@@ -18,23 +18,33 @@ export const Header = ({ page }: { page: FrontMatterPost }) => {
     useGSAP(
         () => {
             const heroText = new SplitType('.header-text h1', {
-                types: 'chars',
+                types: 'lines',
+                tagName: 'div',
+                lineClass: 'line',
             });
             const text = new SplitType('.header-text p', {
                 types: 'lines',
                 tagName: 'div',
                 lineClass: 'line',
             });
-            gsap.set(heroText.chars, {
-                y: 400,
+
+            // Animate h1 lines
+            heroText.lines?.forEach((line) => {
+                const content = line.innerHTML;
+                line.innerHTML = `<span>${content}</span>`;
             });
 
-            gsap.to(heroText.chars, {
+            gsap.set('.header-text h1 .line span', {
+                y: 400,
+                display: 'block',
+            });
+
+            gsap.to('.header-text h1 .line span', {
                 y: 0,
-                duration: 1,
-                stagger: 0.075,
+                duration: 1.5,
+                stagger: 0.1,
                 ease: 'power4.out',
-                delay: 1,
+                delay: 0.5,
             });
 
             // paragraph lines
@@ -57,6 +67,7 @@ export const Header = ({ page }: { page: FrontMatterPost }) => {
             });
 
             return () => {
+                if (heroText) heroText.revert();
                 if (text) text.revert();
             };
         },
