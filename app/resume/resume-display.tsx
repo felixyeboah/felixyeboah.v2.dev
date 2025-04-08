@@ -68,89 +68,102 @@ export const ResumeDisplay: React.FC<ResumeDisplayProps> = ({ resumes }) => {
   const displayLocation = primaryResume?.location;
 
   return (
-    <div
-      className="container mx-auto max-w-3xl px-4 lg:pt-40 pb-16 font-sans"
-    >
-      {/* Static Header Section with general info */}
-      <motion.header
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="mb-16 text-center"
-      >
-        <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-3">{displayName}</h1>
-        {/* Optional: A brief tagline or overall title */}
-        <p className="text-lg text-primary mb-6">Senior Frontend Engineer & Tech Lead</p>
-        <div className="flex justify-center items-center flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
-          {displayLocation && <span>{displayLocation}</span>}
-          {displayEmail && <><span>&bull;</span> <a href={`mailto:${displayEmail}`} className="text-foreground hover:text-primary transition-colors">{displayEmail}</a></>}
-          {displayWebsite && <><span>&bull;</span> <a href={displayWebsite} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">Website</a></>}
-          {displayLinkedin && <><span>&bull;</span> <a href={displayLinkedin} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">LinkedIn</a></>}
-          {displayGithub && <><span>&bull;</span> <a href={displayGithub} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">GitHub</a></>}
-        </div>
-      </motion.header>
-
-      {/* Section Title (e.g., Experience) */}
-      <motion.h2
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.5 }}
-        className="text-3xl font-semibold text-foreground mb-8 border-b border-border pb-3"
-      >
-        Experience
-      </motion.h2>
-
-      {/* Map over resume entries - Use actual endDate */}
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="space-y-8"
-      >
-        {resumes.map((resume, index) => {
-          const jobTitle = resume.title || resume.company?.position;
-          const companyName = resume.company?.name;
-          const startDate = formatDate(resume.company?.startDate);
-          const formattedEndDate = resume.company?.endDate ? formatDate(resume.company.endDate) : 'Present';
-          const dateRange = startDate ? `${startDate} - ${formattedEndDate}` : null;
-
-          return (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              className="py-8 border-b border-border last:border-b-0"
-            >
-              <div className="flex flex-col md:flex-row justify-between md:items-start mb-2">
-                <div className="mb-2 md:mb-0">
-                  {jobTitle && <h3 className="text-xl font-semibold text-primary mb-1">{jobTitle}</h3>}
-                  {companyName && <p className="text-md text-foreground font-medium">{companyName}</p>}
-                </div>
-                {dateRange && <p className="text-sm text-muted-foreground font-mono tracking-tight flex-shrink-0 md:text-right">{dateRange}</p>}
-              </div>
-              {resume.subtitle && (
-                <div className="mt-4 text-muted-foreground leading-relaxed text-sm whitespace-pre-wrap">
-                  <div className="prose prose-sm dark:prose-invert max-w-none">
-                    {resume.subtitle}
+    <div className="grid min-h-dvh grid-cols-1 grid-rows-[1fr_1px_auto_1px_auto] justify-center pt-14.25 [--gutter-width:2.5rem] lg:grid-cols-[var(--gutter-width)_minmax(0,var(--breakpoint-2xl))_var(--gutter-width)]">
+      <div className="col-start-1 row-span-full row-start-1 hidden border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed [--pattern-fg:var(--color-black)]/5 lg:block dark:[--pattern-fg:var(--color-white)]/10"></div>
+      <div className="text-gray-950 dark:text-white">
+        <div></div>
+        <div className="grid grid-cols-1 xl:grid-cols-[22rem_2.5rem_auto] xl:grid-rows-[1fr_auto]">
+          <div className="col-start-2 row-span-2 border-r border-l border-gray-950/5 max-xl:hidden dark:border-white/10"></div>
+          <div className="max-xl:mx-auto max-xl:mt-16 w-full max-xl:max-w-2xl">
+            <article className='py-16 max-w-(--breakpoint-md)'>
+              {/* Content wrapper: Occupy center column, adjust padding */}
+              <div className="relative z-10 px-4 lg:col-start-2 lg:px-8">
+                {/* Static Header Section with general info */}
+                <motion.header
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="mb-16 text-center"
+                >
+                  <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-3">{displayName}</h1>
+                  {/* Optional: A brief tagline or overall title */}
+                  <p className="text-lg text-primary mb-6">Senior Frontend Engineer & Tech Lead</p>
+                  <div className="flex justify-center items-center flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
+                    {displayLocation && <span>{displayLocation}</span>}
+                    {displayEmail && <><span>&bull;</span> <a href={`mailto:${displayEmail}`} className="text-foreground hover:text-primary transition-colors">{displayEmail}</a></>}
+                    {displayWebsite && <><span>&bull;</span> <a href={displayWebsite} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">Website</a></>}
+                    {displayLinkedin && <><span>&bull;</span> <a href={displayLinkedin} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">LinkedIn</a></>}
+                    {displayGithub && <><span>&bull;</span> <a href={displayGithub} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">GitHub</a></>}
                   </div>
-                </div>
-              )}
-            </motion.div>
-          );
-        })}
-      </motion.div>
+                </motion.header>
 
-      {/* Add other sections like Education, Skills similarly if data becomes available */}
-      {/* Example: */}
-      {/*
-             <motion.h2 ...>Education</motion.h2>
-             <motion.div variants={containerVariants} ...>
-                 {educationData.map(edu => (
-                     <motion.div key={edu.id} variants={itemVariants} ...>
-                         ...
-                     </motion.div>
-                 ))}
-             </motion.div>
-             */}
+                {/* Section Title (e.g., Experience) */}
+                <motion.h2
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.3, duration: 0.5 }}
+                  className="text-3xl font-semibold text-foreground mb-8 border-b border-border pb-3"
+                >
+                  Experience
+                </motion.h2>
+
+                {/* Map over resume entries - Use actual endDate */}
+                <motion.div
+                  variants={containerVariants}
+                  initial="hidden"
+                  animate="visible"
+                  className="space-y-8"
+                >
+                  {resumes.map((resume, index) => {
+                    const jobTitle = resume.title || resume.company?.position;
+                    const companyName = resume.company?.name;
+                    const startDate = formatDate(resume.company?.startDate);
+                    const formattedEndDate = resume.company?.endDate ? formatDate(resume.company.endDate) : 'Present';
+                    const dateRange = startDate ? `${startDate} - ${formattedEndDate}` : null;
+
+                    return (
+                      <motion.div
+                        key={index}
+                        variants={itemVariants}
+                        className="py-8 border-b border-border last:border-b-0"
+                      >
+                        <div className="flex flex-col md:flex-row justify-between md:items-start mb-2">
+                          <div className="mb-2 md:mb-0">
+                            {jobTitle && <h3 className="text-xl font-semibold text-primary mb-1">{jobTitle}</h3>}
+                            {companyName && <p className="text-md text-foreground font-medium">{companyName}</p>}
+                          </div>
+                          {dateRange && <p className="text-sm text-muted-foreground font-mono tracking-tight flex-shrink-0 md:text-right">{dateRange}</p>}
+                        </div>
+                        {resume.subtitle && (
+                          <div className="mt-4 text-muted-foreground leading-relaxed whitespace-pre-wrap">
+                            <div className="prose dark:prose-invert max-w-none">
+                              {resume.subtitle}
+                            </div>
+                          </div>
+                        )}
+                      </motion.div>
+                    );
+                  })}
+                </motion.div>
+
+                {/* Add other sections like Education, Skills similarly if data becomes available */}
+                {/* Example: */}
+                {/*
+               <motion.h2 ...>Education</motion.h2>
+               <motion.div variants={containerVariants} ...>
+                   {educationData.map(edu => (
+                       <motion.div key={edu.id} variants={itemVariants} ...>
+                           ...
+                       </motion.div>
+                   ))}
+               </motion.div>
+               */}
+              </div> { /* End content wrapper */}
+            </article>
+          </div>
+        </div>
+      </div>
+      <div className="row-span-full row-start-1 hidden border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed [--pattern-fg:var(--color-black)]/5 lg:col-start-3 lg:block dark:[--pattern-fg:var(--color-white)]/10"></div>
     </div>
   );
 }; 

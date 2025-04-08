@@ -99,12 +99,23 @@ const MdxScreen = async ({ params }: { params: Promise<{ slug: string[] }> }) =>
     const isArchived = Boolean(page?.frontMatter.archived);
 
     return (
-        <div className="min-h-screen">
-            <div className="container mx-auto max-w-5xl px-4">
-                <Header page={page} />
-
-                <MainBody mdxSource={page.mdxSource} tweets={tweets ?? {}} />
+        <div className="grid min-h-dvh grid-cols-1 grid-rows-[1fr_1px_auto_1px_auto] justify-center pt-32 [--gutter-width:2.5rem] lg:grid-cols-[var(--gutter-width)_minmax(0,var(--breakpoint-2xl))_var(--gutter-width)]">
+            <div className="col-start-1 row-span-full row-start-1 hidden border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed [--pattern-fg:var(--color-black)]/5 lg:block dark:[--pattern-fg:var(--color-white)]/10"></div>
+            <div className="text-gray-950 dark:text-white">
+                <div></div>
+                <div className="grid grid-cols-1 xl:grid-cols-[22rem_2.5rem_auto] xl:grid-rows-[1fr_auto]">
+                    <div className="col-start-2 row-span-2 border-r border-l border-gray-950/5 max-xl:hidden dark:border-white/10"></div>
+                    <div className="max-xl:mx-auto  w-full max-xl:max-w-2xl">
+                        <article className='max-w-(--breakpoint-md)'>
+                            <div className="relative z-10 px-4 lg:col-start-2 lg:px-8">
+                                <Header page={page} />
+                                <MainBody mdxSource={page.mdxSource} tweets={tweets ?? {}} />
+                            </div>
+                        </article>
+                    </div>
+                </div>
             </div>
+            <div className="row-span-full row-start-1 hidden border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed [--pattern-fg:var(--color-black)]/5 lg:col-start-3 lg:block dark:[--pattern-fg:var(--color-white)]/10"></div>
         </div>
     );
 };

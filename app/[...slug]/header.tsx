@@ -66,7 +66,7 @@ export const Header = ({ page }: { page: FrontMatterPost }) => {
     );
 
     return (
-        <header className="header-text flex flex-col gap-8 items-center justify-center py-16 md:py-40" ref={container}>
+        <header className="header-text flex flex-col gap-8 items-center justify-center" ref={container}>
             <h1 className="block text-4xl md:text-8xl font-bold text-white text-center">
                 {page?.frontMatter.title}
             </h1>
