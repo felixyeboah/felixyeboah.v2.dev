@@ -22,8 +22,8 @@ export const LINKS = [
         name: 'Blog',
         to: '/blog',
     },
+    { name: 'Bookmarks', to: '/bookmarks', height: '45vh', bg: 'bg-[#908f8b]' },
     { name: 'Uses', to: '/uses', height: '30vh', bg: 'bg-[#777671]' },
-    // { name: 'Bookmarks', to: '/bookmarks', height: '45vh', bg: 'bg-[#908f8b]' },
     { name: 'Resume', to: '/resume', height: '60vh', bg: 'bg-[#a9a8a5]' },
     // {
     //     name: 'Memory Lane',
@@ -82,8 +82,8 @@ export const Header = () => {
     };
 
     useEffect(() => {
-        if (isActive) setIsActive(false);
-    }, [isActive, pathname]);
+        setIsActive(false);
+    }, [pathname]);
 
     return (
         <nav
@@ -92,7 +92,7 @@ export const Header = () => {
                 'fixed flex z-50 font-mono top-0 h-20 w-full bg-[#232323]/90 backdrop-blur-md border-t border-b border-[#393939]',
             )}
         >
-            {/* Corner + Icons for the entire Nav - Removed bg color */}
+            {/* Corner + Icons for the entire Nav */}
             <div className="absolute top-0 left-0 transform -translate-x-1/2 -translate-y-1/2 px-1 z-10"><span className="text-[#6B6B6B] text-lg font-thin">+</span></div>
             <div className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 px-1 z-10"><span className="text-[#6B6B6B] text-lg font-thin">+</span></div>
             <div className="absolute bottom-0 left-0 transform -translate-x-1/2 translate-y-1/2 px-1 z-10"><span className="text-[#6B6B6B] text-lg font-thin">+</span></div>
@@ -103,7 +103,7 @@ export const Header = () => {
                 "flex-1 border-r border-[#393939] relative p-4 flex items-center justify-center transition-colors duration-200 hover:bg-[#303030]",
                 pathname === '/' && "bg-[#1b1b1b]"
             )}>
-                {/* Intersection + Icons for Logo Box Right Border - Removed bg color */}
+                {/* Intersection + Icons for Logo Box Right Border */}
                 <div className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 px-1 z-10"><span className="text-[#6B6B6B] text-lg font-thin">+</span></div>
                 <div className="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2 px-1 z-10"><span className="text-[#6B6B6B] text-lg font-thin">+</span></div>
 
@@ -126,14 +126,13 @@ export const Header = () => {
                 </Link>
             </div>
 
-            {/* Navigation Links Box Container */}
-            <ul className="flex flex-[3] h-full">
+            {/* Desktop Navigation */}
+            <ul className="hidden md:flex flex-[3] h-full">
                 {LINKS.map((link, index) => (
                     <li key={link.to} className={cn(
                         "flex-1 border-r border-[#393939] relative p-4 flex items-center justify-center last:border-r-0 transition-colors duration-200 hover:bg-[#303030]",
                         pathname === link.to && "bg-[#1b1b1b]"
                     )}>
-                        {/* Intersection + Icons for Nav Link Right Border (don't add on the very last edge) - Removed bg color */}
                         {index < LINKS.length - 1 && (
                             <>
                                 <div className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 px-1 z-10"><span className="text-[#6B6B6B] text-lg font-thin">+</span></div>
@@ -151,11 +150,9 @@ export const Header = () => {
                                 });
                             }}
                         >
-                            <p
-                                className={cn(
-                                    'block lowercase transition-all duration-300 text-white text-center'
-                                )}
-                            >
+                            <p className={cn(
+                                'block lowercase transition-all duration-300 text-white text-center'
+                            )}>
                                 {link.name}
                             </p>
                         </Link>
@@ -163,20 +160,78 @@ export const Header = () => {
                 ))}
             </ul>
 
-            {/* <Button
+            {/* Hamburger Menu Button */}
+            <button
                 onClick={() => setIsActive(!isActive)}
-                variant="outline"
-                className="menu-button"
+                className="md:hidden grid place-items-center w-20 h-20 border-l border-[#393939] relative transition-colors duration-200 hover:bg-[#303030]"
+                aria-label={isActive ? 'Close menu' : 'Open menu'}
             >
-                {[0, 1].map((i) => (
-                    <p
-                        key={i}
-                        className="block relative top-0 transition-all duration-300 h-full font-semibold leading-[40px] text-[var(--color-tertiary)]"
-                    >
-                        {isActive ? 'Close' : 'Menu'} ✦
-                    </p>
-                ))}
-            </Button> */}
+                <div className="w-6 h-4 relative">
+                    <span
+                        className={cn(
+                            "absolute left-0 h-[2px] w-full bg-white transform-gpu transition-all duration-300 ease-in-out origin-center",
+                            isActive
+                                ? "top-1/2 -translate-y-1/2 rotate-45"
+                                : "top-0"
+                        )}
+                    />
+                    <span
+                        className={cn(
+                            "absolute left-0 h-[2px] w-full bg-white transform-gpu transition-all duration-300 ease-in-out origin-center",
+                            isActive
+                                ? "top-1/2 -translate-y-1/2 -rotate-45"
+                                : "top-[6px]"
+                        )}
+                    />
+                </div>
+            </button>
+
+            {/* Mobile Menu Overlay */}
+            {isActive && (
+                <div className="fixed inset-0 top-20 h-[calc(100vh-5rem)] bg-[#232323] border-t border-[#393939] md:hidden">
+                    <div className="m-4 border border-[#393939] relative">
+                        {/* Corner + Icons for Mobile Menu Box */}
+                        <div className="absolute top-0 left-0 transform -translate-x-1/2 -translate-y-1/2 px-1 z-10"><span className="text-[#6B6B6B] text-lg font-thin">+</span></div>
+                        <div className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 px-1 z-10"><span className="text-[#6B6B6B] text-lg font-thin">+</span></div>
+                        <div className="absolute bottom-0 left-0 transform -translate-x-1/2 translate-y-1/2 px-1 z-10"><span className="text-[#6B6B6B] text-lg font-thin">+</span></div>
+                        <div className="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2 px-1 z-10"><span className="text-[#6B6B6B] text-lg font-thin">+</span></div>
+
+                        <ul className="flex flex-col divide-y divide-[#393939]">
+                            {LINKS.map((link, index) => (
+                                <li key={link.to} className="relative">
+                                    {/* Intersection + Icons for each nav item */}
+                                    {index > 0 && (
+                                        <>
+                                            <div className="absolute top-0 left-0 transform -translate-x-1/2 -translate-y-1/2 px-1 z-10">
+                                                <span className="text-[#6B6B6B] text-lg font-thin">+</span>
+                                            </div>
+                                            <div className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 px-1 z-10">
+                                                <span className="text-[#6B6B6B] text-lg font-thin">+</span>
+                                            </div>
+                                        </>
+                                    )}
+                                    <Link
+                                        href={link.to}
+                                        className={cn(
+                                            "block text-lg text-white hover:bg-[#303030] transition-colors duration-200 p-6",
+                                            pathname === link.to && "bg-[#1b1b1b]"
+                                        )}
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            setIsActive(false);
+                                            router.push(link.to, {
+                                                onTransitionReady: slideOut,
+                                            });
+                                        }}
+                                    >
+                                        {link.name}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            )}
         </nav>
     );
 };
