@@ -61,7 +61,7 @@ const CaseStudiesPage = async () => {
     const archivedProjects = allProjects.filter((project: Post) => project.archive);
 
     return (
-        <div className='py-10 sm:py-20'>
+        <div className=' sm:py-14'>
             <ProjectHeader />
             {/* Display active projects */}
             <ProjectList projects={activeProjects} />
