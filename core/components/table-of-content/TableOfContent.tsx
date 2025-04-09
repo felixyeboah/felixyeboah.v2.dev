@@ -121,8 +121,8 @@ const TableOfContent = ({ ids }: TableOfContentProps) => {
                             >
                                 <a
                                     href={`#${item.id}`}
-                                    className={cn('', {
-                                        'text-primary':
+                                    className={cn('transition-colors duration-300 ease-in-out', {
+                                        'text-accent font-semibold':
                                             currentActiveIndex === index,
                                     })}
                                     onClick={(event) =>
