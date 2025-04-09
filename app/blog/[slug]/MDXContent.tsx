@@ -19,7 +19,7 @@ import { useGSAP } from '@gsap/react';
 import { format } from 'date-fns';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import { X } from 'lucide-react';
+import { ChevronLeft, X } from 'lucide-react';
 import { MDXRemote } from 'next-mdx-remote';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -166,42 +166,62 @@ const MDXContent = ({ frontMatter, mdxSource, tweets }: MDXContentProps) => {
     );
 
     return (
-        <article className="pt-20 space-y-20 header-text" ref={container}>
-            {ids ? <TableOfContent ids={ids} /> : null}
+        <article
+            className="pt-32 space-y-12 md:pt-20 md:space-y-20 header-text overflow-x-hidden md:overflow-x-auto"
+            ref={container}
+        >
+            {/* Mobile Back Button */}
+            <div className="px-4 md:hidden">
+                <Link
+                    href="/blog"
+                    className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground"
+                >
+                    <ChevronLeft className="mr-1 size-4" />
+                    Back to blog
+                </Link>
+            </div>
+
+            {/* TOC: Hidden on mobile, shown on large screens */}
+            <div className="hidden lg:block">
+                {ids ? <TableOfContent ids={ids} /> : null}
+            </div>
 
             <div className="space-y-16">
-                <TooltipProvider>
-                    <Tooltip>
-                        <TooltipTrigger className="fixed top-40 left-64 z-20">
-                            <Link href="/blog">
-                                <div className="relative bg-primary size-14 rounded-full flex items-center justify-center group">
-                                    <div
-                                        ref={progressRef}
-                                        className="absolute inset-[-1px] rounded-full"
-                                        style={{
-                                            // Use --border for the track color in the initial state
-                                            backgroundImage:
-                                                'conic-gradient(var(--warning) 0deg, var(--border) 0deg)',
-                                            transform: 'scale(1.15)',
-                                            WebkitMask:
-                                                'radial-gradient(circle at center, transparent 66%, black 68%)',
-                                        }}
-                                    />
-                                    <div className="absolute inset-0 bg-background rounded-full z-[1]" />
-                                    <X className="relative z-10 text-foreground" />
-                                </div>
-                            </Link>
-                        </TooltipTrigger>
-                        <TooltipContent
-                            hasArrow={false}
-                            className="text-foreground bg-transparent font-sans text-base"
-                        >
-                            <p>Back to blog</p>
-                        </TooltipContent>
-                    </Tooltip>
-                </TooltipProvider>
-                <div className="max-w-3xl mx-auto">
-                    <Subheading className="mt-16">
+                {/* Tooltip Trigger: Hidden on mobile, shown fixed on medium+ screens */}
+                <div className="hidden md:block">
+                    <TooltipProvider>
+                        <Tooltip>
+                            <TooltipTrigger className="fixed top-40 left-12 xl:left-24 2xl:left-64 z-20">
+                                <Link href="/blog">
+                                    <div className="relative bg-primary size-14 rounded-full flex items-center justify-center group">
+                                        <div
+                                            ref={progressRef}
+                                            className="absolute inset-[-1px] rounded-full"
+                                            style={{
+                                                // Use --border for the track color in the initial state
+                                                backgroundImage:
+                                                    'conic-gradient(var(--warning) 0deg, var(--border) 0deg)',
+                                                transform: 'scale(1.15)',
+                                                WebkitMask:
+                                                    'radial-gradient(circle at center, transparent 66%, black 68%)',
+                                            }}
+                                        />
+                                        <div className="absolute inset-0 bg-background rounded-full z-[1]" />
+                                        <X className="relative z-10 text-foreground" />
+                                    </div>
+                                </Link>
+                            </TooltipTrigger>
+                            <TooltipContent
+                                hasArrow={false}
+                                className="text-foreground bg-transparent font-sans text-base"
+                            >
+                                <p>Back to blog</p>
+                            </TooltipContent>
+                        </Tooltip>
+                    </TooltipProvider>
+                </div>
+                <div className="max-w-full px-4 md:max-w-3xl md:px-0 mx-auto">
+                    <Subheading className="mt-8 md:mt-16">
                         {format(new Date(Date.parse(date)), 'MMMM d, yyyy')} /{' '}
                         {readingTime.text}
                     </Subheading>
@@ -212,7 +232,7 @@ const MDXContent = ({ frontMatter, mdxSource, tweets }: MDXContentProps) => {
                         <p className="mt-4 text-xl text-gray-500">{subtitle}</p>
                     )}
                 </div>
-                <div className="relative h-[800px] min-w-full">
+                <div className="relative h-[300px] sm:h-[450px] md:h-[600px] lg:h-[700px] xl:h-[800px] min-w-full">
                     <Image
                         src={cover}
                         alt={title}
@@ -232,7 +252,7 @@ const MDXContent = ({ frontMatter, mdxSource, tweets }: MDXContentProps) => {
                         priority
                     />
                 </div>
-                <div className="max-w-3xl mx-auto mt-10 prose prose-headings:text-foreground prose-pre:bg-transparent prose-a:cursor-pointer prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:tracking-wide prose-headings:leading-tight prose-li:leading-relaxed [&_span[data-testid='content-line']]:text-muted-foreground [&_div[data-testid='number-line']]:text-muted-foreground prose-strong:p-1 prose-strong:text-foreground prose-strong:font-medium prose-strong:text-sm prose-strong:rounded-sm">
+                <div className="max-w-full px-4 md:max-w-3xl md:px-0 mx-auto mt-8 md:mt-10 prose prose-a:text-primary hover:prose-a:text-primary/80 prose-headings:text-foreground prose-pre:bg-transparent prose-a:cursor-pointer prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:tracking-wide prose-headings:leading-tight prose-li:leading-relaxed [&_span[data-testid='content-line']]:text-muted-foreground [&_div[data-testid='number-line']]:text-muted-foreground prose-strong:p-1 prose-strong:text-foreground prose-strong:font-medium prose-strong:text-sm prose-strong:rounded-sm">
                     <MDXRemote
                         {...mdxSource}
                         components={{

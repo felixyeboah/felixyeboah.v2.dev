@@ -12783,7 +12783,7 @@ const Signature = ({ title, url }: { title: string; url: string }) => {
 
 	return (
 		<section
-			className="bg-card max-w-3xl mx-auto py-10 rounded-lg"
+			className="bg-secondary max-w-3xl mx-auto p-10 md:py-10 rounded-lg"
 			data-testid="signature"
 		>
 			<div
@@ -12793,7 +12793,7 @@ const Signature = ({ title, url }: { title: string; url: string }) => {
 					margin: '0 auto',
 				}}
 			>
-				<p>
+				<p className='text-lg md:text-base'>
 					Liked this article?{' '}
 					<a
 						className="text-primary hover:underline transition-all duration-300 ease-in hover:text-primary cursor-pointer"
@@ -12818,9 +12818,7 @@ const Signature = ({ title, url }: { title: string; url: string }) => {
 				</p>
 
 				<div
-					style={{
-						color: 'var(--62)',
-					}}
+					className='text-lg md:text-base'
 				>
 					<p>Have a wonderful day.</p>
 					<div className="flex items-start">
