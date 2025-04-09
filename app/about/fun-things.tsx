@@ -10,12 +10,14 @@ import { useEffect, useRef, useState } from 'react';
 export const FunThings = () => {
     const [isLoading, setLoading] = useState(true);
     const containerRef = useRef<HTMLDivElement>(null);
-    const imageRef = useRef<HTMLDivElement>(null);
+    const imageContainerRef = useRef<HTMLDivElement>(null);
+    const image1Ref = useRef<HTMLImageElement>(null);
+    const image2Ref = useRef<HTMLImageElement>(null);
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        const tl = gsap.to(imageRef.current, {
+        const tlParallax = gsap.to(imageContainerRef.current, {
             yPercent: 0,
             ease: 'none',
             scrollTrigger: {
@@ -26,35 +28,110 @@ export const FunThings = () => {
             },
         });
 
-        return () => {
-            tl.kill();
+        const imageWrapper = imageContainerRef.current;
+        let hoverTween: gsap.core.Timeline | null = null;
+
+        const handleMouseEnter = () => {
+            if (hoverTween) hoverTween.kill();
+            hoverTween = gsap.timeline()
+                .to(image1Ref.current, {
+                    opacity: 0,
+                    scale: 0.95,
+                    duration: 0.6,
+                    ease: 'expo.inOut',
+                }, 0)
+                .to(image2Ref.current, {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.6,
+                    ease: 'expo.inOut',
+                }, "<0.1");
         };
-    }, []);
+
+        const handleMouseLeave = () => {
+            if (hoverTween) hoverTween.kill();
+            hoverTween = gsap.timeline()
+                .to(image2Ref.current, {
+                    opacity: 0,
+                    scale: 0.95,
+                    duration: 0.6,
+                    ease: 'expo.inOut',
+                }, 0)
+                .to(image1Ref.current, {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.6,
+                    ease: 'expo.inOut',
+                }, "<0.1");
+        };
+
+        if (imageWrapper) {
+            gsap.set(image2Ref.current, { opacity: 0, scale: 0.95 });
+            gsap.set(image1Ref.current, { scale: 1 });
+
+            imageWrapper.addEventListener('mouseenter', handleMouseEnter);
+            imageWrapper.addEventListener('mouseleave', handleMouseLeave);
+        }
+
+        return () => {
+            tlParallax.kill();
+            if (hoverTween) hoverTween.kill();
+            if (imageWrapper) {
+                imageWrapper.removeEventListener('mouseenter', handleMouseEnter);
+                imageWrapper.removeEventListener('mouseleave', handleMouseLeave);
+            }
+            ScrollTrigger.getAll().forEach(trigger => {
+                if (trigger.vars.trigger === containerRef.current) {
+                    trigger.kill();
+                }
+            });
+        };
+    }, [isLoading]);
+
+    const handleImageLoad = () => {
+        setLoading(false);
+    };
 
     return (
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 min-h-screen py-14 sm:py-16 lg:py-20">
             <div className="lg:col-span-6 order-2 lg:order-1" ref={containerRef}>
-                <div className="h-[400px] sm:h-[500px] md:h-[600px] lg:h-full mb-8 lg:mb-0 overflow-hidden rounded-lg relative">
+                <div className="h-[400px] sm:h-[500px] md:h-[600px] lg:h-full mb-8 lg:mb-0 overflow-hidden rounded-lg relative group">
                     <div
-                        ref={imageRef}
+                        ref={imageContainerRef}
                         className="absolute inset-0 h-[120%] w-full"
                     >
                         <Image
+                            ref={image1Ref}
                             src="felixyeboah.dev/IMG_7341_dqpzxu"
                             alt="Felix Yeboah"
                             fill={true}
                             className={cn(
-                                'group-hover:opacity-75 duration-700 ease-in-out',
+                                'absolute inset-0 object-cover duration-700 ease-in-out',
                                 isLoading
-                                    ? 'grayscale blur-2xl scale-110'
-                                    : 'grayscale-0 blur-0 scale-100'
+                                    ? 'grayscale blur-2xl scale-110 opacity-100'
+                                    : 'grayscale-0 blur-0 scale-100 opacity-100'
                             )}
-                            style={{
-                                objectFit: 'cover',
-                            }}
+                            style={{ objectFit: 'cover' }}
                             loader={loader}
-                            onLoad={() => setLoading(false)}
+                            onLoad={handleImageLoad}
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            priority
+                        />
+                        <Image
+                            ref={image2Ref}
+                            src="felixyeboah.dev/ghibli-laughter"
+                            alt="Felix Yeboah - Ghibli Laughter"
+                            fill={true}
+                            className={cn(
+                                'absolute inset-0 object-cover duration-700 ease-in-out',
+                                isLoading
+                                    ? 'grayscale blur-2xl scale-110 opacity-0'
+                                    : 'grayscale-0 blur-0 scale-100 opacity-0'
+                            )}
+                            style={{ objectFit: 'cover' }}
+                            loader={loader}
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            aria-hidden="true"
                         />
                     </div>
                 </div>

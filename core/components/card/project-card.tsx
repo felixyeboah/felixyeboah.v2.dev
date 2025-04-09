@@ -20,7 +20,14 @@ export const ProjectCard = ({
             rel={project.archive ? "noopener noreferrer" : ""}
         >
             <div className="portfolio-list-item__photo">
-                <Image className="portfolio-list-item__photo" src={project.cover} alt={project.title} fill={true} loader={loader} />
+                <Image
+                    className="portfolio-list-item__photo"
+                    src={project.cover}
+                    alt={project.title}
+                    fill={true}
+                    loader={loader}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
             </div>
             <div className="portfolio-list-item__flash"></div>
             <div className="portfolio-list-item-info">
