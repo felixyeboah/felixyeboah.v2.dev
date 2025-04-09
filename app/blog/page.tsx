@@ -50,7 +50,7 @@ const BlogsPage = async () => {
 
     return (
         <Suspense>
-            <div className="mx-auto max-w-7xl space-y-12 font-sans md:pt-20">
+            <div className="mx-auto max-w-7xl space-y-12 font-sans pt-10 md:pt-20">
                 <BlogHeader />
                 <BlogContent posts={posts} />
             </div>

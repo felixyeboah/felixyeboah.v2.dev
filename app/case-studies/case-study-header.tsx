@@ -13,12 +13,12 @@ export const CaseStudyHeader = ({ post }: { post: FrontMatterPost }) => {
     const [isLoading, setLoading] = useState(true);
 
     return (
-        <header className="bg-gray-200 flex flex-col items-center justify-center relative">
-            <div className="fixed top-4 sm:top-6 lg:top-8 right-4 sm:right-6 lg:right-8 flex items-center gap-2 sm:gap-4 z-10">
+        <header className="flex flex-col items-center justify-center relative">
+            <div className="fixed top-4 sm:top-6 lg:top-32 right-4 sm:right-6 lg:right-8 flex items-center gap-2 sm:gap-4 z-10">
                 <Button
                     size="icon"
                     variant="ghost"
-                    className="hover:bg-transparent text-gray-600 hover:text-gray-950 transition-colors duration-300 ease-in-out cursor-pointer"
+                    className="hover:bg-transparent text-primary hover:text-gray-950 transition-colors duration-300 ease-in-out cursor-pointer"
                 >
                     <Share2 className="size-5 sm:size-6 lg:size-7" />
                 </Button>
@@ -26,7 +26,7 @@ export const CaseStudyHeader = ({ post }: { post: FrontMatterPost }) => {
                     asChild
                     size="icon"
                     variant="ghost"
-                    className="hover:bg-transparent text-gray-600 hover:text-gray-950 transition-colors duration-300 ease-in-out cursor-pointer"
+                    className="hover:bg-transparent text-primary hover:text-gray-950 transition-colors duration-300 ease-in-out cursor-pointer"
                 >
                     <Link
                         href={post.frontMatter.client.link}

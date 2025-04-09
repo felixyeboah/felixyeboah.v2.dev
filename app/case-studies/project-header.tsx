@@ -73,7 +73,7 @@ export const ProjectHeader = () => {
 
     return (
         <header
-            className="page-header header-text flex flex-col items-center justify-center min-h-[50vh] text-white px-4 sm:px-6 lg:px-8 py-0 sm:py-14"
+            className="page-header header-text flex flex-col items-center justify-center min-h-[50vh] text-white px-4 sm:px-6 lg:px-8"
             ref={container}
         >
             <div className="w-full sm:w-4/5 mx-auto space-y-4 sm:space-y-6">

@@ -11,8 +11,14 @@ export const ProjectCard = ({
     project: Post;
 }) => {
 
+    const linkHref = project.archive ? project.client?.link : `/case-studies/${project.slug}`;
+
     return (
-        <Link href={`/case-studies/${project.slug}`} className="portfolio-list-item g-fadeIn" data-category-id="18 20" style={{ opacity: 1, translate: 'none', rotate: 'none', scale: 'none', transform: 'translate(0px, 0px)' }}>
+        <Link href={linkHref || '#'}
+            className="portfolio-list-item g-fadeIn" data-category-id="18 20" style={{ opacity: 1, translate: 'none', rotate: 'none', scale: 'none', transform: 'translate(0px, 0px)' }}
+            target={project.archive ? "_blank" : "_self"}
+            rel={project.archive ? "noopener noreferrer" : ""}
+        >
             <div className="portfolio-list-item__photo">
                 <Image className="portfolio-list-item__photo" src={project.cover} alt={project.title} fill={true} loader={loader} />
             </div>
