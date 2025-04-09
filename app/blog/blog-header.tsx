@@ -70,9 +70,16 @@ export const BlogHeader = () => {
     );
 
     return (
-        <header className="h-[20vh] header-text overflow-visible" ref={container}>
-            <h1 className="lg:text-[100px] text-white">Blog</h1>
-            <p className="text-2xl text-gray-300">Find the latest of my writing here.</p>
+        <header
+            className="header-text overflow-visible py-8 sm:py-12 md:py-16 lg:py-20 space-y-2 sm:space-y-3 md:space-y-4"
+            ref={container}
+        >
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[100px] text-white">
+                Blog
+            </h1>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300">
+                Find the latest of my writing here.
+            </p>
         </header>
     );
 };
