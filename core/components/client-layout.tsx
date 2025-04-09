@@ -1,8 +1,10 @@
 'use client';
 
 import { ReactNode, useEffect } from 'react';
+import Link from 'next/link';
 
 import { Header } from './header/header';
+import { Footer } from './footer';
 
 const Wrapper = ({
     children,
@@ -66,6 +68,7 @@ export const ClientLayout = ({ children }: { children: ReactNode }) => {
             <div data-scroll-content className="font-sans">
                 <Header />
                 {children}
+                <Footer />
             </div>
         </Wrapper>
     );
