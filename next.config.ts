@@ -15,16 +15,6 @@ const nextConfig: NextConfig = {
             },
             {
                 protocol: 'https',
-                hostname: 'felixyeboahdev.vercel.app',
-                pathname: '**',
-            },
-            {
-                protocol: 'http',
-                hostname: 'localhost',
-                pathname: '**',
-            },
-            {
-                protocol: 'https',
                 hostname: 'pbs.twimg.com',
                 pathname: '**',
             },
@@ -54,7 +44,6 @@ const nextConfig: NextConfig = {
                 pathname: '**',
             },
         ],
-        unoptimized: true,
     },
     transpilePackages: ['next-mdx-remote'],
     eslint: {
@@ -62,8 +51,7 @@ const nextConfig: NextConfig = {
     },
     typescript: {
         ignoreBuildErrors: true
-    },
-    output: 'standalone'
+    }
 };
 
 export default nextConfig;
