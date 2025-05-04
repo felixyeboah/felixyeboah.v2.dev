@@ -22,11 +22,22 @@ export async function generateMetadata({
 
     const fm = post.frontMatter;
 
-    const title = `${fm.title} | Case Study | ${siteConfig.title}`;
-    const description = fm.description || siteConfig.description;
-    // Use post cover image if available, otherwise fallback to site default
-    const ogImage = fm.cover ? `${siteConfig.url}${fm.cover}` : `${siteConfig.siteUrl}${siteConfig.ogImage}`;
+    const title = `${fm.title} | Case Study`;
+    const description = fm.subtitle || fm.description || 'Case study by Felix Yeboah';
     const url = `${siteConfig.url}/case-studies/${slug}`;
+
+    // Format the date for OG image display if available
+    const formattedDate = fm.date ? new Date(fm.date).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+    }) : null;
+
+    // Use dynamic OG image generation
+    const ogImage = `${siteConfig.url}/api/og?title=${encodeURIComponent(fm.title)}
+        &subtitle=${encodeURIComponent(fm.subtitle || 'Case Study')}
+        ${formattedDate ? `&date=${encodeURIComponent(formattedDate)}` : ''}
+        ${fm.cover ? `&cover=${encodeURIComponent(fm.cover)}` : ''}`.replace(/\s+/g, '');
 
     return {
         title,

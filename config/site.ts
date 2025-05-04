@@ -30,7 +30,7 @@ export const siteConfig: SiteConfig = {
   siteUrl: 'https://felixyeboahdev.vercel.app/',
   siteLanguage: 'en',
   logo: '/static/logo/logo.png', // Path is relative to the public directory
-  ogImage: '/static/og/main-og-image.png', // Path is relative to the public directory
+  ogImage: '/api/og', // Update to use the dynamic OG image generator
   favicon: '/static/favicon.png', // Path is relative to the public directory
   shortName: 'FelixYeboah',
   author: 'Felix Yeboah',

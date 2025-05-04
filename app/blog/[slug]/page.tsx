@@ -23,7 +23,22 @@ export async function generateMetadata({
     const { title, subtitle, date, keywords, categories, cover, updated } = post.frontMatter;
     const url = `${siteConfig.url}/blog/${slug}`;
 
-    const ogImageUrl = `${siteConfig.url}/api/og?title=${encodeURIComponent(title)}&subtitle=${encodeURIComponent(subtitle || '')}`;
+    // Format the date for OG image display
+    const formattedDate = new Date(date).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+    });
+
+    // Get reading time from frontMatter
+    const readingTime = post.frontMatter.readingTime.text;
+
+    const ogImageUrl = `${siteConfig.url}/api/og?title=${encodeURIComponent(title)}
+        &subtitle=${encodeURIComponent(subtitle || '')}
+        &date=${encodeURIComponent(formattedDate)}
+        &readingTime=${encodeURIComponent(readingTime)}
+        ${cover ? `&cover=${encodeURIComponent(cover)}` : ''}`.replace(/\s+/g, '');
+
     const publishedTime = new Date(date).toISOString();
     const modifiedTime = updated ? new Date(updated).toISOString() : publishedTime;
 
