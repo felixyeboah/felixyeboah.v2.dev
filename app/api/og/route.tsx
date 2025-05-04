@@ -1,5 +1,6 @@
 import { ImageResponse } from '@vercel/og';
 import { NextRequest } from 'next/server';
+import React from 'react';
 
 export const runtime = 'edge';
 
@@ -20,238 +21,21 @@ export async function GET(req: NextRequest) {
 
     // Generate blog post OG image
     return new ImageResponse(
-        (
-            <div
-                style={{
+        React.createElement(
+            'div',
+            {
+                style: {
                     display: 'flex',
-                    flexDirection: 'column',
-                    height: '630px',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                     width: '1200px',
+                    height: '630px',
                     backgroundColor: '#232323',
-                    position: 'relative',
-                    overflow: 'hidden',
-                    fontFamily: 'system-ui, -apple-system, sans-serif',
-                }}
-            >
-                {/* Backdrop blur effect */}
-                <div
-                    style={{
-                        position: 'absolute',
-                        inset: 0,
-                        backdropFilter: 'blur(16px)',
-                    }}
-                />
-
-                {/* Main content */}
-                <div
-                    style={{
-                        position: 'relative',
-                        zIndex: 10,
-                        display: 'flex',
-                        flexDirection: 'column',
-                        height: '100%',
-                        width: '100%',
-                        padding: '40px',
-                    }}
-                >
-                    {/* Header with border */}
-                    <div
-                        style={{
-                            width: '100%',
-                            borderBottom: '1px solid #393939',
-                            paddingBottom: '20px',
-                            position: 'relative',
-                        }}
-                    >
-                        {/* Corner + elements */}
-                        <div style={{ position: 'absolute', bottom: 0, left: 0, transform: 'translate(-50%, 50%)', zIndex: 10 }}>
-                            <span style={{ color: '#6B6B6B', fontSize: 18, fontFamily: 'monospace' }}>+</span>
-                        </div>
-                        <div style={{ position: 'absolute', bottom: 0, right: 0, transform: 'translate(50%, 50%)', zIndex: 10 }}>
-                            <span style={{ color: '#6B6B6B', fontSize: 18, fontFamily: 'monospace' }}>+</span>
-                        </div>
-
-                        <div style={{ display: 'flex', alignItems: 'center' }}>
-                            <h3 style={{ fontSize: 24, color: 'white', fontWeight: 500, fontFamily: 'system-ui, sans-serif' }}>
-                                Felix
-                            </h3>
-                            <div style={{ marginLeft: 'auto', color: 'rgba(255,255,255,0.7)', fontSize: 14, fontFamily: 'system-ui, sans-serif' }}>
-                                {date} {readingTime && `• ${readingTime}`}
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Content Area with Title, Subtitle and Cover Image */}
-                    <div
-                        style={{
-                            display: 'flex',
-                            flex: 1,
-                            gap: '40px',
-                            marginTop: '40px',
-                        }}
-                    >
-                        {/* Title and subtitle */}
-                        <div
-                            style={{
-                                flex: '0 0 60%',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                justifyContent: 'center',
-                            }}
-                        >
-                            <h1
-                                style={{
-                                    fontSize: 52,
-                                    color: 'white',
-                                    lineHeight: 1.2,
-                                    margin: 0,
-                                    fontWeight: 700,
-                                    fontFamily: 'system-ui, sans-serif',
-                                }}
-                            >
-                                {title}
-                            </h1>
-                            {subtitle && (
-                                <p
-                                    style={{
-                                        fontSize: 24,
-                                        color: 'rgba(255,255,255,0.8)',
-                                        lineHeight: 1.4,
-                                        marginTop: '20px',
-                                        fontFamily: 'system-ui, sans-serif',
-                                    }}
-                                >
-                                    {subtitle}
-                                </p>
-                            )}
-                        </div>
-
-                        {/* Cover image with border */}
-                        <div
-                            style={{
-                                flex: '0 0 40%',
-                                border: '1px solid #393939',
-                                position: 'relative',
-                                padding: '8px',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                backgroundColor: '#1B1B1B',
-                            }}
-                        >
-                            {/* Corner + elements */}
-                            <div style={{ position: 'absolute', top: 0, left: 0, transform: 'translate(-50%, -50%)', zIndex: 10 }}>
-                                <span style={{ color: '#6B6B6B', fontSize: 18, fontFamily: 'monospace' }}>+</span>
-                            </div>
-                            <div style={{ position: 'absolute', top: 0, right: 0, transform: 'translate(50%, -50%)', zIndex: 10 }}>
-                                <span style={{ color: '#6B6B6B', fontSize: 18, fontFamily: 'monospace' }}>+</span>
-                            </div>
-                            <div style={{ position: 'absolute', bottom: 0, left: 0, transform: 'translate(-50%, 50%)', zIndex: 10 }}>
-                                <span style={{ color: '#6B6B6B', fontSize: 18, fontFamily: 'monospace' }}>+</span>
-                            </div>
-                            <div style={{ position: 'absolute', bottom: 0, right: 0, transform: 'translate(50%, 50%)', zIndex: 10 }}>
-                                <span style={{ color: '#6B6B6B', fontSize: 18, fontFamily: 'monospace' }}>+</span>
-                            </div>
-
-                            {cover ? (
-                                <img
-                                    style={{
-                                        width: '100%',
-                                        height: '100%',
-                                        objectFit: 'cover',
-                                    }}
-                                    src={cover}
-                                    alt={title}
-                                />
-                            ) : (
-                                <div
-                                    style={{
-                                        height: '100%',
-                                        width: '100%',
-                                        backgroundColor: '#2A2A2A',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                    }}
-                                >
-                                    <span style={{ color: '#6B6B6B', fontFamily: 'system-ui, sans-serif' }}>
-                                        No image
-                                    </span>
-                                </div>
-                            )}
-                        </div>
-                    </div>
-
-                    {/* Footer with author info */}
-                    <div
-                        style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            marginTop: '40px',
-                            paddingTop: '20px',
-                            borderTop: '1px solid #393939',
-                            position: 'relative',
-                        }}
-                    >
-                        {/* Corner + elements */}
-                        <div style={{ position: 'absolute', top: 0, left: 0, transform: 'translate(-50%, -50%)', zIndex: 10 }}>
-                            <span style={{ color: '#6B6B6B', fontSize: 18, fontFamily: 'monospace' }}>+</span>
-                        </div>
-                        <div style={{ position: 'absolute', top: 0, right: 0, transform: 'translate(50%, -50%)', zIndex: 10 }}>
-                            <span style={{ color: '#6B6B6B', fontSize: 18, fontFamily: 'monospace' }}>+</span>
-                        </div>
-
-                        <img
-                            src="https://github.com/felixyeboah.png"
-                            alt="Felix"
-                            width="48"
-                            height="48"
-                            style={{
-                                borderRadius: '4px',
-                            }}
-                        />
-                        <div
-                            style={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                marginLeft: '12px',
-                            }}
-                        >
-                            <p
-                                style={{
-                                    fontSize: 18,
-                                    color: 'white',
-                                    margin: 0,
-                                    fontFamily: 'system-ui, sans-serif',
-                                }}
-                            >
-                                Felix Yeboah
-                            </p>
-                            <p
-                                style={{
-                                    fontSize: 14,
-                                    color: 'rgba(255,255,255,0.6)',
-                                    margin: 0,
-                                    fontFamily: 'system-ui, sans-serif',
-                                }}
-                            >
-                                @sudocode_
-                            </p>
-                        </div>
-
-                        <div
-                            style={{
-                                marginLeft: 'auto',
-                                color: 'rgba(255,255,255,0.8)',
-                                fontSize: 14,
-                                fontFamily: 'monospace',
-                            }}
-                        >
-                            felixyeboahdev.vercel.app
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    color: 'white',
+                    fontSize: 48,
+                },
+            },
+            'OG Test'
         ),
         {
             width: 1200,
@@ -260,7 +44,7 @@ export async function GET(req: NextRequest) {
                 'content-type': 'image/png',
                 'cache-control': 'public, max-age=31536000, immutable',
             },
-        },
+        }
     );
 }
 
@@ -292,7 +76,6 @@ function generateDefaultOGImage() {
                 <div
                     style={{
                         position: 'relative',
-                        zIndex: 10,
                         display: 'flex',
                         flexDirection: 'column',
                         justifyContent: 'space-between',
@@ -312,16 +95,16 @@ function generateDefaultOGImage() {
                         }}
                     >
                         {/* Corner + elements */}
-                        <div style={{ position: 'absolute', top: 0, left: 0, transform: 'translate(-50%, -50%)', zIndex: 10 }}>
+                        <div style={{ position: 'absolute', top: 0, left: 0, transform: 'translate(-50%, -50%)', display: 'flex' }}>
                             <span style={{ color: '#6B6B6B', fontSize: 18, fontFamily: 'monospace' }}>+</span>
                         </div>
-                        <div style={{ position: 'absolute', top: 0, right: 0, transform: 'translate(50%, -50%)', zIndex: 10 }}>
+                        <div style={{ position: 'absolute', top: 0, right: 0, transform: 'translate(50%, -50%)', display: 'flex' }}>
                             <span style={{ color: '#6B6B6B', fontSize: 18, fontFamily: 'monospace' }}>+</span>
                         </div>
-                        <div style={{ position: 'absolute', bottom: 0, left: 0, transform: 'translate(-50%, 50%)', zIndex: 10 }}>
+                        <div style={{ position: 'absolute', bottom: 0, left: 0, transform: 'translate(-50%, 50%)', display: 'flex' }}>
                             <span style={{ color: '#6B6B6B', fontSize: 18, fontFamily: 'monospace' }}>+</span>
                         </div>
-                        <div style={{ position: 'absolute', bottom: 0, right: 0, transform: 'translate(50%, 50%)', zIndex: 10 }}>
+                        <div style={{ position: 'absolute', bottom: 0, right: 0, transform: 'translate(50%, 50%)', display: 'flex' }}>
                             <span style={{ color: '#6B6B6B', fontSize: 18, fontFamily: 'monospace' }}>+</span>
                         </div>
 
@@ -337,10 +120,10 @@ function generateDefaultOGImage() {
                                 padding: '16px'
                             }}
                         >
-                            <div style={{ position: 'absolute', top: 0, right: 0, transform: 'translate(50%, -50%)', zIndex: 10 }}>
+                            <div style={{ position: 'absolute', top: 0, right: 0, transform: 'translate(50%, -50%)', display: 'flex' }}>
                                 <span style={{ color: '#6B6B6B', fontSize: 18, fontFamily: 'monospace' }}>+</span>
                             </div>
-                            <div style={{ position: 'absolute', bottom: 0, right: 0, transform: 'translate(50%, 50%)', zIndex: 10 }}>
+                            <div style={{ position: 'absolute', bottom: 0, right: 0, transform: 'translate(50%, 50%)', display: 'flex' }}>
                                 <span style={{ color: '#6B6B6B', fontSize: 18, fontFamily: 'monospace' }}>+</span>
                             </div>
 
@@ -359,10 +142,10 @@ function generateDefaultOGImage() {
                                 alignItems: 'center',
                                 justifyContent: 'center'
                             }}>
-                                <div style={{ position: 'absolute', top: 0, right: 0, transform: 'translate(50%, -50%)', zIndex: 10 }}>
+                                <div style={{ position: 'absolute', top: 0, right: 0, transform: 'translate(50%, -50%)', display: 'flex' }}>
                                     <span style={{ color: '#6B6B6B', fontSize: 18, fontFamily: 'monospace' }}>+</span>
                                 </div>
-                                <div style={{ position: 'absolute', bottom: 0, right: 0, transform: 'translate(50%, 50%)', zIndex: 10 }}>
+                                <div style={{ position: 'absolute', bottom: 0, right: 0, transform: 'translate(50%, 50%)', display: 'flex' }}>
                                     <span style={{ color: '#6B6B6B', fontSize: 18, fontFamily: 'monospace' }}>+</span>
                                 </div>
                                 <p style={{ color: 'white', fontSize: 16, fontFamily: 'system-ui, sans-serif' }}>About</p>
@@ -375,10 +158,10 @@ function generateDefaultOGImage() {
                                 alignItems: 'center',
                                 justifyContent: 'center'
                             }}>
-                                <div style={{ position: 'absolute', top: 0, right: 0, transform: 'translate(50%, -50%)', zIndex: 10 }}>
+                                <div style={{ position: 'absolute', top: 0, right: 0, transform: 'translate(50%, -50%)', display: 'flex' }}>
                                     <span style={{ color: '#6B6B6B', fontSize: 18, fontFamily: 'monospace' }}>+</span>
                                 </div>
-                                <div style={{ position: 'absolute', bottom: 0, right: 0, transform: 'translate(50%, 50%)', zIndex: 10 }}>
+                                <div style={{ position: 'absolute', bottom: 0, right: 0, transform: 'translate(50%, 50%)', display: 'flex' }}>
                                     <span style={{ color: '#6B6B6B', fontSize: 18, fontFamily: 'monospace' }}>+</span>
                                 </div>
                                 <p style={{ color: 'white', fontSize: 16, fontFamily: 'system-ui, sans-serif' }}>Cases</p>
@@ -441,21 +224,20 @@ function generateDefaultOGImage() {
                             borderTop: '1px solid #393939',
                             borderBottom: '1px solid #393939',
                             display: 'flex',
-                            zIndex: 10,
                             backgroundColor: '#232323',
                         }}
                     >
                         {/* Corner + elements */}
-                        <div style={{ position: 'absolute', top: 0, left: 0, transform: 'translate(-50%, -50%)', zIndex: 10 }}>
+                        <div style={{ position: 'absolute', top: 0, left: 0, transform: 'translate(-50%, -50%)', display: 'flex' }}>
                             <span style={{ color: '#6B6B6B', fontSize: 18, fontFamily: 'monospace' }}>+</span>
                         </div>
-                        <div style={{ position: 'absolute', top: 0, right: 0, transform: 'translate(50%, -50%)', zIndex: 10 }}>
+                        <div style={{ position: 'absolute', top: 0, right: 0, transform: 'translate(50%, -50%)', display: 'flex' }}>
                             <span style={{ color: '#6B6B6B', fontSize: 18, fontFamily: 'monospace' }}>+</span>
                         </div>
-                        <div style={{ position: 'absolute', bottom: 0, left: 0, transform: 'translate(-50%, 50%)', zIndex: 10 }}>
+                        <div style={{ position: 'absolute', bottom: 0, left: 0, transform: 'translate(-50%, 50%)', display: 'flex' }}>
                             <span style={{ color: '#6B6B6B', fontSize: 18, fontFamily: 'monospace' }}>+</span>
                         </div>
-                        <div style={{ position: 'absolute', bottom: 0, right: 0, transform: 'translate(50%, 50%)', zIndex: 10 }}>
+                        <div style={{ position: 'absolute', bottom: 0, right: 0, transform: 'translate(50%, 50%)', display: 'flex' }}>
                             <span style={{ color: '#6B6B6B', fontSize: 18, fontFamily: 'monospace' }}>+</span>
                         </div>
 
@@ -471,10 +253,10 @@ function generateDefaultOGImage() {
                                 justifyContent: 'flex-end',
                             }}
                         >
-                            <div style={{ position: 'absolute', top: 0, right: 0, transform: 'translate(50%, -50%)', zIndex: 10 }}>
+                            <div style={{ position: 'absolute', top: 0, right: 0, transform: 'translate(50%, -50%)', display: 'flex' }}>
                                 <span style={{ color: '#6B6B6B', fontSize: 18, fontFamily: 'monospace' }}>+</span>
                             </div>
-                            <div style={{ position: 'absolute', bottom: 0, right: 0, transform: 'translate(50%, 50%)', zIndex: 10 }}>
+                            <div style={{ position: 'absolute', bottom: 0, right: 0, transform: 'translate(50%, 50%)', display: 'flex' }}>
                                 <span style={{ color: '#6B6B6B', fontSize: 18, fontFamily: 'monospace' }}>+</span>
                             </div>
                             <div style={{ color: 'rgba(255,255,255,0.8)', fontSize: 14, lineHeight: 1.4, fontFamily: 'system-ui, sans-serif' }}>
@@ -491,10 +273,10 @@ function generateDefaultOGImage() {
                                 padding: '16px',
                             }}
                         >
-                            <div style={{ position: 'absolute', top: 0, right: 0, transform: 'translate(50%, -50%)', zIndex: 10 }}>
+                            <div style={{ position: 'absolute', top: 0, right: 0, transform: 'translate(50%, -50%)', display: 'flex' }}>
                                 <span style={{ color: '#6B6B6B', fontSize: 18, fontFamily: 'monospace' }}>+</span>
                             </div>
-                            <div style={{ position: 'absolute', bottom: 0, right: 0, transform: 'translate(50%, 50%)', zIndex: 10 }}>
+                            <div style={{ position: 'absolute', bottom: 0, right: 0, transform: 'translate(50%, 50%)', display: 'flex' }}>
                                 <span style={{ color: '#6B6B6B', fontSize: 18, fontFamily: 'monospace' }}>+</span>
                             </div>
                         </div>
@@ -506,10 +288,10 @@ function generateDefaultOGImage() {
                                 padding: '16px',
                             }}
                         >
-                            <div style={{ position: 'absolute', top: 0, right: 0, transform: 'translate(50%, -50%)', zIndex: 10 }}>
+                            <div style={{ position: 'absolute', top: 0, right: 0, transform: 'translate(50%, -50%)', display: 'flex' }}>
                                 <span style={{ color: '#6B6B6B', fontSize: 18, fontFamily: 'monospace' }}>+</span>
                             </div>
-                            <div style={{ position: 'absolute', bottom: 0, right: 0, transform: 'translate(50%, 50%)', zIndex: 10 }}>
+                            <div style={{ position: 'absolute', bottom: 0, right: 0, transform: 'translate(50%, 50%)', display: 'flex' }}>
                                 <span style={{ color: '#6B6B6B', fontSize: 18, fontFamily: 'monospace' }}>+</span>
                             </div>
                         </div>
