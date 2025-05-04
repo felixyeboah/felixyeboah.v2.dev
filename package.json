@@ -6,7 +6,12 @@
         "dev": "next dev --turbopack",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint"
+        "lint": "next lint",
+        "generate-og": "node scripts/generate-og-images.js",
+        "generate-og:no-curl": "node scripts/generate-og-images.js --no-curl",
+        "generate-og:test": "node scripts/generate-og-images.js --test",
+        "generate-og:setup": "node scripts/og-setup.js",
+        "build:with-og": "npm run generate-og && npm run build"
     },
     "dependencies": {
         "@codesandbox/sandpack-react": "^2.20.0",

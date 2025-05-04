@@ -14,9 +14,11 @@ import {
 import { Post } from '@/types/post';
 
 export async function generateMetadata(): Promise<Metadata> {
-    const title = 'Case Studies | ' + siteConfig.title;
+    const title = 'Case Studies';
     const description = 'Explore detailed case studies of projects I have worked on.';
-    const ogImage = siteConfig.ogImage; // Use the general OG image or a specific one for case studies
+    const ogTitle = `Case Studies | ${siteConfig.title}`;
+    // Generate a custom OG image with title parameter
+    const ogImage = `${siteConfig.url}/api/og?title=${encodeURIComponent(ogTitle)}`;
     const url = `${siteConfig.url}/case-studies`;
 
     return {
@@ -26,14 +28,14 @@ export async function generateMetadata(): Promise<Metadata> {
         openGraph: {
             type: 'website',
             url: url,
-            title: title,
+            title: ogTitle,
             description: description,
             images: [
                 {
                     url: ogImage,
                     width: 1200,
                     height: 630,
-                    alt: title,
+                    alt: ogTitle,
                 },
             ],
             siteName: siteConfig.name,
@@ -42,7 +44,7 @@ export async function generateMetadata(): Promise<Metadata> {
             card: siteConfig.twitterCardType,
             site: siteConfig.twitter,
             creator: siteConfig.twitter,
-            title: title,
+            title: ogTitle,
             description: description,
             images: [ogImage],
         },

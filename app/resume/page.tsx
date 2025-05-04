@@ -6,9 +6,11 @@ import { ResumeDisplay, ResumeFrontMatter } from './resume-display';
 
 // Metadata generation remains a server-side function
 export async function generateMetadata(): Promise<Metadata> {
-  const title = 'Resume | ' + siteConfig.title;
+  const title = 'Resume';
   const description = 'View the professional resume of Felix Yeboah, showcasing skills and experience.';
-  const ogImage = siteConfig.ogImage;
+  const ogTitle = `Resume | ${siteConfig.title}`;
+  // Generate a custom OG image with title parameter
+  const ogImage = `${siteConfig.url}/api/og?title=${encodeURIComponent(ogTitle)}`;
   const url = `${siteConfig.url}/resume`;
 
   return {
@@ -18,14 +20,14 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       type: 'profile',
       url: url,
-      title: title,
+      title: ogTitle,
       description: description,
       images: [
         {
           url: ogImage,
           width: 1200,
           height: 630,
-          alt: title,
+          alt: ogTitle,
         },
       ],
       siteName: siteConfig.name,
@@ -34,7 +36,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: 'summary',
       site: siteConfig.twitter,
       creator: siteConfig.twitter,
-      title: title,
+      title: ogTitle,
       description: description,
       images: [ogImage],
     },

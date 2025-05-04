@@ -1,4 +1,5 @@
 import { getAllFilesFrontMatter } from '@/app/libs/mdx';
+import { getOGImageUrl } from '@/app/utils/og-images';
 import React, { Suspense } from 'react';
 import { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
@@ -7,9 +8,11 @@ import { BlogContent } from './blog-content';
 import { BlogHeader } from './blog-header';
 
 export async function generateMetadata(): Promise<Metadata> {
-    const title = 'Blog | ' + siteConfig.title;
-    const description = 'Browse articles on software development, technology, and more.'; // Or a more specific description for the blog page
-    const ogImage = siteConfig.ogImage; // Use the general OG image or a specific one for the blog
+    const title = 'Blog';
+    const description = 'Browse articles on software development, technology, and more.';
+    const ogTitle = `Blog | ${siteConfig.title}`;
+    // Get the pre-generated default OG image
+    const ogImage = getOGImageUrl('default');
     const url = `${siteConfig.url}/blog`;
 
     return {
@@ -19,14 +22,14 @@ export async function generateMetadata(): Promise<Metadata> {
         openGraph: {
             type: 'website',
             url: url,
-            title: title,
+            title: ogTitle,
             description: description,
             images: [
                 {
                     url: ogImage,
                     width: 1200,
                     height: 630,
-                    alt: title,
+                    alt: ogTitle,
                 },
             ],
             siteName: siteConfig.name,
@@ -35,7 +38,7 @@ export async function generateMetadata(): Promise<Metadata> {
             card: siteConfig.twitterCardType,
             site: siteConfig.twitter,
             creator: siteConfig.twitter,
-            title: title,
+            title: ogTitle,
             description: description,
             images: [ogImage],
         },
