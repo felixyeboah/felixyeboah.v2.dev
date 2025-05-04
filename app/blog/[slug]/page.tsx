@@ -30,14 +30,12 @@ export async function generateMetadata({
         day: 'numeric'
     });
 
-    // Get reading time from frontMatter
-    const readingTime = post.frontMatter.readingTime.text;
+    // Estimate reading time (roughly 200 words per minute)
+    const wordCount = post.mdxSource.compiledSource.split(/\s+/).length;
+    const readingTime = `${Math.ceil(wordCount / 200)} min read`;
 
-    const ogImageUrl = `${siteConfig.url}/api/og?title=${encodeURIComponent(title)}
-        &subtitle=${encodeURIComponent(subtitle || '')}
-        &date=${encodeURIComponent(formattedDate)}
-        &readingTime=${encodeURIComponent(readingTime)}
-        ${cover ? `&cover=${encodeURIComponent(cover)}` : ''}`.replace(/\s+/g, '');
+    // Use template literals without newlines to avoid URL parsing issues
+    const ogImageUrl = `${siteConfig.url}/api/og?title=${encodeURIComponent(title)}&subtitle=${encodeURIComponent(subtitle || '')}&date=${encodeURIComponent(formattedDate)}&readingTime=${encodeURIComponent(readingTime)}${cover ? `&cover=${encodeURIComponent(cover)}` : ''}`;
 
     const publishedTime = new Date(date).toISOString();
     const modifiedTime = updated ? new Date(updated).toISOString() : publishedTime;

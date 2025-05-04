@@ -3,6 +3,8 @@ import { NextRequest } from 'next/server';
 
 export const runtime = 'edge';
 
+// Font loading is currently not working with local font files
+// Using a web-safe font instead for now
 export async function GET(req: NextRequest) {
     const { searchParams } = new URL(req.url);
     const title = searchParams.get('title');
@@ -28,6 +30,7 @@ export async function GET(req: NextRequest) {
                     backgroundColor: '#232323',
                     position: 'relative',
                     overflow: 'hidden',
+                    fontFamily: 'system-ui, -apple-system, sans-serif',
                 }}
             >
                 {/* Backdrop blur effect */}
@@ -69,10 +72,10 @@ export async function GET(req: NextRequest) {
                         </div>
 
                         <div style={{ display: 'flex', alignItems: 'center' }}>
-                            <h3 style={{ fontSize: 24, color: 'white', fontWeight: 500, fontFamily: 'sans-serif' }}>
+                            <h3 style={{ fontSize: 24, color: 'white', fontWeight: 500, fontFamily: 'system-ui, sans-serif' }}>
                                 Felix
                             </h3>
-                            <div style={{ marginLeft: 'auto', color: 'rgba(255,255,255,0.7)', fontSize: 14, fontFamily: 'sans-serif' }}>
+                            <div style={{ marginLeft: 'auto', color: 'rgba(255,255,255,0.7)', fontSize: 14, fontFamily: 'system-ui, sans-serif' }}>
                                 {date} {readingTime && `• ${readingTime}`}
                             </div>
                         </div>
@@ -103,7 +106,7 @@ export async function GET(req: NextRequest) {
                                     lineHeight: 1.2,
                                     margin: 0,
                                     fontWeight: 700,
-                                    fontFamily: 'sans-serif',
+                                    fontFamily: 'system-ui, sans-serif',
                                 }}
                             >
                                 {title}
@@ -115,7 +118,7 @@ export async function GET(req: NextRequest) {
                                         color: 'rgba(255,255,255,0.8)',
                                         lineHeight: 1.4,
                                         marginTop: '20px',
-                                        fontFamily: 'sans-serif',
+                                        fontFamily: 'system-ui, sans-serif',
                                     }}
                                 >
                                     {subtitle}
@@ -171,7 +174,7 @@ export async function GET(req: NextRequest) {
                                         justifyContent: 'center',
                                     }}
                                 >
-                                    <span style={{ color: '#6B6B6B', fontFamily: 'sans-serif' }}>
+                                    <span style={{ color: '#6B6B6B', fontFamily: 'system-ui, sans-serif' }}>
                                         No image
                                     </span>
                                 </div>
@@ -219,7 +222,7 @@ export async function GET(req: NextRequest) {
                                     fontSize: 18,
                                     color: 'white',
                                     margin: 0,
-                                    fontFamily: 'sans-serif',
+                                    fontFamily: 'system-ui, sans-serif',
                                 }}
                             >
                                 Felix Yeboah
@@ -229,7 +232,7 @@ export async function GET(req: NextRequest) {
                                     fontSize: 14,
                                     color: 'rgba(255,255,255,0.6)',
                                     margin: 0,
-                                    fontFamily: 'sans-serif',
+                                    fontFamily: 'system-ui, sans-serif',
                                 }}
                             >
                                 @sudocode_
@@ -254,6 +257,7 @@ export async function GET(req: NextRequest) {
             width: 1200,
             height: 630,
             headers: {
+                'content-type': 'image/png',
                 'cache-control': 'public, max-age=31536000, immutable',
             },
         },
@@ -272,6 +276,7 @@ function generateDefaultOGImage() {
                     backgroundColor: '#232323',
                     position: 'relative',
                     overflow: 'hidden',
+                    fontFamily: 'system-ui, -apple-system, sans-serif',
                 }}
             >
                 {/* Backdrop blur effect */}
@@ -339,7 +344,7 @@ function generateDefaultOGImage() {
                                 <span style={{ color: '#6B6B6B', fontSize: 18, fontFamily: 'monospace' }}>+</span>
                             </div>
 
-                            <h3 style={{ fontSize: 24, color: 'white', fontWeight: 500, fontFamily: 'sans-serif' }}>
+                            <h3 style={{ fontSize: 24, color: 'white', fontWeight: 500, fontFamily: 'system-ui, sans-serif' }}>
                                 Felix
                             </h3>
                         </div>
@@ -360,7 +365,7 @@ function generateDefaultOGImage() {
                                 <div style={{ position: 'absolute', bottom: 0, right: 0, transform: 'translate(50%, 50%)', zIndex: 10 }}>
                                     <span style={{ color: '#6B6B6B', fontSize: 18, fontFamily: 'monospace' }}>+</span>
                                 </div>
-                                <p style={{ color: 'white', fontSize: 16, fontFamily: 'sans-serif' }}>About</p>
+                                <p style={{ color: 'white', fontSize: 16, fontFamily: 'system-ui, sans-serif' }}>About</p>
                             </div>
                             <div style={{
                                 flex: 1,
@@ -376,7 +381,7 @@ function generateDefaultOGImage() {
                                 <div style={{ position: 'absolute', bottom: 0, right: 0, transform: 'translate(50%, 50%)', zIndex: 10 }}>
                                     <span style={{ color: '#6B6B6B', fontSize: 18, fontFamily: 'monospace' }}>+</span>
                                 </div>
-                                <p style={{ color: 'white', fontSize: 16, fontFamily: 'sans-serif' }}>Cases</p>
+                                <p style={{ color: 'white', fontSize: 16, fontFamily: 'system-ui, sans-serif' }}>Cases</p>
                             </div>
                             <div style={{
                                 flex: 1,
@@ -384,7 +389,7 @@ function generateDefaultOGImage() {
                                 alignItems: 'center',
                                 justifyContent: 'center'
                             }}>
-                                <p style={{ color: 'white', fontSize: 16, fontFamily: 'sans-serif' }}>Blog</p>
+                                <p style={{ color: 'white', fontSize: 16, fontFamily: 'system-ui, sans-serif' }}>Blog</p>
                             </div>
                         </div>
                     </div>
@@ -407,7 +412,7 @@ function generateDefaultOGImage() {
                                 fontWeight: 700,
                                 textAlign: 'center',
                                 margin: 0,
-                                fontFamily: 'sans-serif'
+                                fontFamily: 'system-ui, sans-serif'
                             }}
                         >
                             Felix Yeboah
@@ -418,7 +423,7 @@ function generateDefaultOGImage() {
                                 fontSize: 28,
                                 textAlign: 'center',
                                 margin: '20px 0 0 0',
-                                fontFamily: 'sans-serif'
+                                fontFamily: 'system-ui, sans-serif'
                             }}
                         >
                             Software Engineer & Designer
@@ -472,7 +477,7 @@ function generateDefaultOGImage() {
                             <div style={{ position: 'absolute', bottom: 0, right: 0, transform: 'translate(50%, 50%)', zIndex: 10 }}>
                                 <span style={{ color: '#6B6B6B', fontSize: 18, fontFamily: 'monospace' }}>+</span>
                             </div>
-                            <div style={{ color: 'rgba(255,255,255,0.8)', fontSize: 14, lineHeight: 1.4, fontFamily: 'sans-serif' }}>
+                            <div style={{ color: 'rgba(255,255,255,0.8)', fontSize: 14, lineHeight: 1.4, fontFamily: 'system-ui, sans-serif' }}>
                                 Designing for a<br />connected world.
                             </div>
                         </div>
@@ -523,6 +528,7 @@ function generateDefaultOGImage() {
             width: 1200,
             height: 630,
             headers: {
+                'content-type': 'image/png',
                 'cache-control': 'public, max-age=31536000, immutable',
             },
         },
