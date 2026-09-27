@@ -1,159 +1,73 @@
-import { ClientLayout } from '@/core/components/client-layout';
 import { siteConfig } from '@/config/site';
-import type { Metadata } from 'next';
-import { ViewTransitions } from 'next-view-transitions';
-import localFont from 'next/font/local';
+import { Footer } from '@/core/site/chrome';
+import { Nav } from '@/core/site/nav';
+import { SiteRuntime } from '@/core/site/runtime';
+import type { Metadata, Viewport } from 'next';
+import { Geist, Geist_Mono } from 'next/font/google';
 
-import './animated-button.css';
-import './globals.css';
-import './locomotive.css';
+import './site.css';
 
-const aperkuSans = localFont({
-    src: [
-        {
-            path: './fonts/ApercuProBlack.otf',
-            weight: '900',
-            style: 'normal',
-        },
-        {
-            path: './fonts/ApercuProBold.otf',
-            weight: '700',
-            style: 'normal',
-        },
-        {
-            path: './fonts/ApercuProExtraLight.otf',
-            weight: '200',
-            style: 'normal',
-        },
-        {
-            path: './fonts/ApercuProLight.otf',
-            weight: '300',
-            style: 'normal',
-        },
-        {
-            path: './fonts/ApercuProMedium.otf',
-            weight: '500',
-            style: 'normal',
-        },
-        {
-            path: './fonts/ApercuProRegular.otf',
-            weight: '400',
-            style: 'normal',
-        },
-        {
-            path: './fonts/ApercuProThin.otf',
-            weight: '100',
-            style: 'normal',
-        },
-    ],
-    variable: '--font-aperku-sans',
-});
+const geist = Geist({ subsets: ['latin'], weight: 'variable', variable: '--font-geist', display: 'swap' });
+const geistMono = Geist_Mono({ subsets: ['latin'], weight: ['400', '500'], variable: '--font-geist-mono', display: 'swap' });
 
-const aperkuSansMono = localFont({
-    src: [
-        {
-            path: './fonts/ApercuMonoProBold.otf',
-            weight: '700',
-            style: 'normal',
-        },
-        {
-            path: './fonts/ApercuMonoProLight.otf',
-            weight: '300',
-            style: 'normal',
-        },
-        {
-            path: './fonts/ApercuMonoProMedium.otf',
-            weight: '500',
-            style: 'normal',
-        },
-        {
-            path: './fonts/ApercuMonoProRegular.otf',
-            weight: '400',
-            style: 'normal',
-        },
-    ],
-    variable: '--font-aperku-sans-mono',
-});
+const ICON =
+    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23F2EFE9'/%3E%3Ctext x='16' y='20.5' font-family='Arial' font-weight='700' font-size='12' text-anchor='middle' fill='%230B0B0C'%3EFY%3C/text%3E%3C/svg%3E";
 
-const voyageBold = localFont({
-    src: [
-        {
-            path: './fonts/Voyage-Bold.otf',
-            weight: '700',
-            style: 'normal',
-        },
-    ],
-    variable: '--font-voyage',
-});
+export const viewport: Viewport = {
+    themeColor: '#0B0B0C',
+    viewportFit: 'cover',
+};
 
 export const metadata: Metadata = {
     metadataBase: new URL(siteConfig.url),
     title: {
-        default: siteConfig.title,
-        template: `%s | ${siteConfig.title}`,
+        default: 'Felix Yeboah — Software Engineer & Designer, Accra',
+        template: '%s — Felix Yeboah',
     },
-    description: siteConfig.description,
+    description:
+        'Felix Yeboah is a self-taught software engineer and UI/UX designer in Accra, Ghana. Ten years designing interfaces and engineering the systems behind them.',
     keywords: siteConfig.keywords,
-    authors: [
-        {
-            name: siteConfig.author,
-            url: siteConfig.url,
-        },
-    ],
+    authors: [{ name: siteConfig.author, url: siteConfig.url }],
     creator: siteConfig.author,
-    themeColor: [
-        { media: '(prefers-color-scheme: light)', color: 'white' },
-        { media: '(prefers-color-scheme: dark)', color: 'black' },
-    ],
+    icons: { icon: ICON },
+    alternates: { types: { 'application/rss+xml': '/writing/feed.xml' } },
     openGraph: {
         type: 'website',
         locale: siteConfig.siteLanguage,
         url: siteConfig.url,
-        title: siteConfig.title,
-        description: siteConfig.description,
         siteName: siteConfig.name,
-        images: [
-            {
-                url: siteConfig.ogImage,
-                width: 1200,
-                height: 630,
-                alt: siteConfig.name,
-            },
-        ],
     },
     twitter: {
-        card: siteConfig.twitterCardType,
-        title: siteConfig.title,
-        description: siteConfig.description,
+        card: 'summary_large_image',
         site: siteConfig.twitter,
         creator: siteConfig.twitter,
-        images: [siteConfig.ogImage],
     },
-    icons: {
-        icon: siteConfig.favicon,
-        shortcut: siteConfig.favicon,
-        apple: siteConfig.favicon,
-    },
-    manifest: `${siteConfig.url}/site.webmanifest`,
 };
 
-export default function RootLayout({
-    children,
-}: Readonly<{
-    children: React.ReactNode;
-}>) {
+/* site.css names the families literally ("Geist", "Geist Mono") so glyphs Geist lacks (e.g. →) fall back to the
+   system fonts exactly as in the prototype, not to next/font's size-adjusted Arial. */
+/* Runs before first paint, like the prototype's blocking site.js: html.js, and html.motion unless reduced motion. */
+const BOOT = `(function(){var r=document.documentElement;r.classList.add('js');if(!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches))r.classList.add('motion')})()`;
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
-        <ViewTransitions>
-            <html
-                lang="en"
-                className={`${aperkuSans.variable} ${aperkuSansMono.variable} ${voyageBold.variable}`}
-            >
-                <body
-                    className={`${aperkuSans.variable} ${aperkuSansMono.variable} ${voyageBold.variable} antialiased`}
-                >
-                    <ClientLayout>{children}</ClientLayout>
-                </body>
-            </html>
-        </ViewTransitions>
+        <html lang="en" className={`${geist.variable} ${geistMono.variable}`} data-scroll-behavior="smooth" suppressHydrationWarning>
+            <head>
+                <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="" />
+            </head>
+            <body id="top">
+                {/* First thing in <body>: parsed and run before any content paints. Kept out of <head>, where
+                    browser extensions inject their own scripts and would throw off hydration. */}
+                <script dangerouslySetInnerHTML={{ __html: BOOT }} />
+                <a className="skip" href="#main">
+                    Skip to content
+                </a>
+                <div className="grain" aria-hidden="true" />
+                <Nav />
+                {children}
+                <Footer />
+                <SiteRuntime />
+            </body>
+        </html>
     );
 }
