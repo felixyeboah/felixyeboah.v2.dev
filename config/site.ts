@@ -26,8 +26,8 @@ export const siteConfig: SiteConfig = {
   titleAlt: 'Felix Yeboah | Portfolio',
   description:
     "Hi I'm Felix, A self-taught Software Engineer and UI/UX Designer from Accra, Ghana. I learn, build and share my knowledge with the world. I'm passionate about building quality software that makes the world a better place.",
-  url: 'https://felixyeboahdev.vercel.app',
-  siteUrl: 'https://felixyeboahdev.vercel.app/',
+  url: 'https://felixyeboah.dev',
+  siteUrl: 'https://felixyeboah.dev/',
   siteLanguage: 'en',
   logo: '/static/logo/logo.png', // Path is relative to the public directory
   ogImage: '/opengraph-image', // Updated to use the file-based OG image

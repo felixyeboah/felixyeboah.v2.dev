@@ -45,9 +45,33 @@ const nextConfig: NextConfig = {
             },
         ],
     },
-    transpilePackages: ['next-mdx-remote'],
-    eslint: {
-        ignoreDuringBuilds: true
+    /* page CSS (styles/pages) and post content are read with fs at build time */
+    outputFileTracingIncludes: { '/**': ['./styles/pages/**', './content/**'] },
+    async redirects() {
+        const renamed: Record<string, string> = {
+            'miss-cookie': 'miss-cookie-spices',
+            dnaweds: 'desmond-weds-akyeamaa',
+            'seven-sports': '7even-sports-group',
+            drobotix: 'drobotix',
+            dronehub: 'dronehub',
+            undisciplined: 'undisciplined',
+        };
+        return [
+            { source: '/blog', destination: '/writing', permanent: true },
+            {
+                source: '/blog/why-i-built-primeflow-a-developers-reaction-to-a-real-problem',
+                destination: '/writing/why-i-built-reevit',
+                permanent: true,
+            },
+            { source: '/blog/:slug', destination: '/writing/:slug', permanent: true },
+            { source: '/case-studies', destination: '/work', permanent: true },
+            ...Object.entries(renamed).map(([from, to]) => ({
+                source: `/case-studies/${from}`,
+                destination: `/work/${to}`,
+                permanent: true,
+            })),
+            { source: '/case-studies/:slug', destination: '/work', permanent: false },
+        ];
     },
     typescript: {
         ignoreBuildErrors: true
